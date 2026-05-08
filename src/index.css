@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Semantic color tokens ─────────────────────────────────────────── */
+/* Light: blue-tinted neutrals (hue ~250°), deep navy text             */
+:root {
+  --surface-base:     #f0f4f9;
+  --surface-card:     #ffffff;
+  --surface-elevated: #eef2f8;
+  --surface-hover:    #e4ecf6;
+  --border-default:   #c8d8ea;
+  --border-hover:     #a0bcd6;
+  --border-faint:     rgba(200, 216, 234, 0.45);
+  --text-primary:     #0d1b2e;
+  --text-secondary:   #1e3a5f;
+  --text-tertiary:    #2d5282;
+  --text-muted:       #4a7098;
+  --text-faint:       #6b90b0;
+  --text-very-faint:  #8aabca;
+  --card-shadow:      0 1px 3px rgba(13, 27, 46, 0.07), 0 1px 2px rgba(13, 27, 46, 0.04);
+}
+
+/* Dark: existing deep navy palette */
+html.dark {
+  --surface-base:     #020617;
+  --surface-card:     #0a1020;
+  --surface-elevated: #0f1828;
+  --surface-hover:    #162035;
+  --border-default:   #1e2d45;
+  --border-hover:     #2a3f5f;
+  --border-faint:     rgba(30, 45, 69, 0.4);
+  --text-primary:     #f1f5f9;
+  --text-secondary:   #e2e8f0;
+  --text-tertiary:    #cbd5e1;
+  --text-muted:       #94a3b8;
+  --text-faint:       #64748b;
+  --text-very-faint:  #475569;
+  --card-shadow:      none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--surface-base);
+  color: var(--text-primary);
+  font-family: 'Readex Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.card-shadow {
+  box-shadow: var(--card-shadow);
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+
+html.dark ::-webkit-scrollbar-track  { background: #0a1020; }
+html.dark ::-webkit-scrollbar-thumb  { background: #1e2d45; border-radius: 3px; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #2a3f5f; }
+
+html:not(.dark) ::-webkit-scrollbar-track  { background: #eef2f8; }
+html:not(.dark) ::-webkit-scrollbar-thumb  { background: #c8d8ea; border-radius: 3px; }
+html:not(.dark) ::-webkit-scrollbar-thumb:hover { background: #a0bcd6; }
+
+/* ─── Select reset ──────────────────────────────────────────────────── */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ─── Recharts tooltip ──────────────────────────────────────────────── */
+.recharts-default-tooltip {
+  border-radius: 10px !important;
+}

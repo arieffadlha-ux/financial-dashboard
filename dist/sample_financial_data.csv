@@ -1,0 +1,127 @@
+Year,Month,Segment,Sub-Segment,Category,Subcategory,Tag,Amount
+2025,January,Gaming,Mobile,Core,Revenue,Gross,850000000000
+2025,January,Gaming,Mobile,Core,COGS,Direct,-680000000000
+2025,January,Marketplace,B2C,Core,Revenue,Gross,320000000000
+2025,January,Marketplace,B2C,Core,COGS,Direct,-290000000000
+2025,January,Fintech,Payment,Core,Revenue,Gross,150000000000
+2025,January,Fintech,Payment,Core,COGS,Direct,-120000000000
+2025,January,Media,Digital,Core,Revenue,Gross,75000000000
+2025,January,Media,Digital,Core,COGS,Direct,-55000000000
+2025,January,Cloud,SaaS,Core,Revenue,Gross,40000000000
+2025,January,Cloud,SaaS,Core,COGS,Direct,-28000000000
+2025,January,Company,OpEx,SM,S&M - Online,Cost,-35000000000
+2025,January,Company,OpEx,SM,S&M - Offline,Cost,-18000000000
+2025,January,Company,OpEx,SM,S&M - Others,Cost,-12000000000
+2025,January,Company,OpEx,SM,S&M - Payment Channel,Cost,-5000000000
+2025,January,Company,OpEx,SM,S&M - O2O,Cost,-8000000000
+2025,January,Company,OpEx,SM,S&M - Distribution Cost,Cost,-22000000000
+2025,January,Company,OpEx,GA,G&A - Depreciation,Cost,-9000000000
+2025,January,Company,OpEx,GA,G&A - IT Cost,Cost,-6500000000
+2025,January,Company,OpEx,GA,G&A - Other Staff Cost,Cost,-14000000000
+2025,January,Company,OpEx,GA,G&A - Facility Management and Travelling,Cost,-4200000000
+2025,January,Company,OpEx,GA,G&A - Consultancy Cost,Cost,-3100000000
+2025,February,Gaming,Mobile,Core,Revenue,Gross,890000000000
+2025,February,Gaming,Mobile,Core,COGS,Direct,-710000000000
+2025,February,Marketplace,B2C,Core,Revenue,Gross,345000000000
+2025,February,Marketplace,B2C,Core,COGS,Direct,-310000000000
+2025,February,Fintech,Payment,Core,Revenue,Gross,162000000000
+2025,February,Fintech,Payment,Core,COGS,Direct,-130000000000
+2025,February,Media,Digital,Core,Revenue,Gross,80000000000
+2025,February,Media,Digital,Core,COGS,Direct,-59000000000
+2025,February,Cloud,SaaS,Core,Revenue,Gross,43000000000
+2025,February,Cloud,SaaS,Core,COGS,Direct,-30000000000
+2025,February,Company,OpEx,SM,S&M - Online,Cost,-38000000000
+2025,February,Company,OpEx,SM,S&M - Offline,Cost,-20000000000
+2025,February,Company,OpEx,SM,S&M - Others,Cost,-13000000000
+2025,February,Company,OpEx,SM,S&M - Payment Channel,Cost,-5500000000
+2025,February,Company,OpEx,SM,S&M - O2O,Cost,-9000000000
+2025,February,Company,OpEx,SM,S&M - Distribution Cost,Cost,-24000000000
+2025,February,Company,OpEx,GA,G&A - Depreciation,Cost,-9000000000
+2025,February,Company,OpEx,GA,G&A - IT Cost,Cost,-6800000000
+2025,February,Company,OpEx,GA,G&A - Other Staff Cost,Cost,-14500000000
+2025,February,Company,OpEx,GA,G&A - Facility Management and Travelling,Cost,-4500000000
+2025,February,Company,OpEx,GA,G&A - Consultancy Cost,Cost,-3200000000
+2025,March,Gaming,Mobile,Core,Revenue,Gross,920000000000
+2025,March,Gaming,Mobile,Core,COGS,Direct,-735000000000
+2025,March,Marketplace,B2C,Core,Revenue,Gross,360000000000
+2025,March,Marketplace,B2C,Core,COGS,Direct,-322000000000
+2025,March,Fintech,Payment,Core,Revenue,Gross,175000000000
+2025,March,Fintech,Payment,Core,COGS,Direct,-140000000000
+2025,March,Media,Digital,Core,Revenue,Gross,82000000000
+2025,March,Media,Digital,Core,COGS,Direct,-61000000000
+2025,March,Cloud,SaaS,Core,Revenue,Gross,47000000000
+2025,March,Cloud,SaaS,Core,COGS,Direct,-33000000000
+2025,March,Company,OpEx,SM,S&M - Online,Cost,-40000000000
+2025,March,Company,OpEx,SM,S&M - Offline,Cost,-22000000000
+2025,March,Company,OpEx,SM,S&M - Others,Cost,-14000000000
+2025,March,Company,OpEx,SM,S&M - Payment Channel,Cost,-6000000000
+2025,March,Company,OpEx,SM,S&M - O2O,Cost,-10000000000
+2025,March,Company,OpEx,SM,S&M - Distribution Cost,Cost,-25000000000
+2025,March,Company,OpEx,GA,G&A - Depreciation,Cost,-9000000000
+2025,March,Company,OpEx,GA,G&A - IT Cost,Cost,-7000000000
+2025,March,Company,OpEx,GA,G&A - Other Staff Cost,Cost,-15000000000
+2025,March,Company,OpEx,GA,G&A - Facility Management and Travelling,Cost,-4800000000
+2025,March,Company,OpEx,GA,G&A - Consultancy Cost,Cost,-3500000000
+2025,April,Gaming,Mobile,Core,Revenue,Gross,870000000000
+2025,April,Gaming,Mobile,Core,COGS,Direct,-695000000000
+2025,April,Marketplace,B2C,Core,Revenue,Gross,330000000000
+2025,April,Marketplace,B2C,Core,COGS,Direct,-297000000000
+2025,April,Fintech,Payment,Core,Revenue,Gross,158000000000
+2025,April,Fintech,Payment,Core,COGS,Direct,-126000000000
+2025,April,Media,Digital,Core,Revenue,Gross,77000000000
+2025,April,Media,Digital,Core,COGS,Direct,-57000000000
+2025,April,Cloud,SaaS,Core,Revenue,Gross,44000000000
+2025,April,Cloud,SaaS,Core,COGS,Direct,-31000000000
+2025,April,Company,OpEx,SM,S&M - Online,Cost,-36000000000
+2025,April,Company,OpEx,SM,S&M - Offline,Cost,-19000000000
+2025,April,Company,OpEx,SM,S&M - Others,Cost,-11000000000
+2025,April,Company,OpEx,SM,S&M - Payment Channel,Cost,-5200000000
+2025,April,Company,OpEx,SM,S&M - O2O,Cost,-8500000000
+2025,April,Company,OpEx,SM,S&M - Distribution Cost,Cost,-23000000000
+2025,April,Company,OpEx,GA,G&A - Depreciation,Cost,-9000000000
+2025,April,Company,OpEx,GA,G&A - IT Cost,Cost,-6600000000
+2025,April,Company,OpEx,GA,G&A - Other Staff Cost,Cost,-14200000000
+2025,April,Company,OpEx,GA,G&A - Facility Management and Travelling,Cost,-4300000000
+2025,April,Company,OpEx,GA,G&A - Consultancy Cost,Cost,-3000000000
+2025,May,Gaming,Mobile,Core,Revenue,Gross,950000000000
+2025,May,Gaming,Mobile,Core,COGS,Direct,-758000000000
+2025,May,Marketplace,B2C,Core,Revenue,Gross,375000000000
+2025,May,Marketplace,B2C,Core,COGS,Direct,-337000000000
+2025,May,Fintech,Payment,Core,Revenue,Gross,180000000000
+2025,May,Fintech,Payment,Core,COGS,Direct,-144000000000
+2025,May,Media,Digital,Core,Revenue,Gross,85000000000
+2025,May,Media,Digital,Core,COGS,Direct,-63000000000
+2025,May,Cloud,SaaS,Core,Revenue,Gross,50000000000
+2025,May,Cloud,SaaS,Core,COGS,Direct,-35000000000
+2025,May,Company,OpEx,SM,S&M - Online,Cost,-42000000000
+2025,May,Company,OpEx,SM,S&M - Offline,Cost,-23000000000
+2025,May,Company,OpEx,SM,S&M - Others,Cost,-15000000000
+2025,May,Company,OpEx,SM,S&M - Payment Channel,Cost,-6200000000
+2025,May,Company,OpEx,SM,S&M - O2O,Cost,-11000000000
+2025,May,Company,OpEx,SM,S&M - Distribution Cost,Cost,-26000000000
+2025,May,Company,OpEx,GA,G&A - Depreciation,Cost,-9000000000
+2025,May,Company,OpEx,GA,G&A - IT Cost,Cost,-7200000000
+2025,May,Company,OpEx,GA,G&A - Other Staff Cost,Cost,-15500000000
+2025,May,Company,OpEx,GA,G&A - Facility Management and Travelling,Cost,-5000000000
+2025,May,Company,OpEx,GA,G&A - Consultancy Cost,Cost,-3600000000
+2025,June,Gaming,Mobile,Core,Revenue,Gross,1020000000000
+2025,June,Gaming,Mobile,Core,COGS,Direct,-815000000000
+2025,June,Marketplace,B2C,Core,Revenue,Gross,400000000000
+2025,June,Marketplace,B2C,Core,COGS,Direct,-360000000000
+2025,June,Fintech,Payment,Core,Revenue,Gross,195000000000
+2025,June,Fintech,Payment,Core,COGS,Direct,-155000000000
+2025,June,Media,Digital,Core,Revenue,Gross,90000000000
+2025,June,Media,Digital,Core,COGS,Direct,-67000000000
+2025,June,Cloud,SaaS,Core,Revenue,Gross,55000000000
+2025,June,Cloud,SaaS,Core,COGS,Direct,-38000000000
+2025,June,Company,OpEx,SM,S&M - Online,Cost,-45000000000
+2025,June,Company,OpEx,SM,S&M - Offline,Cost,-25000000000
+2025,June,Company,OpEx,SM,S&M - Others,Cost,-16000000000
+2025,June,Company,OpEx,SM,S&M - Payment Channel,Cost,-6500000000
+2025,June,Company,OpEx,SM,S&M - O2O,Cost,-12000000000
+2025,June,Company,OpEx,SM,S&M - Distribution Cost,Cost,-28000000000
+2025,June,Company,OpEx,GA,G&A - Depreciation,Cost,-9000000000
+2025,June,Company,OpEx,GA,G&A - IT Cost,Cost,-7500000000
+2025,June,Company,OpEx,GA,G&A - Other Staff Cost,Cost,-16000000000
+2025,June,Company,OpEx,GA,G&A - Facility Management and Travelling,Cost,-5200000000
+2025,June,Company,OpEx,GA,G&A - Consultancy Cost,Cost,-3800000000
