@@ -23,11 +23,11 @@ const MONTH_ORDER = [
 ];
 
 const SM_TAGS  = new Set(['S&M - Others','S&M - Online','S&M - Payment Channel',
-  'S&M - O2O','S&M - Offline','S&M - Distribution Cost','S&M - PCV','Total S&M']);
+  'S&M - O2O','S&M - Offline','S&M - Distribution Cost','S&M - PCV']);
 const GA_TAGS  = new Set(['G&A - Depreciation','G&A - IT Cost','G&A - Other Staff Cost',
   'G&A - Other staff cost','G&A - Facility Management and Travelling',
   'G&A - Consultancy Cost','G&A - Consultancy cost',
-  'G&A - Corporate Action (Adj. Total)','GXA - Staff Cost (N/A)']);
+  'G&A - Corporate Action (Adj. Total)','G&A - Staff Cost','Other income/(expenses)']);
 
 // ── Parse CSV ──────────────────────────────────────────────────────────
 const raw = fs.readFileSync(CSV_PATH, 'utf8');
@@ -184,9 +184,9 @@ export const KPIS = ${JSON.stringify(kpis, null, 2)};
 
 fs.writeFileSync(OUT_PATH, output, 'utf8');
 console.log(`✓ Wrote ${OUT_PATH}`);
-console.log(`  Revenue total:     Rp ${(kpis.revenue/1e12).toFixed(3)}T`);
-console.log(`  Gross Margin:      Rp ${(kpis.grossMargin/1e9).toFixed(1)}B`);
-console.log(`  EBITDA total:      Rp ${(kpis.ebitda/1e9).toFixed(1)}B`);
-console.log(`  Months:            ${monthly.length}`);
-console.log(`  Segments:          ${segmentTotals.map(s=>s.Segment).join(', ')}`);
+console.log(`  Revenue total:      Rp ${(kpis.revenue/1e12).toFixed(3)}T`);
+console.log(`  Gross Margin:       Rp ${(kpis.grossMargin/1e9).toFixed(1)}B`);
+console.log(`  EBITDA total:       Rp ${(kpis.ebitda/1e9).toFixed(1)}B`);
+console.log(`  Months:             ${monthly.length}`);
+console.log(`  Segments:           ${segmentTotals.map(s=>s.Segment).join(', ')}`);
 console.log(`  OpEx categories:   ${opexCategories.length}`);
