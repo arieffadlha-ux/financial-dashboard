@@ -22,12 +22,30 @@ const MONTH_ORDER = [
   'July','August','September','October','November','December',
 ];
 
-const SM_TAGS  = new Set(['S&M - Others','S&M - Online','S&M - Payment Channel',
-  'S&M - O2O','S&M - Offline','S&M - Distribution Cost','S&M - PCV']);
-const GA_TAGS  = new Set(['G&A - Depreciation','G&A - IT Cost','G&A - Other Staff Cost',
-  'G&A - Other staff cost','G&A - Facility Management and Travelling',
-  'G&A - Consultancy Cost','G&A - Consultancy cost',
-  'G&A - Corporate Action (Adj. Total)','G&A - Staff Cost','Other income/(expenses)']);
+// ── Whitelist Sets (Strictly limited to your specified categories) ──
+
+const SM_TAGS  = new Set([
+  'S&M - O2O',
+  'S&M - Offline',
+  'S&M - Online',
+  'S&M - Others',
+  'S&M - Payment Channel',
+  'S&M - PCV',
+  'S&M - Distribution Cost'
+]);
+
+const GA_TAGS  = new Set([
+  'G&A - Staff Cost',
+  'G&A - Other staff cost',
+  'G&A - Other Staff Cost', // Included for casing safety
+  'G&A - Facility Management and Travelling',
+  'G&A - Consultancy cost',
+  'G&A - Consultancy Cost', // Included for casing safety
+  'G&A - Corporate Action (Adj. Total)',
+  'G&A - IT Cost',
+  'G&A - Depreciation',
+  'Other income/(expenses)'
+]);
 
 // ── Parse CSV ──────────────────────────────────────────────────────────
 const raw = fs.readFileSync(CSV_PATH, 'utf8');
@@ -62,12 +80,16 @@ const monthlyMap = {};
 for (const r of rows) {
   if (!r.month) continue;
   const key = `${r.year}-${r.month}`;
-  if (!monthlyMap[key]) monthlyMap[key] = { year: r.year, month: r.month, Revenue: 0, COGS: 0, SM: 0, GA: 0 };
+  
+  if (!monthlyMap[key]) monthlyMap[key] = { year: r.year, month: r.month, Revenue: 0, COGS: 0, SM: 0, GA: 0, EBITDA: 0 };
   const d = monthlyMap[key];
+  
   if (r.subcat === 'Revenue')       d.Revenue += r.amount;
   else if (r.subcat === 'COGS')     d.COGS    += r.amount;
   else if (SM_TAGS.has(r.subcat))   d.SM      += r.amount;
   else if (GA_TAGS.has(r.subcat))   d.GA      += r.amount;
+  
+  if (r.subcat.includes('EBITDA'))  d.EBITDA  += r.amount;
 }
 
 const MONTH_IDX = Object.fromEntries(MONTH_ORDER.map((m, i) => [m, i]));
@@ -76,7 +98,6 @@ const monthly = Object.values(monthlyMap).sort((a, b) => {
   return MONTH_IDX[a.month] - MONTH_IDX[b.month];
 }).map(d => {
   const GP     = d.Revenue + d.COGS;
-  const EBITDA = GP + d.SM + d.GA;
   const mn     = MONTH_IDX[d.month] + 1;
   return {
     year:      d.year,
@@ -89,7 +110,7 @@ const monthly = Object.values(monthlyMap).sort((a, b) => {
     GP:        Math.round(GP),
     SM:        Math.round(d.SM),
     GA:        Math.round(d.GA),
-    EBITDA:    Math.round(EBITDA),
+    EBITDA:    Math.round(d.EBITDA),
   };
 });
 
@@ -111,23 +132,32 @@ const segmentMonthly = Object.values(segMonthMap).map(d => ({
   GP:      Math.round(d.Revenue + d.COGS),
 }));
 
-// ── OpEx categories × month ────────────────────────────────────────────
-// Normalise tag casing variations
+// ── Separated OpEx Breakdown Processing ──────────────────────────────────
 const TAG_NORM = {
   'G&A - Other staff cost':  'G&A - Other Staff Cost',
   'G&A - Consultancy cost':  'G&A - Consultancy Cost',
 };
-const opexMap = {};  // label → { year-month → amount }
+
+const smOpexMap = {};
+const gaOpexMap = {};
+
 for (const r of rows) {
   if (!r.month) continue;
   const norm = TAG_NORM[r.subcat] ?? r.subcat;
-  if (!SM_TAGS.has(norm) && !GA_TAGS.has(norm)) continue;
-  if (!opexMap[norm]) opexMap[norm] = {};
   const key = `${r.year}-${r.month}`;
-  opexMap[norm][key] = (opexMap[norm][key] ?? 0) + r.amount;
+
+  // Route to S&M or G&A based on the strict whitelists
+  if (SM_TAGS.has(norm)) {
+    if (!smOpexMap[norm]) smOpexMap[norm] = {};
+    smOpexMap[norm][key] = (smOpexMap[norm][key] ?? 0) + r.amount;
+  } else if (GA_TAGS.has(norm)) {
+    if (!gaOpexMap[norm]) gaOpexMap[norm] = {};
+    gaOpexMap[norm][key] = (gaOpexMap[norm][key] ?? 0) + r.amount;
+  }
 }
 
-const opexCategories = Object.entries(opexMap)
+// Generate S&M structured array
+const smCategories = Object.entries(smOpexMap)
   .map(([label, monthData]) => ({
     label,
     total: Math.round(Object.values(monthData).reduce((s, v) => s + v, 0)),
@@ -138,16 +168,28 @@ const opexCategories = Object.entries(opexMap)
   .filter(e => e.total !== 0)
   .sort((a, b) => Math.abs(b.total) - Math.abs(a.total));
 
-// ── Overall segment totals (all periods) ──────────────────────────────
-const segTotalsMap = {};
-for (const r of rows) {
-  if (!r.segment || !r.month) continue;
-  if (r.subcat !== 'Revenue') continue;
-  segTotalsMap[r.segment] = (segTotalsMap[r.segment] ?? 0) + r.amount;
-}
-const segmentTotals = Object.entries(segTotalsMap)
-  .map(([Segment, Amount]) => ({ Segment, Amount: Math.round(Amount) }))
-  .sort((a, b) => b.Amount - a.Amount);
+// Generate G&A structured array
+const gaCategories = Object.entries(gaOpexMap)
+  .map(([label, monthData]) => ({
+    label,
+    total: Math.round(Object.values(monthData).reduce((s, v) => s + v, 0)),
+    monthly: Object.fromEntries(
+      Object.entries(monthData).map(([k, v]) => [k, Math.round(v)])
+    ),
+  }))
+  .filter(e => e.total !== 0)
+  .sort((a, b) => Math.abs(b.total) - Math.abs(a.total));
+
+// Build final separate box wrappers containing both Top Total and Categories
+const smOpex = {
+  total: smCategories.reduce((s, c) => s + c.total, 0),
+  categories: smCategories
+};
+
+const gaOpex = {
+  total: gaCategories.reduce((s, c) => s + c.total, 0),
+  categories: gaCategories
+};
 
 // ── Overall KPI totals ────────────────────────────────────────────────
 const totalRevenue = monthly.reduce((s, m) => s + m.Revenue, 0);
@@ -155,7 +197,7 @@ const totalCOGS    = monthly.reduce((s, m) => s + m.COGS, 0);
 const totalGP      = totalRevenue + totalCOGS;
 const totalSM      = monthly.reduce((s, m) => s + m.SM, 0);
 const totalGA      = monthly.reduce((s, m) => s + m.GA, 0);
-const totalEBITDA  = totalGP + totalSM + totalGA;
+const totalEBITDA  = monthly.reduce((s, m) => s + m.EBITDA, 0);
 
 const kpis = {
   revenue:     totalRevenue,
@@ -177,16 +219,14 @@ export const SEGMENT_MONTHLY = ${JSON.stringify(segmentMonthly, null, 2)};
 
 export const SEGMENT_TOTALS = ${JSON.stringify(segmentTotals, null, 2)};
 
-export const OPEX_CATEGORIES = ${JSON.stringify(opexCategories, null, 2)};
+export const SM_OPEX = ${JSON.stringify(smOpex, null, 2)};
+
+export const GA_OPEX = ${JSON.stringify(gaOpex, null, 2)};
 
 export const KPIS = ${JSON.stringify(kpis, null, 2)};
 `;
 
 fs.writeFileSync(OUT_PATH, output, 'utf8');
 console.log(`✓ Wrote ${OUT_PATH}`);
-console.log(`  Revenue total:      Rp ${(kpis.revenue/1e12).toFixed(3)}T`);
-console.log(`  Gross Margin:       Rp ${(kpis.grossMargin/1e9).toFixed(1)}B`);
-console.log(`  EBITDA total:       Rp ${(kpis.ebitda/1e9).toFixed(1)}B`);
-console.log(`  Months:             ${monthly.length}`);
-console.log(`  Segments:           ${segmentTotals.map(s=>s.Segment).join(', ')}`);
-console.log(`  OpEx categories:   ${opexCategories.length}`);
+console.log(`  S&M Box Itemized Categories: ${smCategories.length}`);
+console.log(`  G&A Box Itemized Categories: ${gaCategories.length}`);
