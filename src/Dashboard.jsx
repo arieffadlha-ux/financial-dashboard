@@ -662,7 +662,7 @@ function DashboardInner() {
 
   /* ── Audit notes ────────────────────────────────────────────────── */
   const auditNotes = [
-    { text: `EBITDA total ${idrCompact(KPIS.ebitda)} — ${KPIS.ebitda < 0 ? 'negatif, terutama karena biaya G&A & S&M tinggi' : 'positif'}`, type: KPIS.ebitda < 0 ? 'bad' : 'good' },
+    { text: `ADJ EBITDA total ${idrCompact(KPIS.ebitda)} — ${KPIS.ebitda < 0 ? 'negatif, terutama karena biaya G&A & S&M tinggi' : 'positif'}`, type: KPIS.ebitda < 0 ? 'bad' : 'good' },
     SEGMENT_TOTALS.length > 0 && KPIS.revenue > 0
       ? { text: `${SEGMENT_TOTALS[0].Segment} dominasi pendapatan (${pct(SEGMENT_TOTALS[0].Amount / KPIS.revenue)}) — ketergantungan satu segmen`, type: 'warn' }
       : null,
@@ -719,11 +719,11 @@ function DashboardInner() {
           badgeClass={gpStatus === 'good' ? 'text-emerald-500 bg-emerald-400/10' : gpStatus === 'warn' ? 'text-amber-500 bg-amber-400/10' : 'text-red-500 bg-red-400/10'}
         />
         <KPICard
-          label="EBITDA"
+          label="ADJ EBITDA"
           value={idr(kpis.ebitda)}
           badge={ebitdaMargin != null ? pct(ebitdaMargin) + ' margin' : undefined}
           badgeClass={kpis.ebitda >= 0 ? 'text-emerald-500 bg-emerald-400/10' : 'text-red-500 bg-red-400/10'}
-          sub={kpis.ebitda < 0 ? '⚑ EBITDA negatif pada periode ini' : undefined}
+          sub={kpis.ebitda < 0 ? '⚑ ADJ EBITDA negatif pada periode ini' : undefined}
         />
       </div>
 
@@ -742,7 +742,7 @@ function DashboardInner() {
         <div className="lg:col-span-2 bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 card-shadow">
           <div className="flex justify-between items-start mb-5">
             <div>
-              <h3 className="text-sm font-semibold text-[var(--text-primary)]">Pendapatan vs EBITDA</h3>
+              <h3 className="text-sm font-semibold text-[var(--text-primary)]">Pendapatan vs ADJ EBITDA</h3>
               <p className="text-[11px] text-[var(--text-faint)] mt-0.5">Tren bulanan · IDR</p>
             </div>
             <div className="flex items-center gap-2">
@@ -826,12 +826,12 @@ function DashboardInner() {
               {chartType === 'area'
                 ? <div className="w-5 border-b-2 border-dashed border-emerald-500" />
                 : <div className="w-5 h-2.5 bg-emerald-500/85 rounded-sm" />}
-              <span className="text-[11px] text-[var(--text-faint)]">EBITDA</span>
+              <span className="text-[11px] text-[var(--text-faint)]">ADJ EBITDA</span>
             </div>
             {trendChart.some(d => d.EBITDA < 0) && (
               <div className="flex items-center gap-1.5 ml-auto">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                <span className="text-[11px] text-amber-500">Ada nilai EBITDA negatif</span>
+                <span className="text-[11px] text-amber-500">Ada nilai ADJ EBITDA negatif</span>
               </div>
             )}
           </div>
@@ -930,8 +930,8 @@ function DashboardInner() {
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">{isFiltered ? 'Periode terfilter' : 'FY 2025 – Q1 2026'}</p>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <RatioCell label="EBITDA Margin" value={ebitdaMargin != null ? pct(ebitdaMargin) : '—'} status={ebitdaStatus}
-              note={ebitdaMargin != null && ebitdaMargin < 0 ? 'EBITDA negatif' : ebitdaMargin != null && ebitdaMargin < 0.05 ? 'Di bawah target' : 'Operasional kuat'} />
+            <RatioCell label="ADJ EBITDA Margin" value={ebitdaMargin != null ? pct(ebitdaMargin) : '—'} status={ebitdaStatus}
+              note={ebitdaMargin != null && ebitdaMargin < 0 ? 'ADJ EBITDA negatif' : ebitdaMargin != null && ebitdaMargin < 0.05 ? 'Di bawah target' : 'Operasional kuat'} />
             <RatioCell label="Gross Margin" value={grossMarginPct != null ? pct(grossMarginPct) : '—'} status={gpStatus}
               note={gpStatus === 'bad' ? 'Perlu investigasi COGS' : gpStatus === 'warn' ? 'Di bawah rata-rata industri' : 'Sesuai target'} />
             <RatioCell label="Rasio OpEx/Rev" value={opexRatio != null ? pct(opexRatio) : '—'} status="neutral" />
@@ -959,7 +959,7 @@ function DashboardInner() {
         <div className="flex justify-between items-center mb-5">
           <div>
             <h3 className="text-sm font-semibold text-[var(--text-primary)]">Detail Bulanan</h3>
-            <p className="text-[11px] text-[var(--text-faint)] mt-0.5">{filteredMonthly.length} periode · Revenue, GP, S&M, G&A, EBITDA</p>
+            <p className="text-[11px] text-[var(--text-faint)] mt-0.5">{filteredMonthly.length} periode · Revenue, GP, S&M, G&A, ADJ EBITDA</p>
           </div>
           {isFiltered && <span className="text-[11px] text-blue-500 bg-blue-400/10 px-2.5 py-1 rounded-lg">Filter aktif</span>}
         </div>
@@ -967,7 +967,7 @@ function DashboardInner() {
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-[var(--border-default)]">
-                {['Periode','Revenue','Gross Profit','S&M','G&A','EBITDA','EBITDA %'].map((h, i) => (
+                {['Periode','Revenue','Gross Profit','S&M','G&A','ADJ EBITDA','ADJ EBITDA %'].map((h, i) => (
                   <th key={h} className={`py-2.5 text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium ${i === 0 ? 'text-left pr-3' : 'text-right pr-3 last:pr-0'}`}>{h}</th>
                 ))}
               </tr>
