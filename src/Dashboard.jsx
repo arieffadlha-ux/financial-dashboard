@@ -178,8 +178,30 @@ function filterMonthly(monthly, filter) {
   });
 }
 
-function computePeriodKPIs(filtered) {
+function computePeriodKPIs(filtered, isSegmentPage = false) {
   const last = filtered[filtered.length - 1];
+  if (isSegmentPage) {
+    return {
+      revenue: filtered.reduce((s, m) => s + m.Revenue, 0),
+      cm: filtered.reduce((s, m) => s + (m.CM ?? 0), 0),
+      ebitda: filtered.reduce((s, m) => s + m.EBITDA, 0),
+      vsBudget: {
+        revenue: filtered.reduce((s, m) => s + m.RevenueVsBudget, 0),
+        cm: filtered.reduce((s, m) => s + (m.CMVsBudget ?? 0), 0),
+        ebitda: filtered.reduce((s, m) => s + m.EBITDAVsBudget, 0),
+      },
+      vsPrevMonth: last ? {
+        revenue: last.RevenueDiff,
+        cm: last.CMDiff ?? null,
+        ebitda: last.EBITDADiff,
+      } : { revenue: null, cm: null, ebitda: null },
+      vsYtdBudget: last ? {
+        revenue: last.RevenueYTDVsBudget,
+        cm: last.CMYTDVsBudget ?? null,
+        ebitda: last.EBITDAYTDVsBudget,
+      } : { revenue: null, cm: null, ebitda: null },
+    };
+  }
   return {
     revenue: filtered.reduce((s, m) => s + m.Revenue, 0),
     ebitda: filtered.reduce((s, m) => s + m.EBITDA, 0),
@@ -202,16 +224,14 @@ function computePeriodKPIs(filtered) {
   };
 }
 
-function filteredSegmentPerformance(segmentMonthly, segments, filteredKeys, ebitdaKey = 'EBITDA') {
+function filteredSegmentAdjEbitda(segmentMonthly, segments, filteredKeys) {
   return segments.map(seg => {
     const rows = (segmentMonthly[seg] ?? []).filter(m => filteredKeys.has(`${m.year}-${m.month}`));
     return {
       Segment: seg,
-      Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
-      [ebitdaKey]: rows.reduce((s, m) => s + m.EBITDA, 0),
-      NetIncome: rows.reduce((s, m) => s + m.NetIncome, 0),
+      AdjEBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
     };
-  }).sort((a, b) => b.Revenue - a.Revenue);
+  }).sort((a, b) => b.AdjEBITDA - a.AdjEBITDA);
 }
 
 function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys) {
@@ -473,7 +493,7 @@ function DashboardInner() {
   const filteredKeys = useMemo(() => new Set(filteredMonthly.map(m => `${m.year}-${m.month}`)), [filteredMonthly]);
   const isFiltered = filter.quarter !== 'all' || filter.month !== 'all';
 
-  const kpis = useMemo(() => computePeriodKPIs(filteredMonthly), [filteredMonthly]);
+  const kpis = useMemo(() => computePeriodKPIs(filteredMonthly, isSegmentPage), [filteredMonthly, isSegmentPage]);
 
   const trendChart = useMemo(() => filteredMonthly.map(m => ({
     label: monthLabel(m),
@@ -484,11 +504,10 @@ function DashboardInner() {
 
   const performanceData = useMemo(() => {
     if (page === 'consolidated') {
-      return filteredSegmentPerformance(
+      return filteredSegmentAdjEbitda(
         activeData.SEGMENT_MONTHLY ?? {},
         activeData.SEGMENTS ?? ALL_SEGMENTS,
         filteredKeys,
-        'AdjEBITDA',
       );
     }
     if (subSegment !== 'all') {
@@ -498,7 +517,7 @@ function DashboardInner() {
         Segment: subSegment,
         Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
         EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
-        NetIncome: rows.reduce((s, m) => s + m.NetIncome, 0),
+        NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
       }];
     }
     return filteredSubSegmentPerformance(
@@ -509,9 +528,7 @@ function DashboardInner() {
   }, [activeData, page, filteredKeys, subSegments, subSegment]);
 
   const perfMetrics = page === 'consolidated'
-    ? [{ key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
-       { key: 'AdjEBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA },
-       { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome }]
+    ? [{ key: 'AdjEBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA }]
     : [{ key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
        { key: 'EBITDA', label: 'EBITDA', color: PERF_COLORS.EBITDA },
        { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome }];
@@ -550,10 +567,20 @@ function DashboardInner() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 mb-5">
         <KPICardWithDiffs label="Revenue" value={kpis.revenue}
           vsBudget={kpis.vsBudget.revenue} vsPrevMonth={kpis.vsPrevMonth.revenue} vsYtdBudget={kpis.vsYtdBudget.revenue} />
-        <KPICardWithDiffs label={ebitdaLabel} value={kpis.ebitda}
-          vsBudget={kpis.vsBudget.ebitda} vsPrevMonth={kpis.vsPrevMonth.ebitda} vsYtdBudget={kpis.vsYtdBudget.ebitda} />
-        <KPICardWithDiffs label="Net Income" value={kpis.netIncome}
-          vsBudget={kpis.vsBudget.netIncome} vsPrevMonth={kpis.vsPrevMonth.netIncome} vsYtdBudget={kpis.vsYtdBudget.netIncome} />
+        {isSegmentPage ? (
+          <KPICardWithDiffs label="CM" value={kpis.cm}
+            vsBudget={kpis.vsBudget.cm} vsPrevMonth={kpis.vsPrevMonth.cm} vsYtdBudget={kpis.vsYtdBudget.cm} />
+        ) : (
+          <KPICardWithDiffs label={ebitdaLabel} value={kpis.ebitda}
+            vsBudget={kpis.vsBudget.ebitda} vsPrevMonth={kpis.vsPrevMonth.ebitda} vsYtdBudget={kpis.vsYtdBudget.ebitda} />
+        )}
+        {isSegmentPage ? (
+          <KPICardWithDiffs label="EBITDA" value={kpis.ebitda}
+            vsBudget={kpis.vsBudget.ebitda} vsPrevMonth={kpis.vsPrevMonth.ebitda} vsYtdBudget={kpis.vsYtdBudget.ebitda} />
+        ) : (
+          <KPICardWithDiffs label="Net Income" value={kpis.netIncome}
+            vsBudget={kpis.vsBudget.netIncome} vsPrevMonth={kpis.vsPrevMonth.netIncome} vsYtdBudget={kpis.vsYtdBudget.netIncome} />
+        )}
       </div>
 
       {/* Charts Row */}
@@ -632,7 +659,9 @@ function DashboardInner() {
             <h3 className="text-sm font-semibold text-[var(--text-primary)]">
               {page === 'consolidated' ? 'Performance Segment' : 'Performance Sub-Segment'}
             </h3>
-            <p className="text-[11px] text-[var(--text-faint)] mt-0.5">Revenue · {ebitdaLabel} · Net Income</p>
+            <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
+              {page === 'consolidated' ? 'Adj. EBITDA per segmen' : `Revenue · ${ebitdaLabel} · Net Income`}
+            </p>
           </div>
           {performanceData.length === 0 ? (
             <div className="h-[280px] flex items-center justify-center text-[var(--text-very-faint)] text-sm">Tidak ada data</div>
@@ -664,7 +693,9 @@ function DashboardInner() {
           <div>
             <h3 className="text-sm font-semibold text-[var(--text-primary)]">Detail Bulanan</h3>
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-              {filteredMonthly.length} periode · Revenue, {ebitdaLabel}, Net Income
+              {filteredMonthly.length} periode · {isSegmentPage
+                ? 'Revenue, CM, EBITDA'
+                : `Revenue, ${ebitdaLabel}, Net Income`}
             </p>
           </div>
           {isFiltered && <span className="text-[11px] text-blue-500 bg-blue-400/10 px-2.5 py-1 rounded-lg">Filter aktif</span>}
@@ -673,7 +704,10 @@ function DashboardInner() {
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-[var(--border-default)]">
-                {['Periode', 'Tag', 'Revenue', ebitdaLabel, 'Net Income'].map((h, i) => (
+                {(isSegmentPage
+                  ? ['Periode', 'Tag', 'Revenue', 'CM', 'EBITDA']
+                  : ['Periode', 'Tag', 'Revenue', ebitdaLabel, 'Net Income']
+                ).map((h, i) => (
                   <th key={h} className={`py-2.5 text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium ${i === 0 ? 'text-left pr-3' : 'text-right pr-3 last:pr-0'}`}>{h}</th>
                 ))}
               </tr>
@@ -690,8 +724,16 @@ function DashboardInner() {
                     <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--surface-elevated)] text-[var(--text-faint)]">{row.tag}</span>
                   </td>
                   <td className="py-2.5 pr-3 text-right text-[var(--text-secondary)] tabular">{idrCompact(row.Revenue)}</td>
-                  <td className={`py-2.5 pr-3 text-right tabular font-medium ${row.EBITDA >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.EBITDA)}</td>
-                  <td className={`py-2.5 text-right tabular font-medium ${row.NetIncome >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.NetIncome)}</td>
+                  {isSegmentPage ? (
+                    <td className={`py-2.5 pr-3 text-right tabular font-medium ${(row.CM ?? 0) >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.CM)}</td>
+                  ) : (
+                    <td className={`py-2.5 pr-3 text-right tabular font-medium ${row.EBITDA >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.EBITDA)}</td>
+                  )}
+                  {isSegmentPage ? (
+                    <td className={`py-2.5 text-right tabular font-medium ${row.EBITDA >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.EBITDA)}</td>
+                  ) : (
+                    <td className={`py-2.5 text-right tabular font-medium ${row.NetIncome >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.NetIncome)}</td>
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -701,8 +743,16 @@ function DashboardInner() {
                   <td className="py-2.5 pr-3 font-semibold text-xs uppercase">Total</td>
                   <td />
                   <td className="py-2.5 pr-3 text-right font-semibold tabular">{idrCompact(kpis.revenue)}</td>
-                  <td className={`py-2.5 pr-3 text-right font-semibold tabular ${kpis.ebitda >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.ebitda)}</td>
-                  <td className={`py-2.5 text-right font-semibold tabular ${kpis.netIncome >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.netIncome)}</td>
+                  {isSegmentPage ? (
+                    <td className={`py-2.5 pr-3 text-right font-semibold tabular ${kpis.cm >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.cm)}</td>
+                  ) : (
+                    <td className={`py-2.5 pr-3 text-right font-semibold tabular ${kpis.ebitda >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.ebitda)}</td>
+                  )}
+                  {isSegmentPage ? (
+                    <td className={`py-2.5 text-right font-semibold tabular ${kpis.ebitda >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.ebitda)}</td>
+                  ) : (
+                    <td className={`py-2.5 text-right font-semibold tabular ${kpis.netIncome >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.netIncome)}</td>
+                  )}
                 </tr>
               </tfoot>
             )}

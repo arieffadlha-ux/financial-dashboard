@@ -1,7 +1,7 @@
 // Processes CSV text → dashboard data shape.
 // Rules:
 // - Consolidated view: Sub-Segment = "Dashboard", sum all segments
-// - Segment view: exclude Sub-Segment "Dashboard"; use EBITDA (not Adj. EBITDA)
+// - Segment view: exclude Sub-Segment "Dashboard" + excluded sub-segments; use EBITDA (not Adj. EBITDA)
 // - Tag priority (non-Budget): Run-rate > Pre-closing > Actual > Forecast
 // - Budget rows used only for variance calculations
 // - Only year 2026
@@ -9,6 +9,12 @@
 export const SEGMENTS = ['Retail', 'Mitra', 'Gaming', 'Investment', 'Corporate'];
 export const DASHBOARD_SUB_SEGMENT = 'Dashboard';
 export const DATA_YEAR = 2026;
+export const EXCLUDED_SUB_SEGMENTS = new Set([
+  'Elimination',
+  'Adjustment',
+  'G&A Direct HQ',
+  'G&A Shared',
+]);
 
 const MONTH_ORDER = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -21,6 +27,13 @@ const PRIMARY_TAG_PRIORITY = {
   'Pre-closing': 3,
   Actual: 2,
   Forecast: 1,
+};
+
+const METRIC_DEFS = {
+  Revenue: { field: 'Revenue', budget: 'Revenue', diff: 'RevenueDiff', vsBudget: 'RevenueVsBudget', ytdVsBudget: 'RevenueYTDVsBudget', hasDiff: 'hasRevenueDiff' },
+  CM: { field: 'CM', budget: 'CMBudget', diff: 'CMDiff', vsBudget: 'CMVsBudget', ytdVsBudget: 'CMYTDVsBudget', hasDiff: 'hasCMDiff' },
+  EBITDA: { field: 'EBITDA', budget: 'EBITDABudget', diff: 'EBITDADiff', vsBudget: 'EBITDAVsBudget', ytdVsBudget: 'EBITDAYTDVsBudget', hasDiff: 'hasEBITDADiff' },
+  'Net Income': { field: 'NetIncome', budget: 'NetIncomeBudget', diff: 'NetIncomeDiff', vsBudget: 'NetIncomeVsBudget', ytdVsBudget: 'NetIncomeYTDVsBudget', hasDiff: 'hasNetIncomeDiff' },
 };
 
 function parseCSVLine(line) {
@@ -98,15 +111,6 @@ function pickPrimaryRows(rows) {
   return [...best.values()].map((e) => e.row);
 }
 
-function pickBudgetRows(rows) {
-  const budget = new Map();
-  for (const r of rows) {
-    if (r.tag !== 'Budget') continue;
-    budget.set(rowKey(r), r);
-  }
-  return budget;
-}
-
 function monthMeta(year, month) {
   const mn = MONTH_IDX[month] + 1;
   return {
@@ -132,7 +136,9 @@ function matchesScope(r, scope) {
     return r.segment === segment && r.subSegment === DASHBOARD_SUB_SEGMENT;
   }
   if (mode === 'segment-total') {
-    return r.segment === segment && r.subSegment !== DASHBOARD_SUB_SEGMENT;
+    return r.segment === segment
+      && r.subSegment !== DASHBOARD_SUB_SEGMENT
+      && !EXCLUDED_SUB_SEGMENTS.has(r.subSegment);
   }
   if (mode === 'subsegment') {
     return r.segment === segment && r.subSegment === subSegment;
@@ -142,6 +148,11 @@ function matchesScope(r, scope) {
 
 function ebitdaSubcat(ebitdaMetric) {
   return ebitdaMetric === 'Adj. EBITDA' ? 'Adj. EBITDA' : 'EBITDA';
+}
+
+function resolveSubcat(metric, ebitdaMetric) {
+  if (metric === 'EBITDA') return ebitdaSubcat(ebitdaMetric);
+  return metric;
 }
 
 function sumBudget(budgetRows, year, month, subcat, scope) {
@@ -154,92 +165,85 @@ function sumBudget(budgetRows, year, month, subcat, scope) {
   return total;
 }
 
-function aggregateMonthly(primaryRows, budgetRows, scope, ebitdaMetric) {
-  const ebitdaKey = ebitdaSubcat(ebitdaMetric);
+function emptyBucket(year, month, metrics) {
+  const bucket = { ...monthMeta(year, month), tag: '' };
+  for (const metric of metrics) {
+    const def = METRIC_DEFS[metric === 'EBITDA' ? 'EBITDA' : metric];
+    bucket[def.field] = 0;
+    bucket[def.diff] = 0;
+    bucket[def.hasDiff] = false;
+  }
+  return bucket;
+}
+
+function aggregateMonthly(primaryRows, budgetRows, scope, { ebitdaMetric = 'Adj. EBITDA', metrics = ['Revenue', 'EBITDA', 'Net Income'] } = {}) {
   const bucket = {};
+  const resolvedMetrics = metrics.map((m) => (m === 'EBITDA' ? 'EBITDA' : m));
+  const subcats = resolvedMetrics.map((m) => resolveSubcat(m, ebitdaMetric));
 
   for (const r of primaryRows) {
     if (!matchesScope(r, scope)) continue;
-    if (!['Revenue', ebitdaKey, 'Net Income'].includes(r.subcat)) continue;
 
+    const metricIdx = subcats.indexOf(r.subcat);
+    if (metricIdx === -1) continue;
+
+    const metric = resolvedMetrics[metricIdx];
+    const def = METRIC_DEFS[metric];
     const mk = `${r.year}-${r.month}`;
-    if (!bucket[mk]) {
-      bucket[mk] = {
-        ...monthMeta(r.year, r.month),
-        tag: r.tag,
-        Revenue: 0,
-        EBITDA: 0,
-        NetIncome: 0,
-        RevenueDiff: 0,
-        EBITDADiff: 0,
-        NetIncomeDiff: 0,
-        hasRevenueDiff: false,
-        hasEBITDADiff: false,
-        hasNetIncomeDiff: false,
-      };
-    }
 
+    if (!bucket[mk]) bucket[mk] = emptyBucket(r.year, r.month, resolvedMetrics);
     const d = bucket[mk];
+
     if ((PRIMARY_TAG_PRIORITY[r.tag] ?? 0) > (PRIMARY_TAG_PRIORITY[d.tag] ?? 0)) d.tag = r.tag;
 
-    if (r.subcat === 'Revenue') {
-      d.Revenue += r.amount;
-      if (r.difference != null) { d.RevenueDiff += r.difference; d.hasRevenueDiff = true; }
-    } else if (r.subcat === ebitdaKey) {
-      d.EBITDA += r.amount;
-      if (r.difference != null) { d.EBITDADiff += r.difference; d.hasEBITDADiff = true; }
-    } else if (r.subcat === 'Net Income') {
-      d.NetIncome += r.amount;
-      if (r.difference != null) { d.NetIncomeDiff += r.difference; d.hasNetIncomeDiff = true; }
+    d[def.field] += r.amount;
+    if (r.difference != null) {
+      d[def.diff] += r.difference;
+      d[def.hasDiff] = true;
     }
   }
 
   const monthly = Object.values(bucket)
     .sort((a, b) => MONTH_IDX[a.month] - MONTH_IDX[b.month])
     .map((d) => {
-      const revenueBudget = sumBudget(budgetRows, d.year, d.month, 'Revenue', scope);
-      const ebitdaBudget = sumBudget(budgetRows, d.year, d.month, ebitdaKey, scope);
-      const netIncomeBudget = sumBudget(budgetRows, d.year, d.month, 'Net Income', scope);
-
-      return {
+      const row = {
         year: d.year,
         month: d.month,
         monthNum: d.monthNum,
         quarter: d.quarter,
         date: d.date,
         tag: d.tag,
-        Revenue: Math.round(d.Revenue),
-        EBITDA: Math.round(d.EBITDA),
-        NetIncome: Math.round(d.NetIncome),
-        RevenueBudget: Math.round(revenueBudget),
-        EBITDABudget: Math.round(ebitdaBudget),
-        NetIncomeBudget: Math.round(netIncomeBudget),
-        RevenueVsBudget: Math.round(d.Revenue - revenueBudget),
-        EBITDAVsBudget: Math.round(d.EBITDA - ebitdaBudget),
-        NetIncomeVsBudget: Math.round(d.NetIncome - netIncomeBudget),
-        RevenueDiff: d.hasRevenueDiff ? Math.round(d.RevenueDiff) : null,
-        EBITDADiff: d.hasEBITDADiff ? Math.round(d.EBITDADiff) : null,
-        NetIncomeDiff: d.hasNetIncomeDiff ? Math.round(d.NetIncomeDiff) : null,
       };
+
+      for (const metric of resolvedMetrics) {
+        const def = METRIC_DEFS[metric];
+        const subcat = resolveSubcat(metric, ebitdaMetric);
+        const budget = sumBudget(budgetRows, d.year, d.month, subcat, scope);
+        const actual = d[def.field];
+
+        row[def.field] = Math.round(actual);
+        row[def.budget] = Math.round(budget);
+        row[def.vsBudget] = Math.round(actual - budget);
+        row[def.diff] = d[def.hasDiff] ? Math.round(d[def.diff]) : null;
+      }
+
+      return row;
     });
 
-  let ytdRevenueActual = 0;
-  let ytdEBITDAActual = 0;
-  let ytdNetIncomeActual = 0;
-  let ytdRevenueBudget = 0;
-  let ytdEBITDABudget = 0;
-  let ytdNetIncomeBudget = 0;
+  const ytdActual = {};
+  const ytdBudget = {};
+  for (const metric of resolvedMetrics) {
+    ytdActual[metric] = 0;
+    ytdBudget[metric] = 0;
+  }
 
   for (const m of monthly) {
-    ytdRevenueActual += m.Revenue;
-    ytdEBITDAActual += m.EBITDA;
-    ytdNetIncomeActual += m.NetIncome;
-    ytdRevenueBudget += m.RevenueBudget;
-    ytdEBITDABudget += m.EBITDABudget;
-    ytdNetIncomeBudget += m.NetIncomeBudget;
-    m.RevenueYTDVsBudget = Math.round(ytdRevenueActual - ytdRevenueBudget);
-    m.EBITDAYTDVsBudget = Math.round(ytdEBITDAActual - ytdEBITDABudget);
-    m.NetIncomeYTDVsBudget = Math.round(ytdNetIncomeActual - ytdNetIncomeBudget);
+    for (const metric of resolvedMetrics) {
+      const def = METRIC_DEFS[metric];
+      ytdActual[metric] += m[def.field];
+      ytdBudget[metric] += m[def.budget];
+      m[def.ytdVsBudget] = Math.round(ytdActual[metric] - ytdBudget[metric]);
+    }
   }
 
   return monthly;
@@ -248,12 +252,15 @@ function aggregateMonthly(primaryRows, budgetRows, scope, ebitdaMetric) {
 function listSubSegments(rows, segment) {
   const subs = new Set();
   for (const r of rows) {
-    if (r.segment === segment && r.subSegment && r.subSegment !== DASHBOARD_SUB_SEGMENT) {
-      subs.add(r.subSegment);
-    }
+    if (r.segment !== segment || !r.subSegment || r.subSegment === DASHBOARD_SUB_SEGMENT) continue;
+    if (EXCLUDED_SUB_SEGMENTS.has(r.subSegment)) continue;
+    subs.add(r.subSegment);
   }
   return [...subs].sort();
 }
+
+const CONSOLIDATED_METRICS = ['Revenue', 'EBITDA', 'Net Income'];
+const SEGMENT_METRICS = ['Revenue', 'CM', 'EBITDA'];
 
 export function processCSV(csvText) {
   const allRows = parseRows(csvText);
@@ -266,7 +273,7 @@ export function processCSV(csvText) {
     primaryRows,
     budgetRows,
     { mode: 'consolidated' },
-    'Adj. EBITDA',
+    { ebitdaMetric: 'Adj. EBITDA', metrics: CONSOLIDATED_METRICS },
   );
 
   const SEGMENT_MONTHLY = {};
@@ -275,7 +282,7 @@ export function processCSV(csvText) {
       primaryRows,
       budgetRows,
       { mode: 'segment-dashboard', segment: seg },
-      'Adj. EBITDA',
+      { ebitdaMetric: 'Adj. EBITDA', metrics: CONSOLIDATED_METRICS },
     );
   }
 
@@ -283,11 +290,9 @@ export function processCSV(csvText) {
     const monthly = SEGMENT_MONTHLY[seg];
     return {
       Segment: seg,
-      Revenue: monthly.reduce((s, m) => s + m.Revenue, 0),
       AdjEBITDA: monthly.reduce((s, m) => s + m.EBITDA, 0),
-      NetIncome: monthly.reduce((s, m) => s + m.NetIncome, 0),
     };
-  }).sort((a, b) => b.Revenue - a.Revenue);
+  }).sort((a, b) => b.AdjEBITDA - a.AdjEBITDA);
 
   const SUB_SEGMENTS = {};
   const SUBSEGMENT_MONTHLY = {};
@@ -298,7 +303,7 @@ export function processCSV(csvText) {
         primaryRows,
         budgetRows,
         { mode: 'segment-total', segment: seg },
-        'EBITDA',
+        { ebitdaMetric: 'EBITDA', metrics: SEGMENT_METRICS },
       ),
     };
     for (const sub of SUB_SEGMENTS[seg]) {
@@ -306,7 +311,7 @@ export function processCSV(csvText) {
         primaryRows,
         budgetRows,
         { mode: 'subsegment', segment: seg, subSegment: sub },
-        'EBITDA',
+        { ebitdaMetric: 'EBITDA', metrics: SEGMENT_METRICS },
       );
     }
   }
