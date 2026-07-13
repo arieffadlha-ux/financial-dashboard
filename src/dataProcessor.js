@@ -260,11 +260,12 @@ function listSubSegments(rows, segment) {
 }
 
 const CONSOLIDATED_METRICS = ['Revenue', 'EBITDA', 'Net Income'];
+const SEGMENT_DASHBOARD_METRICS = ['Revenue', 'CM', 'EBITDA']; // Adj. EBITDA from Dashboard
 const SEGMENT_METRICS = ['Revenue', 'CM', 'EBITDA'];
 
 export function processCSV(csvText) {
   const allRows = parseRows(csvText);
-  if (allRows.length === 0) throw new Error('Tidak ada data tahun 2026 dalam file CSV');
+  if (allRows.length === 0) throw new Error('No 2026 data found in the CSV file');
 
   const primaryRows = pickPrimaryRows(allRows);
   const budgetRows = allRows.filter((r) => r.tag === 'Budget');
@@ -282,7 +283,7 @@ export function processCSV(csvText) {
       primaryRows,
       budgetRows,
       { mode: 'segment-dashboard', segment: seg },
-      { ebitdaMetric: 'Adj. EBITDA', metrics: CONSOLIDATED_METRICS },
+      { ebitdaMetric: 'Adj. EBITDA', metrics: SEGMENT_DASHBOARD_METRICS },
     );
   }
 

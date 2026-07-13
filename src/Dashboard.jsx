@@ -77,7 +77,7 @@ function DataProvider({ children }) {
         setUploading(false);
       }
     };
-    reader.onerror = () => { setUploadError('Gagal membaca file'); setUploading(false); };
+    reader.onerror = () => { setUploadError('Failed to read file'); setUploading(false); };
     reader.readAsText(file);
   }, [index]);
 
@@ -122,8 +122,8 @@ const idr = (v, opts = {}) => {
   const pfx = axis ? '' : 'Rp ';
   if (abs >= 1e12) return `${sign}${pfx}${(abs / 1e12).toFixed(3)}T`;
   if (abs >= 1e9)  return `${sign}${pfx}${(abs / 1e9).toFixed(1)}B`;
-  if (abs >= 1e6)  return `${sign}${pfx}${(abs / 1e6).toFixed(1)}Jt`;
-  return `${sign}${pfx}${abs.toLocaleString('id-ID')}`;
+  if (abs >= 1e6)  return `${sign}${pfx}${(abs / 1e6).toFixed(1)}M`;
+  return `${sign}${pfx}${abs.toLocaleString('en-US')}`;
 };
 
 const idrCompact = (v) => {
@@ -132,8 +132,8 @@ const idrCompact = (v) => {
   const sign = v < 0 ? '-' : '';
   if (abs >= 1e12) return `${sign}Rp ${(abs / 1e12).toFixed(2)}T`;
   if (abs >= 1e9)  return `${sign}Rp ${(abs / 1e9).toFixed(1)}B`;
-  if (abs >= 1e6)  return `${sign}Rp ${(abs / 1e6).toFixed(0)}Jt`;
-  return `${sign}Rp ${abs.toLocaleString('id-ID')}`;
+  if (abs >= 1e6)  return `${sign}Rp ${(abs / 1e6).toFixed(0)}M`;
+  return `${sign}Rp ${abs.toLocaleString('en-US')}`;
 };
 
 const diffFmt = (v) => {
@@ -143,29 +143,28 @@ const diffFmt = (v) => {
 };
 
 const monthLabel = (m) =>
-  new Date(`${m.date}T12:00:00`).toLocaleDateString('id-ID', { month: 'short', year: '2-digit' });
+  new Date(`${m.date}T12:00:00`).toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
 
 const relativeDate = (iso) => {
   const diff = Date.now() - new Date(iso).getTime();
   const mins = Math.floor(diff / 60000);
-  if (mins < 1) return 'baru saja';
-  if (mins < 60) return `${mins} menit lalu`;
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins} min ago`;
   const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs} jam lalu`;
+  if (hrs < 24) return `${hrs} hr ago`;
   const days = Math.floor(hrs / 24);
-  if (days < 30) return `${days} hari lalu`;
-  return new Date(iso).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+  if (days < 30) return `${days} days ago`;
+  return new Date(iso).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
 };
 
-const MONTHS_ID = [
-  'Januari','Februari','Maret','April','Mei','Juni',
-  'Juli','Agustus','September','Oktober','November','Desember',
+const MONTHS_EN = [
+  'January','February','March','April','May','June',
+  'July','August','September','October','November','December',
 ];
-const SEG_COLORS = ['#3b82f6','#6366f1','#8b5cf6','#06b6d4','#64748b'];
 const PERF_COLORS = { Revenue: '#3b82f6', EBITDA: '#10b981', NetIncome: '#f59e0b' };
 
 const PAGES = [
-  { id: 'consolidated', label: 'Ringkasan' },
+  { id: 'consolidated', label: 'Consolidated' },
   ...ALL_SEGMENTS.map(s => ({ id: s, label: s })),
 ];
 
@@ -241,10 +240,25 @@ function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys)
       Segment: sub,
       Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
       EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
-      NetIncome: rows.reduce((s, m) => s + m.NetIncome, 0),
+      NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
     };
   }).filter(s => s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0)
     .sort((a, b) => b.Revenue - a.Revenue);
+}
+
+/* ─── Chart helpers ─────────────────────────────────────────────────── */
+function HighlightDot(props) {
+  const { cx, cy, payload, fill = '#10b981' } = props;
+  if (cx == null || cy == null) return null;
+  if (payload?.highlighted) {
+    return (
+      <g>
+        <circle cx={cx} cy={cy} r={11} fill={fill} fillOpacity={0.2} />
+        <circle cx={cx} cy={cy} r={6} fill={fill} stroke="#fff" strokeWidth={2.5} />
+      </g>
+    );
+  }
+  return <circle cx={cx} cy={cy} r={3} fill={fill} strokeWidth={0} />;
 }
 
 /* ─── UI Components ─────────────────────────────────────────────────── */
@@ -259,7 +273,7 @@ function ThemeToggle() {
 }
 
 function DataManager() {
-  const { activeId, index, isCustom, uploading, uploadError, uploadCSV, switchDataset, removeDataset, dismissError } = useDataCtx();
+  const { activeId, index, uploading, uploadError, uploadCSV, switchDataset, removeDataset, dismissError } = useDataCtx();
   const [open, setOpen] = useState(false);
   const [dragging, setDragging] = useState(false);
   const panelRef = useRef(null);
@@ -298,7 +312,7 @@ function DataManager() {
             <p className="text-sm font-semibold text-[var(--text-primary)]">Data Library</p>
             <button onClick={() => inputRef.current?.click()} disabled={uploading}
               className="px-2.5 py-1.5 rounded-lg text-[11px] font-medium bg-blue-600 text-white cursor-pointer disabled:opacity-50">
-              {uploading ? 'Memproses...' : 'Upload CSV'}
+              {uploading ? 'Processing...' : 'Upload CSV'}
             </button>
             <input ref={inputRef} type="file" accept=".csv" className="hidden"
               onChange={e => { handleFile(e.target.files[0]); e.target.value = ''; }} />
@@ -311,7 +325,7 @@ function DataManager() {
           )}
           {dragging && (
             <div className="absolute inset-0 bg-blue-500/10 border-2 border-dashed border-blue-500 rounded-2xl z-10 flex items-center justify-center pointer-events-none">
-              <p className="text-sm font-medium text-blue-400">Lepas file CSV di sini</p>
+              <p className="text-sm font-medium text-blue-400">Drop CSV file here</p>
             </div>
           )}
           <div className="max-h-[300px] overflow-y-auto">
@@ -388,8 +402,8 @@ function FilterBar({ quarter, month, onChange, onReset, isActive, subSegment, su
       <div className="relative">
         <select value={month} onChange={e => onChange({ quarter, month: e.target.value })}
           className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none">
-          <option value="all">Semua Bulan</option>
-          {MONTHS_ID.map((m, i) => <option key={i} value={i + 1}>{m}</option>)}
+          <option value="all">All Months</option>
+          {MONTHS_EN.map((m, i) => <option key={i} value={i + 1}>{m}</option>)}
         </select>
       </div>
       {showSubSegment && (
@@ -398,7 +412,7 @@ function FilterBar({ quarter, month, onChange, onReset, isActive, subSegment, su
           <div className="relative">
             <select value={subSegment} onChange={e => onSubSegmentChange(e.target.value)}
               className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none min-w-[160px]">
-              <option value="all">Semua Sub-Segment</option>
+              <option value="all">All Sub-Segments</option>
               {subSegments.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
@@ -431,7 +445,7 @@ function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsYtdBudget }) 
       <p className="text-[1.6rem] font-semibold leading-none text-[var(--text-primary)] tabular mb-3">{idr(value)}</p>
       <div className="flex flex-wrap gap-1.5">
         <DiffPill label="vs Budget" value={vsBudget} />
-        <DiffPill label="vs Bulan Lalu" value={vsPrevMonth} />
+        <DiffPill label="vs Prev Month" value={vsPrevMonth} />
         <DiffPill label="vs YTD Budget" value={vsYtdBudget} />
       </div>
     </div>
@@ -476,17 +490,17 @@ function DashboardInner() {
   const [chartType, setChartType] = useState('area');
 
   const isSegmentPage = page !== 'consolidated';
-  const ebitdaLabel = isSegmentPage ? 'EBITDA' : 'Adj. EBITDA';
+  const ebitdaLabel = 'Adj. EBITDA';
   const subSegments = isSegmentPage ? (activeData.SUB_SEGMENTS?.[page] ?? []) : [];
+  const selectedMonthNum = filter.month === 'all' ? null : parseInt(filter.month, 10);
 
   useEffect(() => { setSubSegment('all'); }, [page]);
 
+  // Segment "all" uses Dashboard rows (Adj. EBITDA glossary). Specific sub-segment uses that sub.
   const sourceMonthly = useMemo(() => {
     if (page === 'consolidated') return activeData.MONTHLY ?? [];
-    const segData = activeData.SUBSEGMENT_MONTHLY?.[page];
-    if (!segData) return [];
-    if (subSegment === 'all') return segData._all ?? [];
-    return segData[subSegment] ?? [];
+    if (subSegment === 'all') return activeData.SEGMENT_MONTHLY?.[page] ?? [];
+    return activeData.SUBSEGMENT_MONTHLY?.[page]?.[subSegment] ?? [];
   }, [activeData, page, subSegment]);
 
   const filteredMonthly = useMemo(() => filterMonthly(sourceMonthly, filter), [sourceMonthly, filter]);
@@ -495,12 +509,22 @@ function DashboardInner() {
 
   const kpis = useMemo(() => computePeriodKPIs(filteredMonthly, isSegmentPage), [filteredMonthly, isSegmentPage]);
 
-  const trendChart = useMemo(() => filteredMonthly.map(m => ({
-    label: monthLabel(m),
-    EBITDA: m.EBITDA,
-    Budget: m.EBITDABudget,
-    tag: m.tag,
-  })), [filteredMonthly]);
+  // Trend always shows full-year series; highlight selected month when filtered
+  const trendChart = useMemo(() => {
+    const trendBase = filter.month !== 'all'
+      ? sourceMonthly
+      : filterMonthly(sourceMonthly, { quarter: filter.quarter, month: 'all' });
+    return trendBase.map(m => ({
+      label: monthLabel(m),
+      EBITDA: m.EBITDA,
+      Budget: m.EBITDABudget,
+      monthNum: m.monthNum,
+      highlighted: selectedMonthNum != null && m.monthNum === selectedMonthNum,
+      tag: m.tag,
+    }));
+  }, [sourceMonthly, filter.quarter, filter.month, selectedMonthNum]);
+
+  const highlightedLabel = trendChart.find(d => d.highlighted)?.label ?? null;
 
   const performanceData = useMemo(() => {
     if (page === 'consolidated') {
@@ -530,19 +554,28 @@ function DashboardInner() {
   const perfMetrics = page === 'consolidated'
     ? [{ key: 'AdjEBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA }]
     : [{ key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
-       { key: 'EBITDA', label: 'EBITDA', color: PERF_COLORS.EBITDA },
+       { key: 'EBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA },
        { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome }];
 
-  const pageTitle = page === 'consolidated' ? 'Ringkasan Keuangan' : `Segment ${page}`;
+  const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
   const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'cleaned_data(1) (2).csv';
 
   return (
     <div className="min-h-screen bg-[var(--surface-base)] text-[var(--text-primary)] px-4 py-6 md:px-8 md:py-8 font-sans">
-      <header className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-5">
-        <div>
-          <p className="text-[11px] uppercase tracking-widest text-[var(--text-very-faint)] mb-1.5">Executive Dashboard</p>
-          <h1 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)]">{pageTitle}</h1>
-          <p className="text-[var(--text-faint)] text-sm mt-1">FY 2026 · Actual / Run-rate / Forecast</p>
+      <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-5">
+        <div className="flex items-center gap-3.5 min-w-0">
+          <img
+            src="/bukalapak-logo.png"
+            alt="Bukalapak"
+            className="h-10 w-10 sm:h-11 sm:w-11 object-contain shrink-0 rounded-lg"
+          />
+          <div className="min-w-0">
+            <p className="text-[11px] uppercase tracking-widest text-[var(--text-very-faint)] mb-1">Executive Dashboard</p>
+            <h1 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] truncate">{pageTitle}</h1>
+            {isSegmentPage && (
+              <p className="text-[var(--text-faint)] text-sm mt-1">FY 2026</p>
+            )}
+          </div>
         </div>
         <div className="flex items-center gap-2.5 flex-wrap">
           <DataManager />
@@ -575,7 +608,7 @@ function DashboardInner() {
             vsBudget={kpis.vsBudget.ebitda} vsPrevMonth={kpis.vsPrevMonth.ebitda} vsYtdBudget={kpis.vsYtdBudget.ebitda} />
         )}
         {isSegmentPage ? (
-          <KPICardWithDiffs label="EBITDA" value={kpis.ebitda}
+          <KPICardWithDiffs label="Adj. EBITDA" value={kpis.ebitda}
             vsBudget={kpis.vsBudget.ebitda} vsPrevMonth={kpis.vsPrevMonth.ebitda} vsYtdBudget={kpis.vsYtdBudget.ebitda} />
         ) : (
           <KPICardWithDiffs label="Net Income" value={kpis.netIncome}
@@ -585,12 +618,16 @@ function DashboardInner() {
 
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
-        {/* Trend: Adj EBITDA vs Budget */}
         <div className="lg:col-span-2 bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 card-shadow">
           <div className="flex justify-between items-start mb-5">
             <div>
-              <h3 className="text-sm font-semibold text-[var(--text-primary)]">Tren {ebitdaLabel} vs Budget</h3>
-              <p className="text-[11px] text-[var(--text-faint)] mt-0.5">Tren bulanan · IDR</p>
+              <h3 className="text-sm font-semibold text-[var(--text-primary)]">{ebitdaLabel} Trend vs Budget</h3>
+              <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
+                Monthly trend · IDR
+                {highlightedLabel && (
+                  <span className="ml-2 text-blue-400">· Highlighted: {highlightedLabel}</span>
+                )}
+              </p>
             </div>
             <div className="flex items-center bg-[var(--surface-elevated)] rounded-lg p-0.5 gap-0.5">
               {['area', 'bar'].map(t => (
@@ -622,10 +659,17 @@ function DashboardInner() {
                     tickFormatter={v => idr(v, { axis: true })} width={72} />
                   <Tooltip content={<CustomTooltip />} />
                   <ReferenceLine y={0} stroke={c.refLine} strokeDasharray="4 4" />
+                  {highlightedLabel && (
+                    <ReferenceLine x={highlightedLabel} stroke="#3b82f6" strokeDasharray="4 4" strokeWidth={1.5} />
+                  )}
                   <Area type="monotone" dataKey="EBITDA" name={ebitdaLabel} stroke="#10b981" strokeWidth={2}
-                    fill="url(#gradEBIT)" dot={{ fill: '#10b981', r: 3, strokeWidth: 0 }} />
+                    fill="url(#gradEBIT)"
+                    dot={<HighlightDot fill="#10b981" />}
+                    activeDot={{ r: 6, strokeWidth: 0 }} />
                   <Area type="monotone" dataKey="Budget" name="Budget" stroke="#f59e0b" strokeWidth={1.5}
-                    fill="url(#gradBudget)" strokeDasharray="5 4" dot={{ fill: '#f59e0b', r: 2.5, strokeWidth: 0 }} />
+                    fill="url(#gradBudget)" strokeDasharray="5 4"
+                    dot={<HighlightDot fill="#f59e0b" />}
+                    activeDot={{ r: 5, strokeWidth: 0 }} />
                 </AreaChart>
               ) : (
                 <BarChart data={trendChart} margin={{ top: 4, right: 4, left: 0, bottom: 0 }} barCategoryGap="25%">
@@ -635,8 +679,18 @@ function DashboardInner() {
                     tickFormatter={v => idr(v, { axis: true })} width={72} />
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: c.cursor, opacity: 0.4 }} />
                   <ReferenceLine y={0} stroke={c.refLine} strokeDasharray="4 4" />
-                  <Bar dataKey="EBITDA" name={ebitdaLabel} fill="#10b981" fillOpacity={0.85} radius={[3, 3, 0, 0]} maxBarSize={24} />
-                  <Bar dataKey="Budget" name="Budget" fill="#f59e0b" fillOpacity={0.85} radius={[3, 3, 0, 0]} maxBarSize={24} />
+                  <Bar dataKey="EBITDA" name={ebitdaLabel} radius={[3, 3, 0, 0]} maxBarSize={24}>
+                    {trendChart.map((d, i) => (
+                      <Cell key={i} fill="#10b981" fillOpacity={d.highlighted ? 1 : 0.45}
+                        stroke={d.highlighted ? '#fff' : undefined} strokeWidth={d.highlighted ? 2 : 0} />
+                    ))}
+                  </Bar>
+                  <Bar dataKey="Budget" name="Budget" radius={[3, 3, 0, 0]} maxBarSize={24}>
+                    {trendChart.map((d, i) => (
+                      <Cell key={i} fill="#f59e0b" fillOpacity={d.highlighted ? 1 : 0.45}
+                        stroke={d.highlighted ? '#fff' : undefined} strokeWidth={d.highlighted ? 2 : 0} />
+                    ))}
+                  </Bar>
                 </BarChart>
               )}
             </ResponsiveContainer>
@@ -653,18 +707,17 @@ function DashboardInner() {
           </div>
         </div>
 
-        {/* Performance Segment */}
         <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 card-shadow">
           <div className="mb-5">
             <h3 className="text-sm font-semibold text-[var(--text-primary)]">
-              {page === 'consolidated' ? 'Performance Segment' : 'Performance Sub-Segment'}
+              {page === 'consolidated' ? 'Segment Performance' : 'Sub-Segment Performance'}
             </h3>
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-              {page === 'consolidated' ? 'Adj. EBITDA per segmen' : `Revenue · ${ebitdaLabel} · Net Income`}
+              {page === 'consolidated' ? 'Adj. EBITDA by segment' : `Revenue · ${ebitdaLabel} · Net Income`}
             </p>
           </div>
           {performanceData.length === 0 ? (
-            <div className="h-[280px] flex items-center justify-center text-[var(--text-very-faint)] text-sm">Tidak ada data</div>
+            <div className="h-[280px] flex items-center justify-center text-[var(--text-very-faint)] text-sm">No data</div>
           ) : (
             <div className="h-[280px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -691,22 +744,22 @@ function DashboardInner() {
       <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 mb-5 card-shadow">
         <div className="flex justify-between items-center mb-5">
           <div>
-            <h3 className="text-sm font-semibold text-[var(--text-primary)]">Detail Bulanan</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)]">Monthly Detail</h3>
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-              {filteredMonthly.length} periode · {isSegmentPage
-                ? 'Revenue, CM, EBITDA'
+              {filteredMonthly.length} periods · {isSegmentPage
+                ? 'Revenue, CM, Adj. EBITDA'
                 : `Revenue, ${ebitdaLabel}, Net Income`}
             </p>
           </div>
-          {isFiltered && <span className="text-[11px] text-blue-500 bg-blue-400/10 px-2.5 py-1 rounded-lg">Filter aktif</span>}
+          {isFiltered && <span className="text-[11px] text-blue-500 bg-blue-400/10 px-2.5 py-1 rounded-lg">Filter active</span>}
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-[var(--border-default)]">
                 {(isSegmentPage
-                  ? ['Periode', 'Tag', 'Revenue', 'CM', 'EBITDA']
-                  : ['Periode', 'Tag', 'Revenue', ebitdaLabel, 'Net Income']
+                  ? ['Period', 'Tag', 'Revenue', 'CM', 'Adj. EBITDA']
+                  : ['Period', 'Tag', 'Revenue', ebitdaLabel, 'Net Income']
                 ).map((h, i) => (
                   <th key={h} className={`py-2.5 text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium ${i === 0 ? 'text-left pr-3' : 'text-right pr-3 last:pr-0'}`}>{h}</th>
                 ))}
@@ -714,11 +767,11 @@ function DashboardInner() {
             </thead>
             <tbody>
               {filteredMonthly.length === 0 ? (
-                <tr><td colSpan={5} className="py-10 text-center text-[var(--text-very-faint)]">Tidak ada data untuk periode yang dipilih</td></tr>
+                <tr><td colSpan={5} className="py-10 text-center text-[var(--text-very-faint)]">No data for the selected period</td></tr>
               ) : filteredMonthly.map((row, i) => (
-                <tr key={i} className="border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors">
+                <tr key={i} className={`border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors ${selectedMonthNum === row.monthNum ? 'bg-blue-500/5' : ''}`}>
                   <td className="py-2.5 pr-3 text-[var(--text-tertiary)] font-medium whitespace-nowrap">
-                    {new Date(`${row.date}T12:00:00`).toLocaleDateString('id-ID', { month: 'long', year: 'numeric' })}
+                    {new Date(`${row.date}T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                   </td>
                   <td className="py-2.5 pr-3 text-right">
                     <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--surface-elevated)] text-[var(--text-faint)]">{row.tag}</span>
@@ -761,8 +814,8 @@ function DashboardInner() {
       </div>
 
       <footer className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-[var(--text-very-faint)]">
-        <span>Sumber: {dataSourceLabel} · Nilai dalam IDR</span>
-        <span>{new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+        <span>Source: {dataSourceLabel} · Values in IDR</span>
+        <span>{new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
       </footer>
     </div>
   );
