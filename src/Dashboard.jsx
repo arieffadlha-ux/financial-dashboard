@@ -163,10 +163,39 @@ const MONTHS_EN = [
 ];
 const PERF_COLORS = { Revenue: '#3b82f6', EBITDA: '#10b981', NetIncome: '#f59e0b' };
 
+const SEGMENT_COLORS = {
+  Retail: 'rgb(58, 60, 169)',
+  Mitra: 'rgb(198, 16, 67)',
+  Gaming: 'rgb(57, 172, 219)',
+  Investment: 'rgb(247, 149, 78)',
+  Corporate: 'rgb(249, 0, 74)',
+};
+
 const PAGES = [
   { id: 'consolidated', label: 'Consolidated' },
   ...ALL_SEGMENTS.map(s => ({ id: s, label: s })),
 ];
+
+function BukalapakLogo({ className = '' }) {
+  const { theme } = useTheme();
+  // Theme-aware mark: soft white on dark, brand magenta on light — transparent background
+  const color = theme === 'dark' ? 'rgba(255,255,255,0.92)' : 'rgb(227, 30, 82)';
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      className={className}
+      aria-label="Bukalapak"
+      role="img"
+    >
+      <g fill={color}>
+        <rect x="18" y="8" width="18" height="58" rx="9" transform="rotate(-28 27 37)" />
+        <circle cx="42" cy="78" r="11" />
+        <path d="M52 18c16.5 0 30 13.5 30 34 0 17.5-11 31-27 34-2.6.5-4.6-1.8-4.2-4.4 7.5-3 12.5-12 12.5-22.5 0-13-9-22-20.5-22-2.8 0-4.8-2.3-4.5-5.1.3-2.5 2.5-3.9 5.2-3.9H52z" />
+      </g>
+    </svg>
+  );
+}
 
 /* ─── Data helpers ──────────────────────────────────────────────────── */
 function filterMonthly(monthly, filter) {
@@ -490,18 +519,22 @@ function DashboardInner() {
   const [chartType, setChartType] = useState('area');
 
   const isSegmentPage = page !== 'consolidated';
+  const hideSubSegment = page === 'Corporate';
   const ebitdaLabel = 'Adj. EBITDA';
-  const subSegments = isSegmentPage ? (activeData.SUB_SEGMENTS?.[page] ?? []) : [];
+  const subSegments = isSegmentPage && !hideSubSegment
+    ? (activeData.SUB_SEGMENTS?.[page] ?? [])
+    : [];
   const selectedMonthNum = filter.month === 'all' ? null : parseInt(filter.month, 10);
+  const effectiveSubSegment = hideSubSegment ? 'all' : subSegment;
 
   useEffect(() => { setSubSegment('all'); }, [page]);
 
-  // Segment "all" uses Dashboard rows (Adj. EBITDA glossary). Specific sub-segment uses that sub.
+  // Segment "all" / Corporate uses Dashboard rows (Adj. EBITDA glossary). Specific sub-segment uses that sub.
   const sourceMonthly = useMemo(() => {
     if (page === 'consolidated') return activeData.MONTHLY ?? [];
-    if (subSegment === 'all') return activeData.SEGMENT_MONTHLY?.[page] ?? [];
-    return activeData.SUBSEGMENT_MONTHLY?.[page]?.[subSegment] ?? [];
-  }, [activeData, page, subSegment]);
+    if (effectiveSubSegment === 'all') return activeData.SEGMENT_MONTHLY?.[page] ?? [];
+    return activeData.SUBSEGMENT_MONTHLY?.[page]?.[effectiveSubSegment] ?? [];
+  }, [activeData, page, effectiveSubSegment]);
 
   const filteredMonthly = useMemo(() => filterMonthly(sourceMonthly, filter), [sourceMonthly, filter]);
   const filteredKeys = useMemo(() => new Set(filteredMonthly.map(m => `${m.year}-${m.month}`)), [filteredMonthly]);
@@ -534,11 +567,11 @@ function DashboardInner() {
         filteredKeys,
       );
     }
-    if (subSegment !== 'all') {
-      const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[subSegment] ?? [])
+    if (effectiveSubSegment !== 'all') {
+      const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[effectiveSubSegment] ?? [])
         .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
       return [{
-        Segment: subSegment,
+        Segment: effectiveSubSegment,
         Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
         EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
         NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
@@ -549,7 +582,7 @@ function DashboardInner() {
       subSegments,
       filteredKeys,
     );
-  }, [activeData, page, filteredKeys, subSegments, subSegment]);
+  }, [activeData, page, filteredKeys, subSegments, effectiveSubSegment]);
 
   const perfMetrics = page === 'consolidated'
     ? [{ key: 'AdjEBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA }]
@@ -564,11 +597,7 @@ function DashboardInner() {
     <div className="min-h-screen bg-[var(--surface-base)] text-[var(--text-primary)] px-4 py-6 md:px-8 md:py-8 font-sans">
       <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-5">
         <div className="flex items-center gap-3.5 min-w-0">
-          <img
-            src="/bukalapak-logo.png"
-            alt="Bukalapak"
-            className="h-10 w-10 sm:h-11 sm:w-11 object-contain shrink-0 rounded-lg"
-          />
+          <BukalapakLogo className="h-10 w-10 sm:h-11 sm:w-11 shrink-0" />
           <div className="min-w-0">
             <p className="text-[11px] uppercase tracking-widest text-[var(--text-very-faint)] mb-1">Executive Dashboard</p>
             <h1 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] truncate">{pageTitle}</h1>
@@ -590,8 +619,8 @@ function DashboardInner() {
         onChange={f => setFilter(prev => ({ ...prev, ...f }))}
         onReset={() => setFilter({ quarter: 'all', month: 'all' })}
         isActive={isFiltered}
-        showSubSegment={isSegmentPage}
-        subSegment={subSegment}
+        showSubSegment={isSegmentPage && !hideSubSegment}
+        subSegment={effectiveSubSegment}
         subSegments={subSegments}
         onSubSegmentChange={setSubSegment}
       />
@@ -729,12 +758,30 @@ function DashboardInner() {
                     tickFormatter={v => idr(v, { axis: true })} width={60} />
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: c.cursor, opacity: 0.4 }} />
                   <ReferenceLine y={0} stroke={c.refLine} strokeDasharray="4 4" />
-                  {perfMetrics.map(m => (
-                    <Bar key={m.key} dataKey={m.key} name={m.label} fill={m.color} fillOpacity={0.85} radius={[2, 2, 0, 0]} maxBarSize={14} />
-                  ))}
-                  <Legend wrapperStyle={{ fontSize: 10 }} />
+                  {page === 'consolidated' ? (
+                    <Bar dataKey="AdjEBITDA" name="Adj. EBITDA" fillOpacity={0.95} radius={[2, 2, 0, 0]} maxBarSize={28}>
+                      {performanceData.map((row, i) => (
+                        <Cell key={i} fill={SEGMENT_COLORS[row.Segment] ?? PERF_COLORS.EBITDA} />
+                      ))}
+                    </Bar>
+                  ) : (
+                    perfMetrics.map(m => (
+                      <Bar key={m.key} dataKey={m.key} name={m.label} fill={m.color} fillOpacity={0.85} radius={[2, 2, 0, 0]} maxBarSize={14} />
+                    ))
+                  )}
+                  {page !== 'consolidated' && <Legend wrapperStyle={{ fontSize: 10 }} />}
                 </BarChart>
               </ResponsiveContainer>
+            </div>
+          )}
+          {page === 'consolidated' && performanceData.length > 0 && (
+            <div className="mt-3 pt-3 border-t border-[var(--border-default)] flex flex-wrap gap-x-4 gap-y-2">
+              {ALL_SEGMENTS.map(seg => (
+                <div key={seg} className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: SEGMENT_COLORS[seg] }} />
+                  <span className="text-[11px] text-[var(--text-faint)]">{seg}</span>
+                </div>
+              ))}
             </div>
           )}
         </div>
