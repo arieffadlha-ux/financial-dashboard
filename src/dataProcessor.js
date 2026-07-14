@@ -50,6 +50,15 @@ function parseCSVLine(line) {
   return cols;
 }
 
+/** Parse numeric cells that may include thousand separators, e.g. "5,350,651,340" */
+function parseNumber(raw) {
+  if (raw == null) return null;
+  const cleaned = String(raw).trim().replace(/,/g, '');
+  if (cleaned === '') return null;
+  const n = parseFloat(cleaned);
+  return isNaN(n) ? null : n;
+}
+
 function parseRows(csvText) {
   const lines = csvText.replace(/\r/g, '').split('\n');
   const rows = [];
@@ -69,14 +78,13 @@ function parseRows(csvText) {
     const tag = cols[6]?.trim() ?? '';
     const amtStr = cols[7]?.trim();
     const diffStr = cols[9]?.trim() ?? '';
+    const diffYtdStr = cols[10]?.trim() ?? '';
 
     if (!year?.match(/^\d{4}$/) || parseInt(year, 10) !== DATA_YEAR) continue;
     if (!month || !subcat || !amtStr) continue;
 
-    const amount = parseFloat(amtStr);
-    if (isNaN(amount)) continue;
-
-    const difference = diffStr !== '' && !isNaN(parseFloat(diffStr)) ? parseFloat(diffStr) : null;
+    const amount = parseNumber(amtStr);
+    if (amount == null) continue;
 
     rows.push({
       year: parseInt(year, 10),
@@ -86,7 +94,8 @@ function parseRows(csvText) {
       subcat,
       tag,
       amount,
-      difference,
+      difference: parseNumber(diffStr),
+      differenceYtdBudget: parseNumber(diffYtdStr),
     });
   }
 
@@ -172,6 +181,8 @@ function emptyBucket(year, month, metrics) {
     bucket[def.field] = 0;
     bucket[def.diff] = 0;
     bucket[def.hasDiff] = false;
+    bucket[`${def.field}YtdDiff`] = 0;
+    bucket[`${def.field}HasYtdDiff`] = false;
   }
   return bucket;
 }
@@ -201,6 +212,10 @@ function aggregateMonthly(primaryRows, budgetRows, scope, { ebitdaMetric = 'Adj.
       d[def.diff] += r.difference;
       d[def.hasDiff] = true;
     }
+    if (r.differenceYtdBudget != null) {
+      d[`${def.field}YtdDiff`] += r.differenceYtdBudget;
+      d[`${def.field}HasYtdDiff`] = true;
+    }
   }
 
   const monthly = Object.values(bucket)
@@ -225,6 +240,10 @@ function aggregateMonthly(primaryRows, budgetRows, scope, { ebitdaMetric = 'Adj.
         row[def.budget] = Math.round(budget);
         row[def.vsBudget] = Math.round(actual - budget);
         row[def.diff] = d[def.hasDiff] ? Math.round(d[def.diff]) : null;
+        // Prefer CSV "Difference YTD Budget" when present; else compute from cumulative actual − budget
+        row[`_${def.field}YtdFromCsv`] = d[`${def.field}HasYtdDiff`]
+          ? Math.round(d[`${def.field}YtdDiff`])
+          : null;
       }
 
       return row;
@@ -242,7 +261,11 @@ function aggregateMonthly(primaryRows, budgetRows, scope, { ebitdaMetric = 'Adj.
       const def = METRIC_DEFS[metric];
       ytdActual[metric] += m[def.field];
       ytdBudget[metric] += m[def.budget];
-      m[def.ytdVsBudget] = Math.round(ytdActual[metric] - ytdBudget[metric]);
+      const fromCsv = m[`_${def.field}YtdFromCsv`];
+      m[def.ytdVsBudget] = fromCsv != null
+        ? fromCsv
+        : Math.round(ytdActual[metric] - ytdBudget[metric]);
+      delete m[`_${def.field}YtdFromCsv`];
     }
   }
 

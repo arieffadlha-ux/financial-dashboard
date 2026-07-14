@@ -591,7 +591,7 @@ function DashboardInner() {
        { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome }];
 
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
-  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'cleaned_data(1) (2).csv';
+  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 14 July 15.45.xlsx';
 
   return (
     <div className="min-h-screen bg-[var(--surface-base)] text-[var(--text-primary)] px-4 py-6 md:px-8 md:py-8 font-sans">

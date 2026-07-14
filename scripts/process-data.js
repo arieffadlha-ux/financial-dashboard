@@ -12,7 +12,7 @@ import { processCSV } from '../src/dataProcessor.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const CSV_PATH = process.argv[2]
-  ?? path.join(process.env.USERPROFILE ?? '', 'Downloads', 'Telegram Desktop', 'cleaned_data(1) (2).csv');
+  ?? path.join(__dirname, '../public/cleaned_data.csv');
 
 const OUT_PATH = path.join(__dirname, '../src/data.js');
 
