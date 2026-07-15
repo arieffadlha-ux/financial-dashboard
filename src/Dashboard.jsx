@@ -496,7 +496,7 @@ function DashboardInner() {
   const [subSegment, setSubSegment] = useState('all');
   const [filter, setFilter] = useState({ quarter: 'all', month: 'all' });
   const [chartType, setChartType] = useState('area');
-  const [trendMetric, setTrendMetric] = useState('ebitda'); // revenue | cm | ebitda
+  const [trendMetric, setTrendMetric] = useState('ebitda'); // revenue | cm | ebitda | netIncome
 
   const isSegmentPage = page !== 'consolidated';
   const hideSubSegment = page === 'Corporate';
@@ -507,14 +507,29 @@ function DashboardInner() {
   const selectedMonthNum = filter.month === 'all' ? null : parseInt(filter.month, 10);
   const effectiveSubSegment = hideSubSegment ? 'all' : subSegment;
 
-  const TREND_OPTIONS = [
-    { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
-    { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
-    { id: 'ebitda', label: 'Adj. EBITDA', actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
-  ];
-  const activeTrend = TREND_OPTIONS.find(o => o.id === trendMetric) ?? TREND_OPTIONS[2];
+  // Consolidated KPI nature: Revenue / Adj. EBITDA / Net Income
+  // Segment KPI nature: Revenue / CM / Adj. EBITDA
+  const TREND_OPTIONS = isSegmentPage
+    ? [
+        { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
+        { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
+        { id: 'ebitda', label: 'Adj. EBITDA', actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
+      ]
+    : [
+        { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
+        { id: 'ebitda', label: 'Adj. EBITDA', actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
+        { id: 'netIncome', label: 'Net Income', actualKey: 'NetIncome', budgetKey: 'NetIncomeBudget', color: '#a855f7' },
+      ];
+  const activeTrend = TREND_OPTIONS.find(o => o.id === trendMetric) ?? TREND_OPTIONS.find(o => o.id === 'ebitda') ?? TREND_OPTIONS[0];
 
   useEffect(() => { setSubSegment('all'); }, [page]);
+
+  // Reset metric when switching page type if current option isn't available
+  useEffect(() => {
+    if (!TREND_OPTIONS.some(o => o.id === trendMetric)) {
+      setTrendMetric('ebitda');
+    }
+  }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Segment "all" / Corporate uses Dashboard rows (Adj. EBITDA glossary). Specific sub-segment uses that sub.
   const sourceMonthly = useMemo(() => {
