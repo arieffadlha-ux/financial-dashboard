@@ -1,8 +1,7 @@
 // Processes CSV text → dashboard data shape.
 // Rules:
-// - Consolidated / segment dashboard: Sub-Segment = "Dashboard", then subtract
-//   Elimination + Adjustment Elimination (before-elimination view)
-// - Segment sub-segment view: exclude Dashboard + excluded sub-segments
+// - Consolidated view: Sub-Segment = "Dashboard", sum all segments
+// - Segment view: exclude Sub-Segment "Dashboard" + excluded sub-segments; use EBITDA (not Adj. EBITDA)
 // - Tag priority (non-Budget): Run-rate > Pre-closing > Actual > Forecast
 // - Budget rows used only for variance calculations
 // - Only year 2026
@@ -10,14 +9,8 @@
 export const SEGMENTS = ['Retail', 'Mitra', 'Gaming', 'Investment', 'Corporate'];
 export const DASHBOARD_SUB_SEGMENT = 'Dashboard';
 export const DATA_YEAR = 2026;
-/** Sub-segments already embedded in Dashboard totals — subtract to get before-elimination */
-export const ELIMINATION_SUB_SEGMENTS = new Set([
-  'Elimination',
-  'Adjustment Elimination',
-]);
 export const EXCLUDED_SUB_SEGMENTS = new Set([
   'Elimination',
-  'Adjustment Elimination',
   'Adjustment',
   'G&A Direct HQ',
   'G&A Shared',
@@ -171,91 +164,12 @@ function resolveSubcat(metric, ebitdaMetric) {
   return metric;
 }
 
-/** Subcategories to subtract from Dashboard for a given metric (Elimination rows often use EBITDA, not Adj. EBITDA). */
-function eliminationSubcatsFor(metric, ebitdaMetric) {
-  if (metric === 'EBITDA' && ebitdaMetric === 'Adj. EBITDA') {
-    return ['Adj. EBITDA', 'EBITDA'];
-  }
-  return [resolveSubcat(metric, ebitdaMetric)];
-}
-
-function wantsBeforeElimination(scope) {
-  return scope.mode === 'consolidated' || scope.mode === 'segment-dashboard';
-}
-
-function matchesEliminationScope(r, scope) {
-  if (!ELIMINATION_SUB_SEGMENTS.has(r.subSegment)) return false;
-  if (scope.mode === 'consolidated') return true;
-  if (scope.mode === 'segment-dashboard') return r.segment === scope.segment;
-  return false;
-}
-
-/**
- * Sum elimination amounts for a metric.
- * Prefer Adj. EBITDA over EBITDA per segment/month/sub-segment when both exist.
- */
-function sumEliminationMetric(rows, year, month, scope, metric, ebitdaMetric) {
-  const subcats = eliminationSubcatsFor(metric, ebitdaMetric);
-  const byKey = new Map(); // year|month|segment|subSegment -> { amount, difference, differenceYtdBudget, subcat }
-
-  for (const r of rows) {
-    if (r.year !== year || r.month !== month) continue;
-    if (!matchesEliminationScope(r, scope)) continue;
-    if (!subcats.includes(r.subcat)) continue;
-
-    const key = `${r.year}|${r.month}|${r.segment}|${r.subSegment}`;
-    const existing = byKey.get(key);
-    if (!existing) {
-      byKey.set(key, {
-        amount: r.amount,
-        difference: r.difference,
-        differenceYtdBudget: r.differenceYtdBudget,
-        subcat: r.subcat,
-      });
-      continue;
-    }
-    // Prefer Adj. EBITDA if both Adj. EBITDA and EBITDA are present
-    if (existing.subcat === 'EBITDA' && r.subcat === 'Adj. EBITDA') {
-      byKey.set(key, {
-        amount: r.amount,
-        difference: r.difference,
-        differenceYtdBudget: r.differenceYtdBudget,
-        subcat: r.subcat,
-      });
-    } else if (existing.subcat === r.subcat) {
-      existing.amount += r.amount;
-      if (r.difference != null) {
-        existing.difference = (existing.difference ?? 0) + r.difference;
-      }
-      if (r.differenceYtdBudget != null) {
-        existing.differenceYtdBudget = (existing.differenceYtdBudget ?? 0) + r.differenceYtdBudget;
-      }
-    }
-  }
-
-  let amount = 0;
-  let difference = 0;
-  let hasDiff = false;
-  let differenceYtdBudget = 0;
-  let hasYtd = false;
-  for (const v of byKey.values()) {
-    amount += v.amount;
-    if (v.difference != null) { difference += v.difference; hasDiff = true; }
-    if (v.differenceYtdBudget != null) { differenceYtdBudget += v.differenceYtdBudget; hasYtd = true; }
-  }
-  return { amount, difference, hasDiff, differenceYtdBudget, hasYtd };
-}
-
-function sumBudget(budgetRows, year, month, subcat, scope, metric, ebitdaMetric) {
+function sumBudget(budgetRows, year, month, subcat, scope) {
   let total = 0;
   for (const r of budgetRows) {
     if (r.year !== year || r.month !== month || r.subcat !== subcat) continue;
     if (!matchesScope(r, scope)) continue;
     total += r.amount;
-  }
-  if (wantsBeforeElimination(scope) && metric != null) {
-    const elim = sumEliminationMetric(budgetRows, year, month, scope, metric, ebitdaMetric);
-    total -= elim.amount;
   }
   return total;
 }
@@ -277,7 +191,6 @@ function aggregateMonthly(primaryRows, budgetRows, scope, { ebitdaMetric = 'Adj.
   const bucket = {};
   const resolvedMetrics = metrics.map((m) => (m === 'EBITDA' ? 'EBITDA' : m));
   const subcats = resolvedMetrics.map((m) => resolveSubcat(m, ebitdaMetric));
-  const beforeElim = wantsBeforeElimination(scope);
 
   for (const r of primaryRows) {
     if (!matchesScope(r, scope)) continue;
@@ -305,28 +218,6 @@ function aggregateMonthly(primaryRows, budgetRows, scope, { ebitdaMetric = 'Adj.
     }
   }
 
-  // Dashboard totals already include Elimination — subtract to get before-elimination figures
-  if (beforeElim) {
-    const monthKeys = Object.keys(bucket);
-    // Also create months that only exist on elimination if dashboard was empty (unlikely)
-    for (const mk of monthKeys) {
-      const d = bucket[mk];
-      for (const metric of resolvedMetrics) {
-        const def = METRIC_DEFS[metric];
-        const elim = sumEliminationMetric(primaryRows, d.year, d.month, scope, metric, ebitdaMetric);
-        d[def.field] -= elim.amount;
-        if (elim.hasDiff) {
-          d[def.diff] -= elim.difference;
-          d[def.hasDiff] = true;
-        }
-        if (elim.hasYtd) {
-          d[`${def.field}YtdDiff`] -= elim.differenceYtdBudget;
-          d[`${def.field}HasYtdDiff`] = true;
-        }
-      }
-    }
-  }
-
   const monthly = Object.values(bucket)
     .sort((a, b) => MONTH_IDX[a.month] - MONTH_IDX[b.month])
     .map((d) => {
@@ -342,7 +233,7 @@ function aggregateMonthly(primaryRows, budgetRows, scope, { ebitdaMetric = 'Adj.
       for (const metric of resolvedMetrics) {
         const def = METRIC_DEFS[metric];
         const subcat = resolveSubcat(metric, ebitdaMetric);
-        const budget = sumBudget(budgetRows, d.year, d.month, subcat, scope, metric, ebitdaMetric);
+        const budget = sumBudget(budgetRows, d.year, d.month, subcat, scope);
         const actual = d[def.field];
 
         row[def.field] = Math.round(actual);
