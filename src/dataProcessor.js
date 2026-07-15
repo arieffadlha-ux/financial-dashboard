@@ -282,7 +282,7 @@ function listSubSegments(rows, segment) {
   return [...subs].sort();
 }
 
-const CONSOLIDATED_METRICS = ['Revenue', 'EBITDA', 'Net Income'];
+const CONSOLIDATED_METRICS = ['Revenue', 'CM', 'EBITDA', 'Net Income'];
 const SEGMENT_DASHBOARD_METRICS = ['Revenue', 'CM', 'EBITDA']; // Adj. EBITDA from Dashboard
 const SEGMENT_METRICS = ['Revenue', 'CM', 'EBITDA'];
 

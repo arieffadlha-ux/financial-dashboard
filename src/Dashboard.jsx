@@ -496,6 +496,7 @@ function DashboardInner() {
   const [subSegment, setSubSegment] = useState('all');
   const [filter, setFilter] = useState({ quarter: 'all', month: 'all' });
   const [chartType, setChartType] = useState('area');
+  const [trendMetric, setTrendMetric] = useState('ebitda'); // revenue | cm | ebitda
 
   const isSegmentPage = page !== 'consolidated';
   const hideSubSegment = page === 'Corporate';
@@ -505,6 +506,13 @@ function DashboardInner() {
     : [];
   const selectedMonthNum = filter.month === 'all' ? null : parseInt(filter.month, 10);
   const effectiveSubSegment = hideSubSegment ? 'all' : subSegment;
+
+  const TREND_OPTIONS = [
+    { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
+    { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
+    { id: 'ebitda', label: 'Adj. EBITDA', actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
+  ];
+  const activeTrend = TREND_OPTIONS.find(o => o.id === trendMetric) ?? TREND_OPTIONS[2];
 
   useEffect(() => { setSubSegment('all'); }, [page]);
 
@@ -521,20 +529,21 @@ function DashboardInner() {
 
   const kpis = useMemo(() => computePeriodKPIs(filteredMonthly, isSegmentPage), [filteredMonthly, isSegmentPage]);
 
-  // Trend always shows full-year series; highlight selected month when filtered
+  // Trend always shows full-year series; highlight selected month when filtered.
+  // Actual/Budget fields match the same glossary as KPI cards (Revenue / CM / Adj. EBITDA).
   const trendChart = useMemo(() => {
     const trendBase = filter.month !== 'all'
       ? sourceMonthly
       : filterMonthly(sourceMonthly, { quarter: filter.quarter, month: 'all' });
     return trendBase.map(m => ({
       label: monthLabel(m),
-      EBITDA: m.EBITDA,
-      Budget: m.EBITDABudget,
+      Actual: m[activeTrend.actualKey] ?? 0,
+      Budget: m[activeTrend.budgetKey] ?? 0,
       monthNum: m.monthNum,
       highlighted: selectedMonthNum != null && m.monthNum === selectedMonthNum,
       tag: m.tag,
     }));
-  }, [sourceMonthly, filter.quarter, filter.month, selectedMonthNum]);
+  }, [sourceMonthly, filter.quarter, filter.month, selectedMonthNum, activeTrend]);
 
   const highlightedLabel = trendChart.find(d => d.highlighted)?.label ?? null;
 
@@ -631,22 +640,39 @@ function DashboardInner() {
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
         <div className="lg:col-span-2 bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 card-shadow">
-          <div className="flex justify-between items-start mb-5">
-            <div>
-              <h3 className="text-sm font-semibold text-[var(--text-primary)]">{ebitdaLabel} Trend vs Budget</h3>
-              <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-                Monthly trend · IDR
-                {highlightedLabel && (
-                  <span className="ml-2 text-blue-400">· Highlighted: {highlightedLabel}</span>
-                )}
-              </p>
+          <div className="flex flex-col gap-3 mb-5">
+            <div className="flex flex-wrap justify-between items-start gap-3">
+              <div>
+                <h3 className="text-sm font-semibold text-[var(--text-primary)]">{activeTrend.label} Trend vs Budget</h3>
+                <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
+                  Monthly trend · IDR
+                  {highlightedLabel && (
+                    <span className="ml-2 text-blue-400">· Highlighted: {highlightedLabel}</span>
+                  )}
+                </p>
+              </div>
+              <div className="flex items-center bg-[var(--surface-elevated)] rounded-lg p-0.5 gap-0.5">
+                {['area', 'bar'].map(t => (
+                  <button key={t} onClick={() => setChartType(t)}
+                    className={`px-2.5 py-1.5 rounded-md text-[11px] font-medium cursor-pointer transition-all
+                      ${chartType === t ? 'bg-[var(--surface-card)] text-[var(--text-primary)] shadow-sm' : 'text-[var(--text-faint)]'}`}>
+                    {t === 'area' ? 'Line' : 'Bar'}
+                  </button>
+                ))}
+              </div>
             </div>
-            <div className="flex items-center bg-[var(--surface-elevated)] rounded-lg p-0.5 gap-0.5">
-              {['area', 'bar'].map(t => (
-                <button key={t} onClick={() => setChartType(t)}
-                  className={`px-2.5 py-1.5 rounded-md text-[11px] font-medium cursor-pointer transition-all
-                    ${chartType === t ? 'bg-[var(--surface-card)] text-[var(--text-primary)] shadow-sm' : 'text-[var(--text-faint)]'}`}>
-                  {t === 'area' ? 'Line' : 'Bar'}
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-[10px] uppercase tracking-wider text-[var(--text-very-faint)] mr-1">Metric</span>
+              {TREND_OPTIONS.map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setTrendMetric(opt.id)}
+                  className={`px-2.5 py-1.5 rounded-lg text-[11px] font-medium cursor-pointer transition-all
+                    ${trendMetric === opt.id
+                      ? 'bg-blue-600 text-white shadow-[0_0_12px_rgba(59,130,246,0.3)]'
+                      : 'bg-[var(--surface-elevated)] text-[var(--text-muted)] hover:text-[var(--text-secondary)]'}`}
+                >
+                  {opt.label}
                 </button>
               ))}
             </div>
@@ -656,9 +682,9 @@ function DashboardInner() {
               {chartType === 'area' ? (
                 <AreaChart data={trendChart} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
                   <defs>
-                    <linearGradient id="gradEBIT" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#10b981" stopOpacity={0.18} />
-                      <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+                    <linearGradient id="gradActual" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor={activeTrend.color} stopOpacity={0.18} />
+                      <stop offset="95%" stopColor={activeTrend.color} stopOpacity={0} />
                     </linearGradient>
                     <linearGradient id="gradBudget" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.12} />
@@ -674,9 +700,9 @@ function DashboardInner() {
                   {highlightedLabel && (
                     <ReferenceLine x={highlightedLabel} stroke="#3b82f6" strokeDasharray="4 4" strokeWidth={1.5} />
                   )}
-                  <Area type="monotone" dataKey="EBITDA" name={ebitdaLabel} stroke="#10b981" strokeWidth={2}
-                    fill="url(#gradEBIT)"
-                    dot={<HighlightDot fill="#10b981" />}
+                  <Area type="monotone" dataKey="Actual" name={activeTrend.label} stroke={activeTrend.color} strokeWidth={2}
+                    fill="url(#gradActual)"
+                    dot={<HighlightDot fill={activeTrend.color} />}
                     activeDot={{ r: 6, strokeWidth: 0 }} />
                   <Area type="monotone" dataKey="Budget" name="Budget" stroke="#f59e0b" strokeWidth={1.5}
                     fill="url(#gradBudget)" strokeDasharray="5 4"
@@ -691,9 +717,9 @@ function DashboardInner() {
                     tickFormatter={v => idr(v, { axis: true })} width={72} />
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: c.cursor, opacity: 0.4 }} />
                   <ReferenceLine y={0} stroke={c.refLine} strokeDasharray="4 4" />
-                  <Bar dataKey="EBITDA" name={ebitdaLabel} radius={[3, 3, 0, 0]} maxBarSize={24}>
+                  <Bar dataKey="Actual" name={activeTrend.label} radius={[3, 3, 0, 0]} maxBarSize={24}>
                     {trendChart.map((d, i) => (
-                      <Cell key={i} fill="#10b981" fillOpacity={d.highlighted ? 1 : 0.45}
+                      <Cell key={i} fill={activeTrend.color} fillOpacity={d.highlighted ? 1 : 0.45}
                         stroke={d.highlighted ? '#fff' : undefined} strokeWidth={d.highlighted ? 2 : 0} />
                     ))}
                   </Bar>
@@ -709,8 +735,8 @@ function DashboardInner() {
           </div>
           <div className="flex gap-5 mt-3 pt-3 border-t border-[var(--border-default)]">
             <div className="flex items-center gap-2">
-              <div className="w-5 h-[2px] bg-emerald-500 rounded" />
-              <span className="text-[11px] text-[var(--text-faint)]">{ebitdaLabel}</span>
+              <div className="w-5 h-[2px] rounded" style={{ background: activeTrend.color }} />
+              <span className="text-[11px] text-[var(--text-faint)]">{activeTrend.label}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-5 border-b-2 border-dashed border-amber-500" />
