@@ -176,27 +176,6 @@ const PAGES = [
   ...ALL_SEGMENTS.map(s => ({ id: s, label: s })),
 ];
 
-function BukalapakLogo({ className = '' }) {
-  const { theme } = useTheme();
-  // Theme-aware mark: soft white on dark, brand magenta on light — transparent background
-  const color = theme === 'dark' ? 'rgba(255,255,255,0.92)' : 'rgb(227, 30, 82)';
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 100"
-      className={className}
-      aria-label="Bukalapak"
-      role="img"
-    >
-      <g fill={color}>
-        <rect x="18" y="8" width="18" height="58" rx="9" transform="rotate(-28 27 37)" />
-        <circle cx="42" cy="78" r="11" />
-        <path d="M52 18c16.5 0 30 13.5 30 34 0 17.5-11 31-27 34-2.6.5-4.6-1.8-4.2-4.4 7.5-3 12.5-12 12.5-22.5 0-13-9-22-20.5-22-2.8 0-4.8-2.3-4.5-5.1.3-2.5 2.5-3.9 5.2-3.9H52z" />
-      </g>
-    </svg>
-  );
-}
-
 /* ─── Data helpers ──────────────────────────────────────────────────── */
 function filterMonthly(monthly, filter) {
   return monthly.filter(m => {
@@ -591,13 +570,17 @@ function DashboardInner() {
        { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome }];
 
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
-  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 14 July 15.45.xlsx';
+  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 15 July 14.50.xlsx';
 
   return (
     <div className="min-h-screen bg-[var(--surface-base)] text-[var(--text-primary)] px-4 py-6 md:px-8 md:py-8 font-sans">
       <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-5">
         <div className="flex items-center gap-3.5 min-w-0">
-          <BukalapakLogo className="h-10 w-10 sm:h-11 sm:w-11 shrink-0" />
+          <img
+            src="/bukalapak-logo.png"
+            alt="Bukalapak"
+            className="h-10 w-10 sm:h-11 sm:w-11 object-contain shrink-0 bg-transparent"
+          />
           <div className="min-w-0">
             <p className="text-[11px] uppercase tracking-widest text-[var(--text-very-faint)] mb-1">Executive Dashboard</p>
             <h1 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] truncate">{pageTitle}</h1>
