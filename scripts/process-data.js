@@ -26,13 +26,21 @@ const output = `// AUTO-GENERATED — do not edit manually
 
 export const MONTHLY = ${JSON.stringify(data.MONTHLY, null, 2)};
 
+export const MONTHLY_VARIANTS = ${JSON.stringify(data.MONTHLY_VARIANTS, null, 2)};
+
 export const SEGMENT_MONTHLY = ${JSON.stringify(data.SEGMENT_MONTHLY, null, 2)};
+
+export const SEGMENT_VARIANTS = ${JSON.stringify(data.SEGMENT_VARIANTS, null, 2)};
 
 export const SEGMENT_PERFORMANCE = ${JSON.stringify(data.SEGMENT_PERFORMANCE, null, 2)};
 
 export const SUB_SEGMENTS = ${JSON.stringify(data.SUB_SEGMENTS, null, 2)};
 
 export const SUBSEGMENT_MONTHLY = ${JSON.stringify(data.SUBSEGMENT_MONTHLY, null, 2)};
+
+export const PNL_ORDER = ${JSON.stringify(data.PNL_ORDER, null, 2)};
+
+export const PNL = ${JSON.stringify(data.PNL, null, 2)};
 
 export const SEGMENTS = ${JSON.stringify(data.SEGMENTS, null, 2)};
 
@@ -44,4 +52,4 @@ console.log(`✓ Wrote ${OUT_PATH}`);
 console.log(`  Revenue:   Rp ${(data.KPIS.revenue / 1e12).toFixed(3)}T`);
 console.log(`  Adj EBITDA: Rp ${(data.KPIS.adjEbitda / 1e9).toFixed(1)}B`);
 console.log(`  Net Income: Rp ${(data.KPIS.netIncome / 1e9).toFixed(1)}B`);
-console.log(`  Months: ${data.MONTHLY.length}`);
+console.log(`  Months: ${data.MONTHLY['Before Elim']?.length ?? 0}`);

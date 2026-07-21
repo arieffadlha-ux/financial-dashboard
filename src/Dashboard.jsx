@@ -32,6 +32,14 @@ const dsKey      = (id) => `fd-dataset-${id}`;
 const DataCtx = createContext(null);
 const useDataCtx = () => useContext(DataCtx);
 
+function monthCountFromData(result) {
+  const m = result?.MONTHLY;
+  if (Array.isArray(m)) return m.length;
+  if (m?.['Before Elim']) return m['Before Elim'].length;
+  if (m?.['After Elim']) return m['After Elim'].length;
+  return 0;
+}
+
 function DataProvider({ children }) {
   const [index, setIndex] = useState(() => {
     try { return JSON.parse(localStorage.getItem(INDEX_KEY) ?? '[]'); }
@@ -62,7 +70,7 @@ function DataProvider({ children }) {
           id,
           filename: file.name,
           uploadedAt: new Date().toISOString(),
-          months: result.MONTHLY.length,
+          months: monthCountFromData(result),
           revenue: result.KPIS.revenue,
         };
         localStorage.setItem(dsKey(id), JSON.stringify(result));
@@ -171,69 +179,62 @@ const SEGMENT_COLORS = {
   Corporate: 'rgb(249, 0, 74)',
 };
 
+const SUB_SEGMENT_PALETTE = [
+  '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#a855f7',
+  '#06b6d4', '#f97316', '#84cc16', '#ec4899', '#6366f1',
+  '#14b8a6', '#eab308',
+];
+
 const PAGES = [
   { id: 'consolidated', label: 'Consolidated' },
   ...ALL_SEGMENTS.map(s => ({ id: s, label: s })),
 ];
 
+const EBITDA_VARIANT_OPTS = [
+  { id: 'Adj. EBITDA (Direct)', label: 'Adj. EBITDA (Direct)' },
+  { id: 'Adj. EBITDA (Total)', label: 'Adj. EBITDA (Total)' },
+];
+const EBIT_VARIANT_OPTS = [
+  { id: 'Adj. EBIT (Direct)', label: 'Adj. EBIT (Direct)' },
+  { id: 'Adj. EBIT (Total)', label: 'Adj. EBIT (Total)' },
+];
+
 /* ─── Data helpers ──────────────────────────────────────────────────── */
+function asMonthlyArray(monthlyLike, category = 'Before Elim') {
+  if (!monthlyLike) return [];
+  if (Array.isArray(monthlyLike)) return monthlyLike;
+  return monthlyLike[category] ?? monthlyLike['Before Elim'] ?? monthlyLike['After Elim'] ?? [];
+}
+
 function filterMonthly(monthly, filter) {
+  const months = filter.months; // [] means all
   return monthly.filter(m => {
     if (filter.quarter !== 'all' && m.quarter !== parseInt(filter.quarter.replace('Q', ''), 10)) return false;
-    if (filter.month !== 'all' && m.monthNum !== parseInt(filter.month, 10)) return false;
+    if (months.length > 0 && !months.includes(m.monthNum)) return false;
     return true;
   });
 }
 
-function computePeriodKPIs(filtered, isSegmentPage = false) {
-  const last = filtered[filtered.length - 1];
-  if (isSegmentPage) {
-    return {
-      revenue: filtered.reduce((s, m) => s + m.Revenue, 0),
-      cm: filtered.reduce((s, m) => s + (m.CM ?? 0), 0),
-      ebitda: filtered.reduce((s, m) => s + m.EBITDA, 0),
-      vsBudget: {
-        revenue: filtered.reduce((s, m) => s + m.RevenueVsBudget, 0),
-        cm: filtered.reduce((s, m) => s + (m.CMVsBudget ?? 0), 0),
-        ebitda: filtered.reduce((s, m) => s + m.EBITDAVsBudget, 0),
-      },
-      vsPrevMonth: last ? {
-        revenue: last.RevenueDiff,
-        cm: last.CMDiff ?? null,
-        ebitda: last.EBITDADiff,
-      } : { revenue: null, cm: null, ebitda: null },
-      vsYtdBudget: last ? {
-        revenue: last.RevenueYTDVsBudget,
-        cm: last.CMYTDVsBudget ?? null,
-        ebitda: last.EBITDAYTDVsBudget,
-      } : { revenue: null, cm: null, ebitda: null },
-    };
-  }
-  return {
-    revenue: filtered.reduce((s, m) => s + m.Revenue, 0),
-    ebitda: filtered.reduce((s, m) => s + m.EBITDA, 0),
-    netIncome: filtered.reduce((s, m) => s + m.NetIncome, 0),
-    vsBudget: {
-      revenue: filtered.reduce((s, m) => s + m.RevenueVsBudget, 0),
-      ebitda: filtered.reduce((s, m) => s + m.EBITDAVsBudget, 0),
-      netIncome: filtered.reduce((s, m) => s + m.NetIncomeVsBudget, 0),
-    },
-    vsPrevMonth: last ? {
-      revenue: last.RevenueDiff,
-      ebitda: last.EBITDADiff,
-      netIncome: last.NetIncomeDiff,
-    } : { revenue: null, ebitda: null, netIncome: null },
-    vsYtdBudget: last ? {
-      revenue: last.RevenueYTDVsBudget,
-      ebitda: last.EBITDAYTDVsBudget,
-      netIncome: last.NetIncomeYTDVsBudget,
-    } : { revenue: null, ebitda: null, netIncome: null },
-  };
+function sumField(rows, field) {
+  return rows.reduce((s, m) => s + (m[field] ?? 0), 0);
 }
 
-function filteredSegmentAdjEbitda(segmentMonthly, segments, filteredKeys) {
+function computePeriodKPIs(filtered, fields) {
+  const last = filtered[filtered.length - 1];
+  const out = {};
+  for (const f of fields) {
+    out[f.key] = sumField(filtered, f.actual);
+    out[`vsBudget_${f.key}`] = sumField(filtered, f.vsBudget);
+    out[`vsPrev_${f.key}`] = last ? (last[f.diff] ?? null) : null;
+    out[`vsYtd_${f.key}`] = last ? (last[f.ytd] ?? null) : null;
+  }
+  return out;
+}
+
+function filteredSegmentAdjEbitda(segmentMonthly, segments, filteredKeys, category) {
   return segments.map(seg => {
-    const rows = (segmentMonthly[seg] ?? []).filter(m => filteredKeys.has(`${m.year}-${m.month}`));
+    const rows = asMonthlyArray(segmentMonthly[seg], category)
+      .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
     return {
       Segment: seg,
       AdjEBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
@@ -252,6 +253,28 @@ function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys)
     };
   }).filter(s => s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0)
     .sort((a, b) => b.Revenue - a.Revenue);
+}
+
+function mergeMonthlySeries(seriesList) {
+  if (!seriesList.length) return [];
+  if (seriesList.length === 1) return seriesList[0];
+  const map = new Map();
+  for (const series of seriesList) {
+    for (const row of series) {
+      const key = `${row.year}-${row.month}`;
+      if (!map.has(key)) {
+        map.set(key, { ...row });
+        continue;
+      }
+      const acc = map.get(key);
+      for (const [k, v] of Object.entries(row)) {
+        if (typeof v === 'number' && k !== 'year' && k !== 'monthNum' && k !== 'quarter') {
+          acc[k] = (acc[k] ?? 0) + v;
+        }
+      }
+    }
+  }
+  return [...map.values()].sort((a, b) => a.monthNum - b.monthNum);
 }
 
 /* ─── Chart helpers ─────────────────────────────────────────────────── */
@@ -385,7 +408,70 @@ function PageNav({ page, onChange }) {
   );
 }
 
-function FilterBar({ quarter, month, onChange, onReset, isActive, subSegment, subSegments, onSubSegmentChange, showSubSegment }) {
+function MultiSelect({ label, allLabel, options, values, onChange, minWidth = 160 }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handle = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', handle);
+    return () => document.removeEventListener('mousedown', handle);
+  }, [open]);
+
+  const allSelected = values.length === 0;
+  const display = allSelected
+    ? allLabel
+    : values.length === 1
+      ? (options.find(o => o.value === values[0])?.label ?? `${values.length} selected`)
+      : `${values.length} selected`;
+
+  const toggle = (val) => {
+    if (values.includes(val)) {
+      const next = values.filter(v => v !== val);
+      onChange(next);
+    } else {
+      onChange([...values, val]);
+    }
+  };
+
+  return (
+    <div className="relative" ref={ref}>
+      <button type="button" onClick={() => setOpen(o => !o)}
+        className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none text-left"
+        style={{ minWidth }}>
+        {display}
+      </button>
+      {open && (
+        <div className="absolute left-0 top-full mt-1 z-40 min-w-full w-max max-w-[280px] max-h-[260px] overflow-y-auto bg-[var(--surface-card)] border border-[var(--border-default)] rounded-xl shadow-xl py-1">
+          <button type="button"
+            onClick={() => { onChange([]); setOpen(false); }}
+            className={`w-full text-left px-3 py-1.5 text-xs cursor-pointer hover:bg-[var(--surface-elevated)] ${allSelected ? 'text-blue-400 font-medium' : 'text-[var(--text-muted)]'}`}>
+            {allLabel}
+          </button>
+          {options.map(opt => {
+            const checked = values.includes(opt.value);
+            return (
+              <label key={opt.value}
+                className="flex items-center gap-2 px-3 py-1.5 text-xs text-[var(--text-muted)] hover:bg-[var(--surface-elevated)] cursor-pointer">
+                <input type="checkbox" checked={checked} onChange={() => toggle(opt.value)}
+                  className="rounded border-[var(--border-default)]" />
+                <span className={checked ? 'text-[var(--text-primary)]' : ''}>{opt.label}</span>
+              </label>
+            );
+          })}
+        </div>
+      )}
+      <span className="sr-only">{label}</span>
+    </div>
+  );
+}
+
+function FilterBar({
+  quarter, months, onChange, onReset, isActive,
+  subSegmentsSelected, subSegments, onSubSegmentsChange, showSubSegment,
+  category, onCategoryChange, dataStatus,
+}) {
   const Pill = ({ active, onClick, children }) => (
     <button onClick={onClick}
       className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer
@@ -401,30 +487,50 @@ function FilterBar({ quarter, month, onChange, onReset, isActive, subSegment, su
       <div className="h-4 w-px bg-[var(--border-default)]" />
       <div className="flex gap-1.5">
         {['all', 'Q1', 'Q2', 'Q3', 'Q4'].map(q => (
-          <Pill key={q} active={quarter === q} onClick={() => onChange({ quarter: q, month: 'all' })}>
-            {q === 'all' ? 'All Q' : q}
+          <Pill key={q} active={quarter === q} onClick={() => onChange({ quarter: q, months: [] })}>
+            {q === 'all' ? 'FY' : q}
           </Pill>
         ))}
       </div>
       <div className="h-4 w-px bg-[var(--border-default)]" />
-      <div className="relative">
-        <select value={month} onChange={e => onChange({ quarter, month: e.target.value })}
-          className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none">
-          <option value="all">All Months</option>
-          {MONTHS_EN.map((m, i) => <option key={i} value={i + 1}>{m}</option>)}
-        </select>
-      </div>
+      <MultiSelect
+        label="Months"
+        allLabel="All Months"
+        options={MONTHS_EN.map((m, i) => ({ value: i + 1, label: m }))}
+        values={months}
+        onChange={(next) => onChange({ quarter, months: next })}
+        minWidth={140}
+      />
       {showSubSegment && (
         <>
           <div className="h-4 w-px bg-[var(--border-default)]" />
-          <div className="relative">
-            <select value={subSegment} onChange={e => onSubSegmentChange(e.target.value)}
-              className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none min-w-[160px]">
-              <option value="all">All Sub-Segments</option>
-              {subSegments.map(s => <option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
+          <MultiSelect
+            label="Sub-Segments"
+            allLabel="All Sub-Segments"
+            options={subSegments.map(s => ({ value: s, label: s }))}
+            values={subSegmentsSelected}
+            onChange={onSubSegmentsChange}
+            minWidth={180}
+          />
         </>
+      )}
+      <div className="h-4 w-px bg-[var(--border-default)]" />
+      <div className="relative">
+        <select value={category} onChange={e => onCategoryChange(e.target.value)}
+          className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none">
+          <option value="Before Elim">Before Elim</option>
+          <option value="After Elim">After Elim</option>
+        </select>
+      </div>
+      {dataStatus && (
+        <span className={`text-[10px] font-semibold px-2 py-1 rounded-lg ${
+          dataStatus === 'Actual' ? 'bg-emerald-500/15 text-emerald-400'
+            : dataStatus === 'Forecast' ? 'bg-amber-500/15 text-amber-400'
+              : dataStatus === 'Run-rate' ? 'bg-blue-500/15 text-blue-400'
+                : 'bg-[var(--surface-elevated)] text-[var(--text-faint)]'
+        }`}>
+          {dataStatus}
+        </span>
       )}
       {isActive && (
         <button onClick={onReset} className="ml-auto text-xs text-[var(--text-faint)] hover:text-[var(--text-tertiary)] cursor-pointer">
@@ -446,10 +552,25 @@ function DiffPill({ label, value }) {
   );
 }
 
-function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsYtdBudget }) {
+function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsYtdBudget, dropdown }) {
   return (
     <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-5 card-shadow hover:border-[var(--border-hover)] transition-all">
-      <p className="text-[11px] uppercase tracking-widest text-[var(--text-faint)] font-medium mb-3">{label}</p>
+      <div className="flex items-start justify-between gap-2 mb-3">
+        {dropdown ? (
+          <select
+            value={dropdown.value}
+            onChange={e => dropdown.onChange(e.target.value)}
+            disabled={dropdown.disabled}
+            className="text-[11px] uppercase tracking-widest text-[var(--text-faint)] font-medium bg-transparent border-0 outline-none cursor-pointer max-w-full pr-1 disabled:cursor-default disabled:opacity-70"
+          >
+            {dropdown.options.map(o => (
+              <option key={o.id} value={o.id}>{o.label}</option>
+            ))}
+          </select>
+        ) : (
+          <p className="text-[11px] uppercase tracking-widest text-[var(--text-faint)] font-medium">{label}</p>
+        )}
+      </div>
       <p className="text-[1.6rem] font-semibold leading-none text-[var(--text-primary)] tabular mb-3">{idr(value)}</p>
       <div className="flex flex-wrap gap-1.5">
         <DiffPill label="vs Budget" value={vsBudget} />
@@ -476,6 +597,48 @@ function CustomTooltip({ active, payload, label }) {
   );
 }
 
+function PnLBox({ rows }) {
+  return (
+    <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 mb-5 card-shadow">
+      <div className="mb-5">
+        <h3 className="text-sm font-semibold text-[var(--text-primary)]">Performance P&L</h3>
+        <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
+          Sub-Category from Revenue to Net Income · follows active filters
+        </p>
+      </div>
+      {rows.length === 0 ? (
+        <div className="py-10 text-center text-[var(--text-very-faint)] text-sm">No P&L data</div>
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-[var(--border-default)]">
+                <th className="py-2.5 text-left text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium pr-3">Sub-Category</th>
+                <th className="py-2.5 text-right text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row) => {
+                const isTotalish = /^(Revenue|CM|GP|Total |EBITDA|EBIT|Adj\.|Net Income|Finance)/i.test(row.subcat);
+                return (
+                  <tr key={row.subcat} className="border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors">
+                    <td className={`py-2 pr-3 ${isTotalish ? 'font-semibold text-[var(--text-primary)]' : 'text-[var(--text-tertiary)]'}`}>
+                      {row.subcat}
+                    </td>
+                    <td className={`py-2 text-right tabular font-medium ${row.amount >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                      {idrCompact(row.amount)}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ─── Main Dashboard ────────────────────────────────────────────────── */
 export default function Dashboard() {
   return (
@@ -493,74 +656,164 @@ function DashboardInner() {
   const c = CHART[theme];
 
   const [page, setPage] = useState('consolidated');
-  const [subSegment, setSubSegment] = useState('all');
-  const [filter, setFilter] = useState({ quarter: 'all', month: 'all' });
+  const [subSegmentsSelected, setSubSegmentsSelected] = useState([]); // [] = all
+  const [filter, setFilter] = useState({ quarter: 'all', months: [] }); // months [] = all
+  const [category, setCategory] = useState('Before Elim');
+  const [ebitdaVariant, setEbitdaVariant] = useState('Adj. EBITDA (Direct)');
+  const [ebitVariant, setEbitVariant] = useState('Adj. EBIT (Direct)');
   const [chartType, setChartType] = useState('area');
-  const [trendMetric, setTrendMetric] = useState('ebitda'); // revenue | cm | ebitda | netIncome
+  const [trendMetric, setTrendMetric] = useState('ebitda');
 
   const isSegmentPage = page !== 'consolidated';
-  const hideSubSegment = page === 'Corporate';
-  const ebitdaLabel = 'Adj. EBITDA';
-  const subSegments = isSegmentPage && !hideSubSegment
-    ? (activeData.SUB_SEGMENTS?.[page] ?? [])
-    : [];
-  const selectedMonthNum = filter.month === 'all' ? null : parseInt(filter.month, 10);
-  const effectiveSubSegment = hideSubSegment ? 'all' : subSegment;
+  const isCorporate = page === 'Corporate';
+  const isRetail = page === 'Retail';
+  const showEbitdaVariant = isSegmentPage && !isRetail && category === 'Before Elim';
+  const showEbitVariant = isRetail && category === 'Before Elim';
+  const useDashboardScope = !isSegmentPage || subSegmentsSelected.length === 0;
 
-  // Consolidated KPI nature: Revenue / Adj. EBITDA / Net Income
-  // Segment KPI nature: Revenue / CM / Adj. EBITDA
-  const TREND_OPTIONS = isSegmentPage
-    ? [
+  const subSegments = isSegmentPage ? (activeData.SUB_SEGMENTS?.[page] ?? []) : [];
+  const selectedMonthNums = filter.months;
+  const isFiltered = filter.quarter !== 'all' || filter.months.length > 0 || subSegmentsSelected.length > 0 || category !== 'Before Elim';
+
+  const ebitdaLabel = category === 'After Elim'
+    ? 'Adj. EBITDA'
+    : (isSegmentPage && !isRetail ? ebitdaVariant : 'Adj. EBITDA');
+  const ebitLabel = category === 'After Elim' ? 'Adj. EBIT' : ebitVariant;
+
+  // KPI field configs per page
+  const kpiFields = useMemo(() => {
+    if (!isSegmentPage) {
+      return [
+        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget' },
+        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget' },
+        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget' },
+      ];
+    }
+    if (isCorporate) {
+      return [
+        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget' },
+        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget' },
+        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget' },
+      ];
+    }
+    if (isRetail) {
+      return [
+        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget' },
+        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget' },
+        { key: 'ebit', label: ebitLabel, actual: 'EBIT', vsBudget: 'EBITVsBudget', diff: 'EBITDiff', ytd: 'EBITYTDVsBudget' },
+      ];
+    }
+    return [
+      { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget' },
+      { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget' },
+      { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget' },
+    ];
+  }, [isSegmentPage, isCorporate, isRetail, ebitdaLabel, ebitLabel]);
+
+  const TREND_OPTIONS = useMemo(() => {
+    if (!isSegmentPage) {
+      return [
         { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
-        { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
-        { id: 'ebitda', label: 'Adj. EBITDA', actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
-      ]
-    : [
-        { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
-        { id: 'ebitda', label: 'Adj. EBITDA', actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
+        { id: 'ebitda', label: ebitdaLabel, actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
         { id: 'netIncome', label: 'Net Income', actualKey: 'NetIncome', budgetKey: 'NetIncomeBudget', color: '#a855f7' },
       ];
-  const activeTrend = TREND_OPTIONS.find(o => o.id === trendMetric) ?? TREND_OPTIONS.find(o => o.id === 'ebitda') ?? TREND_OPTIONS[0];
+    }
+    if (isCorporate) {
+      return [
+        { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
+        { id: 'ebitda', label: ebitdaLabel, actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
+        { id: 'netIncome', label: 'Net Income', actualKey: 'NetIncome', budgetKey: 'NetIncomeBudget', color: '#a855f7' },
+      ];
+    }
+    if (isRetail) {
+      return [
+        { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
+        { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
+        { id: 'ebit', label: ebitLabel, actualKey: 'EBIT', budgetKey: 'EBITBudget', color: '#f59e0b' },
+      ];
+    }
+    return [
+      { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
+      { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
+      { id: 'ebitda', label: ebitdaLabel, actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
+    ];
+  }, [isSegmentPage, isCorporate, isRetail, ebitdaLabel, ebitLabel]);
 
-  useEffect(() => { setSubSegment('all'); }, [page]);
+  const activeTrend = TREND_OPTIONS.find(o => o.id === trendMetric) ?? TREND_OPTIONS[0];
 
-  // Reset metric when switching page type if current option isn't available
+  useEffect(() => { setSubSegmentsSelected([]); }, [page]);
+
   useEffect(() => {
     if (!TREND_OPTIONS.some(o => o.id === trendMetric)) {
-      setTrendMetric('ebitda');
+      setTrendMetric(TREND_OPTIONS[0]?.id ?? 'ebitda');
     }
-  }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [page, TREND_OPTIONS, trendMetric]);
 
-  // Segment "all" / Corporate uses Dashboard rows (Adj. EBITDA glossary). Specific sub-segment uses that sub.
+  const pickVariantSeries = useCallback((baseByCategory, variantsByCategory) => {
+    if (category === 'After Elim') {
+      return asMonthlyArray(baseByCategory, 'After Elim');
+    }
+    // Before Elim — prefer Direct/Total variant series when applicable
+    if (isRetail && variantsByCategory?.['Before Elim']?.[ebitVariant]) {
+      return variantsByCategory['Before Elim'][ebitVariant];
+    }
+    if (isSegmentPage && !isRetail && variantsByCategory?.['Before Elim']?.[ebitdaVariant]) {
+      return variantsByCategory['Before Elim'][ebitdaVariant];
+    }
+    if (!isSegmentPage && variantsByCategory?.['Before Elim']?.['Adj. EBITDA (Total)']) {
+      return variantsByCategory['Before Elim']['Adj. EBITDA (Total)'];
+    }
+    return asMonthlyArray(baseByCategory, 'Before Elim');
+  }, [category, isRetail, isSegmentPage, ebitVariant, ebitdaVariant]);
+
   const sourceMonthly = useMemo(() => {
-    if (page === 'consolidated') return activeData.MONTHLY ?? [];
-    if (effectiveSubSegment === 'all') return activeData.SEGMENT_MONTHLY?.[page] ?? [];
-    return activeData.SUBSEGMENT_MONTHLY?.[page]?.[effectiveSubSegment] ?? [];
-  }, [activeData, page, effectiveSubSegment]);
+    if (page === 'consolidated') {
+      return pickVariantSeries(activeData.MONTHLY, activeData.MONTHLY_VARIANTS);
+    }
+    if (useDashboardScope) {
+      return pickVariantSeries(
+        activeData.SEGMENT_MONTHLY?.[page],
+        activeData.SEGMENT_VARIANTS?.[page],
+      );
+    }
+    // Multi sub-segment selection — sum selected sub-segments (no Before/After Elim on detail rows)
+    const series = subSegmentsSelected
+      .map(sub => activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
+      .filter(s => s.length);
+    return mergeMonthlySeries(series);
+  }, [activeData, page, useDashboardScope, subSegmentsSelected, pickVariantSeries]);
 
   const filteredMonthly = useMemo(() => filterMonthly(sourceMonthly, filter), [sourceMonthly, filter]);
   const filteredKeys = useMemo(() => new Set(filteredMonthly.map(m => `${m.year}-${m.month}`)), [filteredMonthly]);
-  const isFiltered = filter.quarter !== 'all' || filter.month !== 'all';
 
-  const kpis = useMemo(() => computePeriodKPIs(filteredMonthly, isSegmentPage), [filteredMonthly, isSegmentPage]);
+  const kpis = useMemo(() => computePeriodKPIs(filteredMonthly, kpiFields), [filteredMonthly, kpiFields]);
 
-  // Trend always shows full-year series; highlight selected month when filtered.
-  // Actual/Budget fields match the same glossary as KPI cards (Revenue / CM / Adj. EBITDA).
+  const dataStatus = useMemo(() => {
+    if (selectedMonthNums.length === 0) return null;
+    const tags = filteredMonthly
+      .filter(m => selectedMonthNums.includes(m.monthNum))
+      .map(m => m.tag)
+      .filter(Boolean);
+    if (!tags.length) return null;
+    const unique = [...new Set(tags)];
+    return unique.length === 1 ? unique[0] : 'Mixed';
+  }, [filteredMonthly, selectedMonthNums]);
+
   const trendChart = useMemo(() => {
-    const trendBase = filter.month !== 'all'
+    const trendBase = selectedMonthNums.length > 0
       ? sourceMonthly
-      : filterMonthly(sourceMonthly, { quarter: filter.quarter, month: 'all' });
+      : filterMonthly(sourceMonthly, { quarter: filter.quarter, months: [] });
     return trendBase.map(m => ({
       label: monthLabel(m),
       Actual: m[activeTrend.actualKey] ?? 0,
       Budget: m[activeTrend.budgetKey] ?? 0,
       monthNum: m.monthNum,
-      highlighted: selectedMonthNum != null && m.monthNum === selectedMonthNum,
+      highlighted: selectedMonthNums.length > 0 && selectedMonthNums.includes(m.monthNum),
       tag: m.tag,
     }));
-  }, [sourceMonthly, filter.quarter, filter.month, selectedMonthNum, activeTrend]);
+  }, [sourceMonthly, filter.quarter, selectedMonthNums, activeTrend]);
 
-  const highlightedLabel = trendChart.find(d => d.highlighted)?.label ?? null;
+  const highlightedLabels = trendChart.filter(d => d.highlighted).map(d => d.label);
 
   const performanceData = useMemo(() => {
     if (page === 'consolidated') {
@@ -568,33 +821,78 @@ function DashboardInner() {
         activeData.SEGMENT_MONTHLY ?? {},
         activeData.SEGMENTS ?? ALL_SEGMENTS,
         filteredKeys,
+        category,
       );
     }
-    if (effectiveSubSegment !== 'all') {
-      const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[effectiveSubSegment] ?? [])
-        .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
-      return [{
-        Segment: effectiveSubSegment,
-        Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
-        EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
-        NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
-      }];
+    // Corporate: same visual as Consolidated Segment Performance (Adj. EBITDA by sub-segment)
+    if (isCorporate && useDashboardScope) {
+      const subs = activeData.SUB_SEGMENTS?.[page] ?? [];
+      return subs.map(sub => {
+        const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
+          .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
+        return {
+          Segment: sub,
+          AdjEBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
+        };
+      }).filter(s => s.AdjEBITDA !== 0)
+        .sort((a, b) => b.AdjEBITDA - a.AdjEBITDA);
+    }
+    if (!useDashboardScope) {
+      const series = subSegmentsSelected
+        .map(sub => {
+          const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
+            .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
+          return {
+            Segment: sub,
+            Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
+            EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
+            NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
+          };
+        })
+        .filter(s => s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0)
+        .sort((a, b) => b.Revenue - a.Revenue);
+      return series;
     }
     return filteredSubSegmentPerformance(
       activeData.SUBSEGMENT_MONTHLY?.[page] ?? {},
       subSegments,
       filteredKeys,
     );
-  }, [activeData, page, filteredKeys, subSegments, effectiveSubSegment]);
+  }, [activeData, page, filteredKeys, subSegments, useDashboardScope, subSegmentsSelected, isCorporate, category]);
 
-  const perfMetrics = page === 'consolidated'
+  const showConsolidatedStylePerf = page === 'consolidated' || (isCorporate && useDashboardScope);
+
+  const perfMetrics = showConsolidatedStylePerf
     ? [{ key: 'AdjEBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA }]
     : [{ key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
        { key: 'EBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA },
        { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome }];
 
+  const pnlRows = useMemo(() => {
+    if (!useDashboardScope) return [];
+    const key = page === 'consolidated' ? 'consolidated' : page;
+    const pnl = activeData.PNL?.[key]?.[category] ?? [];
+    return pnl.map(line => {
+      const months = line.months.filter(m => {
+        if (filter.quarter !== 'all' && m.quarter !== parseInt(filter.quarter.replace('Q', ''), 10)) return false;
+        if (selectedMonthNums.length > 0 && !selectedMonthNums.includes(m.monthNum)) return false;
+        return true;
+      });
+      return {
+        subcat: line.subcat,
+        amount: months.reduce((s, m) => s + m.amount, 0),
+      };
+    });
+  }, [activeData, page, category, filter, selectedMonthNums, useDashboardScope]);
+
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
-  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 15 July 14.50.xlsx';
+  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 21 July 13.56.xlsx';
+
+  const tableHeaders = useMemo(() => {
+    const cols = ['Period', 'Tag'];
+    for (const f of kpiFields) cols.push(f.label);
+    return cols;
+  }, [kpiFields]);
 
   return (
     <div className="min-h-screen bg-[var(--surface-base)] text-[var(--text-primary)] px-4 py-6 md:px-8 md:py-8 font-sans">
@@ -622,34 +920,47 @@ function DashboardInner() {
       <PageNav page={page} onChange={setPage} />
 
       <FilterBar
-        quarter={filter.quarter} month={filter.month}
+        quarter={filter.quarter}
+        months={filter.months}
         onChange={f => setFilter(prev => ({ ...prev, ...f }))}
-        onReset={() => setFilter({ quarter: 'all', month: 'all' })}
+        onReset={() => { setFilter({ quarter: 'all', months: [] }); setSubSegmentsSelected([]); setCategory('Before Elim'); }}
         isActive={isFiltered}
-        showSubSegment={isSegmentPage && !hideSubSegment}
-        subSegment={effectiveSubSegment}
+        showSubSegment={isSegmentPage}
+        subSegmentsSelected={subSegmentsSelected}
         subSegments={subSegments}
-        onSubSegmentChange={setSubSegment}
+        onSubSegmentsChange={setSubSegmentsSelected}
+        category={category}
+        onCategoryChange={setCategory}
+        dataStatus={dataStatus}
       />
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 mb-5">
-        <KPICardWithDiffs label="Revenue" value={kpis.revenue}
-          vsBudget={kpis.vsBudget.revenue} vsPrevMonth={kpis.vsPrevMonth.revenue} vsYtdBudget={kpis.vsYtdBudget.revenue} />
-        {isSegmentPage ? (
-          <KPICardWithDiffs label="CM" value={kpis.cm}
-            vsBudget={kpis.vsBudget.cm} vsPrevMonth={kpis.vsPrevMonth.cm} vsYtdBudget={kpis.vsYtdBudget.cm} />
-        ) : (
-          <KPICardWithDiffs label={ebitdaLabel} value={kpis.ebitda}
-            vsBudget={kpis.vsBudget.ebitda} vsPrevMonth={kpis.vsPrevMonth.ebitda} vsYtdBudget={kpis.vsYtdBudget.ebitda} />
-        )}
-        {isSegmentPage ? (
-          <KPICardWithDiffs label="Adj. EBITDA" value={kpis.ebitda}
-            vsBudget={kpis.vsBudget.ebitda} vsPrevMonth={kpis.vsPrevMonth.ebitda} vsYtdBudget={kpis.vsYtdBudget.ebitda} />
-        ) : (
-          <KPICardWithDiffs label="Net Income" value={kpis.netIncome}
-            vsBudget={kpis.vsBudget.netIncome} vsPrevMonth={kpis.vsPrevMonth.netIncome} vsYtdBudget={kpis.vsYtdBudget.netIncome} />
-        )}
+        {kpiFields.map(f => {
+          const isEbitdaCard = f.key === 'ebitda' && showEbitdaVariant;
+          const isEbitCard = f.key === 'ebit' && showEbitVariant;
+          return (
+            <KPICardWithDiffs
+              key={f.key}
+              label={f.label}
+              value={kpis[f.key]}
+              vsBudget={kpis[`vsBudget_${f.key}`]}
+              vsPrevMonth={kpis[`vsPrev_${f.key}`]}
+              vsYtdBudget={kpis[`vsYtd_${f.key}`]}
+              dropdown={isEbitdaCard ? {
+                value: ebitdaVariant,
+                onChange: setEbitdaVariant,
+                options: EBITDA_VARIANT_OPTS,
+                disabled: false,
+              } : isEbitCard ? {
+                value: ebitVariant,
+                onChange: setEbitVariant,
+                options: EBIT_VARIANT_OPTS,
+                disabled: false,
+              } : null}
+            />
+          );
+        })}
       </div>
 
       {/* Charts Row */}
@@ -661,8 +972,8 @@ function DashboardInner() {
                 <h3 className="text-sm font-semibold text-[var(--text-primary)]">{activeTrend.label} Trend vs Budget</h3>
                 <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
                   Monthly trend · IDR
-                  {highlightedLabel && (
-                    <span className="ml-2 text-blue-400">· Highlighted: {highlightedLabel}</span>
+                  {highlightedLabels.length > 0 && (
+                    <span className="ml-2 text-blue-400">· Highlighted: {highlightedLabels.join(', ')}</span>
                   )}
                 </p>
               </div>
@@ -712,9 +1023,9 @@ function DashboardInner() {
                     tickFormatter={v => idr(v, { axis: true })} width={72} />
                   <Tooltip content={<CustomTooltip />} />
                   <ReferenceLine y={0} stroke={c.refLine} strokeDasharray="4 4" />
-                  {highlightedLabel && (
-                    <ReferenceLine x={highlightedLabel} stroke="#3b82f6" strokeDasharray="4 4" strokeWidth={1.5} />
-                  )}
+                  {highlightedLabels.slice(0, 3).map(lbl => (
+                    <ReferenceLine key={lbl} x={lbl} stroke="#3b82f6" strokeDasharray="4 4" strokeWidth={1.5} />
+                  ))}
                   <Area type="monotone" dataKey="Actual" name={activeTrend.label} stroke={activeTrend.color} strokeWidth={2}
                     fill="url(#gradActual)"
                     dot={<HighlightDot fill={activeTrend.color} />}
@@ -763,10 +1074,12 @@ function DashboardInner() {
         <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 card-shadow">
           <div className="mb-5">
             <h3 className="text-sm font-semibold text-[var(--text-primary)]">
-              {page === 'consolidated' ? 'Segment Performance' : 'Sub-Segment Performance'}
+              {page === 'consolidated' ? 'Segment Performance' : (isCorporate && useDashboardScope ? 'Sub-Segment Performance' : 'Sub-Segment Performance')}
             </h3>
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-              {page === 'consolidated' ? 'Adj. EBITDA by segment' : `Revenue · ${ebitdaLabel} · Net Income`}
+              {showConsolidatedStylePerf
+                ? (page === 'consolidated' ? 'Adj. EBITDA by segment' : 'Adj. EBITDA by sub-segment')
+                : `Revenue · Adj. EBITDA · Net Income`}
             </p>
           </div>
           {performanceData.length === 0 ? (
@@ -782,10 +1095,14 @@ function DashboardInner() {
                     tickFormatter={v => idr(v, { axis: true })} width={60} />
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: c.cursor, opacity: 0.4 }} />
                   <ReferenceLine y={0} stroke={c.refLine} strokeDasharray="4 4" />
-                  {page === 'consolidated' ? (
+                  {showConsolidatedStylePerf ? (
                     <Bar dataKey="AdjEBITDA" name="Adj. EBITDA" fillOpacity={0.95} radius={[2, 2, 0, 0]} maxBarSize={28}>
                       {performanceData.map((row, i) => (
-                        <Cell key={i} fill={SEGMENT_COLORS[row.Segment] ?? PERF_COLORS.EBITDA} />
+                        <Cell key={i} fill={
+                          page === 'consolidated'
+                            ? (SEGMENT_COLORS[row.Segment] ?? PERF_COLORS.EBITDA)
+                            : (SUB_SEGMENT_PALETTE[i % SUB_SEGMENT_PALETTE.length])
+                        } />
                       ))}
                     </Bar>
                   ) : (
@@ -793,7 +1110,7 @@ function DashboardInner() {
                       <Bar key={m.key} dataKey={m.key} name={m.label} fill={m.color} fillOpacity={0.85} radius={[2, 2, 0, 0]} maxBarSize={14} />
                     ))
                   )}
-                  {page !== 'consolidated' && <Legend wrapperStyle={{ fontSize: 10 }} />}
+                  {!showConsolidatedStylePerf && <Legend wrapperStyle={{ fontSize: 10 }} />}
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -808,6 +1125,16 @@ function DashboardInner() {
               ))}
             </div>
           )}
+          {isCorporate && useDashboardScope && performanceData.length > 0 && (
+            <div className="mt-3 pt-3 border-t border-[var(--border-default)] flex flex-wrap gap-x-4 gap-y-2">
+              {performanceData.map((row, i) => (
+                <div key={row.Segment} className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: SUB_SEGMENT_PALETTE[i % SUB_SEGMENT_PALETTE.length] }} />
+                  <span className="text-[11px] text-[var(--text-faint)]">{row.Segment}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -817,9 +1144,7 @@ function DashboardInner() {
           <div>
             <h3 className="text-sm font-semibold text-[var(--text-primary)]">Monthly Detail</h3>
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-              {filteredMonthly.length} periods · {isSegmentPage
-                ? 'Revenue, CM, Adj. EBITDA'
-                : `Revenue, ${ebitdaLabel}, Net Income`}
+              {filteredMonthly.length} periods · {kpiFields.map(f => f.label).join(', ')}
             </p>
           </div>
           {isFiltered && <span className="text-[11px] text-blue-500 bg-blue-400/10 px-2.5 py-1 rounded-lg">Filter active</span>}
@@ -828,36 +1153,32 @@ function DashboardInner() {
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-[var(--border-default)]">
-                {(isSegmentPage
-                  ? ['Period', 'Tag', 'Revenue', 'CM', 'Adj. EBITDA']
-                  : ['Period', 'Tag', 'Revenue', ebitdaLabel, 'Net Income']
-                ).map((h, i) => (
+                {tableHeaders.map((h, i) => (
                   <th key={h} className={`py-2.5 text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium ${i === 0 ? 'text-left pr-3' : 'text-right pr-3 last:pr-0'}`}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {filteredMonthly.length === 0 ? (
-                <tr><td colSpan={5} className="py-10 text-center text-[var(--text-very-faint)]">No data for the selected period</td></tr>
+                <tr><td colSpan={tableHeaders.length} className="py-10 text-center text-[var(--text-very-faint)]">No data for the selected period</td></tr>
               ) : filteredMonthly.map((row, i) => (
-                <tr key={i} className={`border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors ${selectedMonthNum === row.monthNum ? 'bg-blue-500/5' : ''}`}>
+                <tr key={i} className={`border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors ${selectedMonthNums.includes(row.monthNum) ? 'bg-blue-500/5' : ''}`}>
                   <td className="py-2.5 pr-3 text-[var(--text-tertiary)] font-medium whitespace-nowrap">
                     {new Date(`${row.date}T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                   </td>
                   <td className="py-2.5 pr-3 text-right">
                     <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--surface-elevated)] text-[var(--text-faint)]">{row.tag}</span>
                   </td>
-                  <td className="py-2.5 pr-3 text-right text-[var(--text-secondary)] tabular">{idrCompact(row.Revenue)}</td>
-                  {isSegmentPage ? (
-                    <td className={`py-2.5 pr-3 text-right tabular font-medium ${(row.CM ?? 0) >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.CM)}</td>
-                  ) : (
-                    <td className={`py-2.5 pr-3 text-right tabular font-medium ${row.EBITDA >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.EBITDA)}</td>
-                  )}
-                  {isSegmentPage ? (
-                    <td className={`py-2.5 text-right tabular font-medium ${row.EBITDA >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.EBITDA)}</td>
-                  ) : (
-                    <td className={`py-2.5 text-right tabular font-medium ${row.NetIncome >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(row.NetIncome)}</td>
-                  )}
+                  {kpiFields.map((f, fi) => {
+                    const val = row[f.actual] ?? 0;
+                    const isLast = fi === kpiFields.length - 1;
+                    return (
+                      <td key={f.key}
+                        className={`py-2.5 ${isLast ? '' : 'pr-3'} text-right tabular font-medium ${val >= 0 ? 'text-emerald-500' : 'text-red-500'} ${f.key === 'revenue' ? 'text-[var(--text-secondary)] font-normal' : ''}`}>
+                        {idrCompact(val)}
+                      </td>
+                    );
+                  })}
                 </tr>
               ))}
             </tbody>
@@ -866,23 +1187,24 @@ function DashboardInner() {
                 <tr className="border-t-2 border-[var(--border-default)]">
                   <td className="py-2.5 pr-3 font-semibold text-xs uppercase">Total</td>
                   <td />
-                  <td className="py-2.5 pr-3 text-right font-semibold tabular">{idrCompact(kpis.revenue)}</td>
-                  {isSegmentPage ? (
-                    <td className={`py-2.5 pr-3 text-right font-semibold tabular ${kpis.cm >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.cm)}</td>
-                  ) : (
-                    <td className={`py-2.5 pr-3 text-right font-semibold tabular ${kpis.ebitda >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.ebitda)}</td>
-                  )}
-                  {isSegmentPage ? (
-                    <td className={`py-2.5 text-right font-semibold tabular ${kpis.ebitda >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.ebitda)}</td>
-                  ) : (
-                    <td className={`py-2.5 text-right font-semibold tabular ${kpis.netIncome >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>{idrCompact(kpis.netIncome)}</td>
-                  )}
+                  {kpiFields.map((f, fi) => {
+                    const val = kpis[f.key] ?? 0;
+                    const isLast = fi === kpiFields.length - 1;
+                    return (
+                      <td key={f.key}
+                        className={`py-2.5 ${isLast ? '' : 'pr-3'} text-right font-semibold tabular ${val >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                        {idrCompact(val)}
+                      </td>
+                    );
+                  })}
                 </tr>
               </tfoot>
             )}
           </table>
         </div>
       </div>
+
+      <PnLBox rows={pnlRows} />
 
       <footer className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-[var(--text-very-faint)]">
         <span>Source: {dataSourceLabel} · Values in IDR</span>
