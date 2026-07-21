@@ -1,5 +1,5 @@
 // AUTO-GENERATED — do not edit manually
-// Source: WIP Dashboard per 21 July 18.34_cleaned.csv
+// Source: WIP Dashboard per 21 July 19.09_cleaned.csv
 // Year: 2026 only · Tag: Run-rate > Pre-closing > Actual > Forecast
 // Run `node scripts/process-data.js` to regenerate
 
@@ -12,31 +12,31 @@ export const MONTHLY = {
       "quarter": 1,
       "date": "2026-01-01",
       "tag": "Actual",
-      "Revenue": 807532937534,
+      "Revenue": 807532475314,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 807532937534,
+      "RevenueVsBudget": 807532475314,
       "RevenueDiff": null,
       "CM": 32712274947,
       "CMBudget": 0,
       "CMVsBudget": 32712274947,
       "CMDiff": null,
-      "EBITDA": 304314567,
+      "EBITDA": 48303722785,
       "EBITDABudget": 0,
-      "EBITDAVsBudget": 304314567,
+      "EBITDAVsBudget": 48303722785,
       "EBITDADiff": null,
-      "EBIT": -6338576972,
+      "EBIT": 41660831246,
       "EBITBudget": 0,
-      "EBITVsBudget": -6338576972,
+      "EBITVsBudget": 41660831246,
       "EBITDiff": null,
-      "NetIncome": 94171846475,
+      "NetIncome": 142171254693,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": 94171846475,
+      "NetIncomeVsBudget": 142171254693,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 807532937534,
+      "RevenueYTDVsBudget": 807532475314,
       "CMYTDVsBudget": 32712274947,
-      "EBITDAYTDVsBudget": 304314567,
-      "EBITYTDVsBudget": -6338576972,
-      "NetIncomeYTDVsBudget": 94171846475
+      "EBITDAYTDVsBudget": 48303722785,
+      "EBITYTDVsBudget": 41660831246,
+      "NetIncomeYTDVsBudget": 142171254693
     },
     {
       "year": 2026,
@@ -45,31 +45,31 @@ export const MONTHLY = {
       "quarter": 1,
       "date": "2026-02-01",
       "tag": "Actual",
-      "Revenue": 755559817832,
+      "Revenue": 755559993052,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 755559817832,
+      "RevenueVsBudget": 755559993052,
       "RevenueDiff": null,
       "CM": 28529927203,
       "CMBudget": 0,
       "CMVsBudget": 28529927203,
       "CMDiff": null,
-      "EBITDA": -2238955875,
+      "EBITDA": -121480479412,
       "EBITDABudget": 0,
-      "EBITDAVsBudget": -2238955875,
+      "EBITDAVsBudget": -121480479412,
       "EBITDADiff": null,
-      "EBIT": -8849262476,
+      "EBIT": -128090786013,
       "EBITBudget": 0,
-      "EBITVsBudget": -8849262476,
+      "EBITVsBudget": -128090786013,
       "EBITDiff": null,
-      "NetIncome": -98426506177,
+      "NetIncome": -217668496271,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -98426506177,
+      "NetIncomeVsBudget": -217668496271,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 1563092755366,
+      "RevenueYTDVsBudget": 1563092468366,
       "CMYTDVsBudget": 61242202150,
-      "EBITDAYTDVsBudget": -1934641308,
-      "EBITYTDVsBudget": -15187839448,
-      "NetIncomeYTDVsBudget": -4254659702
+      "EBITDAYTDVsBudget": -73176756627,
+      "EBITYTDVsBudget": -86429954767,
+      "NetIncomeYTDVsBudget": -75497241578
     },
     {
       "year": 2026,
@@ -78,31 +78,31 @@ export const MONTHLY = {
       "quarter": 1,
       "date": "2026-03-01",
       "tag": "Actual",
-      "Revenue": 810493075378,
+      "Revenue": 810493574238,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 810493075378,
+      "RevenueVsBudget": 810493574238,
       "RevenueDiff": null,
       "CM": 36583155293,
       "CMBudget": 0,
       "CMVsBudget": 36583155293,
       "CMDiff": null,
-      "EBITDA": 3669829688,
+      "EBITDA": -433986763346,
       "EBITDABudget": 0,
-      "EBITDAVsBudget": 3669829688,
+      "EBITDAVsBudget": -433986763346,
       "EBITDADiff": null,
-      "EBIT": -3678164468,
+      "EBIT": -441334757502,
       "EBITBudget": 0,
-      "EBITVsBudget": -3678164468,
+      "EBITVsBudget": -441334757502,
       "EBITDiff": null,
-      "NetIncome": -421753712073,
+      "NetIncome": -859409941855,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -421753712073,
+      "NetIncomeVsBudget": -859409941855,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 2373585830744,
+      "RevenueYTDVsBudget": 2373586042604,
       "CMYTDVsBudget": 97825357443,
-      "EBITDAYTDVsBudget": 1735188380,
-      "EBITYTDVsBudget": -18866003916,
-      "NetIncomeYTDVsBudget": -426008371775
+      "EBITDAYTDVsBudget": -507163519973,
+      "EBITYTDVsBudget": -527764712269,
+      "NetIncomeYTDVsBudget": -934907183433
     },
     {
       "year": 2026,
@@ -111,31 +111,31 @@ export const MONTHLY = {
       "quarter": 2,
       "date": "2026-04-01",
       "tag": "Actual",
-      "Revenue": 644319807946,
+      "Revenue": 644320046096,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 644319807946,
+      "RevenueVsBudget": 644320046096,
       "RevenueDiff": null,
       "CM": 28124830417,
       "CMBudget": 0,
       "CMVsBudget": 28124830417,
       "CMDiff": null,
-      "EBITDA": 4602031828,
+      "EBITDA": 296574363305,
       "EBITDABudget": 0,
-      "EBITDAVsBudget": 4602031828,
+      "EBITDAVsBudget": 296574363305,
       "EBITDADiff": null,
-      "EBIT": -1881985692,
+      "EBIT": 290090345785,
       "EBITBudget": 0,
-      "EBITVsBudget": -1881985692,
+      "EBITVsBudget": 290090345785,
       "EBITDiff": null,
-      "NetIncome": 324550848627,
+      "NetIncome": 616523377605,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": 324550848627,
+      "NetIncomeVsBudget": 616523377605,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 3017905638690,
+      "RevenueYTDVsBudget": 3017906088700,
       "CMYTDVsBudget": 125950187860,
-      "EBITDAYTDVsBudget": 6337220208,
-      "EBITYTDVsBudget": -20747989608,
-      "NetIncomeYTDVsBudget": -101457523148
+      "EBITDAYTDVsBudget": -210589156668,
+      "EBITYTDVsBudget": -237674366484,
+      "NetIncomeYTDVsBudget": -318383805828
     },
     {
       "year": 2026,
@@ -144,31 +144,31 @@ export const MONTHLY = {
       "quarter": 2,
       "date": "2026-05-01",
       "tag": "Actual",
-      "Revenue": 505742688462,
+      "Revenue": 505742809379,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 505742688462,
+      "RevenueVsBudget": 505742809379,
       "RevenueDiff": null,
       "CM": 25945480768,
       "CMBudget": 0,
       "CMVsBudget": 25945480768,
       "CMDiff": null,
-      "EBITDA": 2076326729,
+      "EBITDA": -356559383205,
       "EBITDABudget": 0,
-      "EBITDAVsBudget": 2076326729,
+      "EBITDAVsBudget": -356559383205,
       "EBITDADiff": null,
-      "EBIT": -4361735614,
+      "EBIT": -362997445548,
       "EBITBudget": 0,
-      "EBITVsBudget": -4361735614,
+      "EBITVsBudget": -362997445548,
       "EBITDiff": null,
-      "NetIncome": -316828848216,
+      "NetIncome": -675464664266,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -316828848216,
+      "NetIncomeVsBudget": -675464664266,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 3523648327152,
+      "RevenueYTDVsBudget": 3523648898079,
       "CMYTDVsBudget": 151895668628,
-      "EBITDAYTDVsBudget": 8413546937,
-      "EBITYTDVsBudget": -25109725222,
-      "NetIncomeYTDVsBudget": -418286371364
+      "EBITDAYTDVsBudget": -567148539873,
+      "EBITYTDVsBudget": -600671812032,
+      "NetIncomeYTDVsBudget": -993848470094
     },
     {
       "year": 2026,
@@ -177,31 +177,31 @@ export const MONTHLY = {
       "quarter": 2,
       "date": "2026-06-01",
       "tag": "Actual",
-      "Revenue": 474542080501,
+      "Revenue": 474542158311,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 474542080501,
+      "RevenueVsBudget": 474542158311,
       "RevenueDiff": null,
       "CM": 17310362237,
       "CMBudget": 0,
       "CMVsBudget": 17310362237,
       "CMDiff": null,
-      "EBITDA": -2191471993,
+      "EBITDA": -404290722354,
       "EBITDABudget": 0,
-      "EBITDAVsBudget": -2191471993,
+      "EBITDAVsBudget": -404290722354,
       "EBITDADiff": null,
-      "EBIT": -8706610069,
+      "EBIT": -410805860430,
       "EBITBudget": 0,
-      "EBITVsBudget": -8706610069,
+      "EBITVsBudget": -410805860430,
       "EBITDiff": null,
-      "NetIncome": -394511991337,
+      "NetIncome": -796610857402,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -394511991337,
+      "NetIncomeVsBudget": -796610857402,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 3998190407653,
+      "RevenueYTDVsBudget": 3998191056390,
       "CMYTDVsBudget": 169206030865,
-      "EBITDAYTDVsBudget": 6222074944,
-      "EBITYTDVsBudget": -33816335291,
-      "NetIncomeYTDVsBudget": -812798362701
+      "EBITDAYTDVsBudget": -971439262227,
+      "EBITYTDVsBudget": -1011477672462,
+      "NetIncomeYTDVsBudget": -1790459327496
     },
     {
       "year": 2026,
@@ -210,9 +210,9 @@ export const MONTHLY = {
       "quarter": 3,
       "date": "2026-07-01",
       "tag": "Run-rate",
-      "Revenue": 526567804975,
+      "Revenue": 526567493866,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 526567804975,
+      "RevenueVsBudget": 526567493866,
       "RevenueDiff": null,
       "CM": 27973021974,
       "CMBudget": 0,
@@ -230,11 +230,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -2330056901,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 4524758212628,
+      "RevenueYTDVsBudget": 4524758550256,
       "CMYTDVsBudget": 197179052839,
-      "EBITDAYTDVsBudget": 6877842375,
-      "EBITYTDVsBudget": -36146392192,
-      "NetIncomeYTDVsBudget": -815128419602
+      "EBITDAYTDVsBudget": -970783494796,
+      "EBITYTDVsBudget": -1013807729363,
+      "NetIncomeYTDVsBudget": -1792789384397
     },
     {
       "year": 2026,
@@ -243,9 +243,9 @@ export const MONTHLY = {
       "quarter": 3,
       "date": "2026-08-01",
       "tag": "Forecast",
-      "Revenue": 491613460010,
+      "Revenue": 491613589599,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 491613460010,
+      "RevenueVsBudget": 491613589599,
       "RevenueDiff": null,
       "CM": 27639942057,
       "CMBudget": 0,
@@ -263,11 +263,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -10928996800,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 5016371672638,
+      "RevenueYTDVsBudget": 5016372139855,
       "CMYTDVsBudget": 224818994896,
-      "EBITDAYTDVsBudget": 3288841393,
-      "EBITYTDVsBudget": -47075388992,
-      "NetIncomeYTDVsBudget": -826057416402
+      "EBITDAYTDVsBudget": -974372495778,
+      "EBITYTDVsBudget": -1024736726163,
+      "NetIncomeYTDVsBudget": -1803718381197
     },
     {
       "year": 2026,
@@ -276,9 +276,9 @@ export const MONTHLY = {
       "quarter": 3,
       "date": "2026-09-01",
       "tag": "Forecast",
-      "Revenue": 496101083172,
+      "Revenue": 496100747173,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 496101083172,
+      "RevenueVsBudget": 496100747173,
       "RevenueDiff": null,
       "CM": 27826128186,
       "CMBudget": 0,
@@ -296,11 +296,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -11269583530,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 5512472755810,
+      "RevenueYTDVsBudget": 5512472887028,
       "CMYTDVsBudget": 252645123082,
-      "EBITDAYTDVsBudget": -657301548,
-      "EBITYTDVsBudget": -58344972522,
-      "NetIncomeYTDVsBudget": -837326999932
+      "EBITDAYTDVsBudget": -978318638719,
+      "EBITYTDVsBudget": -1036006309693,
+      "NetIncomeYTDVsBudget": -1814987964727
     },
     {
       "year": 2026,
@@ -309,9 +309,9 @@ export const MONTHLY = {
       "quarter": 4,
       "date": "2026-10-01",
       "tag": "Forecast",
-      "Revenue": 513300997717,
+      "Revenue": 513300580779,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 513300997717,
+      "RevenueVsBudget": 513300580779,
       "RevenueDiff": null,
       "CM": 28530106166,
       "CMBudget": 0,
@@ -329,11 +329,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -9823191690,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 6025773753527,
+      "RevenueYTDVsBudget": 6025773467807,
       "CMYTDVsBudget": 281175229248,
-      "EBITDAYTDVsBudget": -3162089422,
-      "EBITYTDVsBudget": -68168164212,
-      "NetIncomeYTDVsBudget": -847150191622
+      "EBITDAYTDVsBudget": -980823426593,
+      "EBITYTDVsBudget": -1045829501383,
+      "NetIncomeYTDVsBudget": -1824811156417
     },
     {
       "year": 2026,
@@ -342,9 +342,9 @@ export const MONTHLY = {
       "quarter": 4,
       "date": "2026-11-01",
       "tag": "Forecast",
-      "Revenue": 535235133824,
+      "Revenue": 535235057369,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 535235133824,
+      "RevenueVsBudget": 535235057369,
       "RevenueDiff": null,
       "CM": 29301693894,
       "CMBudget": 0,
@@ -362,11 +362,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -8675357914,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 6561008887351,
+      "RevenueYTDVsBudget": 6561008525176,
       "CMYTDVsBudget": 310476923142,
-      "EBITDAYTDVsBudget": -4514579234,
-      "EBITYTDVsBudget": -76843522126,
-      "NetIncomeYTDVsBudget": -855825549536
+      "EBITDAYTDVsBudget": -982175916405,
+      "EBITYTDVsBudget": -1054504859297,
+      "NetIncomeYTDVsBudget": -1833486514331
     },
     {
       "year": 2026,
@@ -375,9 +375,9 @@ export const MONTHLY = {
       "quarter": 4,
       "date": "2026-12-01",
       "tag": "Forecast",
-      "Revenue": 562655302570,
+      "Revenue": 562655018166,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 562655302570,
+      "RevenueVsBudget": 562655018166,
       "RevenueDiff": null,
       "CM": 31950847775,
       "CMBudget": 0,
@@ -395,11 +395,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -6886396109,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 7123664189921,
+      "RevenueYTDVsBudget": 7123663543342,
       "CMYTDVsBudget": 342427770917,
-      "EBITDAYTDVsBudget": -4078107241,
-      "EBITYTDVsBudget": -83729918235,
-      "NetIncomeYTDVsBudget": -862711945645
+      "EBITDAYTDVsBudget": -981739444412,
+      "EBITYTDVsBudget": -1061391255406,
+      "NetIncomeYTDVsBudget": -1840372910440
     }
   ],
   "After Elim": [
@@ -410,9 +410,9 @@ export const MONTHLY = {
       "quarter": 1,
       "date": "2026-01-01",
       "tag": "Actual",
-      "Revenue": 806646589100,
+      "Revenue": 806646126880,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 806646589100,
+      "RevenueVsBudget": 806646126880,
       "RevenueDiff": null,
       "CM": 33030340912,
       "CMBudget": 0,
@@ -430,7 +430,7 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": 96165842005,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 806646589100,
+      "RevenueYTDVsBudget": 806646126880,
       "CMYTDVsBudget": 33030340912,
       "EBITDAYTDVsBudget": 1295833705,
       "EBITYTDVsBudget": -5374003667,
@@ -443,9 +443,9 @@ export const MONTHLY = {
       "quarter": 1,
       "date": "2026-02-01",
       "tag": "Actual",
-      "Revenue": 754547154950,
+      "Revenue": 754547330170,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 754547154950,
+      "RevenueVsBudget": 754547330170,
       "RevenueDiff": null,
       "CM": 29035333883,
       "CMBudget": 0,
@@ -459,15 +459,15 @@ export const MONTHLY = {
       "EBITBudget": 0,
       "EBITVsBudget": -8338693384,
       "EBITDiff": null,
-      "NetIncome": -97484900154,
+      "NetIncome": -97484864699,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -97484900154,
+      "NetIncomeVsBudget": -97484864699,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 1561193744050,
+      "RevenueYTDVsBudget": 1561193457050,
       "CMYTDVsBudget": 62065674795,
       "EBITDAYTDVsBudget": -403332706,
       "EBITYTDVsBudget": -13712697051,
-      "NetIncomeYTDVsBudget": -1319058149
+      "NetIncomeYTDVsBudget": -1319022694
     },
     {
       "year": 2026,
@@ -476,9 +476,9 @@ export const MONTHLY = {
       "quarter": 1,
       "date": "2026-03-01",
       "tag": "Actual",
-      "Revenue": 808638337866,
+      "Revenue": 808638836726,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 808638337866,
+      "RevenueVsBudget": 808638836726,
       "RevenueDiff": null,
       "CM": 36333028040,
       "CMBudget": 0,
@@ -492,15 +492,15 @@ export const MONTHLY = {
       "EBITBudget": 0,
       "EBITVsBudget": -3076465000,
       "EBITDiff": null,
-      "NetIncome": -421550577627,
+      "NetIncome": -421551077155,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -421550577627,
+      "NetIncomeVsBudget": -421551077155,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 2369832081916,
+      "RevenueYTDVsBudget": 2369832293776,
       "CMYTDVsBudget": 98398702835,
       "EBITDAYTDVsBudget": 3897682196,
       "EBITYTDVsBudget": -16789162051,
-      "NetIncomeYTDVsBudget": -422869635776
+      "NetIncomeYTDVsBudget": -422870099849
     },
     {
       "year": 2026,
@@ -509,9 +509,9 @@ export const MONTHLY = {
       "quarter": 2,
       "date": "2026-04-01",
       "tag": "Actual",
-      "Revenue": 643815087028,
+      "Revenue": 643815325178,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 643815087028,
+      "RevenueVsBudget": 643815325178,
       "RevenueDiff": null,
       "CM": 28797306559,
       "CMBudget": 0,
@@ -525,15 +525,15 @@ export const MONTHLY = {
       "EBITBudget": 0,
       "EBITVsBudget": -1247210783,
       "EBITDiff": null,
-      "NetIncome": 325520685782,
+      "NetIncome": 325520458825,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": 325520685782,
+      "NetIncomeVsBudget": 325520458825,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 3013647168944,
+      "RevenueYTDVsBudget": 3013647618954,
       "CMYTDVsBudget": 127196009394,
       "EBITDAYTDVsBudget": 9165036166,
       "EBITYTDVsBudget": -18036372834,
-      "NetIncomeYTDVsBudget": -97348949994
+      "NetIncomeYTDVsBudget": -97349641024
     },
     {
       "year": 2026,
@@ -542,9 +542,9 @@ export const MONTHLY = {
       "quarter": 2,
       "date": "2026-05-01",
       "tag": "Actual",
-      "Revenue": 504696475976,
+      "Revenue": 504696596893,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 504696475976,
+      "RevenueVsBudget": 504696596893,
       "RevenueDiff": null,
       "CM": 26206282304,
       "CMBudget": 0,
@@ -558,15 +558,15 @@ export const MONTHLY = {
       "EBITBudget": 0,
       "EBITVsBudget": -3743049807,
       "EBITDiff": null,
-      "NetIncome": -323554975261,
+      "NetIncome": -323554784973,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -323554975261,
+      "NetIncomeVsBudget": -323554784973,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 3518343644920,
+      "RevenueYTDVsBudget": 3518344215847,
       "CMYTDVsBudget": 153402291698,
       "EBITDAYTDVsBudget": 11831133152,
       "EBITYTDVsBudget": -21779422641,
-      "NetIncomeYTDVsBudget": -420903925255
+      "NetIncomeYTDVsBudget": -420904425997
     },
     {
       "year": 2026,
@@ -575,9 +575,9 @@ export const MONTHLY = {
       "quarter": 2,
       "date": "2026-06-01",
       "tag": "Actual",
-      "Revenue": 473417136593,
+      "Revenue": 473417214403,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 473417136593,
+      "RevenueVsBudget": 473417214403,
       "RevenueDiff": null,
       "CM": 17271672913,
       "CMBudget": 0,
@@ -591,15 +591,15 @@ export const MONTHLY = {
       "EBITBudget": 0,
       "EBITVsBudget": -8520555134,
       "EBITDiff": null,
-      "NetIncome": -394183716042,
+      "NetIncome": -394183348049,
       "NetIncomeBudget": 0,
-      "NetIncomeVsBudget": -394183716042,
+      "NetIncomeVsBudget": -394183348049,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 3991760781513,
+      "RevenueYTDVsBudget": 3991761430250,
       "CMYTDVsBudget": 170673964611,
       "EBITDAYTDVsBudget": 9796800545,
       "EBITYTDVsBudget": -30299977775,
-      "NetIncomeYTDVsBudget": -815087641297
+      "NetIncomeYTDVsBudget": -815087774046
     },
     {
       "year": 2026,
@@ -608,9 +608,9 @@ export const MONTHLY = {
       "quarter": 3,
       "date": "2026-07-01",
       "tag": "Run-rate",
-      "Revenue": 526567804975,
+      "Revenue": 526567493866,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 526567804975,
+      "RevenueVsBudget": 526567493866,
       "RevenueDiff": null,
       "CM": 27973021974,
       "CMBudget": 0,
@@ -628,11 +628,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -2330056901,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 4518328586488,
+      "RevenueYTDVsBudget": 4518328924116,
       "CMYTDVsBudget": 198646986585,
       "EBITDAYTDVsBudget": 10452567976,
       "EBITYTDVsBudget": -32630034676,
-      "NetIncomeYTDVsBudget": -817417698198
+      "NetIncomeYTDVsBudget": -817417830947
     },
     {
       "year": 2026,
@@ -641,9 +641,9 @@ export const MONTHLY = {
       "quarter": 3,
       "date": "2026-08-01",
       "tag": "Forecast",
-      "Revenue": 491613460010,
+      "Revenue": 491613589599,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 491613460010,
+      "RevenueVsBudget": 491613589599,
       "RevenueDiff": null,
       "CM": 27639942057,
       "CMBudget": 0,
@@ -661,11 +661,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -10928996800,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 5009942046498,
+      "RevenueYTDVsBudget": 5009942513715,
       "CMYTDVsBudget": 226286928642,
       "EBITDAYTDVsBudget": 6863566994,
       "EBITYTDVsBudget": -43559031476,
-      "NetIncomeYTDVsBudget": -828346694998
+      "NetIncomeYTDVsBudget": -828346827747
     },
     {
       "year": 2026,
@@ -674,9 +674,9 @@ export const MONTHLY = {
       "quarter": 3,
       "date": "2026-09-01",
       "tag": "Forecast",
-      "Revenue": 496101083172,
+      "Revenue": 496100747173,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 496101083172,
+      "RevenueVsBudget": 496100747173,
       "RevenueDiff": null,
       "CM": 27826128186,
       "CMBudget": 0,
@@ -694,11 +694,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -11269583530,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 5506043129670,
+      "RevenueYTDVsBudget": 5506043260888,
       "CMYTDVsBudget": 254113056828,
       "EBITDAYTDVsBudget": 2917424053,
       "EBITYTDVsBudget": -54828615006,
-      "NetIncomeYTDVsBudget": -839616278528
+      "NetIncomeYTDVsBudget": -839616411277
     },
     {
       "year": 2026,
@@ -707,9 +707,9 @@ export const MONTHLY = {
       "quarter": 4,
       "date": "2026-10-01",
       "tag": "Forecast",
-      "Revenue": 513300997717,
+      "Revenue": 513300580779,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 513300997717,
+      "RevenueVsBudget": 513300580779,
       "RevenueDiff": null,
       "CM": 28530106166,
       "CMBudget": 0,
@@ -727,11 +727,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -9823191690,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 6019344127387,
+      "RevenueYTDVsBudget": 6019343841667,
       "CMYTDVsBudget": 282643162994,
       "EBITDAYTDVsBudget": 412636179,
       "EBITYTDVsBudget": -64651806696,
-      "NetIncomeYTDVsBudget": -849439470218
+      "NetIncomeYTDVsBudget": -849439602967
     },
     {
       "year": 2026,
@@ -740,9 +740,9 @@ export const MONTHLY = {
       "quarter": 4,
       "date": "2026-11-01",
       "tag": "Forecast",
-      "Revenue": 535235133824,
+      "Revenue": 535235057369,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 535235133824,
+      "RevenueVsBudget": 535235057369,
       "RevenueDiff": null,
       "CM": 29301693894,
       "CMBudget": 0,
@@ -760,11 +760,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -8675357914,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 6554579261211,
+      "RevenueYTDVsBudget": 6554578899036,
       "CMYTDVsBudget": 311944856888,
       "EBITDAYTDVsBudget": -939853633,
       "EBITYTDVsBudget": -73327164610,
-      "NetIncomeYTDVsBudget": -858114828132
+      "NetIncomeYTDVsBudget": -858114960881
     },
     {
       "year": 2026,
@@ -773,9 +773,9 @@ export const MONTHLY = {
       "quarter": 4,
       "date": "2026-12-01",
       "tag": "Forecast",
-      "Revenue": 562655302570,
+      "Revenue": 562655018166,
       "RevenueBudget": 0,
-      "RevenueVsBudget": 562655302570,
+      "RevenueVsBudget": 562655018166,
       "RevenueDiff": null,
       "CM": 31950847775,
       "CMBudget": 0,
@@ -793,11 +793,11 @@ export const MONTHLY = {
       "NetIncomeBudget": 0,
       "NetIncomeVsBudget": -6886396109,
       "NetIncomeDiff": null,
-      "RevenueYTDVsBudget": 7117234563781,
+      "RevenueYTDVsBudget": 7117233917202,
       "CMYTDVsBudget": 343895704663,
       "EBITDAYTDVsBudget": -503381640,
       "EBITYTDVsBudget": -80213560719,
-      "NetIncomeYTDVsBudget": -865001224241
+      "NetIncomeYTDVsBudget": -865001356990
     }
   ]
 };
@@ -812,31 +812,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 1,
         "date": "2026-01-01",
         "tag": "Actual",
-        "Revenue": 807532937534,
+        "Revenue": 807532475314,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 807532937534,
+        "RevenueVsBudget": 807532475314,
         "RevenueDiff": null,
         "CM": 32712274947,
         "CMBudget": 0,
         "CMVsBudget": 32712274947,
         "CMDiff": null,
-        "EBITDA": -430630430,
+        "EBITDA": 52642074855,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -430630430,
+        "EBITDAVsBudget": 52642074855,
         "EBITDADiff": null,
-        "EBIT": -6338576972,
+        "EBIT": 41660831246,
         "EBITBudget": 0,
-        "EBITVsBudget": -6338576972,
+        "EBITVsBudget": 41660831246,
         "EBITDiff": null,
-        "NetIncome": 94171846475,
+        "NetIncome": 142171254693,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 94171846475,
+        "NetIncomeVsBudget": 142171254693,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 807532937534,
+        "RevenueYTDVsBudget": 807532475314,
         "CMYTDVsBudget": 32712274947,
-        "EBITDAYTDVsBudget": -430630430,
-        "EBITYTDVsBudget": -6338576972,
-        "NetIncomeYTDVsBudget": 94171846475
+        "EBITDAYTDVsBudget": 52642074855,
+        "EBITYTDVsBudget": 41660831246,
+        "NetIncomeYTDVsBudget": 142171254693
       },
       {
         "year": 2026,
@@ -845,31 +845,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 1,
         "date": "2026-02-01",
         "tag": "Actual",
-        "Revenue": 755559817832,
+        "Revenue": 755559993052,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 755559817832,
+        "RevenueVsBudget": 755559993052,
         "RevenueDiff": null,
         "CM": 28529927203,
         "CMBudget": 0,
         "CMVsBudget": 28529927203,
         "CMDiff": null,
-        "EBITDA": -264078434,
+        "EBITDA": -116948779492,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -264078434,
+        "EBITDAVsBudget": -116948779492,
         "EBITDADiff": null,
-        "EBIT": -8849262476,
+        "EBIT": -128090786013,
         "EBITBudget": 0,
-        "EBITVsBudget": -8849262476,
+        "EBITVsBudget": -128090786013,
         "EBITDiff": null,
-        "NetIncome": -98426506177,
+        "NetIncome": -217668496271,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -98426506177,
+        "NetIncomeVsBudget": -217668496271,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 1563092755366,
+        "RevenueYTDVsBudget": 1563092468366,
         "CMYTDVsBudget": 61242202150,
-        "EBITDAYTDVsBudget": -694708864,
-        "EBITYTDVsBudget": -15187839448,
-        "NetIncomeYTDVsBudget": -4254659702
+        "EBITDAYTDVsBudget": -64306704637,
+        "EBITYTDVsBudget": -86429954767,
+        "NetIncomeYTDVsBudget": -75497241578
       },
       {
         "year": 2026,
@@ -878,31 +878,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 1,
         "date": "2026-03-01",
         "tag": "Actual",
-        "Revenue": 810493075378,
+        "Revenue": 810493574238,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 810493075378,
+        "RevenueVsBudget": 810493574238,
         "RevenueDiff": null,
         "CM": 36583155293,
         "CMBudget": 0,
         "CMVsBudget": 36583155293,
         "CMDiff": null,
-        "EBITDA": -2830987602,
+        "EBITDA": -430236142817,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -2830987602,
+        "EBITDAVsBudget": -430236142817,
         "EBITDADiff": null,
-        "EBIT": -3678164468,
+        "EBIT": -441334757502,
         "EBITBudget": 0,
-        "EBITVsBudget": -3678164468,
+        "EBITVsBudget": -441334757502,
         "EBITDiff": null,
-        "NetIncome": -421753712073,
+        "NetIncome": -859409941855,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -421753712073,
+        "NetIncomeVsBudget": -859409941855,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 2373585830744,
+        "RevenueYTDVsBudget": 2373586042604,
         "CMYTDVsBudget": 97825357443,
-        "EBITDAYTDVsBudget": -3525696466,
-        "EBITYTDVsBudget": -18866003916,
-        "NetIncomeYTDVsBudget": -426008371775
+        "EBITDAYTDVsBudget": -494542847454,
+        "EBITYTDVsBudget": -527764712269,
+        "NetIncomeYTDVsBudget": -934907183433
       },
       {
         "year": 2026,
@@ -911,31 +911,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 2,
         "date": "2026-04-01",
         "tag": "Actual",
-        "Revenue": 644319807946,
+        "Revenue": 644320046096,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 644319807946,
+        "RevenueVsBudget": 644320046096,
         "RevenueDiff": null,
         "CM": 28124830417,
         "CMBudget": 0,
         "CMVsBudget": 28124830417,
         "CMDiff": null,
-        "EBITDA": 905581497,
+        "EBITDA": 299650353244,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 905581497,
+        "EBITDAVsBudget": 299650353244,
         "EBITDADiff": null,
-        "EBIT": -1881985692,
+        "EBIT": 290090345785,
         "EBITBudget": 0,
-        "EBITVsBudget": -1881985692,
+        "EBITVsBudget": 290090345785,
         "EBITDiff": null,
-        "NetIncome": 324550848627,
+        "NetIncome": 616523377605,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 324550848627,
+        "NetIncomeVsBudget": 616523377605,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3017905638690,
+        "RevenueYTDVsBudget": 3017906088700,
         "CMYTDVsBudget": 125950187860,
-        "EBITDAYTDVsBudget": -2620114969,
-        "EBITYTDVsBudget": -20747989608,
-        "NetIncomeYTDVsBudget": -101457523148
+        "EBITDAYTDVsBudget": -194892494210,
+        "EBITYTDVsBudget": -237674366484,
+        "NetIncomeYTDVsBudget": -318383805828
       },
       {
         "year": 2026,
@@ -944,31 +944,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 2,
         "date": "2026-05-01",
         "tag": "Actual",
-        "Revenue": 505742688462,
+        "Revenue": 505742809379,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 505742688462,
+        "RevenueVsBudget": 505742809379,
         "RevenueDiff": null,
         "CM": 25945480768,
         "CMBudget": 0,
         "CMVsBudget": 25945480768,
         "CMDiff": null,
-        "EBITDA": -2036651792,
+        "EBITDA": -352603397985,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -2036651792,
+        "EBITDAVsBudget": -352603397985,
         "EBITDADiff": null,
-        "EBIT": -4361735614,
+        "EBIT": -362997445548,
         "EBITBudget": 0,
-        "EBITVsBudget": -4361735614,
+        "EBITVsBudget": -362997445548,
         "EBITDiff": null,
-        "NetIncome": -316828848216,
+        "NetIncome": -675464664266,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -316828848216,
+        "NetIncomeVsBudget": -675464664266,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3523648327152,
+        "RevenueYTDVsBudget": 3523648898079,
         "CMYTDVsBudget": 151895668628,
-        "EBITDAYTDVsBudget": -4656766761,
-        "EBITYTDVsBudget": -25109725222,
-        "NetIncomeYTDVsBudget": -418286371364
+        "EBITDAYTDVsBudget": -547495892195,
+        "EBITYTDVsBudget": -600671812032,
+        "NetIncomeYTDVsBudget": -993848470094
       },
       {
         "year": 2026,
@@ -977,31 +977,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 2,
         "date": "2026-06-01",
         "tag": "Actual",
-        "Revenue": 474542080501,
+        "Revenue": 474542158311,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 474542080501,
+        "RevenueVsBudget": 474542158311,
         "RevenueDiff": null,
         "CM": 17310362237,
         "CMBudget": 0,
         "CMVsBudget": 17310362237,
         "CMDiff": null,
-        "EBITDA": 13939396166,
+        "EBITDA": -401125858029,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 13939396166,
+        "EBITDAVsBudget": -401125858029,
         "EBITDADiff": null,
-        "EBIT": -8706610069,
+        "EBIT": -410805860430,
         "EBITBudget": 0,
-        "EBITVsBudget": -8706610069,
+        "EBITVsBudget": -410805860430,
         "EBITDiff": null,
-        "NetIncome": -394511991337,
+        "NetIncome": -796610857402,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -394511991337,
+        "NetIncomeVsBudget": -796610857402,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3998190407653,
+        "RevenueYTDVsBudget": 3998191056390,
         "CMYTDVsBudget": 169206030865,
-        "EBITDAYTDVsBudget": 9282629405,
-        "EBITYTDVsBudget": -33816335291,
-        "NetIncomeYTDVsBudget": -812798362701
+        "EBITDAYTDVsBudget": -948621750224,
+        "EBITYTDVsBudget": -1011477672462,
+        "NetIncomeYTDVsBudget": -1790459327496
       },
       {
         "year": 2026,
@@ -1010,17 +1010,17 @@ export const MONTHLY_VARIANTS = {
         "quarter": 3,
         "date": "2026-07-01",
         "tag": "Run-rate",
-        "Revenue": 526567804975,
+        "Revenue": 526567493866,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 526567804975,
+        "RevenueVsBudget": 526567493866,
         "RevenueDiff": null,
         "CM": 27973021974,
         "CMBudget": 0,
         "CMVsBudget": 27973021974,
         "CMDiff": null,
-        "EBITDA": 2070900911,
+        "EBITDA": 4375073743,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 2070900911,
+        "EBITDAVsBudget": 4375073743,
         "EBITDADiff": null,
         "EBIT": -2330056901,
         "EBITBudget": 0,
@@ -1030,11 +1030,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -2330056901,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 4524758212628,
+        "RevenueYTDVsBudget": 4524758550256,
         "CMYTDVsBudget": 197179052839,
-        "EBITDAYTDVsBudget": 11353530316,
-        "EBITYTDVsBudget": -36146392192,
-        "NetIncomeYTDVsBudget": -815128419602
+        "EBITDAYTDVsBudget": -944246676481,
+        "EBITYTDVsBudget": -1013807729363,
+        "NetIncomeYTDVsBudget": -1792789384397
       },
       {
         "year": 2026,
@@ -1043,17 +1043,17 @@ export const MONTHLY_VARIANTS = {
         "quarter": 3,
         "date": "2026-08-01",
         "tag": "Forecast",
-        "Revenue": 491613460010,
+        "Revenue": 491613589599,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 491613460010,
+        "RevenueVsBudget": 491613589599,
         "RevenueDiff": null,
         "CM": 27639942057,
         "CMBudget": 0,
         "CMVsBudget": 27639942057,
         "CMDiff": null,
-        "EBITDA": -844191002,
+        "EBITDA": 227141139,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -844191002,
+        "EBITDAVsBudget": 227141139,
         "EBITDADiff": null,
         "EBIT": -10928996800,
         "EBITBudget": 0,
@@ -1063,11 +1063,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -10928996800,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5016371672638,
+        "RevenueYTDVsBudget": 5016372139855,
         "CMYTDVsBudget": 224818994896,
-        "EBITDAYTDVsBudget": 10509339314,
-        "EBITYTDVsBudget": -47075388992,
-        "NetIncomeYTDVsBudget": -826057416402
+        "EBITDAYTDVsBudget": -944019535342,
+        "EBITYTDVsBudget": -1024736726163,
+        "NetIncomeYTDVsBudget": -1803718381197
       },
       {
         "year": 2026,
@@ -1076,17 +1076,17 @@ export const MONTHLY_VARIANTS = {
         "quarter": 3,
         "date": "2026-09-01",
         "tag": "Forecast",
-        "Revenue": 496101083172,
+        "Revenue": 496100747173,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 496101083172,
+        "RevenueVsBudget": 496100747173,
         "RevenueDiff": null,
         "CM": 27826128186,
         "CMBudget": 0,
         "CMVsBudget": 27826128186,
         "CMDiff": null,
-        "EBITDA": -844191002,
+        "EBITDA": 429412247,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -844191002,
+        "EBITDAVsBudget": 429412247,
         "EBITDADiff": null,
         "EBIT": -11269583530,
         "EBITBudget": 0,
@@ -1096,11 +1096,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -11269583530,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5512472755810,
+        "RevenueYTDVsBudget": 5512472887028,
         "CMYTDVsBudget": 252645123082,
-        "EBITDAYTDVsBudget": 9665148312,
-        "EBITYTDVsBudget": -58344972522,
-        "NetIncomeYTDVsBudget": -837326999932
+        "EBITDAYTDVsBudget": -943590123095,
+        "EBITYTDVsBudget": -1036006309693,
+        "NetIncomeYTDVsBudget": -1814987964727
       },
       {
         "year": 2026,
@@ -1109,17 +1109,17 @@ export const MONTHLY_VARIANTS = {
         "quarter": 4,
         "date": "2026-10-01",
         "tag": "Forecast",
-        "Revenue": 513300997717,
+        "Revenue": 513300580779,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 513300997717,
+        "RevenueVsBudget": 513300580779,
         "RevenueDiff": null,
         "CM": 28530106166,
         "CMBudget": 0,
         "CMVsBudget": 28530106166,
         "CMDiff": null,
-        "EBITDA": -844191002,
+        "EBITDA": 1215130410,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -844191002,
+        "EBITDAVsBudget": 1215130410,
         "EBITDADiff": null,
         "EBIT": -9823191690,
         "EBITBudget": 0,
@@ -1129,11 +1129,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -9823191690,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 6025773753527,
+        "RevenueYTDVsBudget": 6025773467807,
         "CMYTDVsBudget": 281175229248,
-        "EBITDAYTDVsBudget": 8820957310,
-        "EBITYTDVsBudget": -68168164212,
-        "NetIncomeYTDVsBudget": -847150191622
+        "EBITDAYTDVsBudget": -942374992685,
+        "EBITYTDVsBudget": -1045829501383,
+        "NetIncomeYTDVsBudget": -1824811156417
       },
       {
         "year": 2026,
@@ -1142,17 +1142,17 @@ export const MONTHLY_VARIANTS = {
         "quarter": 4,
         "date": "2026-11-01",
         "tag": "Forecast",
-        "Revenue": 535235133824,
+        "Revenue": 535235057369,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 535235133824,
+        "RevenueVsBudget": 535235057369,
         "RevenueDiff": null,
         "CM": 29301693894,
         "CMBudget": 0,
         "CMVsBudget": 29301693894,
         "CMDiff": null,
-        "EBITDA": -844191002,
+        "EBITDA": 2366564915,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -844191002,
+        "EBITDAVsBudget": 2366564915,
         "EBITDADiff": null,
         "EBIT": -8675357914,
         "EBITBudget": 0,
@@ -1162,11 +1162,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -8675357914,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 6561008887351,
+        "RevenueYTDVsBudget": 6561008525176,
         "CMYTDVsBudget": 310476923142,
-        "EBITDAYTDVsBudget": 7976766308,
-        "EBITYTDVsBudget": -76843522126,
-        "NetIncomeYTDVsBudget": -855825549536
+        "EBITDAYTDVsBudget": -940008427770,
+        "EBITYTDVsBudget": -1054504859297,
+        "NetIncomeYTDVsBudget": -1833486514331
       },
       {
         "year": 2026,
@@ -1175,17 +1175,17 @@ export const MONTHLY_VARIANTS = {
         "quarter": 4,
         "date": "2026-12-01",
         "tag": "Forecast",
-        "Revenue": 562655302570,
+        "Revenue": 562655018166,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 562655302570,
+        "RevenueVsBudget": 562655018166,
         "RevenueDiff": null,
         "CM": 31950847775,
         "CMBudget": 0,
         "CMVsBudget": 31950847775,
         "CMDiff": null,
-        "EBITDA": -844191002,
+        "EBITDA": 4631673705,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -844191002,
+        "EBITDAVsBudget": 4631673705,
         "EBITDADiff": null,
         "EBIT": -6886396109,
         "EBITBudget": 0,
@@ -1195,11 +1195,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -6886396109,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 7123664189921,
+        "RevenueYTDVsBudget": 7123663543342,
         "CMYTDVsBudget": 342427770917,
-        "EBITDAYTDVsBudget": 7132575306,
-        "EBITYTDVsBudget": -83729918235,
-        "NetIncomeYTDVsBudget": -862711945645
+        "EBITDAYTDVsBudget": -935376754065,
+        "EBITYTDVsBudget": -1061391255406,
+        "NetIncomeYTDVsBudget": -1840372910440
       }
     ],
     "Adj. EBITDA (Total)": [
@@ -1210,31 +1210,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 1,
         "date": "2026-01-01",
         "tag": "Actual",
-        "Revenue": 807532937534,
+        "Revenue": 807532475314,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 807532937534,
+        "RevenueVsBudget": 807532475314,
         "RevenueDiff": null,
         "CM": 32712274947,
         "CMBudget": 0,
         "CMVsBudget": 32712274947,
         "CMDiff": null,
-        "EBITDA": 304314567,
+        "EBITDA": 48303722785,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 304314567,
+        "EBITDAVsBudget": 48303722785,
         "EBITDADiff": null,
-        "EBIT": -6338576972,
+        "EBIT": 41660831246,
         "EBITBudget": 0,
-        "EBITVsBudget": -6338576972,
+        "EBITVsBudget": 41660831246,
         "EBITDiff": null,
-        "NetIncome": 94171846475,
+        "NetIncome": 142171254693,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 94171846475,
+        "NetIncomeVsBudget": 142171254693,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 807532937534,
+        "RevenueYTDVsBudget": 807532475314,
         "CMYTDVsBudget": 32712274947,
-        "EBITDAYTDVsBudget": 304314567,
-        "EBITYTDVsBudget": -6338576972,
-        "NetIncomeYTDVsBudget": 94171846475
+        "EBITDAYTDVsBudget": 48303722785,
+        "EBITYTDVsBudget": 41660831246,
+        "NetIncomeYTDVsBudget": 142171254693
       },
       {
         "year": 2026,
@@ -1243,31 +1243,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 1,
         "date": "2026-02-01",
         "tag": "Actual",
-        "Revenue": 755559817832,
+        "Revenue": 755559993052,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 755559817832,
+        "RevenueVsBudget": 755559993052,
         "RevenueDiff": null,
         "CM": 28529927203,
         "CMBudget": 0,
         "CMVsBudget": 28529927203,
         "CMDiff": null,
-        "EBITDA": -2238955875,
+        "EBITDA": -121480479412,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -2238955875,
+        "EBITDAVsBudget": -121480479412,
         "EBITDADiff": null,
-        "EBIT": -8849262476,
+        "EBIT": -128090786013,
         "EBITBudget": 0,
-        "EBITVsBudget": -8849262476,
+        "EBITVsBudget": -128090786013,
         "EBITDiff": null,
-        "NetIncome": -98426506177,
+        "NetIncome": -217668496271,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -98426506177,
+        "NetIncomeVsBudget": -217668496271,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 1563092755366,
+        "RevenueYTDVsBudget": 1563092468366,
         "CMYTDVsBudget": 61242202150,
-        "EBITDAYTDVsBudget": -1934641308,
-        "EBITYTDVsBudget": -15187839448,
-        "NetIncomeYTDVsBudget": -4254659702
+        "EBITDAYTDVsBudget": -73176756627,
+        "EBITYTDVsBudget": -86429954767,
+        "NetIncomeYTDVsBudget": -75497241578
       },
       {
         "year": 2026,
@@ -1276,31 +1276,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 1,
         "date": "2026-03-01",
         "tag": "Actual",
-        "Revenue": 810493075378,
+        "Revenue": 810493574238,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 810493075378,
+        "RevenueVsBudget": 810493574238,
         "RevenueDiff": null,
         "CM": 36583155293,
         "CMBudget": 0,
         "CMVsBudget": 36583155293,
         "CMDiff": null,
-        "EBITDA": 3669829688,
+        "EBITDA": -433986763346,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 3669829688,
+        "EBITDAVsBudget": -433986763346,
         "EBITDADiff": null,
-        "EBIT": -3678164468,
+        "EBIT": -441334757502,
         "EBITBudget": 0,
-        "EBITVsBudget": -3678164468,
+        "EBITVsBudget": -441334757502,
         "EBITDiff": null,
-        "NetIncome": -421753712073,
+        "NetIncome": -859409941855,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -421753712073,
+        "NetIncomeVsBudget": -859409941855,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 2373585830744,
+        "RevenueYTDVsBudget": 2373586042604,
         "CMYTDVsBudget": 97825357443,
-        "EBITDAYTDVsBudget": 1735188380,
-        "EBITYTDVsBudget": -18866003916,
-        "NetIncomeYTDVsBudget": -426008371775
+        "EBITDAYTDVsBudget": -507163519973,
+        "EBITYTDVsBudget": -527764712269,
+        "NetIncomeYTDVsBudget": -934907183433
       },
       {
         "year": 2026,
@@ -1309,31 +1309,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 2,
         "date": "2026-04-01",
         "tag": "Actual",
-        "Revenue": 644319807946,
+        "Revenue": 644320046096,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 644319807946,
+        "RevenueVsBudget": 644320046096,
         "RevenueDiff": null,
         "CM": 28124830417,
         "CMBudget": 0,
         "CMVsBudget": 28124830417,
         "CMDiff": null,
-        "EBITDA": 4602031828,
+        "EBITDA": 296574363305,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 4602031828,
+        "EBITDAVsBudget": 296574363305,
         "EBITDADiff": null,
-        "EBIT": -1881985692,
+        "EBIT": 290090345785,
         "EBITBudget": 0,
-        "EBITVsBudget": -1881985692,
+        "EBITVsBudget": 290090345785,
         "EBITDiff": null,
-        "NetIncome": 324550848627,
+        "NetIncome": 616523377605,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 324550848627,
+        "NetIncomeVsBudget": 616523377605,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3017905638690,
+        "RevenueYTDVsBudget": 3017906088700,
         "CMYTDVsBudget": 125950187860,
-        "EBITDAYTDVsBudget": 6337220208,
-        "EBITYTDVsBudget": -20747989608,
-        "NetIncomeYTDVsBudget": -101457523148
+        "EBITDAYTDVsBudget": -210589156668,
+        "EBITYTDVsBudget": -237674366484,
+        "NetIncomeYTDVsBudget": -318383805828
       },
       {
         "year": 2026,
@@ -1342,31 +1342,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 2,
         "date": "2026-05-01",
         "tag": "Actual",
-        "Revenue": 505742688462,
+        "Revenue": 505742809379,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 505742688462,
+        "RevenueVsBudget": 505742809379,
         "RevenueDiff": null,
         "CM": 25945480768,
         "CMBudget": 0,
         "CMVsBudget": 25945480768,
         "CMDiff": null,
-        "EBITDA": 2076326729,
+        "EBITDA": -356559383205,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 2076326729,
+        "EBITDAVsBudget": -356559383205,
         "EBITDADiff": null,
-        "EBIT": -4361735614,
+        "EBIT": -362997445548,
         "EBITBudget": 0,
-        "EBITVsBudget": -4361735614,
+        "EBITVsBudget": -362997445548,
         "EBITDiff": null,
-        "NetIncome": -316828848216,
+        "NetIncome": -675464664266,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -316828848216,
+        "NetIncomeVsBudget": -675464664266,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3523648327152,
+        "RevenueYTDVsBudget": 3523648898079,
         "CMYTDVsBudget": 151895668628,
-        "EBITDAYTDVsBudget": 8413546937,
-        "EBITYTDVsBudget": -25109725222,
-        "NetIncomeYTDVsBudget": -418286371364
+        "EBITDAYTDVsBudget": -567148539873,
+        "EBITYTDVsBudget": -600671812032,
+        "NetIncomeYTDVsBudget": -993848470094
       },
       {
         "year": 2026,
@@ -1375,31 +1375,31 @@ export const MONTHLY_VARIANTS = {
         "quarter": 2,
         "date": "2026-06-01",
         "tag": "Actual",
-        "Revenue": 474542080501,
+        "Revenue": 474542158311,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 474542080501,
+        "RevenueVsBudget": 474542158311,
         "RevenueDiff": null,
         "CM": 17310362237,
         "CMBudget": 0,
         "CMVsBudget": 17310362237,
         "CMDiff": null,
-        "EBITDA": -2191471993,
+        "EBITDA": -404290722354,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -2191471993,
+        "EBITDAVsBudget": -404290722354,
         "EBITDADiff": null,
-        "EBIT": -8706610069,
+        "EBIT": -410805860430,
         "EBITBudget": 0,
-        "EBITVsBudget": -8706610069,
+        "EBITVsBudget": -410805860430,
         "EBITDiff": null,
-        "NetIncome": -394511991337,
+        "NetIncome": -796610857402,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -394511991337,
+        "NetIncomeVsBudget": -796610857402,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3998190407653,
+        "RevenueYTDVsBudget": 3998191056390,
         "CMYTDVsBudget": 169206030865,
-        "EBITDAYTDVsBudget": 6222074944,
-        "EBITYTDVsBudget": -33816335291,
-        "NetIncomeYTDVsBudget": -812798362701
+        "EBITDAYTDVsBudget": -971439262227,
+        "EBITYTDVsBudget": -1011477672462,
+        "NetIncomeYTDVsBudget": -1790459327496
       },
       {
         "year": 2026,
@@ -1408,9 +1408,9 @@ export const MONTHLY_VARIANTS = {
         "quarter": 3,
         "date": "2026-07-01",
         "tag": "Run-rate",
-        "Revenue": 526567804975,
+        "Revenue": 526567493866,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 526567804975,
+        "RevenueVsBudget": 526567493866,
         "RevenueDiff": null,
         "CM": 27973021974,
         "CMBudget": 0,
@@ -1428,11 +1428,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -2330056901,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 4524758212628,
+        "RevenueYTDVsBudget": 4524758550256,
         "CMYTDVsBudget": 197179052839,
-        "EBITDAYTDVsBudget": 6877842375,
-        "EBITYTDVsBudget": -36146392192,
-        "NetIncomeYTDVsBudget": -815128419602
+        "EBITDAYTDVsBudget": -970783494796,
+        "EBITYTDVsBudget": -1013807729363,
+        "NetIncomeYTDVsBudget": -1792789384397
       },
       {
         "year": 2026,
@@ -1441,9 +1441,9 @@ export const MONTHLY_VARIANTS = {
         "quarter": 3,
         "date": "2026-08-01",
         "tag": "Forecast",
-        "Revenue": 491613460010,
+        "Revenue": 491613589599,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 491613460010,
+        "RevenueVsBudget": 491613589599,
         "RevenueDiff": null,
         "CM": 27639942057,
         "CMBudget": 0,
@@ -1461,11 +1461,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -10928996800,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5016371672638,
+        "RevenueYTDVsBudget": 5016372139855,
         "CMYTDVsBudget": 224818994896,
-        "EBITDAYTDVsBudget": 3288841393,
-        "EBITYTDVsBudget": -47075388992,
-        "NetIncomeYTDVsBudget": -826057416402
+        "EBITDAYTDVsBudget": -974372495778,
+        "EBITYTDVsBudget": -1024736726163,
+        "NetIncomeYTDVsBudget": -1803718381197
       },
       {
         "year": 2026,
@@ -1474,9 +1474,9 @@ export const MONTHLY_VARIANTS = {
         "quarter": 3,
         "date": "2026-09-01",
         "tag": "Forecast",
-        "Revenue": 496101083172,
+        "Revenue": 496100747173,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 496101083172,
+        "RevenueVsBudget": 496100747173,
         "RevenueDiff": null,
         "CM": 27826128186,
         "CMBudget": 0,
@@ -1494,11 +1494,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -11269583530,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5512472755810,
+        "RevenueYTDVsBudget": 5512472887028,
         "CMYTDVsBudget": 252645123082,
-        "EBITDAYTDVsBudget": -657301548,
-        "EBITYTDVsBudget": -58344972522,
-        "NetIncomeYTDVsBudget": -837326999932
+        "EBITDAYTDVsBudget": -978318638719,
+        "EBITYTDVsBudget": -1036006309693,
+        "NetIncomeYTDVsBudget": -1814987964727
       },
       {
         "year": 2026,
@@ -1507,9 +1507,9 @@ export const MONTHLY_VARIANTS = {
         "quarter": 4,
         "date": "2026-10-01",
         "tag": "Forecast",
-        "Revenue": 513300997717,
+        "Revenue": 513300580779,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 513300997717,
+        "RevenueVsBudget": 513300580779,
         "RevenueDiff": null,
         "CM": 28530106166,
         "CMBudget": 0,
@@ -1527,11 +1527,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -9823191690,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 6025773753527,
+        "RevenueYTDVsBudget": 6025773467807,
         "CMYTDVsBudget": 281175229248,
-        "EBITDAYTDVsBudget": -3162089422,
-        "EBITYTDVsBudget": -68168164212,
-        "NetIncomeYTDVsBudget": -847150191622
+        "EBITDAYTDVsBudget": -980823426593,
+        "EBITYTDVsBudget": -1045829501383,
+        "NetIncomeYTDVsBudget": -1824811156417
       },
       {
         "year": 2026,
@@ -1540,9 +1540,9 @@ export const MONTHLY_VARIANTS = {
         "quarter": 4,
         "date": "2026-11-01",
         "tag": "Forecast",
-        "Revenue": 535235133824,
+        "Revenue": 535235057369,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 535235133824,
+        "RevenueVsBudget": 535235057369,
         "RevenueDiff": null,
         "CM": 29301693894,
         "CMBudget": 0,
@@ -1560,11 +1560,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -8675357914,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 6561008887351,
+        "RevenueYTDVsBudget": 6561008525176,
         "CMYTDVsBudget": 310476923142,
-        "EBITDAYTDVsBudget": -4514579234,
-        "EBITYTDVsBudget": -76843522126,
-        "NetIncomeYTDVsBudget": -855825549536
+        "EBITDAYTDVsBudget": -982175916405,
+        "EBITYTDVsBudget": -1054504859297,
+        "NetIncomeYTDVsBudget": -1833486514331
       },
       {
         "year": 2026,
@@ -1573,9 +1573,9 @@ export const MONTHLY_VARIANTS = {
         "quarter": 4,
         "date": "2026-12-01",
         "tag": "Forecast",
-        "Revenue": 562655302570,
+        "Revenue": 562655018166,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 562655302570,
+        "RevenueVsBudget": 562655018166,
         "RevenueDiff": null,
         "CM": 31950847775,
         "CMBudget": 0,
@@ -1593,11 +1593,11 @@ export const MONTHLY_VARIANTS = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": -6886396109,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 7123664189921,
+        "RevenueYTDVsBudget": 7123663543342,
         "CMYTDVsBudget": 342427770917,
-        "EBITDAYTDVsBudget": -4078107241,
-        "EBITYTDVsBudget": -83729918235,
-        "NetIncomeYTDVsBudget": -862711945645
+        "EBITDAYTDVsBudget": -981739444412,
+        "EBITYTDVsBudget": -1061391255406,
+        "NetIncomeYTDVsBudget": -1840372910440
       }
     ]
   }
@@ -1621,23 +1621,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 4951557520,
         "CMDiff": null,
-        "EBITDA": -445778535,
+        "EBITDA": -1971688873,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -445778535,
+        "EBITDAVsBudget": -1971688873,
         "EBITDADiff": null,
-        "EBIT": -5657990855,
+        "EBIT": -5682426640,
         "EBITBudget": 0,
-        "EBITVsBudget": -5657990855,
+        "EBITVsBudget": -5682426640,
         "EBITDiff": null,
-        "NetIncome": -2944274685,
+        "NetIncome": -2968710470,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -2944274685,
+        "NetIncomeVsBudget": -2968710470,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 22207663257,
         "CMYTDVsBudget": 4951557520,
-        "EBITDAYTDVsBudget": -445778535,
-        "EBITYTDVsBudget": -5657990855,
-        "NetIncomeYTDVsBudget": -2944274685
+        "EBITDAYTDVsBudget": -1971688873,
+        "EBITYTDVsBudget": -5682426640,
+        "NetIncomeYTDVsBudget": -2968710470
       },
       {
         "year": 2026,
@@ -1654,23 +1654,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 4458878003,
         "CMDiff": null,
-        "EBITDA": 581938217,
+        "EBITDA": -1246917980,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 581938217,
+        "EBITDAVsBudget": -1246917980,
         "EBITDADiff": null,
-        "EBIT": -4894767617,
+        "EBIT": -4923004524,
         "EBITBudget": 0,
-        "EBITVsBudget": -4894767617,
+        "EBITVsBudget": -4923004524,
         "EBITDiff": null,
-        "NetIncome": -4586531200,
+        "NetIncome": -4614768107,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -4586531200,
+        "NetIncomeVsBudget": -4614768107,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 44526610725,
         "CMYTDVsBudget": 9410435523,
-        "EBITDAYTDVsBudget": 136159682,
-        "EBITYTDVsBudget": -10552758472,
-        "NetIncomeYTDVsBudget": -7530805885
+        "EBITDAYTDVsBudget": -3218606853,
+        "EBITYTDVsBudget": -10605431164,
+        "NetIncomeYTDVsBudget": -7583478577
       },
       {
         "year": 2026,
@@ -1687,23 +1687,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 6615244175,
         "CMDiff": null,
-        "EBITDA": -1895869398,
+        "EBITDA": -1658738843,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -1895869398,
+        "EBITDAVsBudget": -1658738843,
         "EBITDADiff": null,
-        "EBIT": -5766280200,
+        "EBIT": -5790715985,
         "EBITBudget": 0,
-        "EBITVsBudget": -5766280200,
+        "EBITVsBudget": -5790715985,
         "EBITDiff": null,
-        "NetIncome": -7513293343,
+        "NetIncome": -7537729128,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -7513293343,
+        "NetIncomeVsBudget": -7537729128,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 79921697772,
         "CMYTDVsBudget": 16025679698,
-        "EBITDAYTDVsBudget": -1759709716,
-        "EBITYTDVsBudget": -16319038672,
-        "NetIncomeYTDVsBudget": -15044099228
+        "EBITDAYTDVsBudget": -4877345696,
+        "EBITYTDVsBudget": -16396147149,
+        "NetIncomeYTDVsBudget": -15121207705
       },
       {
         "year": 2026,
@@ -1720,23 +1720,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 4572002299,
         "CMDiff": null,
-        "EBITDA": -20204248,
+        "EBITDA": 406677335,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -20204248,
+        "EBITDAVsBudget": 406677335,
         "EBITDADiff": null,
-        "EBIT": -2962295816,
+        "EBIT": -2990524645,
         "EBITBudget": 0,
-        "EBITVsBudget": -2962295816,
+        "EBITVsBudget": -2990524645,
         "EBITDiff": null,
-        "NetIncome": -178253914,
+        "NetIncome": -206482743,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -178253914,
+        "NetIncomeVsBudget": -206482743,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 102115030070,
         "CMYTDVsBudget": 20597681997,
-        "EBITDAYTDVsBudget": -1779913964,
-        "EBITYTDVsBudget": -19281334488,
-        "NetIncomeYTDVsBudget": -15222353142
+        "EBITDAYTDVsBudget": -4470668361,
+        "EBITYTDVsBudget": -19386671794,
+        "NetIncomeYTDVsBudget": -15327690448
       },
       {
         "year": 2026,
@@ -1753,23 +1753,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 5248385203,
         "CMDiff": null,
-        "EBITDA": -383573377,
+        "EBITDA": -1035715256,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -383573377,
+        "EBITDAVsBudget": -1035715256,
         "EBITDADiff": null,
-        "EBIT": -4431445881,
+        "EBIT": -4459676888,
         "EBITBudget": 0,
-        "EBITVsBudget": -4431445881,
+        "EBITVsBudget": -4459676888,
         "EBITDiff": null,
-        "NetIncome": 4849596583,
+        "NetIncome": 4821365576,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 4849596583,
+        "NetIncomeVsBudget": 4821365576,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 122219960980,
         "CMYTDVsBudget": 25846067200,
-        "EBITDAYTDVsBudget": -2163487341,
-        "EBITYTDVsBudget": -23712780369,
-        "NetIncomeYTDVsBudget": -10372756559
+        "EBITDAYTDVsBudget": -5506383617,
+        "EBITYTDVsBudget": -23846348682,
+        "NetIncomeYTDVsBudget": -10506324872
       },
       {
         "year": 2026,
@@ -1786,23 +1786,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 4889958920,
         "CMDiff": null,
-        "EBITDA": 1864355336,
+        "EBITDA": -768103989,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 1864355336,
+        "EBITDAVsBudget": -768103989,
         "EBITDADiff": null,
-        "EBIT": -4168078884,
+        "EBIT": -4118600162,
         "EBITBudget": 0,
-        "EBITVsBudget": -4168078884,
+        "EBITVsBudget": -4118600162,
         "EBITDiff": null,
-        "NetIncome": -3354063478,
+        "NetIncome": -3304584756,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -3354063478,
+        "NetIncomeVsBudget": -3304584756,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 140324007435,
         "CMYTDVsBudget": 30736026120,
-        "EBITDAYTDVsBudget": -299132005,
-        "EBITYTDVsBudget": -27880859253,
-        "NetIncomeYTDVsBudget": -13726820037
+        "EBITDAYTDVsBudget": -6274487606,
+        "EBITYTDVsBudget": -27964948844,
+        "NetIncomeYTDVsBudget": -13810909628
       },
       {
         "year": 2026,
@@ -1819,9 +1819,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 6069757598,
         "CMDiff": null,
-        "EBITDA": 62600283,
+        "EBITDA": -170644590,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 62600283,
+        "EBITDAVsBudget": -170644590,
         "EBITDADiff": null,
         "EBIT": -3540380284,
         "EBITBudget": 0,
@@ -1833,9 +1833,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 162275944929,
         "CMYTDVsBudget": 36805783718,
-        "EBITDAYTDVsBudget": -236531722,
-        "EBITYTDVsBudget": -31421239537,
-        "NetIncomeYTDVsBudget": -17267200321
+        "EBITDAYTDVsBudget": -6445132196,
+        "EBITYTDVsBudget": -31505329128,
+        "NetIncomeYTDVsBudget": -17351289912
       },
       {
         "year": 2026,
@@ -1852,9 +1852,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 6408127661,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": -216145751,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": -216145751,
         "EBITDADiff": null,
         "EBIT": -3882502725,
         "EBITBudget": 0,
@@ -1866,9 +1866,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 184041877169,
         "CMYTDVsBudget": 43213911379,
-        "EBITDAYTDVsBudget": -236531722,
-        "EBITYTDVsBudget": -35303742262,
-        "NetIncomeYTDVsBudget": -21149703046
+        "EBITDAYTDVsBudget": -6661277947,
+        "EBITYTDVsBudget": -35387831853,
+        "NetIncomeYTDVsBudget": -21233792637
       },
       {
         "year": 2026,
@@ -1885,9 +1885,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 6773726777,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 170392483,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 170392483,
         "EBITDADiff": null,
         "EBIT": -3614333053,
         "EBITBudget": 0,
@@ -1899,9 +1899,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 206878622815,
         "CMYTDVsBudget": 49987638156,
-        "EBITDAYTDVsBudget": -236531722,
-        "EBITYTDVsBudget": -38918075315,
-        "NetIncomeYTDVsBudget": -24764036099
+        "EBITDAYTDVsBudget": -6490885464,
+        "EBITYTDVsBudget": -39002164906,
+        "NetIncomeYTDVsBudget": -24848125690
       },
       {
         "year": 2026,
@@ -1918,9 +1918,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 6830449163,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 176258386,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 176258386,
         "EBITDADiff": null,
         "EBIT": -3469738182,
         "EBITBudget": 0,
@@ -1932,9 +1932,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 230052412714,
         "CMYTDVsBudget": 56818087319,
-        "EBITDAYTDVsBudget": -236531722,
-        "EBITYTDVsBudget": -42387813497,
-        "NetIncomeYTDVsBudget": -28233774281
+        "EBITDAYTDVsBudget": -6314627078,
+        "EBITYTDVsBudget": -42471903088,
+        "NetIncomeYTDVsBudget": -28317863872
       },
       {
         "year": 2026,
@@ -1951,9 +1951,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 6711574843,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 238700977,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 238700977,
         "EBITDADiff": null,
         "EBIT": -3407112867,
         "EBITBudget": 0,
@@ -1965,9 +1965,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 252844807700,
         "CMYTDVsBudget": 63529662162,
-        "EBITDAYTDVsBudget": -236531722,
-        "EBITYTDVsBudget": -45794926364,
-        "NetIncomeYTDVsBudget": -31640887148
+        "EBITDAYTDVsBudget": -6075926101,
+        "EBITYTDVsBudget": -45879015955,
+        "NetIncomeYTDVsBudget": -31724976739
       },
       {
         "year": 2026,
@@ -1984,9 +1984,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 8043714755,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 1381820684,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 1381820684,
         "EBITDADiff": null,
         "EBIT": -2364743102,
         "EBITBudget": 0,
@@ -1998,9 +1998,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 280704017260,
         "CMYTDVsBudget": 71573376917,
-        "EBITDAYTDVsBudget": -236531722,
-        "EBITYTDVsBudget": -48159669466,
-        "NetIncomeYTDVsBudget": -34005630250
+        "EBITDAYTDVsBudget": -4694105417,
+        "EBITYTDVsBudget": -48243759057,
+        "NetIncomeYTDVsBudget": -34089719841
       }
     ],
     "After Elim": [
@@ -2419,9 +2419,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 7787404894,
         "CMDiff": null,
-        "EBITDA": -154178511,
+        "EBITDA": 916102029,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -154178511,
+        "EBITDAVsBudget": 916102029,
         "EBITDADiff": null,
         "EBIT": -1249449495,
         "EBITBudget": 0,
@@ -2433,7 +2433,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 57602475508,
         "CMYTDVsBudget": 7787404894,
-        "EBITDAYTDVsBudget": -154178511,
+        "EBITDAYTDVsBudget": 916102029,
         "EBITYTDVsBudget": -1249449495,
         "NetIncomeYTDVsBudget": -870262140
       },
@@ -2452,9 +2452,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 6071225483,
         "CMDiff": null,
-        "EBITDA": -302218368,
+        "EBITDA": -1278273033,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -302218368,
+        "EBITDAVsBudget": -1278273033,
         "EBITDADiff": null,
         "EBIT": -3410666985,
         "EBITBudget": 0,
@@ -2466,7 +2466,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 109015175641,
         "CMYTDVsBudget": 13858630377,
-        "EBITDAYTDVsBudget": -456396879,
+        "EBITDAYTDVsBudget": -362171004,
         "EBITYTDVsBudget": -4660116480,
         "NetIncomeYTDVsBudget": -4176099448
       },
@@ -2485,9 +2485,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9117477324,
         "CMDiff": null,
-        "EBITDA": -375219558,
+        "EBITDA": 2295262720,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -375219558,
+        "EBITDAVsBudget": 2295262720,
         "EBITDADiff": null,
         "EBIT": 499249928,
         "EBITBudget": 0,
@@ -2499,7 +2499,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 174889563282,
         "CMYTDVsBudget": 22976107701,
-        "EBITDAYTDVsBudget": -831616437,
+        "EBITDAYTDVsBudget": 1933091716,
         "EBITYTDVsBudget": -4160866552,
         "NetIncomeYTDVsBudget": -770441016
       },
@@ -2518,9 +2518,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9630671052,
         "CMDiff": null,
-        "EBITDA": -204878033,
+        "EBITDA": 6294324025,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -204878033,
+        "EBITDAVsBudget": 6294324025,
         "EBITDADiff": null,
         "EBIT": 4421968483,
         "EBITBudget": 0,
@@ -2532,7 +2532,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 229246763628,
         "CMYTDVsBudget": 32606778753,
-        "EBITDAYTDVsBudget": -1036494470,
+        "EBITDAYTDVsBudget": 8227415741,
         "EBITYTDVsBudget": 261101931,
         "NetIncomeYTDVsBudget": 4100566706
       },
@@ -2551,9 +2551,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9457735081,
         "CMDiff": null,
-        "EBITDA": -422554350,
+        "EBITDA": 2481702396,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -422554350,
+        "EBITDAVsBudget": 2481702396,
         "EBITDADiff": null,
         "EBIT": 540710307,
         "EBITBudget": 0,
@@ -2565,7 +2565,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 278301718516,
         "CMYTDVsBudget": 42064513834,
-        "EBITDAYTDVsBudget": -1459048820,
+        "EBITDAYTDVsBudget": 10709118137,
         "EBITYTDVsBudget": 801812238,
         "NetIncomeYTDVsBudget": 5373973453
       },
@@ -2584,9 +2584,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9735233979,
         "CMDiff": null,
-        "EBITDA": 534677150,
+        "EBITDA": 3180753831,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 534677150,
+        "EBITDAVsBudget": 3180753831,
         "EBITDADiff": null,
         "EBIT": 1450970808,
         "EBITBudget": 0,
@@ -2598,7 +2598,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 326437706468,
         "CMYTDVsBudget": 51799747813,
-        "EBITDAYTDVsBudget": -924371670,
+        "EBITDAYTDVsBudget": 13889871968,
         "EBITYTDVsBudget": 2252783046,
         "NetIncomeYTDVsBudget": 10313144907
       },
@@ -2617,9 +2617,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 8778031709,
         "CMDiff": null,
-        "EBITDA": -237191002,
+        "EBITDA": 1530516848,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -237191002,
+        "EBITDAVsBudget": 1530516848,
         "EBITDADiff": null,
         "EBIT": 227359640,
         "EBITBudget": 0,
@@ -2631,7 +2631,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 375896061533,
         "CMYTDVsBudget": 60577779522,
-        "EBITDAYTDVsBudget": -1161562672,
+        "EBITDAYTDVsBudget": 15420388816,
         "EBITYTDVsBudget": 2480142686,
         "NetIncomeYTDVsBudget": 10540504547
       },
@@ -2650,9 +2650,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9290563152,
         "CMDiff": null,
-        "EBITDA": -137191002,
+        "EBITDA": 1668497645,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -137191002,
+        "EBITDAVsBudget": 1668497645,
         "EBITDADiff": null,
         "EBIT": -841633927,
         "EBITBudget": 0,
@@ -2664,7 +2664,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 426681076887,
         "CMYTDVsBudget": 69868342674,
-        "EBITDAYTDVsBudget": -1298753674,
+        "EBITDAYTDVsBudget": 17088886461,
         "EBITYTDVsBudget": 1638508759,
         "NetIncomeYTDVsBudget": 9698870620
       },
@@ -2683,9 +2683,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9391796246,
         "CMDiff": null,
-        "EBITDA": -137191002,
+        "EBITDA": 1820406577,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -137191002,
+        "EBITDAVsBudget": 1820406577,
         "EBITDADiff": null,
         "EBIT": -872953043,
         "EBITBudget": 0,
@@ -2697,7 +2697,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 477912015612,
         "CMYTDVsBudget": 79260138920,
-        "EBITDAYTDVsBudget": -1435944676,
+        "EBITDAYTDVsBudget": 18909293038,
         "EBITYTDVsBudget": 765555716,
         "NetIncomeYTDVsBudget": 8825917577
       },
@@ -2716,9 +2716,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9532034908,
         "CMDiff": null,
-        "EBITDA": -137191002,
+        "EBITDA": 1997015723,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -137191002,
+        "EBITDAVsBudget": 1997015723,
         "EBITDADiff": null,
         "EBIT": -481599056,
         "EBITBudget": 0,
@@ -2730,7 +2730,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 530602711014,
         "CMYTDVsBudget": 88792173828,
-        "EBITDAYTDVsBudget": -1573135678,
+        "EBITDAYTDVsBudget": 20906308761,
         "EBITYTDVsBudget": 283956660,
         "NetIncomeYTDVsBudget": 8344318521
       },
@@ -2749,9 +2749,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 9665700806,
         "CMDiff": null,
-        "EBITDA": -137191002,
+        "EBITDA": 2243336685,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -137191002,
+        "EBITDAVsBudget": 2243336685,
         "EBITDADiff": null,
         "EBIT": -234995248,
         "EBITBudget": 0,
@@ -2763,7 +2763,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 584621937436,
         "CMYTDVsBudget": 98457874634,
-        "EBITDAYTDVsBudget": -1710326680,
+        "EBITDAYTDVsBudget": 23149645446,
         "EBITYTDVsBudget": 48961412,
         "NetIncomeYTDVsBudget": 8109323273
       },
@@ -2782,9 +2782,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 10324786535,
         "CMDiff": null,
-        "EBITDA": -137191002,
+        "EBITDA": 2772909193,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -137191002,
+        "EBITDAVsBudget": 2772909193,
         "EBITDADiff": null,
         "EBIT": 138621871,
         "EBITBudget": 0,
@@ -2796,7 +2796,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 639948518030,
         "CMYTDVsBudget": 108782661169,
-        "EBITDAYTDVsBudget": -1847517682,
+        "EBITDAYTDVsBudget": 25922554639,
         "EBITYTDVsBudget": 187583283,
         "NetIncomeYTDVsBudget": 8247945144
       }
@@ -3209,31 +3209,31 @@ export const SEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-01-01",
         "tag": "Actual",
-        "Revenue": 717966000000,
+        "Revenue": 717965537780,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 717966000000,
+        "RevenueVsBudget": 717965537780,
         "RevenueDiff": null,
         "CM": 16781819940,
         "CMBudget": 0,
         "CMVsBudget": 16781819940,
         "CMDiff": null,
-        "EBITDA": 112538013,
+        "EBITDA": 10683507119,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 112538013,
+        "EBITDAVsBudget": 10683507119,
         "EBITDADiff": null,
-        "EBIT": 9042939579,
+        "EBIT": 8996374888,
         "EBITBudget": 0,
-        "EBITVsBudget": 9042939579,
+        "EBITVsBudget": 8996374888,
         "EBITDiff": null,
-        "NetIncome": 21881322588,
+        "NetIncome": 21834757897,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 21881322588,
+        "NetIncomeVsBudget": 21834757897,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 717966000000,
+        "RevenueYTDVsBudget": 717965537780,
         "CMYTDVsBudget": 16781819940,
-        "EBITDAYTDVsBudget": 112538013,
-        "EBITYTDVsBudget": 9042939579,
-        "NetIncomeYTDVsBudget": 21881322588
+        "EBITDAYTDVsBudget": 10683507119,
+        "EBITYTDVsBudget": 8996374888,
+        "NetIncomeYTDVsBudget": 21834757897
       },
       {
         "year": 2026,
@@ -3242,31 +3242,31 @@ export const SEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-02-01",
         "tag": "Actual",
-        "Revenue": 674368000000,
+        "Revenue": 674368175220,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 674368000000,
+        "RevenueVsBudget": 674368175220,
         "RevenueDiff": null,
         "CM": 15729773811,
         "CMBudget": 0,
         "CMVsBudget": 15729773811,
         "CMDiff": null,
-        "EBITDA": -180608556,
+        "EBITDA": 8923424498,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -180608556,
+        "EBITDAVsBudget": 8923424498,
         "EBITDADiff": null,
-        "EBIT": 7318952417,
+        "EBIT": 7133951380,
         "EBITBudget": 0,
-        "EBITVsBudget": 7318952417,
+        "EBITVsBudget": 7133951380,
         "EBITDiff": null,
-        "NetIncome": 13722395082,
+        "NetIncome": 13537394045,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 13722395082,
+        "NetIncomeVsBudget": 13537394045,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 1392334000000,
+        "RevenueYTDVsBudget": 1392333713000,
         "CMYTDVsBudget": 32511593751,
-        "EBITDAYTDVsBudget": -68070543,
-        "EBITYTDVsBudget": 16361891996,
-        "NetIncomeYTDVsBudget": 35603717670
+        "EBITDAYTDVsBudget": 19606931617,
+        "EBITYTDVsBudget": 16130326268,
+        "NetIncomeYTDVsBudget": 35372151942
       },
       {
         "year": 2026,
@@ -3275,31 +3275,31 @@ export const SEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-03-01",
         "tag": "Actual",
-        "Revenue": 703273000000,
+        "Revenue": 703273498860,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 703273000000,
+        "RevenueVsBudget": 703273498860,
         "RevenueDiff": null,
         "CM": 18419049614,
         "CMBudget": 0,
         "CMVsBudget": 18419049614,
         "CMDiff": null,
-        "EBITDA": 195594647,
+        "EBITDA": 12898762032,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 195594647,
+        "EBITDAVsBudget": 12898762032,
         "EBITDADiff": null,
-        "EBIT": 11628823192,
+        "EBIT": 11808621000,
         "EBITBudget": 0,
-        "EBITVsBudget": 11628823192,
+        "EBITVsBudget": 11808621000,
         "EBITDiff": null,
-        "NetIncome": 11361005157,
+        "NetIncome": 11540802965,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 11361005157,
+        "NetIncomeVsBudget": 11540802965,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 2095607000000,
+        "RevenueYTDVsBudget": 2095607211860,
         "CMYTDVsBudget": 50930643365,
-        "EBITDAYTDVsBudget": 127524104,
-        "EBITYTDVsBudget": 27990715188,
-        "NetIncomeYTDVsBudget": 46964722827
+        "EBITDAYTDVsBudget": 32505693649,
+        "EBITYTDVsBudget": 27938947268,
+        "NetIncomeYTDVsBudget": 46912954907
       },
       {
         "year": 2026,
@@ -3308,31 +3308,31 @@ export const SEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-04-01",
         "tag": "Actual",
-        "Revenue": 560781000000,
+        "Revenue": 560781238150,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 560781000000,
+        "RevenueVsBudget": 560781238150,
         "RevenueDiff": null,
         "CM": 12530076252,
         "CMBudget": 0,
         "CMVsBudget": 12530076252,
         "CMDiff": null,
-        "EBITDA": 5894900,
+        "EBITDA": 5874399285,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 5894900,
+        "EBITDAVsBudget": 5874399285,
         "EBITDADiff": null,
-        "EBIT": 4552401499,
+        "EBIT": 4505830321,
         "EBITBudget": 0,
-        "EBITVsBudget": 4552401499,
+        "EBITVsBudget": 4505830321,
         "EBITDiff": null,
-        "NetIncome": 11726760205,
+        "NetIncome": 11680189027,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 11726760205,
+        "NetIncomeVsBudget": 11680189027,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 2656388000000,
+        "RevenueYTDVsBudget": 2656388450010,
         "CMYTDVsBudget": 63460719617,
-        "EBITDAYTDVsBudget": 133419004,
-        "EBITYTDVsBudget": 32543116687,
-        "NetIncomeYTDVsBudget": 58691483032
+        "EBITDAYTDVsBudget": 38380092934,
+        "EBITYTDVsBudget": 32444777589,
+        "NetIncomeYTDVsBudget": 58593143934
       },
       {
         "year": 2026,
@@ -3341,31 +3341,31 @@ export const SEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-05-01",
         "tag": "Actual",
-        "Revenue": 428175000000,
+        "Revenue": 428175120917,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 428175000000,
+        "RevenueVsBudget": 428175120917,
         "RevenueDiff": null,
         "CM": 7944390082,
         "CMBudget": 0,
         "CMVsBudget": 7944390082,
         "CMDiff": null,
-        "EBITDA": -43382687,
+        "EBITDA": 1732123317,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -43382687,
+        "EBITDAVsBudget": 1732123317,
         "EBITDADiff": null,
-        "EBIT": 342648638,
+        "EBIT": 299265951,
         "EBITBudget": 0,
-        "EBITVsBudget": 342648638,
+        "EBITVsBudget": 299265951,
         "EBITDiff": null,
-        "NetIncome": 10644361405,
+        "NetIncome": 10600978718,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 10644361405,
+        "NetIncomeVsBudget": 10600978718,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3084563000000,
+        "RevenueYTDVsBudget": 3084563570927,
         "CMYTDVsBudget": 71405109699,
-        "EBITDAYTDVsBudget": 90036317,
-        "EBITYTDVsBudget": 32885765325,
-        "NetIncomeYTDVsBudget": 69335844437
+        "EBITDAYTDVsBudget": 40112216251,
+        "EBITYTDVsBudget": 32744043540,
+        "NetIncomeYTDVsBudget": 69194122652
       },
       {
         "year": 2026,
@@ -3374,31 +3374,31 @@ export const SEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-06-01",
         "tag": "Actual",
-        "Revenue": 400614000000,
+        "Revenue": 400614077810,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 400614000000,
+        "RevenueVsBudget": 400614077810,
         "RevenueDiff": null,
         "CM": 9584372282,
         "CMBudget": 0,
         "CMVsBudget": 9584372282,
         "CMDiff": null,
-        "EBITDA": 499732973,
+        "EBITDA": 2800668458,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 499732973,
+        "EBITDAVsBudget": 2800668458,
         "EBITDADiff": null,
-        "EBIT": 1583459803,
+        "EBIT": 1536692426,
         "EBITBudget": 0,
-        "EBITVsBudget": 1583459803,
+        "EBITVsBudget": 1536692426,
         "EBITDiff": null,
-        "NetIncome": 7077325924,
+        "NetIncome": 7030558547,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 7077325924,
+        "NetIncomeVsBudget": 7030558547,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3485177000000,
+        "RevenueYTDVsBudget": 3485177648737,
         "CMYTDVsBudget": 80989481981,
-        "EBITDAYTDVsBudget": 589769290,
-        "EBITYTDVsBudget": 34469225128,
-        "NetIncomeYTDVsBudget": 76413170361
+        "EBITDAYTDVsBudget": 42912884709,
+        "EBITYTDVsBudget": 34280735966,
+        "NetIncomeYTDVsBudget": 76224681199
       },
       {
         "year": 2026,
@@ -3407,17 +3407,17 @@ export const SEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-07-01",
         "tag": "Run-rate",
-        "Revenue": 448184000000,
+        "Revenue": 448183688891,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 448184000000,
+        "RevenueVsBudget": 448183688891,
         "RevenueDiff": null,
         "CM": 12516954114,
         "CMBudget": 0,
         "CMVsBudget": 12516954114,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 6838242605,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 6838242605,
         "EBITDADiff": null,
         "EBIT": 5735972952,
         "EBITBudget": 0,
@@ -3427,11 +3427,11 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 5735972952,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3933361000000,
+        "RevenueYTDVsBudget": 3933361337628,
         "CMYTDVsBudget": 93506436095,
-        "EBITDAYTDVsBudget": 589769290,
-        "EBITYTDVsBudget": 40205198080,
-        "NetIncomeYTDVsBudget": 82149143313
+        "EBITDAYTDVsBudget": 49751127314,
+        "EBITYTDVsBudget": 40016708918,
+        "NetIncomeYTDVsBudget": 81960654151
       },
       {
         "year": 2026,
@@ -3440,17 +3440,17 @@ export const SEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-08-01",
         "tag": "Forecast",
-        "Revenue": 412089000000,
+        "Revenue": 412089129589,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 412089000000,
+        "RevenueVsBudget": 412089129589,
         "RevenueDiff": null,
         "CM": 9966835794,
         "CMBudget": 0,
         "CMVsBudget": 9966835794,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 3462233820,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 3462233820,
         "EBITDADiff": null,
         "EBIT": 1494816220,
         "EBITBudget": 0,
@@ -3460,11 +3460,11 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 1494816220,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 4345450000000,
+        "RevenueYTDVsBudget": 4345450467217,
         "CMYTDVsBudget": 103473271889,
-        "EBITDAYTDVsBudget": 589769290,
-        "EBITYTDVsBudget": 41700014300,
-        "NetIncomeYTDVsBudget": 83643959533
+        "EBITDAYTDVsBudget": 53213361134,
+        "EBITYTDVsBudget": 41511525138,
+        "NetIncomeYTDVsBudget": 83455470371
       },
       {
         "year": 2026,
@@ -3473,17 +3473,17 @@ export const SEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-09-01",
         "tag": "Forecast",
-        "Revenue": 415700000000,
+        "Revenue": 415699664001,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 415700000000,
+        "RevenueVsBudget": 415699664001,
         "RevenueDiff": null,
         "CM": 9790432149,
         "CMBudget": 0,
         "CMVsBudget": 9790432149,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 3332284779,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 3332284779,
         "EBITDADiff": null,
         "EBIT": 1191368053,
         "EBITBudget": 0,
@@ -3493,11 +3493,11 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 1191368053,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 4761150000000,
+        "RevenueYTDVsBudget": 4761150131218,
         "CMYTDVsBudget": 113263704038,
-        "EBITDAYTDVsBudget": 589769290,
-        "EBITYTDVsBudget": 42891382353,
-        "NetIncomeYTDVsBudget": 84835327586
+        "EBITDAYTDVsBudget": 56545645913,
+        "EBITYTDVsBudget": 42702893191,
+        "NetIncomeYTDVsBudget": 84646838424
       },
       {
         "year": 2026,
@@ -3506,17 +3506,17 @@ export const SEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-10-01",
         "tag": "Forecast",
-        "Revenue": 430463000000,
+        "Revenue": 430462583062,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 430463000000,
+        "RevenueVsBudget": 430462583062,
         "RevenueDiff": null,
         "CM": 10193206645,
         "CMBudget": 0,
         "CMVsBudget": 10193206645,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 3742024234,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 3742024234,
         "EBITDADiff": null,
         "EBIT": 1804449968,
         "EBITBudget": 0,
@@ -3526,11 +3526,11 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 1804449968,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5191613000000,
+        "RevenueYTDVsBudget": 5191612714280,
         "CMYTDVsBudget": 123456910683,
-        "EBITDAYTDVsBudget": 589769290,
-        "EBITYTDVsBudget": 44695832321,
-        "NetIncomeYTDVsBudget": 86639777554
+        "EBITDAYTDVsBudget": 60287670147,
+        "EBITYTDVsBudget": 44507343159,
+        "NetIncomeYTDVsBudget": 86451288392
       },
       {
         "year": 2026,
@@ -3539,17 +3539,17 @@ export const SEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-11-01",
         "tag": "Forecast",
-        "Revenue": 451450000000,
+        "Revenue": 451449923545,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 451450000000,
+        "RevenueVsBudget": 451449923545,
         "RevenueDiff": null,
         "CM": 10950002795,
         "CMBudget": 0,
         "CMVsBudget": 10950002795,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 4553782885,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 4553782885,
         "EBITDADiff": null,
         "EBIT": 2616476447,
         "EBITBudget": 0,
@@ -3559,11 +3559,11 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 2616476447,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5643063000000,
+        "RevenueYTDVsBudget": 5643062637825,
         "CMYTDVsBudget": 134406913478,
-        "EBITDAYTDVsBudget": 589769290,
-        "EBITYTDVsBudget": 47312308768,
-        "NetIncomeYTDVsBudget": 89256254001
+        "EBITDAYTDVsBudget": 64841453032,
+        "EBITYTDVsBudget": 47123819606,
+        "NetIncomeYTDVsBudget": 89067764839
       },
       {
         "year": 2026,
@@ -3572,17 +3572,17 @@ export const SEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-12-01",
         "tag": "Forecast",
-        "Revenue": 472496000000,
+        "Revenue": 472495715596,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 472496000000,
+        "RevenueVsBudget": 472495715596,
         "RevenueDiff": null,
         "CM": 11607931035,
         "CMBudget": 0,
         "CMVsBudget": 11607931035,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 5147094424,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 5147094424,
         "EBITDADiff": null,
         "EBIT": 3062113413,
         "EBITBudget": 0,
@@ -3592,11 +3592,11 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 3062113413,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 6115559000000,
+        "RevenueYTDVsBudget": 6115558353421,
         "CMYTDVsBudget": 146014844513,
-        "EBITDAYTDVsBudget": 589769290,
-        "EBITYTDVsBudget": 50374422181,
-        "NetIncomeYTDVsBudget": 92318367414
+        "EBITDAYTDVsBudget": 69988547456,
+        "EBITYTDVsBudget": 50185933019,
+        "NetIncomeYTDVsBudget": 92129878252
       }
     ],
     "After Elim": [
@@ -3607,9 +3607,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-01-01",
         "tag": "Actual",
-        "Revenue": 717966000000,
+        "Revenue": 717965537780,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 717966000000,
+        "RevenueVsBudget": 717965537780,
         "RevenueDiff": null,
         "CM": 16781819940,
         "CMBudget": 0,
@@ -3627,7 +3627,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 23625964139,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 717966000000,
+        "RevenueYTDVsBudget": 717965537780,
         "CMYTDVsBudget": 16781819940,
         "EBITDAYTDVsBudget": 11149120862,
         "EBITYTDVsBudget": 10787581130,
@@ -3640,9 +3640,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-02-01",
         "tag": "Actual",
-        "Revenue": 674368000000,
+        "Revenue": 674368175220,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 674368000000,
+        "RevenueVsBudget": 674368175220,
         "RevenueDiff": null,
         "CM": 15729773811,
         "CMBudget": 0,
@@ -3660,7 +3660,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 14415344670,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 1392334000000,
+        "RevenueYTDVsBudget": 1392333713000,
         "CMYTDVsBudget": 32511593751,
         "EBITDAYTDVsBudget": 19514636377,
         "EBITYTDVsBudget": 18799483135,
@@ -3673,9 +3673,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-03-01",
         "tag": "Actual",
-        "Revenue": 703273000000,
+        "Revenue": 703273498860,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 703273000000,
+        "RevenueVsBudget": 703273498860,
         "RevenueDiff": null,
         "CM": 18419049614,
         "CMBudget": 0,
@@ -3693,7 +3693,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 13368091344,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 2095607000000,
+        "RevenueYTDVsBudget": 2095607211860,
         "CMYTDVsBudget": 50930643365,
         "EBITDAYTDVsBudget": 33496554285,
         "EBITYTDVsBudget": 32435392514,
@@ -3706,9 +3706,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-04-01",
         "tag": "Actual",
-        "Revenue": 560781000000,
+        "Revenue": 560781238150,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 560781000000,
+        "RevenueVsBudget": 560781238150,
         "RevenueDiff": null,
         "CM": 12530076252,
         "CMBudget": 0,
@@ -3726,7 +3726,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 13336965893,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 2656388000000,
+        "RevenueYTDVsBudget": 2656388450010,
         "CMYTDVsBudget": 63460719617,
         "EBITDAYTDVsBudget": 39962275831,
         "EBITYTDVsBudget": 38601184228,
@@ -3739,9 +3739,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-05-01",
         "tag": "Actual",
-        "Revenue": 428175000000,
+        "Revenue": 428175120917,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 428175000000,
+        "RevenueVsBudget": 428175120917,
         "RevenueDiff": null,
         "CM": 7944390082,
         "CMBudget": 0,
@@ -3759,7 +3759,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 10766462257,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3084563000000,
+        "RevenueYTDVsBudget": 3084563570927,
         "CMYTDVsBudget": 71405109699,
         "EBITDAYTDVsBudget": 40700048357,
         "EBITYTDVsBudget": 39065933718,
@@ -3772,9 +3772,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-06-01",
         "tag": "Actual",
-        "Revenue": 400614000000,
+        "Revenue": 400614077810,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 400614000000,
+        "RevenueVsBudget": 400614077810,
         "RevenueDiff": null,
         "CM": 9584372282,
         "CMBudget": 0,
@@ -3792,7 +3792,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 8670097605,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3485177000000,
+        "RevenueYTDVsBudget": 3485177648737,
         "CMYTDVsBudget": 80989481981,
         "EBITDAYTDVsBudget": 44146965870,
         "EBITYTDVsBudget": 42242165202,
@@ -3805,9 +3805,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-07-01",
         "tag": "Run-rate",
-        "Revenue": 448184000000,
+        "Revenue": 448183688891,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 448184000000,
+        "RevenueVsBudget": 448183688891,
         "RevenueDiff": null,
         "CM": 12516954114,
         "CMBudget": 0,
@@ -3825,7 +3825,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 5735972952,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 3933361000000,
+        "RevenueYTDVsBudget": 3933361337628,
         "CMYTDVsBudget": 93506436095,
         "EBITDAYTDVsBudget": 49882938822,
         "EBITYTDVsBudget": 47978138154,
@@ -3838,9 +3838,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-08-01",
         "tag": "Forecast",
-        "Revenue": 412089000000,
+        "Revenue": 412089129589,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 412089000000,
+        "RevenueVsBudget": 412089129589,
         "RevenueDiff": null,
         "CM": 9966835794,
         "CMBudget": 0,
@@ -3858,7 +3858,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 1494816220,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 4345450000000,
+        "RevenueYTDVsBudget": 4345450467217,
         "CMYTDVsBudget": 103473271889,
         "EBITDAYTDVsBudget": 52164468854,
         "EBITYTDVsBudget": 49472954374,
@@ -3871,9 +3871,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-09-01",
         "tag": "Forecast",
-        "Revenue": 415700000000,
+        "Revenue": 415699664001,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 415700000000,
+        "RevenueVsBudget": 415699664001,
         "RevenueDiff": null,
         "CM": 9790432149,
         "CMBudget": 0,
@@ -3891,7 +3891,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 1191368053,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 4761150000000,
+        "RevenueYTDVsBudget": 4761150131218,
         "CMYTDVsBudget": 113263704038,
         "EBITDAYTDVsBudget": 54142550719,
         "EBITYTDVsBudget": 50664322427,
@@ -3904,9 +3904,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-10-01",
         "tag": "Forecast",
-        "Revenue": 430463000000,
+        "Revenue": 430462583062,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 430463000000,
+        "RevenueVsBudget": 430462583062,
         "RevenueDiff": null,
         "CM": 10193206645,
         "CMBudget": 0,
@@ -3924,7 +3924,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 1804449968,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5191613000000,
+        "RevenueYTDVsBudget": 5191612714280,
         "CMYTDVsBudget": 123456910683,
         "EBITDAYTDVsBudget": 56733714499,
         "EBITYTDVsBudget": 52468772395,
@@ -3937,9 +3937,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-11-01",
         "tag": "Forecast",
-        "Revenue": 451450000000,
+        "Revenue": 451449923545,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 451450000000,
+        "RevenueVsBudget": 451449923545,
         "RevenueDiff": null,
         "CM": 10950002795,
         "CMBudget": 0,
@@ -3957,7 +3957,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 2616476447,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 5643063000000,
+        "RevenueYTDVsBudget": 5643062637825,
         "CMYTDVsBudget": 134406913478,
         "EBITDAYTDVsBudget": 60136904758,
         "EBITYTDVsBudget": 55085248842,
@@ -3970,9 +3970,9 @@ export const SEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-12-01",
         "tag": "Forecast",
-        "Revenue": 472496000000,
+        "Revenue": 472495715596,
         "RevenueBudget": 0,
-        "RevenueVsBudget": 472496000000,
+        "RevenueVsBudget": 472495715596,
         "RevenueDiff": null,
         "CM": 11607931035,
         "CMBudget": 0,
@@ -3990,7 +3990,7 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 3062113413,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 6115559000000,
+        "RevenueYTDVsBudget": 6115558353421,
         "CMYTDVsBudget": 146014844513,
         "EBITDAYTDVsBudget": 63985731983,
         "EBITYTDVsBudget": 58147362255,
@@ -4015,23 +4015,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 3259390091,
         "CMDiff": null,
-        "EBITDA": -192638991,
+        "EBITDA": 224911772,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -192638991,
+        "EBITDAVsBudget": 224911772,
         "EBITDADiff": null,
-        "EBIT": -532279419,
+        "EBIT": -548035034,
         "EBITBudget": 0,
-        "EBITVsBudget": -532279419,
+        "EBITVsBudget": -548035034,
         "EBITDiff": null,
-        "NetIncome": -550875974,
+        "NetIncome": -566631589,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -550875974,
+        "NetIncomeVsBudget": -566631589,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 9491362934,
         "CMYTDVsBudget": 3259390091,
-        "EBITDAYTDVsBudget": -192638991,
-        "EBITYTDVsBudget": -532279419,
-        "NetIncomeYTDVsBudget": -550875974
+        "EBITDAYTDVsBudget": 224911772,
+        "EBITYTDVsBudget": -548035034,
+        "NetIncomeYTDVsBudget": -566631589
       },
       {
         "year": 2026,
@@ -4048,23 +4048,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2327704398,
         "CMDiff": null,
-        "EBITDA": -101716140,
+        "EBITDA": 103602658,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -101716140,
+        "EBITDAVsBudget": 103602658,
         "EBITDADiff": null,
-        "EBIT": -647060262,
+        "EBIT": -665399710,
         "EBITBudget": 0,
-        "EBITVsBudget": -647060262,
+        "EBITVsBudget": -665399710,
         "EBITDiff": null,
-        "NetIncome": -633532751,
+        "NetIncome": -651872199,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -633532751,
+        "NetIncomeVsBudget": -651872199,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 16675854324,
         "CMYTDVsBudget": 5587094489,
-        "EBITDAYTDVsBudget": -294355131,
-        "EBITYTDVsBudget": -1179339681,
-        "NetIncomeYTDVsBudget": -1184408725
+        "EBITDAYTDVsBudget": 328514430,
+        "EBITYTDVsBudget": -1213434744,
+        "NetIncomeYTDVsBudget": -1218503788
       },
       {
         "year": 2026,
@@ -4081,23 +4081,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 1861392998,
         "CMDiff": null,
-        "EBITDA": -18171359,
+        "EBITDA": 123615769,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -18171359,
+        "EBITDAVsBudget": 123615769,
         "EBITDADiff": null,
-        "EBIT": -637303644,
+        "EBIT": -1365475003,
         "EBITBudget": 0,
-        "EBITVsBudget": -637303644,
+        "EBITVsBudget": -1365475003,
         "EBITDiff": null,
-        "NetIncome": -573082319,
+        "NetIncome": -1301253678,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -573082319,
+        "NetIncomeVsBudget": -1301253678,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 21714590773,
         "CMYTDVsBudget": 7448487487,
-        "EBITDAYTDVsBudget": -312526490,
-        "EBITYTDVsBudget": -1816643325,
-        "NetIncomeYTDVsBudget": -1757491044
+        "EBITDAYTDVsBudget": 452130199,
+        "EBITYTDVsBudget": -2578909747,
+        "NetIncomeYTDVsBudget": -2519757466
       },
       {
         "year": 2026,
@@ -4114,23 +4114,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 1709826310,
         "CMDiff": null,
-        "EBITDA": -6099272,
+        "EBITDA": -520250906,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -6099272,
+        "EBITDAVsBudget": -520250906,
         "EBITDADiff": null,
-        "EBIT": -1208509313,
+        "EBIT": -1226219269,
         "EBITBudget": 0,
-        "EBITVsBudget": -1208509313,
+        "EBITVsBudget": -1226219269,
         "EBITDiff": null,
-        "NetIncome": -1191665386,
+        "NetIncome": -1209375342,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -1191665386,
+        "NetIncomeVsBudget": -1209375342,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 28687225238,
         "CMYTDVsBudget": 9158313797,
-        "EBITDAYTDVsBudget": -318625762,
-        "EBITYTDVsBudget": -3025152638,
-        "NetIncomeYTDVsBudget": -2949156430
+        "EBITDAYTDVsBudget": -68120707,
+        "EBITYTDVsBudget": -3805129016,
+        "NetIncomeYTDVsBudget": -3729132808
       },
       {
         "year": 2026,
@@ -4147,23 +4147,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 3480743575,
         "CMDiff": null,
-        "EBITDA": -61617714,
+        "EBITDA": 1224478066,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -61617714,
+        "EBITDAVsBudget": 1224478066,
         "EBITDADiff": null,
-        "EBIT": 485221769,
+        "EBIT": 423604055,
         "EBITBudget": 0,
-        "EBITVsBudget": 485221769,
+        "EBITVsBudget": 423604055,
         "EBITDiff": null,
-        "NetIncome": 499787049,
+        "NetIncome": 438169335,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 499787049,
+        "NetIncomeVsBudget": 438169335,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 36947324151,
         "CMYTDVsBudget": 12639057372,
-        "EBITDAYTDVsBudget": -380243476,
-        "EBITYTDVsBudget": -2539930869,
-        "NetIncomeYTDVsBudget": -2449369381
+        "EBITDAYTDVsBudget": 1156357359,
+        "EBITYTDVsBudget": -3381524961,
+        "NetIncomeYTDVsBudget": -3290963473
       },
       {
         "year": 2026,
@@ -4180,23 +4180,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2388932111,
         "CMDiff": null,
-        "EBITDA": 189469488,
+        "EBITDA": 55077719,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 189469488,
+        "EBITDAVsBudget": 55077719,
         "EBITDADiff": null,
-        "EBIT": -617418527,
+        "EBIT": -637582424,
         "EBITBudget": 0,
-        "EBITVsBudget": -617418527,
+        "EBITVsBudget": -637582424,
         "EBITDiff": null,
-        "NetIncome": -556425237,
+        "NetIncome": -576589134,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -556425237,
+        "NetIncomeVsBudget": -576589134,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 44413353691,
         "CMYTDVsBudget": 15027989483,
-        "EBITDAYTDVsBudget": -190773988,
-        "EBITYTDVsBudget": -3157349396,
-        "NetIncomeYTDVsBudget": -3005794618
+        "EBITDAYTDVsBudget": 1211435078,
+        "EBITYTDVsBudget": -4019107385,
+        "NetIncomeYTDVsBudget": -3867552607
       },
       {
         "year": 2026,
@@ -4213,9 +4213,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2307748783,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 96748854,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 96748854,
         "EBITDADiff": null,
         "EBIT": -616248317,
         "EBITBudget": 0,
@@ -4227,9 +4227,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 51386866107,
         "CMYTDVsBudget": 17335738266,
-        "EBITDAYTDVsBudget": -190773988,
-        "EBITYTDVsBudget": -3773597713,
-        "NetIncomeYTDVsBudget": -3622042935
+        "EBITDAYTDVsBudget": 1308183932,
+        "EBITYTDVsBudget": -4635355702,
+        "NetIncomeYTDVsBudget": -4483800924
       },
       {
         "year": 2026,
@@ -4246,9 +4246,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2307748783,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 189534021,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 189534021,
         "EBITDADiff": null,
         "EBIT": -710176117,
         "EBITBudget": 0,
@@ -4260,9 +4260,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 58360378523,
         "CMYTDVsBudget": 19643487049,
-        "EBITDAYTDVsBudget": -190773988,
-        "EBITYTDVsBudget": -4483773830,
-        "NetIncomeYTDVsBudget": -4332219052
+        "EBITDAYTDVsBudget": 1497717953,
+        "EBITYTDVsBudget": -5345531819,
+        "NetIncomeYTDVsBudget": -5193977041
       },
       {
         "year": 2026,
@@ -4279,9 +4279,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2203506347,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 65117337,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 65117337,
         "EBITDADiff": null,
         "EBIT": -894587825,
         "EBITBudget": 0,
@@ -4293,9 +4293,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 64693777324,
         "CMYTDVsBudget": 21846993396,
-        "EBITDAYTDVsBudget": -190773988,
-        "EBITYTDVsBudget": -5378361655,
-        "NetIncomeYTDVsBudget": -5226806877
+        "EBITDAYTDVsBudget": 1562835290,
+        "EBITYTDVsBudget": -6240119644,
+        "NetIncomeYTDVsBudget": -6088564866
       },
       {
         "year": 2026,
@@ -4312,9 +4312,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2307748783,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 179315635,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 179315635,
         "EBITDADiff": null,
         "EBIT": -710074845,
         "EBITBudget": 0,
@@ -4326,9 +4326,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 71667289740,
         "CMYTDVsBudget": 24154742179,
-        "EBITDAYTDVsBudget": -190773988,
-        "EBITYTDVsBudget": -6088436500,
-        "NetIncomeYTDVsBudget": -5936881722
+        "EBITDAYTDVsBudget": 1742150925,
+        "EBITYTDVsBudget": -6950194489,
+        "NetIncomeYTDVsBudget": -6798639711
       },
       {
         "year": 2026,
@@ -4345,9 +4345,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2307748783,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 193794584,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 193794584,
         "EBITDADiff": null,
         "EBIT": -695503283,
         "EBITBudget": 0,
@@ -4359,9 +4359,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 78640802156,
         "CMYTDVsBudget": 26462490962,
-        "EBITDAYTDVsBudget": -190773988,
-        "EBITYTDVsBudget": -6783939783,
-        "NetIncomeYTDVsBudget": -6632385005
+        "EBITDAYTDVsBudget": 1935945509,
+        "EBITYTDVsBudget": -7645697772,
+        "NetIncomeYTDVsBudget": -7494142994
       },
       {
         "year": 2026,
@@ -4378,9 +4378,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 2307748783,
         "CMDiff": null,
-        "EBITDA": 0,
+        "EBITDA": 159803296,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 0,
+        "EBITDAVsBudget": 159803296,
         "EBITDADiff": null,
         "EBIT": -780559609,
         "EBITBudget": 0,
@@ -4392,9 +4392,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 85614314572,
         "CMYTDVsBudget": 28770239745,
-        "EBITDAYTDVsBudget": -190773988,
-        "EBITYTDVsBudget": -7564499392,
-        "NetIncomeYTDVsBudget": -7412944614
+        "EBITDAYTDVsBudget": 2095748805,
+        "EBITYTDVsBudget": -8426257381,
+        "NetIncomeYTDVsBudget": -8274702603
       }
     ],
     "After Elim": [
@@ -4813,23 +4813,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -67897498,
         "CMDiff": null,
-        "EBITDA": 249427594,
+        "EBITDA": 42789242808,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 249427594,
+        "EBITDAVsBudget": 42789242808,
         "EBITDADiff": null,
-        "EBIT": -7941796782,
+        "EBIT": 40144367527,
         "EBITBudget": 0,
-        "EBITVsBudget": -7941796782,
+        "EBITVsBudget": 40144367527,
         "EBITDiff": null,
-        "NetIncome": 76655936687,
+        "NetIncome": 124742100996,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 76655936687,
+        "NetIncomeVsBudget": 124742100996,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 265435835,
         "CMYTDVsBudget": -67897498,
-        "EBITDAYTDVsBudget": 249427594,
-        "EBITYTDVsBudget": -7941796782,
-        "NetIncomeYTDVsBudget": 76655936687
+        "EBITDAYTDVsBudget": 42789242808,
+        "EBITYTDVsBudget": 40144367527,
+        "NetIncomeYTDVsBudget": 124742100996
       },
       {
         "year": 2026,
@@ -4846,23 +4846,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -57654492,
         "CMDiff": null,
-        "EBITDA": -261473587,
+        "EBITDA": -123450615635,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -261473587,
+        "EBITDAVsBudget": -123450615635,
         "EBITDADiff": null,
-        "EBIT": -7215720029,
+        "EBIT": -126225666174,
         "EBITBudget": 0,
-        "EBITVsBudget": -7215720029,
+        "EBITVsBudget": -126225666174,
         "EBITDiff": null,
-        "NetIncome": -103623000000,
+        "NetIncome": -222633412702,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -103623000000,
+        "NetIncomeVsBudget": -222633412702,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 541114676,
         "CMYTDVsBudget": -125551990,
-        "EBITDAYTDVsBudget": -12045993,
-        "EBITYTDVsBudget": -15157516811,
-        "NetIncomeYTDVsBudget": -26967063313
+        "EBITDAYTDVsBudget": -80661372827,
+        "EBITYTDVsBudget": -86081298647,
+        "NetIncomeYTDVsBudget": -97891311706
       },
       {
         "year": 2026,
@@ -4879,23 +4879,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": 569991182,
         "CMDiff": null,
-        "EBITDA": -737321934,
+        "EBITDA": -443895044495,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -737321934,
+        "EBITDAVsBudget": -443895044495,
         "EBITDADiff": null,
-        "EBIT": -9402653744,
+        "EBIT": -446486437442,
         "EBITBudget": 0,
-        "EBITVsBudget": -9402653744,
+        "EBITVsBudget": -446486437442,
         "EBITDiff": null,
-        "NetIncome": -428434000000,
+        "NetIncome": -865517420446,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -428434000000,
+        "NetIncomeVsBudget": -865517420446,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1452978917,
         "CMYTDVsBudget": 444439192,
-        "EBITDAYTDVsBudget": -749367927,
-        "EBITYTDVsBudget": -24560170555,
-        "NetIncomeYTDVsBudget": -455401063313
+        "EBITDAYTDVsBudget": -524556417322,
+        "EBITYTDVsBudget": -532567736089,
+        "NetIncomeYTDVsBudget": -963408732152
       },
       {
         "year": 2026,
@@ -4912,23 +4912,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -317745496,
         "CMDiff": null,
-        "EBITDA": 1130868150,
+        "EBITDA": 287595203505,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 1130868150,
+        "EBITDAVsBudget": 287595203505,
         "EBITDADiff": null,
-        "EBIT": -6685550545,
+        "EBIT": 285379290895,
         "EBITBudget": 0,
-        "EBITVsBudget": -6685550545,
+        "EBITVsBudget": 285379290895,
         "EBITDiff": null,
-        "NetIncome": 309323000000,
+        "NetIncome": 601388038941,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 309323000000,
+        "NetIncomeVsBudget": 601388038941,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1468619754,
         "CMYTDVsBudget": 126693696,
-        "EBITDAYTDVsBudget": 381500223,
-        "EBITYTDVsBudget": -31245721100,
-        "NetIncomeYTDVsBudget": -146078063313
+        "EBITDAYTDVsBudget": -236961213817,
+        "EBITYTDVsBudget": -247188445194,
+        "NetIncomeYTDVsBudget": -362020693211
       },
       {
         "year": 2026,
@@ -4945,23 +4945,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -185773173,
         "CMDiff": null,
-        "EBITDA": -1125523664,
+        "EBITDA": -357005986508,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -1125523664,
+        "EBITDAVsBudget": -357005986508,
         "EBITDADiff": null,
-        "EBIT": -1298870447,
+        "EBIT": -359801348973,
         "EBITBudget": 0,
-        "EBITVsBudget": -1298870447,
+        "EBITVsBudget": -359801348973,
         "EBITDiff": null,
-        "NetIncome": -334096000000,
+        "NetIncome": -692598584642,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -334096000000,
+        "NetIncomeVsBudget": -692598584642,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1616323505,
         "CMYTDVsBudget": -59079477,
-        "EBITDAYTDVsBudget": -744023441,
-        "EBITYTDVsBudget": -32544591547,
-        "NetIncomeYTDVsBudget": -480174063313
+        "EBITDAYTDVsBudget": -593967200325,
+        "EBITYTDVsBudget": -606989794167,
+        "NetIncomeYTDVsBudget": -1054619277853
       },
       {
         "year": 2026,
@@ -4978,23 +4978,23 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -9288135055,
         "CMDiff": null,
-        "EBITDA": 10851161219,
+        "EBITDA": -406394254048,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 10851161219,
+        "EBITDAVsBudget": -406394254048,
         "EBITDADiff": null,
-        "EBIT": -6955543269,
+        "EBIT": -409037341078,
         "EBITBudget": 0,
-        "EBITVsBudget": -6955543269,
+        "EBITVsBudget": -409037341078,
         "EBITDiff": null,
-        "NetIncome": -402618000000,
+        "NetIncome": -804699413513,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -402618000000,
+        "NetIncomeVsBudget": -804699413513,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1838340059,
         "CMYTDVsBudget": -9347214532,
-        "EBITDAYTDVsBudget": 10107137778,
-        "EBITYTDVsBudget": -39500134816,
-        "NetIncomeYTDVsBudget": -882792063313
+        "EBITDAYTDVsBudget": -1000361454373,
+        "EBITYTDVsBudget": -1016027135245,
+        "NetIncomeYTDVsBudget": -1859318691366
       },
       {
         "year": 2026,
@@ -5011,9 +5011,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -1699470230,
         "CMDiff": null,
-        "EBITDA": 2245491630,
+        "EBITDA": -3919789974,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": 2245491630,
+        "EBITDAVsBudget": -3919789974,
         "EBITDADiff": null,
         "EBIT": -4136760892,
         "EBITBudget": 0,
@@ -5025,9 +5025,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1838340059,
         "CMYTDVsBudget": -11046684762,
-        "EBITDAYTDVsBudget": 12352629408,
-        "EBITYTDVsBudget": -43636895708,
-        "NetIncomeYTDVsBudget": -886928824205
+        "EBITDAYTDVsBudget": -1004281244347,
+        "EBITYTDVsBudget": -1020163896137,
+        "NetIncomeYTDVsBudget": -1863455452258
       },
       {
         "year": 2026,
@@ -5044,9 +5044,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -333333333,
         "CMDiff": null,
-        "EBITDA": -707000000,
+        "EBITDA": -4876978596,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -707000000,
+        "EBITDAVsBudget": -4876978596,
         "EBITDADiff": null,
         "EBIT": -6989500251,
         "EBITBudget": 0,
@@ -5058,9 +5058,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1838340059,
         "CMYTDVsBudget": -11380018095,
-        "EBITDAYTDVsBudget": 11645629408,
-        "EBITYTDVsBudget": -50626395959,
-        "NetIncomeYTDVsBudget": -893918324456
+        "EBITDAYTDVsBudget": -1009158222943,
+        "EBITYTDVsBudget": -1027153396388,
+        "NetIncomeYTDVsBudget": -1870444952509
       },
       {
         "year": 2026,
@@ -5077,9 +5077,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -333333333,
         "CMDiff": null,
-        "EBITDA": -707000000,
+        "EBITDA": -4958788929,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -707000000,
+        "EBITDAVsBudget": -4958788929,
         "EBITDADiff": null,
         "EBIT": -7079077662,
         "EBITBudget": 0,
@@ -5091,9 +5091,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1838340059,
         "CMYTDVsBudget": -11713351428,
-        "EBITDAYTDVsBudget": 10938629408,
-        "EBITYTDVsBudget": -57705473621,
-        "NetIncomeYTDVsBudget": -900997402118
+        "EBITDAYTDVsBudget": -1014117011872,
+        "EBITYTDVsBudget": -1034232474050,
+        "NetIncomeYTDVsBudget": -1877524030171
       },
       {
         "year": 2026,
@@ -5110,9 +5110,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -333333333,
         "CMDiff": null,
-        "EBITDA": -707000000,
+        "EBITDA": -4879483568,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -707000000,
+        "EBITDAVsBudget": -4879483568,
         "EBITDADiff": null,
         "EBIT": -6966229575,
         "EBITBudget": 0,
@@ -5124,9 +5124,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1838340059,
         "CMYTDVsBudget": -12046684761,
-        "EBITDAYTDVsBudget": 10231629408,
-        "EBITYTDVsBudget": -64671703196,
-        "NetIncomeYTDVsBudget": -907963631693
+        "EBITDAYTDVsBudget": -1018996495440,
+        "EBITYTDVsBudget": -1041198703625,
+        "NetIncomeYTDVsBudget": -1884490259746
       },
       {
         "year": 2026,
@@ -5143,9 +5143,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -333333333,
         "CMDiff": null,
-        "EBITDA": -707000000,
+        "EBITDA": -4863050216,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -707000000,
+        "EBITDAVsBudget": -4863050216,
         "EBITDADiff": null,
         "EBIT": -6954222963,
         "EBITBudget": 0,
@@ -5157,9 +5157,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1838340059,
         "CMYTDVsBudget": -12380018094,
-        "EBITDAYTDVsBudget": 9524629408,
-        "EBITYTDVsBudget": -71625926159,
-        "NetIncomeYTDVsBudget": -914917854656
+        "EBITDAYTDVsBudget": -1023859545656,
+        "EBITYTDVsBudget": -1048152926588,
+        "NetIncomeYTDVsBudget": -1891444482709
       },
       {
         "year": 2026,
@@ -5176,9 +5176,9 @@ export const SEGMENT_MONTHLY = {
         "CMBudget": 0,
         "CMVsBudget": -333333333,
         "CMDiff": null,
-        "EBITDA": -707000000,
+        "EBITDA": -4829953892,
         "EBITDABudget": 0,
-        "EBITDAVsBudget": -707000000,
+        "EBITDAVsBudget": -4829953892,
         "EBITDADiff": null,
         "EBIT": -6941828682,
         "EBITBudget": 0,
@@ -5190,9 +5190,9 @@ export const SEGMENT_MONTHLY = {
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 1838340059,
         "CMYTDVsBudget": -12713351427,
-        "EBITDAYTDVsBudget": 8817629408,
-        "EBITYTDVsBudget": -78567754841,
-        "NetIncomeYTDVsBudget": -921859683338
+        "EBITDAYTDVsBudget": -1028689499548,
+        "EBITYTDVsBudget": -1055094755270,
+        "NetIncomeYTDVsBudget": -1898386311391
       }
     ],
     "After Elim": [
@@ -5252,15 +5252,15 @@ export const SEGMENT_MONTHLY = {
         "EBITBudget": 0,
         "EBITVsBudget": -10990156613,
         "EBITDiff": null,
-        "NetIncome": -107224000000,
+        "NetIncome": -107223964545,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -107224000000,
+        "NetIncomeVsBudget": -107223964545,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 0,
         "CMYTDVsBudget": -666666666,
         "EBITDAYTDVsBudget": -20196966130,
         "EBITYTDVsBudget": -25105072641,
-        "NetIncomeYTDVsBudget": -36025669653
+        "NetIncomeYTDVsBudget": -36025634198
       },
       {
         "year": 2026,
@@ -5285,15 +5285,15 @@ export const SEGMENT_MONTHLY = {
         "EBITBudget": 0,
         "EBITVsBudget": -17143618491,
         "EBITDiff": null,
-        "NetIncome": -436844000000,
+        "NetIncome": -436844499528,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -436844000000,
+        "NetIncomeVsBudget": -436844499528,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 0,
         "CMYTDVsBudget": -1008539725,
         "EBITDAYTDVsBudget": -34888330947,
         "EBITYTDVsBudget": -42248691132,
-        "NetIncomeYTDVsBudget": -472869669653
+        "NetIncomeYTDVsBudget": -472870133726
       },
       {
         "year": 2026,
@@ -5318,15 +5318,15 @@ export const SEGMENT_MONTHLY = {
         "EBITBudget": 0,
         "EBITVsBudget": -12815648091,
         "EBITDiff": null,
-        "NetIncome": 303246000000,
+        "NetIncome": 303245773043,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": 303246000000,
+        "NetIncomeVsBudget": 303245773043,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 0,
         "CMYTDVsBudget": -1341926058,
         "EBITDAYTDVsBudget": -45236364432,
         "EBITYTDVsBudget": -55064339223,
-        "NetIncomeYTDVsBudget": -169623669653
+        "NetIncomeYTDVsBudget": -169624360683
       },
       {
         "year": 2026,
@@ -5351,15 +5351,15 @@ export const SEGMENT_MONTHLY = {
         "EBITBudget": 0,
         "EBITVsBudget": -1941001685,
         "EBITDiff": null,
-        "NetIncome": -334563000000,
+        "NetIncome": -334562809712,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -334563000000,
+        "NetIncomeVsBudget": -334562809712,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 0,
         "CMYTDVsBudget": -1675402982,
         "EBITDAYTDVsBudget": -44721499611,
         "EBITYTDVsBudget": -57005340908,
-        "NetIncomeYTDVsBudget": -504186669653
+        "NetIncomeYTDVsBudget": -504187170395
       },
       {
         "year": 2026,
@@ -5384,15 +5384,15 @@ export const SEGMENT_MONTHLY = {
         "EBITBudget": 0,
         "EBITVsBudget": -12967763629,
         "EBITDiff": null,
-        "NetIncome": -408488000000,
+        "NetIncome": -408487632007,
         "NetIncomeBudget": 0,
-        "NetIncomeVsBudget": -408488000000,
+        "NetIncomeVsBudget": -408487632007,
         "NetIncomeDiff": null,
         "RevenueYTDVsBudget": 0,
         "CMYTDVsBudget": -11185554591,
         "EBITDAYTDVsBudget": -55235540687,
         "EBITYTDVsBudget": -69973104537,
-        "NetIncomeYTDVsBudget": -912674669653
+        "NetIncomeYTDVsBudget": -912674802402
       },
       {
         "year": 2026,
@@ -5425,7 +5425,7 @@ export const SEGMENT_MONTHLY = {
         "CMYTDVsBudget": -12885024821,
         "EBITDAYTDVsBudget": -59372301579,
         "EBITYTDVsBudget": -74109865429,
-        "NetIncomeYTDVsBudget": -916811430545
+        "NetIncomeYTDVsBudget": -916811563294
       },
       {
         "year": 2026,
@@ -5458,7 +5458,7 @@ export const SEGMENT_MONTHLY = {
         "CMYTDVsBudget": -13218358154,
         "EBITDAYTDVsBudget": -64423999398,
         "EBITYTDVsBudget": -81099365680,
-        "NetIncomeYTDVsBudget": -923800930796
+        "NetIncomeYTDVsBudget": -923801063545
       },
       {
         "year": 2026,
@@ -5491,7 +5491,7 @@ export const SEGMENT_MONTHLY = {
         "CMYTDVsBudget": -13551691487,
         "EBITDAYTDVsBudget": -69581829857,
         "EBITYTDVsBudget": -88178443342,
-        "NetIncomeYTDVsBudget": -930880008458
+        "NetIncomeYTDVsBudget": -930880141207
       },
       {
         "year": 2026,
@@ -5524,7 +5524,7 @@ export const SEGMENT_MONTHLY = {
         "CMYTDVsBudget": -13885024820,
         "EBITDAYTDVsBudget": -74631849002,
         "EBITYTDVsBudget": -95144672917,
-        "NetIncomeYTDVsBudget": -937846238033
+        "NetIncomeYTDVsBudget": -937846370782
       },
       {
         "year": 2026,
@@ -5557,7 +5557,7 @@ export const SEGMENT_MONTHLY = {
         "CMYTDVsBudget": -14218358153,
         "EBITDAYTDVsBudget": -79665397249,
         "EBITYTDVsBudget": -102098895880,
-        "NetIncomeYTDVsBudget": -944800460996
+        "NetIncomeYTDVsBudget": -944800593745
       },
       {
         "year": 2026,
@@ -5590,7 +5590,7 @@ export const SEGMENT_MONTHLY = {
         "CMYTDVsBudget": -14551691486,
         "EBITDAYTDVsBudget": -84686551215,
         "EBITYTDVsBudget": -109040724562,
-        "NetIncomeYTDVsBudget": -951742289678
+        "NetIncomeYTDVsBudget": -951742422427
       }
     ]
   }
@@ -5615,23 +5615,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4951557520,
           "CMDiff": null,
-          "EBITDA": -445778535,
+          "EBITDA": -1971688873,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -445778535,
+          "EBITDAVsBudget": -1971688873,
           "EBITDADiff": null,
-          "EBIT": -5657990855,
+          "EBIT": -5682426640,
           "EBITBudget": 0,
-          "EBITVsBudget": -5657990855,
+          "EBITVsBudget": -5682426640,
           "EBITDiff": null,
-          "NetIncome": -2944274685,
+          "NetIncome": -2968710470,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -2944274685,
+          "NetIncomeVsBudget": -2968710470,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 22207663257,
           "CMYTDVsBudget": 4951557520,
-          "EBITDAYTDVsBudget": -445778535,
-          "EBITYTDVsBudget": -5657990855,
-          "NetIncomeYTDVsBudget": -2944274685
+          "EBITDAYTDVsBudget": -1971688873,
+          "EBITYTDVsBudget": -5682426640,
+          "NetIncomeYTDVsBudget": -2968710470
         },
         {
           "year": 2026,
@@ -5648,23 +5648,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4458878003,
           "CMDiff": null,
-          "EBITDA": 581938217,
+          "EBITDA": -1246917980,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 581938217,
+          "EBITDAVsBudget": -1246917980,
           "EBITDADiff": null,
-          "EBIT": -4894767617,
+          "EBIT": -4923004524,
           "EBITBudget": 0,
-          "EBITVsBudget": -4894767617,
+          "EBITVsBudget": -4923004524,
           "EBITDiff": null,
-          "NetIncome": -4586531200,
+          "NetIncome": -4614768107,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -4586531200,
+          "NetIncomeVsBudget": -4614768107,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44526610725,
           "CMYTDVsBudget": 9410435523,
-          "EBITDAYTDVsBudget": 136159682,
-          "EBITYTDVsBudget": -10552758472,
-          "NetIncomeYTDVsBudget": -7530805885
+          "EBITDAYTDVsBudget": -3218606853,
+          "EBITYTDVsBudget": -10605431164,
+          "NetIncomeYTDVsBudget": -7583478577
         },
         {
           "year": 2026,
@@ -5681,23 +5681,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6615244175,
           "CMDiff": null,
-          "EBITDA": -1895869398,
+          "EBITDA": -1658738843,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1895869398,
+          "EBITDAVsBudget": -1658738843,
           "EBITDADiff": null,
-          "EBIT": -5766280200,
+          "EBIT": -5790715985,
           "EBITBudget": 0,
-          "EBITVsBudget": -5766280200,
+          "EBITVsBudget": -5790715985,
           "EBITDiff": null,
-          "NetIncome": -7513293343,
+          "NetIncome": -7537729128,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -7513293343,
+          "NetIncomeVsBudget": -7537729128,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 79921697772,
           "CMYTDVsBudget": 16025679698,
-          "EBITDAYTDVsBudget": -1759709716,
-          "EBITYTDVsBudget": -16319038672,
-          "NetIncomeYTDVsBudget": -15044099228
+          "EBITDAYTDVsBudget": -4877345696,
+          "EBITYTDVsBudget": -16396147149,
+          "NetIncomeYTDVsBudget": -15121207705
         },
         {
           "year": 2026,
@@ -5714,23 +5714,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4572002299,
           "CMDiff": null,
-          "EBITDA": -20204248,
+          "EBITDA": 406677335,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -20204248,
+          "EBITDAVsBudget": 406677335,
           "EBITDADiff": null,
-          "EBIT": -2962295816,
+          "EBIT": -2990524645,
           "EBITBudget": 0,
-          "EBITVsBudget": -2962295816,
+          "EBITVsBudget": -2990524645,
           "EBITDiff": null,
-          "NetIncome": -178253914,
+          "NetIncome": -206482743,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -178253914,
+          "NetIncomeVsBudget": -206482743,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 102115030070,
           "CMYTDVsBudget": 20597681997,
-          "EBITDAYTDVsBudget": -1779913964,
-          "EBITYTDVsBudget": -19281334488,
-          "NetIncomeYTDVsBudget": -15222353142
+          "EBITDAYTDVsBudget": -4470668361,
+          "EBITYTDVsBudget": -19386671794,
+          "NetIncomeYTDVsBudget": -15327690448
         },
         {
           "year": 2026,
@@ -5747,23 +5747,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 5248385203,
           "CMDiff": null,
-          "EBITDA": -383573377,
+          "EBITDA": -1035715256,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -383573377,
+          "EBITDAVsBudget": -1035715256,
           "EBITDADiff": null,
-          "EBIT": -4431445881,
+          "EBIT": -4459676888,
           "EBITBudget": 0,
-          "EBITVsBudget": -4431445881,
+          "EBITVsBudget": -4459676888,
           "EBITDiff": null,
-          "NetIncome": 4849596583,
+          "NetIncome": 4821365576,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 4849596583,
+          "NetIncomeVsBudget": 4821365576,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 122219960980,
           "CMYTDVsBudget": 25846067200,
-          "EBITDAYTDVsBudget": -2163487341,
-          "EBITYTDVsBudget": -23712780369,
-          "NetIncomeYTDVsBudget": -10372756559
+          "EBITDAYTDVsBudget": -5506383617,
+          "EBITYTDVsBudget": -23846348682,
+          "NetIncomeYTDVsBudget": -10506324872
         },
         {
           "year": 2026,
@@ -5780,23 +5780,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4889958920,
           "CMDiff": null,
-          "EBITDA": 1864355336,
+          "EBITDA": -768103989,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1864355336,
+          "EBITDAVsBudget": -768103989,
           "EBITDADiff": null,
-          "EBIT": -4168078884,
+          "EBIT": -4118600162,
           "EBITBudget": 0,
-          "EBITVsBudget": -4168078884,
+          "EBITVsBudget": -4118600162,
           "EBITDiff": null,
-          "NetIncome": -3354063478,
+          "NetIncome": -3304584756,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -3354063478,
+          "NetIncomeVsBudget": -3304584756,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 140324007435,
           "CMYTDVsBudget": 30736026120,
-          "EBITDAYTDVsBudget": -299132005,
-          "EBITYTDVsBudget": -27880859253,
-          "NetIncomeYTDVsBudget": -13726820037
+          "EBITDAYTDVsBudget": -6274487606,
+          "EBITYTDVsBudget": -27964948844,
+          "NetIncomeYTDVsBudget": -13810909628
         },
         {
           "year": 2026,
@@ -5813,9 +5813,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6069757598,
           "CMDiff": null,
-          "EBITDA": 62600283,
+          "EBITDA": -170644590,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 62600283,
+          "EBITDAVsBudget": -170644590,
           "EBITDADiff": null,
           "EBIT": -3540380284,
           "EBITBudget": 0,
@@ -5827,9 +5827,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 162275944929,
           "CMYTDVsBudget": 36805783718,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -31421239537,
-          "NetIncomeYTDVsBudget": -17267200321
+          "EBITDAYTDVsBudget": -6445132196,
+          "EBITYTDVsBudget": -31505329128,
+          "NetIncomeYTDVsBudget": -17351289912
         },
         {
           "year": 2026,
@@ -5846,9 +5846,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6408127661,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": -216145751,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": -216145751,
           "EBITDADiff": null,
           "EBIT": -3882502725,
           "EBITBudget": 0,
@@ -5860,9 +5860,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 184041877169,
           "CMYTDVsBudget": 43213911379,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -35303742262,
-          "NetIncomeYTDVsBudget": -21149703046
+          "EBITDAYTDVsBudget": -6661277947,
+          "EBITYTDVsBudget": -35387831853,
+          "NetIncomeYTDVsBudget": -21233792637
         },
         {
           "year": 2026,
@@ -5879,9 +5879,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6773726777,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 170392483,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 170392483,
           "EBITDADiff": null,
           "EBIT": -3614333053,
           "EBITBudget": 0,
@@ -5893,9 +5893,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 206878622815,
           "CMYTDVsBudget": 49987638156,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -38918075315,
-          "NetIncomeYTDVsBudget": -24764036099
+          "EBITDAYTDVsBudget": -6490885464,
+          "EBITYTDVsBudget": -39002164906,
+          "NetIncomeYTDVsBudget": -24848125690
         },
         {
           "year": 2026,
@@ -5912,9 +5912,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6830449163,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 176258386,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 176258386,
           "EBITDADiff": null,
           "EBIT": -3469738182,
           "EBITBudget": 0,
@@ -5926,9 +5926,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 230052412714,
           "CMYTDVsBudget": 56818087319,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -42387813497,
-          "NetIncomeYTDVsBudget": -28233774281
+          "EBITDAYTDVsBudget": -6314627078,
+          "EBITYTDVsBudget": -42471903088,
+          "NetIncomeYTDVsBudget": -28317863872
         },
         {
           "year": 2026,
@@ -5945,9 +5945,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6711574843,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 238700977,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 238700977,
           "EBITDADiff": null,
           "EBIT": -3407112867,
           "EBITBudget": 0,
@@ -5959,9 +5959,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 252844807700,
           "CMYTDVsBudget": 63529662162,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -45794926364,
-          "NetIncomeYTDVsBudget": -31640887148
+          "EBITDAYTDVsBudget": -6075926101,
+          "EBITYTDVsBudget": -45879015955,
+          "NetIncomeYTDVsBudget": -31724976739
         },
         {
           "year": 2026,
@@ -5978,9 +5978,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 8043714755,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 1381820684,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 1381820684,
           "EBITDADiff": null,
           "EBIT": -2364743102,
           "EBITBudget": 0,
@@ -5992,9 +5992,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 280704017260,
           "CMYTDVsBudget": 71573376917,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -48159669466,
-          "NetIncomeYTDVsBudget": -34005630250
+          "EBITDAYTDVsBudget": -4694105417,
+          "EBITYTDVsBudget": -48243759057,
+          "NetIncomeYTDVsBudget": -34089719841
         }
       ],
       "Adj. EBITDA (Total)": [
@@ -6013,23 +6013,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4951557520,
           "CMDiff": null,
-          "EBITDA": -2730391186,
+          "EBITDA": -2754826971,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -2730391186,
+          "EBITDAVsBudget": -2754826971,
           "EBITDADiff": null,
-          "EBIT": -5657990855,
+          "EBIT": -5682426640,
           "EBITBudget": 0,
-          "EBITVsBudget": -5657990855,
+          "EBITVsBudget": -5682426640,
           "EBITDiff": null,
-          "NetIncome": -2944274685,
+          "NetIncome": -2968710470,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -2944274685,
+          "NetIncomeVsBudget": -2968710470,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 22207663257,
           "CMYTDVsBudget": 4951557520,
-          "EBITDAYTDVsBudget": -2730391186,
-          "EBITYTDVsBudget": -5657990855,
-          "NetIncomeYTDVsBudget": -2944274685
+          "EBITDAYTDVsBudget": -2754826971,
+          "EBITYTDVsBudget": -5682426640,
+          "NetIncomeYTDVsBudget": -2968710470
         },
         {
           "year": 2026,
@@ -6046,23 +6046,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4458878003,
           "CMDiff": null,
-          "EBITDA": -1988753805,
+          "EBITDA": -2016990712,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1988753805,
+          "EBITDAVsBudget": -2016990712,
           "EBITDADiff": null,
-          "EBIT": -4894767617,
+          "EBIT": -4923004524,
           "EBITBudget": 0,
-          "EBITVsBudget": -4894767617,
+          "EBITVsBudget": -4923004524,
           "EBITDiff": null,
-          "NetIncome": -4586531200,
+          "NetIncome": -4614768107,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -4586531200,
+          "NetIncomeVsBudget": -4614768107,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44526610725,
           "CMYTDVsBudget": 9410435523,
-          "EBITDAYTDVsBudget": -4719144991,
-          "EBITYTDVsBudget": -10552758472,
-          "NetIncomeYTDVsBudget": -7530805885
+          "EBITDAYTDVsBudget": -4771817683,
+          "EBITYTDVsBudget": -10605431164,
+          "NetIncomeYTDVsBudget": -7583478577
         },
         {
           "year": 2026,
@@ -6079,23 +6079,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6615244175,
           "CMDiff": null,
-          "EBITDA": -2225570652,
+          "EBITDA": -2250006437,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -2225570652,
+          "EBITDAVsBudget": -2250006437,
           "EBITDADiff": null,
-          "EBIT": -5766280200,
+          "EBIT": -5790715985,
           "EBITBudget": 0,
-          "EBITVsBudget": -5766280200,
+          "EBITVsBudget": -5790715985,
           "EBITDiff": null,
-          "NetIncome": -7513293343,
+          "NetIncome": -7537729128,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -7513293343,
+          "NetIncomeVsBudget": -7537729128,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 79921697772,
           "CMYTDVsBudget": 16025679698,
-          "EBITDAYTDVsBudget": -6944715643,
-          "EBITYTDVsBudget": -16319038672,
-          "NetIncomeYTDVsBudget": -15044099228
+          "EBITDAYTDVsBudget": -7021824120,
+          "EBITYTDVsBudget": -16396147149,
+          "NetIncomeYTDVsBudget": -15121207705
         },
         {
           "year": 2026,
@@ -6112,23 +6112,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4572002299,
           "CMDiff": null,
-          "EBITDA": -178864485,
+          "EBITDA": -207093314,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -178864485,
+          "EBITDAVsBudget": -207093314,
           "EBITDADiff": null,
-          "EBIT": -2962295816,
+          "EBIT": -2990524645,
           "EBITBudget": 0,
-          "EBITVsBudget": -2962295816,
+          "EBITVsBudget": -2990524645,
           "EBITDiff": null,
-          "NetIncome": -178253914,
+          "NetIncome": -206482743,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -178253914,
+          "NetIncomeVsBudget": -206482743,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 102115030070,
           "CMYTDVsBudget": 20597681997,
-          "EBITDAYTDVsBudget": -7123580128,
-          "EBITYTDVsBudget": -19281334488,
-          "NetIncomeYTDVsBudget": -15222353142
+          "EBITDAYTDVsBudget": -7228917434,
+          "EBITYTDVsBudget": -19386671794,
+          "NetIncomeYTDVsBudget": -15327690448
         },
         {
           "year": 2026,
@@ -6145,23 +6145,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 5248385203,
           "CMDiff": null,
-          "EBITDA": -1676839892,
+          "EBITDA": -1705070899,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1676839892,
+          "EBITDAVsBudget": -1705070899,
           "EBITDADiff": null,
-          "EBIT": -4431445881,
+          "EBIT": -4459676888,
           "EBITBudget": 0,
-          "EBITVsBudget": -4431445881,
+          "EBITVsBudget": -4459676888,
           "EBITDiff": null,
-          "NetIncome": 4849596583,
+          "NetIncome": 4821365576,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 4849596583,
+          "NetIncomeVsBudget": 4821365576,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 122219960980,
           "CMYTDVsBudget": 25846067200,
-          "EBITDAYTDVsBudget": -8800420020,
-          "EBITYTDVsBudget": -23712780369,
-          "NetIncomeYTDVsBudget": -10372756559
+          "EBITDAYTDVsBudget": -8933988333,
+          "EBITYTDVsBudget": -23846348682,
+          "NetIncomeYTDVsBudget": -10506324872
         },
         {
           "year": 2026,
@@ -6178,23 +6178,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4889958920,
           "CMDiff": null,
-          "EBITDA": -1330141806,
+          "EBITDA": -1280663084,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1330141806,
+          "EBITDAVsBudget": -1280663084,
           "EBITDADiff": null,
-          "EBIT": -4168078884,
+          "EBIT": -4118600162,
           "EBITBudget": 0,
-          "EBITVsBudget": -4168078884,
+          "EBITVsBudget": -4118600162,
           "EBITDiff": null,
-          "NetIncome": -3354063478,
+          "NetIncome": -3304584756,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -3354063478,
+          "NetIncomeVsBudget": -3304584756,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 140324007435,
           "CMYTDVsBudget": 30736026120,
-          "EBITDAYTDVsBudget": -10130561826,
-          "EBITYTDVsBudget": -27880859253,
-          "NetIncomeYTDVsBudget": -13726820037
+          "EBITDAYTDVsBudget": -10214651417,
+          "EBITYTDVsBudget": -27964948844,
+          "NetIncomeYTDVsBudget": -13810909628
         },
         {
           "year": 2026,
@@ -6225,9 +6225,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 162275944929,
           "CMYTDVsBudget": 36805783718,
-          "EBITDAYTDVsBudget": -10964173111,
-          "EBITYTDVsBudget": -31421239537,
-          "NetIncomeYTDVsBudget": -17267200321
+          "EBITDAYTDVsBudget": -11048262702,
+          "EBITYTDVsBudget": -31505329128,
+          "NetIncomeYTDVsBudget": -17351289912
         },
         {
           "year": 2026,
@@ -6258,9 +6258,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 184041877169,
           "CMYTDVsBudget": 43213911379,
-          "EBITDAYTDVsBudget": -11985845745,
-          "EBITYTDVsBudget": -35303742262,
-          "NetIncomeYTDVsBudget": -21149703046
+          "EBITDAYTDVsBudget": -12069935336,
+          "EBITYTDVsBudget": -35387831853,
+          "NetIncomeYTDVsBudget": -21233792637
         },
         {
           "year": 2026,
@@ -6291,9 +6291,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 206878622815,
           "CMYTDVsBudget": 49987638156,
-          "EBITDAYTDVsBudget": -12739348707,
-          "EBITYTDVsBudget": -38918075315,
-          "NetIncomeYTDVsBudget": -24764036099
+          "EBITDAYTDVsBudget": -12823438298,
+          "EBITYTDVsBudget": -39002164906,
+          "NetIncomeYTDVsBudget": -24848125690
         },
         {
           "year": 2026,
@@ -6324,9 +6324,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 230052412714,
           "CMYTDVsBudget": 56818087319,
-          "EBITDAYTDVsBudget": -13348256798,
-          "EBITYTDVsBudget": -42387813497,
-          "NetIncomeYTDVsBudget": -28233774281
+          "EBITDAYTDVsBudget": -13432346389,
+          "EBITYTDVsBudget": -42471903088,
+          "NetIncomeYTDVsBudget": -28317863872
         },
         {
           "year": 2026,
@@ -6357,9 +6357,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 252844807700,
           "CMYTDVsBudget": 63529662162,
-          "EBITDAYTDVsBudget": -13894539574,
-          "EBITYTDVsBudget": -45794926364,
-          "NetIncomeYTDVsBudget": -31640887148
+          "EBITDAYTDVsBudget": -13978629165,
+          "EBITYTDVsBudget": -45879015955,
+          "NetIncomeYTDVsBudget": -31724976739
         },
         {
           "year": 2026,
@@ -6390,9 +6390,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 280704017260,
           "CMYTDVsBudget": 71573376917,
-          "EBITDAYTDVsBudget": -13398452585,
-          "EBITYTDVsBudget": -48159669466,
-          "NetIncomeYTDVsBudget": -34005630250
+          "EBITDAYTDVsBudget": -13482542176,
+          "EBITYTDVsBudget": -48243759057,
+          "NetIncomeYTDVsBudget": -34089719841
         }
       ],
       "Adj. EBIT (Direct)": [
@@ -6411,23 +6411,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4951557520,
           "CMDiff": null,
-          "EBITDA": -445778535,
+          "EBITDA": -1971688873,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -445778535,
+          "EBITDAVsBudget": -1971688873,
           "EBITDADiff": null,
-          "EBIT": -9832103377,
+          "EBIT": -445470963,
           "EBITBudget": 0,
-          "EBITVsBudget": -9832103377,
+          "EBITVsBudget": -445470963,
           "EBITDiff": null,
-          "NetIncome": -2944274685,
+          "NetIncome": -2968710470,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -2944274685,
+          "NetIncomeVsBudget": -2968710470,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 22207663257,
           "CMYTDVsBudget": 4951557520,
-          "EBITDAYTDVsBudget": -445778535,
-          "EBITYTDVsBudget": -9832103377,
-          "NetIncomeYTDVsBudget": -2944274685
+          "EBITDAYTDVsBudget": -1971688873,
+          "EBITYTDVsBudget": -445470963,
+          "NetIncomeYTDVsBudget": -2968710470
         },
         {
           "year": 2026,
@@ -6444,23 +6444,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4458878003,
           "CMDiff": null,
-          "EBITDA": 581938217,
+          "EBITDA": -1246917980,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 581938217,
+          "EBITDAVsBudget": -1246917980,
           "EBITDADiff": null,
-          "EBIT": -8593348738,
+          "EBIT": -5012750887,
           "EBITBudget": 0,
-          "EBITVsBudget": -8593348738,
+          "EBITVsBudget": -5012750887,
           "EBITDiff": null,
-          "NetIncome": -4586531200,
+          "NetIncome": -4614768107,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -4586531200,
+          "NetIncomeVsBudget": -4614768107,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44526610725,
           "CMYTDVsBudget": 9410435523,
-          "EBITDAYTDVsBudget": 136159682,
-          "EBITYTDVsBudget": -18425452115,
-          "NetIncomeYTDVsBudget": -7530805885
+          "EBITDAYTDVsBudget": -3218606853,
+          "EBITYTDVsBudget": -5458221850,
+          "NetIncomeYTDVsBudget": -7583478577
         },
         {
           "year": 2026,
@@ -6477,23 +6477,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6615244175,
           "CMDiff": null,
-          "EBITDA": -1895869398,
+          "EBITDA": -1658738843,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1895869398,
+          "EBITDAVsBudget": -1658738843,
           "EBITDADiff": null,
-          "EBIT": -11796851861,
+          "EBIT": -5888489108,
           "EBITBudget": 0,
-          "EBITVsBudget": -11796851861,
+          "EBITVsBudget": -5888489108,
           "EBITDiff": null,
-          "NetIncome": -7513293343,
+          "NetIncome": -7537729128,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -7513293343,
+          "NetIncomeVsBudget": -7537729128,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 79921697772,
           "CMYTDVsBudget": 16025679698,
-          "EBITDAYTDVsBudget": -1759709716,
-          "EBITYTDVsBudget": -30222303976,
-          "NetIncomeYTDVsBudget": -15044099228
+          "EBITDAYTDVsBudget": -4877345696,
+          "EBITYTDVsBudget": -11346710958,
+          "NetIncomeYTDVsBudget": -15121207705
         },
         {
           "year": 2026,
@@ -6510,23 +6510,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4572002299,
           "CMDiff": null,
-          "EBITDA": -20204248,
+          "EBITDA": 406677335,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -20204248,
+          "EBITDAVsBudget": 406677335,
           "EBITDADiff": null,
-          "EBIT": -6929464211,
+          "EBIT": 2986924930,
           "EBITBudget": 0,
-          "EBITVsBudget": -6929464211,
+          "EBITVsBudget": 2986924930,
           "EBITDiff": null,
-          "NetIncome": -178253914,
+          "NetIncome": -206482743,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -178253914,
+          "NetIncomeVsBudget": -206482743,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 102115030070,
           "CMYTDVsBudget": 20597681997,
-          "EBITDAYTDVsBudget": -1779913964,
-          "EBITYTDVsBudget": -37151768187,
-          "NetIncomeYTDVsBudget": -15222353142
+          "EBITDAYTDVsBudget": -4470668361,
+          "EBITYTDVsBudget": -8359786028,
+          "NetIncomeYTDVsBudget": -15327690448
         },
         {
           "year": 2026,
@@ -6543,23 +6543,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 5248385203,
           "CMDiff": null,
-          "EBITDA": -383573377,
+          "EBITDA": -1035715256,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -383573377,
+          "EBITDAVsBudget": -1035715256,
           "EBITDADiff": null,
-          "EBIT": -9022584917,
+          "EBIT": 11703633674,
           "EBITBudget": 0,
-          "EBITVsBudget": -9022584917,
+          "EBITVsBudget": 11703633674,
           "EBITDiff": null,
-          "NetIncome": 4849596583,
+          "NetIncome": 4821365576,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 4849596583,
+          "NetIncomeVsBudget": 4821365576,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 122219960980,
           "CMYTDVsBudget": 25846067200,
-          "EBITDAYTDVsBudget": -2163487341,
-          "EBITYTDVsBudget": -46174353104,
-          "NetIncomeYTDVsBudget": -10372756559
+          "EBITDAYTDVsBudget": -5506383617,
+          "EBITYTDVsBudget": 3343847646,
+          "NetIncomeYTDVsBudget": -10506324872
         },
         {
           "year": 2026,
@@ -6576,23 +6576,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4889958920,
           "CMDiff": null,
-          "EBITDA": 1864355336,
+          "EBITDA": -768103989,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1864355336,
+          "EBITDAVsBudget": -768103989,
           "EBITDADiff": null,
-          "EBIT": -8479570686,
+          "EBIT": -6288732682,
           "EBITBudget": 0,
-          "EBITVsBudget": -8479570686,
+          "EBITVsBudget": -6288732682,
           "EBITDiff": null,
-          "NetIncome": -3354063478,
+          "NetIncome": -3304584756,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -3354063478,
+          "NetIncomeVsBudget": -3304584756,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 140324007435,
           "CMYTDVsBudget": 30736026120,
-          "EBITDAYTDVsBudget": -299132005,
-          "EBITYTDVsBudget": -54653923790,
-          "NetIncomeYTDVsBudget": -13726820037
+          "EBITDAYTDVsBudget": -6274487606,
+          "EBITYTDVsBudget": -2944885036,
+          "NetIncomeYTDVsBudget": -13810909628
         },
         {
           "year": 2026,
@@ -6609,13 +6609,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6069757598,
           "CMDiff": null,
-          "EBITDA": 62600283,
+          "EBITDA": -170644590,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 62600283,
+          "EBITDAVsBudget": -170644590,
           "EBITDADiff": null,
-          "EBIT": -8947171187,
+          "EBIT": -2877413589,
           "EBITBudget": 0,
-          "EBITVsBudget": -8947171187,
+          "EBITVsBudget": -2877413589,
           "EBITDiff": null,
           "NetIncome": -3540380284,
           "NetIncomeBudget": 0,
@@ -6623,9 +6623,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 162275944929,
           "CMYTDVsBudget": 36805783718,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -63601094977,
-          "NetIncomeYTDVsBudget": -17267200321
+          "EBITDAYTDVsBudget": -6445132196,
+          "EBITYTDVsBudget": -5822298625,
+          "NetIncomeYTDVsBudget": -17351289912
         },
         {
           "year": 2026,
@@ -6642,13 +6642,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6408127661,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": -216145751,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": -216145751,
           "EBITDADiff": null,
-          "EBIT": -9485103503,
+          "EBIT": -3076975842,
           "EBITBudget": 0,
-          "EBITVsBudget": -9485103503,
+          "EBITVsBudget": -3076975842,
           "EBITDiff": null,
           "NetIncome": -3882502725,
           "NetIncomeBudget": 0,
@@ -6656,9 +6656,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 184041877169,
           "CMYTDVsBudget": 43213911379,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -73086198480,
-          "NetIncomeYTDVsBudget": -21149703046
+          "EBITDAYTDVsBudget": -6661277947,
+          "EBITYTDVsBudget": -8899274467,
+          "NetIncomeYTDVsBudget": -21233792637
         },
         {
           "year": 2026,
@@ -6675,13 +6675,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6773726777,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 170392483,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 170392483,
           "EBITDADiff": null,
-          "EBIT": -9464164385,
+          "EBIT": -2690437608,
           "EBITBudget": 0,
-          "EBITVsBudget": -9464164385,
+          "EBITVsBudget": -2690437608,
           "EBITDiff": null,
           "NetIncome": -3614333053,
           "NetIncomeBudget": 0,
@@ -6689,9 +6689,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 206878622815,
           "CMYTDVsBudget": 49987638156,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -82550362865,
-          "NetIncomeYTDVsBudget": -24764036099
+          "EBITDAYTDVsBudget": -6490885464,
+          "EBITYTDVsBudget": -11589712075,
+          "NetIncomeYTDVsBudget": -24848125690
         },
         {
           "year": 2026,
@@ -6708,13 +6708,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6830449163,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 176258386,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 176258386,
           "EBITDADiff": null,
-          "EBIT": -9515020868,
+          "EBIT": -2684571705,
           "EBITBudget": 0,
-          "EBITVsBudget": -9515020868,
+          "EBITVsBudget": -2684571705,
           "EBITDiff": null,
           "NetIncome": -3469738182,
           "NetIncomeBudget": 0,
@@ -6722,9 +6722,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 230052412714,
           "CMYTDVsBudget": 56818087319,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -92065383733,
-          "NetIncomeYTDVsBudget": -28233774281
+          "EBITDAYTDVsBudget": -6314627078,
+          "EBITYTDVsBudget": -14274283780,
+          "NetIncomeYTDVsBudget": -28317863872
         },
         {
           "year": 2026,
@@ -6741,13 +6741,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6711574843,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 238700977,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 238700977,
           "EBITDADiff": null,
-          "EBIT": -9333703957,
+          "EBIT": -2622129114,
           "EBITBudget": 0,
-          "EBITVsBudget": -9333703957,
+          "EBITVsBudget": -2622129114,
           "EBITDiff": null,
           "NetIncome": -3407112867,
           "NetIncomeBudget": 0,
@@ -6755,9 +6755,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 252844807700,
           "CMYTDVsBudget": 63529662162,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -101399087690,
-          "NetIncomeYTDVsBudget": -31640887148
+          "EBITDAYTDVsBudget": -6075926101,
+          "EBITYTDVsBudget": -16896412894,
+          "NetIncomeYTDVsBudget": -31724976739
         },
         {
           "year": 2026,
@@ -6774,13 +6774,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 8043714755,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 1381820684,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 1381820684,
           "EBITDADiff": null,
-          "EBIT": -9522724162,
+          "EBIT": -1479009407,
           "EBITBudget": 0,
-          "EBITVsBudget": -9522724162,
+          "EBITVsBudget": -1479009407,
           "EBITDiff": null,
           "NetIncome": -2364743102,
           "NetIncomeBudget": 0,
@@ -6788,9 +6788,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 280704017260,
           "CMYTDVsBudget": 71573376917,
-          "EBITDAYTDVsBudget": -236531722,
-          "EBITYTDVsBudget": -110921811852,
-          "NetIncomeYTDVsBudget": -34005630250
+          "EBITDAYTDVsBudget": -4694105417,
+          "EBITYTDVsBudget": -18375422301,
+          "NetIncomeYTDVsBudget": -34089719841
         }
       ],
       "Adj. EBIT (Total)": [
@@ -6809,23 +6809,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4951557520,
           "CMDiff": null,
-          "EBITDA": -2730391186,
+          "EBITDA": -2754826971,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -2730391186,
+          "EBITDAVsBudget": -2754826971,
           "EBITDADiff": null,
-          "EBIT": -5657990855,
+          "EBIT": -5682426640,
           "EBITBudget": 0,
-          "EBITVsBudget": -5657990855,
+          "EBITVsBudget": -5682426640,
           "EBITDiff": null,
-          "NetIncome": -2944274685,
+          "NetIncome": -2968710470,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -2944274685,
+          "NetIncomeVsBudget": -2968710470,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 22207663257,
           "CMYTDVsBudget": 4951557520,
-          "EBITDAYTDVsBudget": -2730391186,
-          "EBITYTDVsBudget": -5657990855,
-          "NetIncomeYTDVsBudget": -2944274685
+          "EBITDAYTDVsBudget": -2754826971,
+          "EBITYTDVsBudget": -5682426640,
+          "NetIncomeYTDVsBudget": -2968710470
         },
         {
           "year": 2026,
@@ -6842,23 +6842,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4458878003,
           "CMDiff": null,
-          "EBITDA": -1988753805,
+          "EBITDA": -2016990712,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1988753805,
+          "EBITDAVsBudget": -2016990712,
           "EBITDADiff": null,
-          "EBIT": -4894767617,
+          "EBIT": -4923004524,
           "EBITBudget": 0,
-          "EBITVsBudget": -4894767617,
+          "EBITVsBudget": -4923004524,
           "EBITDiff": null,
-          "NetIncome": -4586531200,
+          "NetIncome": -4614768107,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -4586531200,
+          "NetIncomeVsBudget": -4614768107,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44526610725,
           "CMYTDVsBudget": 9410435523,
-          "EBITDAYTDVsBudget": -4719144991,
-          "EBITYTDVsBudget": -10552758472,
-          "NetIncomeYTDVsBudget": -7530805885
+          "EBITDAYTDVsBudget": -4771817683,
+          "EBITYTDVsBudget": -10605431164,
+          "NetIncomeYTDVsBudget": -7583478577
         },
         {
           "year": 2026,
@@ -6875,23 +6875,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6615244175,
           "CMDiff": null,
-          "EBITDA": -2225570652,
+          "EBITDA": -2250006437,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -2225570652,
+          "EBITDAVsBudget": -2250006437,
           "EBITDADiff": null,
-          "EBIT": -5766280200,
+          "EBIT": -5790715985,
           "EBITBudget": 0,
-          "EBITVsBudget": -5766280200,
+          "EBITVsBudget": -5790715985,
           "EBITDiff": null,
-          "NetIncome": -7513293343,
+          "NetIncome": -7537729128,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -7513293343,
+          "NetIncomeVsBudget": -7537729128,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 79921697772,
           "CMYTDVsBudget": 16025679698,
-          "EBITDAYTDVsBudget": -6944715643,
-          "EBITYTDVsBudget": -16319038672,
-          "NetIncomeYTDVsBudget": -15044099228
+          "EBITDAYTDVsBudget": -7021824120,
+          "EBITYTDVsBudget": -16396147149,
+          "NetIncomeYTDVsBudget": -15121207705
         },
         {
           "year": 2026,
@@ -6908,23 +6908,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4572002299,
           "CMDiff": null,
-          "EBITDA": -178864485,
+          "EBITDA": -207093314,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -178864485,
+          "EBITDAVsBudget": -207093314,
           "EBITDADiff": null,
-          "EBIT": -2962295816,
+          "EBIT": -2990524645,
           "EBITBudget": 0,
-          "EBITVsBudget": -2962295816,
+          "EBITVsBudget": -2990524645,
           "EBITDiff": null,
-          "NetIncome": -178253914,
+          "NetIncome": -206482743,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -178253914,
+          "NetIncomeVsBudget": -206482743,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 102115030070,
           "CMYTDVsBudget": 20597681997,
-          "EBITDAYTDVsBudget": -7123580128,
-          "EBITYTDVsBudget": -19281334488,
-          "NetIncomeYTDVsBudget": -15222353142
+          "EBITDAYTDVsBudget": -7228917434,
+          "EBITYTDVsBudget": -19386671794,
+          "NetIncomeYTDVsBudget": -15327690448
         },
         {
           "year": 2026,
@@ -6941,23 +6941,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 5248385203,
           "CMDiff": null,
-          "EBITDA": -1676839892,
+          "EBITDA": -1705070899,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1676839892,
+          "EBITDAVsBudget": -1705070899,
           "EBITDADiff": null,
-          "EBIT": -4431445881,
+          "EBIT": -4459676888,
           "EBITBudget": 0,
-          "EBITVsBudget": -4431445881,
+          "EBITVsBudget": -4459676888,
           "EBITDiff": null,
-          "NetIncome": 4849596583,
+          "NetIncome": 4821365576,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 4849596583,
+          "NetIncomeVsBudget": 4821365576,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 122219960980,
           "CMYTDVsBudget": 25846067200,
-          "EBITDAYTDVsBudget": -8800420020,
-          "EBITYTDVsBudget": -23712780369,
-          "NetIncomeYTDVsBudget": -10372756559
+          "EBITDAYTDVsBudget": -8933988333,
+          "EBITYTDVsBudget": -23846348682,
+          "NetIncomeYTDVsBudget": -10506324872
         },
         {
           "year": 2026,
@@ -6974,23 +6974,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 4889958920,
           "CMDiff": null,
-          "EBITDA": -1330141806,
+          "EBITDA": -1280663084,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1330141806,
+          "EBITDAVsBudget": -1280663084,
           "EBITDADiff": null,
-          "EBIT": -4168078884,
+          "EBIT": -4118600162,
           "EBITBudget": 0,
-          "EBITVsBudget": -4168078884,
+          "EBITVsBudget": -4118600162,
           "EBITDiff": null,
-          "NetIncome": -3354063478,
+          "NetIncome": -3304584756,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -3354063478,
+          "NetIncomeVsBudget": -3304584756,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 140324007435,
           "CMYTDVsBudget": 30736026120,
-          "EBITDAYTDVsBudget": -10130561826,
-          "EBITYTDVsBudget": -27880859253,
-          "NetIncomeYTDVsBudget": -13726820037
+          "EBITDAYTDVsBudget": -10214651417,
+          "EBITYTDVsBudget": -27964948844,
+          "NetIncomeYTDVsBudget": -13810909628
         },
         {
           "year": 2026,
@@ -7021,9 +7021,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 162275944929,
           "CMYTDVsBudget": 36805783718,
-          "EBITDAYTDVsBudget": -10964173111,
-          "EBITYTDVsBudget": -31421239537,
-          "NetIncomeYTDVsBudget": -17267200321
+          "EBITDAYTDVsBudget": -11048262702,
+          "EBITYTDVsBudget": -31505329128,
+          "NetIncomeYTDVsBudget": -17351289912
         },
         {
           "year": 2026,
@@ -7054,9 +7054,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 184041877169,
           "CMYTDVsBudget": 43213911379,
-          "EBITDAYTDVsBudget": -11985845745,
-          "EBITYTDVsBudget": -35303742262,
-          "NetIncomeYTDVsBudget": -21149703046
+          "EBITDAYTDVsBudget": -12069935336,
+          "EBITYTDVsBudget": -35387831853,
+          "NetIncomeYTDVsBudget": -21233792637
         },
         {
           "year": 2026,
@@ -7087,9 +7087,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 206878622815,
           "CMYTDVsBudget": 49987638156,
-          "EBITDAYTDVsBudget": -12739348707,
-          "EBITYTDVsBudget": -38918075315,
-          "NetIncomeYTDVsBudget": -24764036099
+          "EBITDAYTDVsBudget": -12823438298,
+          "EBITYTDVsBudget": -39002164906,
+          "NetIncomeYTDVsBudget": -24848125690
         },
         {
           "year": 2026,
@@ -7120,9 +7120,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 230052412714,
           "CMYTDVsBudget": 56818087319,
-          "EBITDAYTDVsBudget": -13348256798,
-          "EBITYTDVsBudget": -42387813497,
-          "NetIncomeYTDVsBudget": -28233774281
+          "EBITDAYTDVsBudget": -13432346389,
+          "EBITYTDVsBudget": -42471903088,
+          "NetIncomeYTDVsBudget": -28317863872
         },
         {
           "year": 2026,
@@ -7153,9 +7153,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 252844807700,
           "CMYTDVsBudget": 63529662162,
-          "EBITDAYTDVsBudget": -13894539574,
-          "EBITYTDVsBudget": -45794926364,
-          "NetIncomeYTDVsBudget": -31640887148
+          "EBITDAYTDVsBudget": -13978629165,
+          "EBITYTDVsBudget": -45879015955,
+          "NetIncomeYTDVsBudget": -31724976739
         },
         {
           "year": 2026,
@@ -7186,9 +7186,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 280704017260,
           "CMYTDVsBudget": 71573376917,
-          "EBITDAYTDVsBudget": -13398452585,
-          "EBITYTDVsBudget": -48159669466,
-          "NetIncomeYTDVsBudget": -34005630250
+          "EBITDAYTDVsBudget": -13482542176,
+          "EBITYTDVsBudget": -48243759057,
+          "NetIncomeYTDVsBudget": -34089719841
         }
       ]
     }
@@ -7211,9 +7211,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 7787404894,
           "CMDiff": null,
-          "EBITDA": -154178511,
+          "EBITDA": 916102029,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -154178511,
+          "EBITDAVsBudget": 916102029,
           "EBITDADiff": null,
           "EBIT": -1249449495,
           "EBITBudget": 0,
@@ -7225,7 +7225,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 57602475508,
           "CMYTDVsBudget": 7787404894,
-          "EBITDAYTDVsBudget": -154178511,
+          "EBITDAYTDVsBudget": 916102029,
           "EBITYTDVsBudget": -1249449495,
           "NetIncomeYTDVsBudget": -870262140
         },
@@ -7244,9 +7244,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6071225483,
           "CMDiff": null,
-          "EBITDA": -302218368,
+          "EBITDA": -1278273033,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -302218368,
+          "EBITDAVsBudget": -1278273033,
           "EBITDADiff": null,
           "EBIT": -3410666985,
           "EBITBudget": 0,
@@ -7258,7 +7258,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 109015175641,
           "CMYTDVsBudget": 13858630377,
-          "EBITDAYTDVsBudget": -456396879,
+          "EBITDAYTDVsBudget": -362171004,
           "EBITYTDVsBudget": -4660116480,
           "NetIncomeYTDVsBudget": -4176099448
         },
@@ -7277,9 +7277,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9117477324,
           "CMDiff": null,
-          "EBITDA": -375219558,
+          "EBITDA": 2295262720,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -375219558,
+          "EBITDAVsBudget": 2295262720,
           "EBITDADiff": null,
           "EBIT": 499249928,
           "EBITBudget": 0,
@@ -7291,7 +7291,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 174889563282,
           "CMYTDVsBudget": 22976107701,
-          "EBITDAYTDVsBudget": -831616437,
+          "EBITDAYTDVsBudget": 1933091716,
           "EBITYTDVsBudget": -4160866552,
           "NetIncomeYTDVsBudget": -770441016
         },
@@ -7310,9 +7310,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9630671052,
           "CMDiff": null,
-          "EBITDA": -204878033,
+          "EBITDA": 6294324025,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -204878033,
+          "EBITDAVsBudget": 6294324025,
           "EBITDADiff": null,
           "EBIT": 4421968483,
           "EBITBudget": 0,
@@ -7324,7 +7324,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 229246763628,
           "CMYTDVsBudget": 32606778753,
-          "EBITDAYTDVsBudget": -1036494470,
+          "EBITDAYTDVsBudget": 8227415741,
           "EBITYTDVsBudget": 261101931,
           "NetIncomeYTDVsBudget": 4100566706
         },
@@ -7343,9 +7343,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9457735081,
           "CMDiff": null,
-          "EBITDA": -422554350,
+          "EBITDA": 2481702396,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -422554350,
+          "EBITDAVsBudget": 2481702396,
           "EBITDADiff": null,
           "EBIT": 540710307,
           "EBITBudget": 0,
@@ -7357,7 +7357,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 278301718516,
           "CMYTDVsBudget": 42064513834,
-          "EBITDAYTDVsBudget": -1459048820,
+          "EBITDAYTDVsBudget": 10709118137,
           "EBITYTDVsBudget": 801812238,
           "NetIncomeYTDVsBudget": 5373973453
         },
@@ -7376,9 +7376,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9735233979,
           "CMDiff": null,
-          "EBITDA": 534677150,
+          "EBITDA": 3180753831,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 534677150,
+          "EBITDAVsBudget": 3180753831,
           "EBITDADiff": null,
           "EBIT": 1450970808,
           "EBITBudget": 0,
@@ -7390,7 +7390,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 326437706468,
           "CMYTDVsBudget": 51799747813,
-          "EBITDAYTDVsBudget": -924371670,
+          "EBITDAYTDVsBudget": 13889871968,
           "EBITYTDVsBudget": 2252783046,
           "NetIncomeYTDVsBudget": 10313144907
         },
@@ -7409,9 +7409,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 8778031709,
           "CMDiff": null,
-          "EBITDA": -237191002,
+          "EBITDA": 1530516848,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -237191002,
+          "EBITDAVsBudget": 1530516848,
           "EBITDADiff": null,
           "EBIT": 227359640,
           "EBITBudget": 0,
@@ -7423,7 +7423,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 375896061533,
           "CMYTDVsBudget": 60577779522,
-          "EBITDAYTDVsBudget": -1161562672,
+          "EBITDAYTDVsBudget": 15420388816,
           "EBITYTDVsBudget": 2480142686,
           "NetIncomeYTDVsBudget": 10540504547
         },
@@ -7442,9 +7442,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9290563152,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 1668497645,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 1668497645,
           "EBITDADiff": null,
           "EBIT": -841633927,
           "EBITBudget": 0,
@@ -7456,7 +7456,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 426681076887,
           "CMYTDVsBudget": 69868342674,
-          "EBITDAYTDVsBudget": -1298753674,
+          "EBITDAYTDVsBudget": 17088886461,
           "EBITYTDVsBudget": 1638508759,
           "NetIncomeYTDVsBudget": 9698870620
         },
@@ -7475,9 +7475,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9391796246,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 1820406577,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 1820406577,
           "EBITDADiff": null,
           "EBIT": -872953043,
           "EBITBudget": 0,
@@ -7489,7 +7489,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 477912015612,
           "CMYTDVsBudget": 79260138920,
-          "EBITDAYTDVsBudget": -1435944676,
+          "EBITDAYTDVsBudget": 18909293038,
           "EBITYTDVsBudget": 765555716,
           "NetIncomeYTDVsBudget": 8825917577
         },
@@ -7508,9 +7508,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9532034908,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 1997015723,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 1997015723,
           "EBITDADiff": null,
           "EBIT": -481599056,
           "EBITBudget": 0,
@@ -7522,7 +7522,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 530602711014,
           "CMYTDVsBudget": 88792173828,
-          "EBITDAYTDVsBudget": -1573135678,
+          "EBITDAYTDVsBudget": 20906308761,
           "EBITYTDVsBudget": 283956660,
           "NetIncomeYTDVsBudget": 8344318521
         },
@@ -7541,9 +7541,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9665700806,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 2243336685,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 2243336685,
           "EBITDADiff": null,
           "EBIT": -234995248,
           "EBITBudget": 0,
@@ -7555,7 +7555,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 584621937436,
           "CMYTDVsBudget": 98457874634,
-          "EBITDAYTDVsBudget": -1710326680,
+          "EBITDAYTDVsBudget": 23149645446,
           "EBITYTDVsBudget": 48961412,
           "NetIncomeYTDVsBudget": 8109323273
         },
@@ -7574,9 +7574,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 10324786535,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 2772909193,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 2772909193,
           "EBITDADiff": null,
           "EBIT": 138621871,
           "EBITBudget": 0,
@@ -7588,7 +7588,7 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 639948518030,
           "CMYTDVsBudget": 108782661169,
-          "EBITDAYTDVsBudget": -1847517682,
+          "EBITDAYTDVsBudget": 25922554639,
           "EBITYTDVsBudget": 187583283,
           "NetIncomeYTDVsBudget": 8247945144
         }
@@ -8007,13 +8007,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 7787404894,
           "CMDiff": null,
-          "EBITDA": -154178511,
+          "EBITDA": 916102029,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -154178511,
+          "EBITDAVsBudget": 916102029,
           "EBITDADiff": null,
-          "EBIT": -7496633169,
+          "EBIT": 290771725,
           "EBITBudget": 0,
-          "EBITVsBudget": -7496633169,
+          "EBITVsBudget": 290771725,
           "EBITDiff": null,
           "NetIncome": -870262140,
           "NetIncomeBudget": 0,
@@ -8021,8 +8021,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 57602475508,
           "CMYTDVsBudget": 7787404894,
-          "EBITDAYTDVsBudget": -154178511,
-          "EBITYTDVsBudget": -7496633169,
+          "EBITDAYTDVsBudget": 916102029,
+          "EBITYTDVsBudget": 290771725,
           "NetIncomeYTDVsBudget": -870262140
         },
         {
@@ -8040,13 +8040,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 6071225483,
           "CMDiff": null,
-          "EBITDA": -302218368,
+          "EBITDA": -1278273033,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -302218368,
+          "EBITDAVsBudget": -1278273033,
           "EBITDADiff": null,
-          "EBIT": -7968950199,
+          "EBIT": -2088654472,
           "EBITBudget": 0,
-          "EBITVsBudget": -7968950199,
+          "EBITVsBudget": -2088654472,
           "EBITDiff": null,
           "NetIncome": -3305837308,
           "NetIncomeBudget": 0,
@@ -8054,8 +8054,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 109015175641,
           "CMYTDVsBudget": 13858630377,
-          "EBITDAYTDVsBudget": -456396879,
-          "EBITYTDVsBudget": -15465583368,
+          "EBITDAYTDVsBudget": -362171004,
+          "EBITYTDVsBudget": -1797882747,
           "NetIncomeYTDVsBudget": -4176099448
         },
         {
@@ -8073,13 +8073,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9117477324,
           "CMDiff": null,
-          "EBITDA": -375219558,
+          "EBITDA": 2295262720,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -375219558,
+          "EBITDAVsBudget": 2295262720,
           "EBITDADiff": null,
-          "EBIT": -7438055100,
+          "EBIT": 1666124828,
           "EBITBudget": 0,
-          "EBITVsBudget": -7438055100,
+          "EBITVsBudget": 1666124828,
           "EBITDiff": null,
           "NetIncome": 3405658432,
           "NetIncomeBudget": 0,
@@ -8087,8 +8087,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 174889563282,
           "CMYTDVsBudget": 22976107701,
-          "EBITDAYTDVsBudget": -831616437,
-          "EBITYTDVsBudget": -22903638468,
+          "EBITDAYTDVsBudget": 1933091716,
+          "EBITYTDVsBudget": -131757919,
           "NetIncomeYTDVsBudget": -770441016
         },
         {
@@ -8106,13 +8106,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9630671052,
           "CMDiff": null,
-          "EBITDA": -204878033,
+          "EBITDA": 6294324025,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -204878033,
+          "EBITDAVsBudget": 6294324025,
           "EBITDADiff": null,
-          "EBIT": -3963524486,
+          "EBIT": 5828088066,
           "EBITBudget": 0,
-          "EBITVsBudget": -3963524486,
+          "EBITVsBudget": 5828088066,
           "EBITDiff": null,
           "NetIncome": 4871007722,
           "NetIncomeBudget": 0,
@@ -8120,8 +8120,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 229246763628,
           "CMYTDVsBudget": 32606778753,
-          "EBITDAYTDVsBudget": -1036494470,
-          "EBITYTDVsBudget": -26867162954,
+          "EBITDAYTDVsBudget": 8227415741,
+          "EBITYTDVsBudget": 5696330147,
           "NetIncomeYTDVsBudget": 4100566706
         },
         {
@@ -8139,13 +8139,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9457735081,
           "CMDiff": null,
-          "EBITDA": -422554350,
+          "EBITDA": 2481702396,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -422554350,
+          "EBITDAVsBudget": 2481702396,
           "EBITDADiff": null,
-          "EBIT": -7581661927,
+          "EBIT": 1876073154,
           "EBITBudget": 0,
-          "EBITVsBudget": -7581661927,
+          "EBITVsBudget": 1876073154,
           "EBITDiff": null,
           "NetIncome": 1273406747,
           "NetIncomeBudget": 0,
@@ -8153,8 +8153,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 278301718516,
           "CMYTDVsBudget": 42064513834,
-          "EBITDAYTDVsBudget": -1459048820,
-          "EBITYTDVsBudget": -34448824881,
+          "EBITDAYTDVsBudget": 10709118137,
+          "EBITYTDVsBudget": 7572403301,
           "NetIncomeYTDVsBudget": 5373973453
         },
         {
@@ -8172,13 +8172,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9735233979,
           "CMDiff": null,
-          "EBITDA": 534677150,
+          "EBITDA": 3180753831,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 534677150,
+          "EBITDAVsBudget": 3180753831,
           "EBITDADiff": null,
-          "EBIT": -7158881687,
+          "EBIT": 2576352292,
           "EBITBudget": 0,
-          "EBITVsBudget": -7158881687,
+          "EBITVsBudget": 2576352292,
           "EBITDiff": null,
           "NetIncome": 4939171454,
           "NetIncomeBudget": 0,
@@ -8186,8 +8186,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 326437706468,
           "CMYTDVsBudget": 51799747813,
-          "EBITDAYTDVsBudget": -924371670,
-          "EBITYTDVsBudget": -41607706568,
+          "EBITDAYTDVsBudget": 13889871968,
+          "EBITYTDVsBudget": 10148755593,
           "NetIncomeYTDVsBudget": 10313144907
         },
         {
@@ -8205,13 +8205,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 8778031709,
           "CMDiff": null,
-          "EBITDA": -237191002,
+          "EBITDA": 1530516848,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -237191002,
+          "EBITDAVsBudget": 1530516848,
           "EBITDADiff": null,
-          "EBIT": -7247514861,
+          "EBIT": 1530516848,
           "EBITBudget": 0,
-          "EBITVsBudget": -7247514861,
+          "EBITVsBudget": 1530516848,
           "EBITDiff": null,
           "NetIncome": 227359640,
           "NetIncomeBudget": 0,
@@ -8219,8 +8219,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 375896061533,
           "CMYTDVsBudget": 60577779522,
-          "EBITDAYTDVsBudget": -1161562672,
-          "EBITYTDVsBudget": -48855221429,
+          "EBITDAYTDVsBudget": 15420388816,
+          "EBITYTDVsBudget": 11679272441,
           "NetIncomeYTDVsBudget": 10540504547
         },
         {
@@ -8238,13 +8238,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9290563152,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 1668497645,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 1668497645,
           "EBITDADiff": null,
-          "EBIT": -8885285601,
+          "EBIT": 405277551,
           "EBITBudget": 0,
-          "EBITVsBudget": -8885285601,
+          "EBITVsBudget": 405277551,
           "EBITDiff": null,
           "NetIncome": -841633927,
           "NetIncomeBudget": 0,
@@ -8252,8 +8252,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 426681076887,
           "CMYTDVsBudget": 69868342674,
-          "EBITDAYTDVsBudget": -1298753674,
-          "EBITYTDVsBudget": -57740507030,
+          "EBITDAYTDVsBudget": 17088886461,
+          "EBITYTDVsBudget": 12084549992,
           "NetIncomeYTDVsBudget": 9698870620
         },
         {
@@ -8271,13 +8271,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9391796246,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 1820406577,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 1820406577,
           "EBITDADiff": null,
-          "EBIT": -8834609763,
+          "EBIT": 557186483,
           "EBITBudget": 0,
-          "EBITVsBudget": -8834609763,
+          "EBITVsBudget": 557186483,
           "EBITDiff": null,
           "NetIncome": -872953043,
           "NetIncomeBudget": 0,
@@ -8285,8 +8285,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 477912015612,
           "CMYTDVsBudget": 79260138920,
-          "EBITDAYTDVsBudget": -1435944676,
-          "EBITYTDVsBudget": -66575116793,
+          "EBITDAYTDVsBudget": 18909293038,
+          "EBITYTDVsBudget": 12641736475,
           "NetIncomeYTDVsBudget": 8825917577
         },
         {
@@ -8304,13 +8304,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9532034908,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 1997015723,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 1997015723,
           "EBITDADiff": null,
-          "EBIT": -8798239279,
+          "EBIT": 733795629,
           "EBITBudget": 0,
-          "EBITVsBudget": -8798239279,
+          "EBITVsBudget": 733795629,
           "EBITDiff": null,
           "NetIncome": -481599056,
           "NetIncomeBudget": 0,
@@ -8318,8 +8318,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 530602711014,
           "CMYTDVsBudget": 88792173828,
-          "EBITDAYTDVsBudget": -1573135678,
-          "EBITYTDVsBudget": -75373356072,
+          "EBITDAYTDVsBudget": 20906308761,
+          "EBITYTDVsBudget": 13375532104,
           "NetIncomeYTDVsBudget": 8344318521
         },
         {
@@ -8337,13 +8337,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 9665700806,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 2243336685,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 2243336685,
           "EBITDADiff": null,
-          "EBIT": -8685584215,
+          "EBIT": 980116591,
           "EBITBudget": 0,
-          "EBITVsBudget": -8685584215,
+          "EBITVsBudget": 980116591,
           "EBITDiff": null,
           "NetIncome": -234995248,
           "NetIncomeBudget": 0,
@@ -8351,8 +8351,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 584621937436,
           "CMYTDVsBudget": 98457874634,
-          "EBITDAYTDVsBudget": -1710326680,
-          "EBITYTDVsBudget": -84058940287,
+          "EBITDAYTDVsBudget": 23149645446,
+          "EBITYTDVsBudget": 14355648695,
           "NetIncomeYTDVsBudget": 8109323273
         },
         {
@@ -8370,13 +8370,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 10324786535,
           "CMDiff": null,
-          "EBITDA": -137191002,
+          "EBITDA": 2772909193,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -137191002,
+          "EBITDAVsBudget": 2772909193,
           "EBITDADiff": null,
-          "EBIT": -8815097436,
+          "EBIT": 1509689099,
           "EBITBudget": 0,
-          "EBITVsBudget": -8815097436,
+          "EBITVsBudget": 1509689099,
           "EBITDiff": null,
           "NetIncome": 138621871,
           "NetIncomeBudget": 0,
@@ -8384,8 +8384,8 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 639948518030,
           "CMYTDVsBudget": 108782661169,
-          "EBITDAYTDVsBudget": -1847517682,
-          "EBITYTDVsBudget": -92874037723,
+          "EBITDAYTDVsBudget": 25922554639,
+          "EBITYTDVsBudget": 15865337794,
           "NetIncomeYTDVsBudget": 8247945144
         }
       ],
@@ -8799,31 +8799,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-01-01",
           "tag": "Actual",
-          "Revenue": 717966000000,
+          "Revenue": 717965537780,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 717966000000,
+          "RevenueVsBudget": 717965537780,
           "RevenueDiff": null,
           "CM": 16781819940,
           "CMBudget": 0,
           "CMVsBudget": 16781819940,
           "CMDiff": null,
-          "EBITDA": 112538013,
+          "EBITDA": 10683507119,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 112538013,
+          "EBITDAVsBudget": 10683507119,
           "EBITDADiff": null,
-          "EBIT": 9042939579,
+          "EBIT": 8996374888,
           "EBITBudget": 0,
-          "EBITVsBudget": 9042939579,
+          "EBITVsBudget": 8996374888,
           "EBITDiff": null,
-          "NetIncome": 21881322588,
+          "NetIncome": 21834757897,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 21881322588,
+          "NetIncomeVsBudget": 21834757897,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 717966000000,
+          "RevenueYTDVsBudget": 717965537780,
           "CMYTDVsBudget": 16781819940,
-          "EBITDAYTDVsBudget": 112538013,
-          "EBITYTDVsBudget": 9042939579,
-          "NetIncomeYTDVsBudget": 21881322588
+          "EBITDAYTDVsBudget": 10683507119,
+          "EBITYTDVsBudget": 8996374888,
+          "NetIncomeYTDVsBudget": 21834757897
         },
         {
           "year": 2026,
@@ -8832,31 +8832,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-02-01",
           "tag": "Actual",
-          "Revenue": 674368000000,
+          "Revenue": 674368175220,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 674368000000,
+          "RevenueVsBudget": 674368175220,
           "RevenueDiff": null,
           "CM": 15729773811,
           "CMBudget": 0,
           "CMVsBudget": 15729773811,
           "CMDiff": null,
-          "EBITDA": -180608556,
+          "EBITDA": 8923424498,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -180608556,
+          "EBITDAVsBudget": 8923424498,
           "EBITDADiff": null,
-          "EBIT": 7318952417,
+          "EBIT": 7133951380,
           "EBITBudget": 0,
-          "EBITVsBudget": 7318952417,
+          "EBITVsBudget": 7133951380,
           "EBITDiff": null,
-          "NetIncome": 13722395082,
+          "NetIncome": 13537394045,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 13722395082,
+          "NetIncomeVsBudget": 13537394045,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 1392334000000,
+          "RevenueYTDVsBudget": 1392333713000,
           "CMYTDVsBudget": 32511593751,
-          "EBITDAYTDVsBudget": -68070543,
-          "EBITYTDVsBudget": 16361891996,
-          "NetIncomeYTDVsBudget": 35603717670
+          "EBITDAYTDVsBudget": 19606931617,
+          "EBITYTDVsBudget": 16130326268,
+          "NetIncomeYTDVsBudget": 35372151942
         },
         {
           "year": 2026,
@@ -8865,31 +8865,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-03-01",
           "tag": "Actual",
-          "Revenue": 703273000000,
+          "Revenue": 703273498860,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 703273000000,
+          "RevenueVsBudget": 703273498860,
           "RevenueDiff": null,
           "CM": 18419049614,
           "CMBudget": 0,
           "CMVsBudget": 18419049614,
           "CMDiff": null,
-          "EBITDA": 195594647,
+          "EBITDA": 12898762032,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 195594647,
+          "EBITDAVsBudget": 12898762032,
           "EBITDADiff": null,
-          "EBIT": 11628823192,
+          "EBIT": 11808621000,
           "EBITBudget": 0,
-          "EBITVsBudget": 11628823192,
+          "EBITVsBudget": 11808621000,
           "EBITDiff": null,
-          "NetIncome": 11361005157,
+          "NetIncome": 11540802965,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11361005157,
+          "NetIncomeVsBudget": 11540802965,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2095607000000,
+          "RevenueYTDVsBudget": 2095607211860,
           "CMYTDVsBudget": 50930643365,
-          "EBITDAYTDVsBudget": 127524104,
-          "EBITYTDVsBudget": 27990715188,
-          "NetIncomeYTDVsBudget": 46964722827
+          "EBITDAYTDVsBudget": 32505693649,
+          "EBITYTDVsBudget": 27938947268,
+          "NetIncomeYTDVsBudget": 46912954907
         },
         {
           "year": 2026,
@@ -8898,31 +8898,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-04-01",
           "tag": "Actual",
-          "Revenue": 560781000000,
+          "Revenue": 560781238150,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 560781000000,
+          "RevenueVsBudget": 560781238150,
           "RevenueDiff": null,
           "CM": 12530076252,
           "CMBudget": 0,
           "CMVsBudget": 12530076252,
           "CMDiff": null,
-          "EBITDA": 5894900,
+          "EBITDA": 5874399285,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 5894900,
+          "EBITDAVsBudget": 5874399285,
           "EBITDADiff": null,
-          "EBIT": 4552401499,
+          "EBIT": 4505830321,
           "EBITBudget": 0,
-          "EBITVsBudget": 4552401499,
+          "EBITVsBudget": 4505830321,
           "EBITDiff": null,
-          "NetIncome": 11726760205,
+          "NetIncome": 11680189027,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11726760205,
+          "NetIncomeVsBudget": 11680189027,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2656388000000,
+          "RevenueYTDVsBudget": 2656388450010,
           "CMYTDVsBudget": 63460719617,
-          "EBITDAYTDVsBudget": 133419004,
-          "EBITYTDVsBudget": 32543116687,
-          "NetIncomeYTDVsBudget": 58691483032
+          "EBITDAYTDVsBudget": 38380092934,
+          "EBITYTDVsBudget": 32444777589,
+          "NetIncomeYTDVsBudget": 58593143934
         },
         {
           "year": 2026,
@@ -8931,31 +8931,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-05-01",
           "tag": "Actual",
-          "Revenue": 428175000000,
+          "Revenue": 428175120917,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 428175000000,
+          "RevenueVsBudget": 428175120917,
           "RevenueDiff": null,
           "CM": 7944390082,
           "CMBudget": 0,
           "CMVsBudget": 7944390082,
           "CMDiff": null,
-          "EBITDA": -43382687,
+          "EBITDA": 1732123317,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -43382687,
+          "EBITDAVsBudget": 1732123317,
           "EBITDADiff": null,
-          "EBIT": 342648638,
+          "EBIT": 299265951,
           "EBITBudget": 0,
-          "EBITVsBudget": 342648638,
+          "EBITVsBudget": 299265951,
           "EBITDiff": null,
-          "NetIncome": 10644361405,
+          "NetIncome": 10600978718,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 10644361405,
+          "NetIncomeVsBudget": 10600978718,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3084563000000,
+          "RevenueYTDVsBudget": 3084563570927,
           "CMYTDVsBudget": 71405109699,
-          "EBITDAYTDVsBudget": 90036317,
-          "EBITYTDVsBudget": 32885765325,
-          "NetIncomeYTDVsBudget": 69335844437
+          "EBITDAYTDVsBudget": 40112216251,
+          "EBITYTDVsBudget": 32744043540,
+          "NetIncomeYTDVsBudget": 69194122652
         },
         {
           "year": 2026,
@@ -8964,31 +8964,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-06-01",
           "tag": "Actual",
-          "Revenue": 400614000000,
+          "Revenue": 400614077810,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 400614000000,
+          "RevenueVsBudget": 400614077810,
           "RevenueDiff": null,
           "CM": 9584372282,
           "CMBudget": 0,
           "CMVsBudget": 9584372282,
           "CMDiff": null,
-          "EBITDA": 499732973,
+          "EBITDA": 2800668458,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 499732973,
+          "EBITDAVsBudget": 2800668458,
           "EBITDADiff": null,
-          "EBIT": 1583459803,
+          "EBIT": 1536692426,
           "EBITBudget": 0,
-          "EBITVsBudget": 1583459803,
+          "EBITVsBudget": 1536692426,
           "EBITDiff": null,
-          "NetIncome": 7077325924,
+          "NetIncome": 7030558547,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 7077325924,
+          "NetIncomeVsBudget": 7030558547,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3485177000000,
+          "RevenueYTDVsBudget": 3485177648737,
           "CMYTDVsBudget": 80989481981,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": 34469225128,
-          "NetIncomeYTDVsBudget": 76413170361
+          "EBITDAYTDVsBudget": 42912884709,
+          "EBITYTDVsBudget": 34280735966,
+          "NetIncomeYTDVsBudget": 76224681199
         },
         {
           "year": 2026,
@@ -8997,17 +8997,17 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-07-01",
           "tag": "Run-rate",
-          "Revenue": 448184000000,
+          "Revenue": 448183688891,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 448184000000,
+          "RevenueVsBudget": 448183688891,
           "RevenueDiff": null,
           "CM": 12516954114,
           "CMBudget": 0,
           "CMVsBudget": 12516954114,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 6838242605,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 6838242605,
           "EBITDADiff": null,
           "EBIT": 5735972952,
           "EBITBudget": 0,
@@ -9017,11 +9017,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 5735972952,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3933361000000,
+          "RevenueYTDVsBudget": 3933361337628,
           "CMYTDVsBudget": 93506436095,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": 40205198080,
-          "NetIncomeYTDVsBudget": 82149143313
+          "EBITDAYTDVsBudget": 49751127314,
+          "EBITYTDVsBudget": 40016708918,
+          "NetIncomeYTDVsBudget": 81960654151
         },
         {
           "year": 2026,
@@ -9030,17 +9030,17 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-08-01",
           "tag": "Forecast",
-          "Revenue": 412089000000,
+          "Revenue": 412089129589,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 412089000000,
+          "RevenueVsBudget": 412089129589,
           "RevenueDiff": null,
           "CM": 9966835794,
           "CMBudget": 0,
           "CMVsBudget": 9966835794,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 3462233820,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 3462233820,
           "EBITDADiff": null,
           "EBIT": 1494816220,
           "EBITBudget": 0,
@@ -9050,11 +9050,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1494816220,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4345450000000,
+          "RevenueYTDVsBudget": 4345450467217,
           "CMYTDVsBudget": 103473271889,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": 41700014300,
-          "NetIncomeYTDVsBudget": 83643959533
+          "EBITDAYTDVsBudget": 53213361134,
+          "EBITYTDVsBudget": 41511525138,
+          "NetIncomeYTDVsBudget": 83455470371
         },
         {
           "year": 2026,
@@ -9063,17 +9063,17 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-09-01",
           "tag": "Forecast",
-          "Revenue": 415700000000,
+          "Revenue": 415699664001,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 415700000000,
+          "RevenueVsBudget": 415699664001,
           "RevenueDiff": null,
           "CM": 9790432149,
           "CMBudget": 0,
           "CMVsBudget": 9790432149,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 3332284779,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 3332284779,
           "EBITDADiff": null,
           "EBIT": 1191368053,
           "EBITBudget": 0,
@@ -9083,11 +9083,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1191368053,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4761150000000,
+          "RevenueYTDVsBudget": 4761150131218,
           "CMYTDVsBudget": 113263704038,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": 42891382353,
-          "NetIncomeYTDVsBudget": 84835327586
+          "EBITDAYTDVsBudget": 56545645913,
+          "EBITYTDVsBudget": 42702893191,
+          "NetIncomeYTDVsBudget": 84646838424
         },
         {
           "year": 2026,
@@ -9096,17 +9096,17 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-10-01",
           "tag": "Forecast",
-          "Revenue": 430463000000,
+          "Revenue": 430462583062,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 430463000000,
+          "RevenueVsBudget": 430462583062,
           "RevenueDiff": null,
           "CM": 10193206645,
           "CMBudget": 0,
           "CMVsBudget": 10193206645,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 3742024234,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 3742024234,
           "EBITDADiff": null,
           "EBIT": 1804449968,
           "EBITBudget": 0,
@@ -9116,11 +9116,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1804449968,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5191613000000,
+          "RevenueYTDVsBudget": 5191612714280,
           "CMYTDVsBudget": 123456910683,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": 44695832321,
-          "NetIncomeYTDVsBudget": 86639777554
+          "EBITDAYTDVsBudget": 60287670147,
+          "EBITYTDVsBudget": 44507343159,
+          "NetIncomeYTDVsBudget": 86451288392
         },
         {
           "year": 2026,
@@ -9129,17 +9129,17 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-11-01",
           "tag": "Forecast",
-          "Revenue": 451450000000,
+          "Revenue": 451449923545,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 451450000000,
+          "RevenueVsBudget": 451449923545,
           "RevenueDiff": null,
           "CM": 10950002795,
           "CMBudget": 0,
           "CMVsBudget": 10950002795,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 4553782885,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 4553782885,
           "EBITDADiff": null,
           "EBIT": 2616476447,
           "EBITBudget": 0,
@@ -9149,11 +9149,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 2616476447,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5643063000000,
+          "RevenueYTDVsBudget": 5643062637825,
           "CMYTDVsBudget": 134406913478,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": 47312308768,
-          "NetIncomeYTDVsBudget": 89256254001
+          "EBITDAYTDVsBudget": 64841453032,
+          "EBITYTDVsBudget": 47123819606,
+          "NetIncomeYTDVsBudget": 89067764839
         },
         {
           "year": 2026,
@@ -9162,17 +9162,17 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-12-01",
           "tag": "Forecast",
-          "Revenue": 472496000000,
+          "Revenue": 472495715596,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 472496000000,
+          "RevenueVsBudget": 472495715596,
           "RevenueDiff": null,
           "CM": 11607931035,
           "CMBudget": 0,
           "CMVsBudget": 11607931035,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 5147094424,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 5147094424,
           "EBITDADiff": null,
           "EBIT": 3062113413,
           "EBITBudget": 0,
@@ -9182,11 +9182,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 3062113413,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 6115559000000,
+          "RevenueYTDVsBudget": 6115558353421,
           "CMYTDVsBudget": 146014844513,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": 50374422181,
-          "NetIncomeYTDVsBudget": 92318367414
+          "EBITDAYTDVsBudget": 69988547456,
+          "EBITYTDVsBudget": 50185933019,
+          "NetIncomeYTDVsBudget": 92129878252
         }
       ],
       "Adj. EBITDA (Total)": [
@@ -9197,31 +9197,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-01-01",
           "tag": "Actual",
-          "Revenue": 717966000000,
+          "Revenue": 717965537780,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 717966000000,
+          "RevenueVsBudget": 717965537780,
           "RevenueDiff": null,
           "CM": 16781819940,
           "CMBudget": 0,
           "CMVsBudget": 16781819940,
           "CMDiff": null,
-          "EBITDA": 9352199286,
+          "EBITDA": 9305634595,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 9352199286,
+          "EBITDAVsBudget": 9305634595,
           "EBITDADiff": null,
-          "EBIT": 9042939579,
+          "EBIT": 8996374888,
           "EBITBudget": 0,
-          "EBITVsBudget": 9042939579,
+          "EBITVsBudget": 8996374888,
           "EBITDiff": null,
-          "NetIncome": 21881322588,
+          "NetIncome": 21834757897,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 21881322588,
+          "NetIncomeVsBudget": 21834757897,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 717966000000,
+          "RevenueYTDVsBudget": 717965537780,
           "CMYTDVsBudget": 16781819940,
-          "EBITDAYTDVsBudget": 9352199286,
-          "EBITYTDVsBudget": 9042939579,
-          "NetIncomeYTDVsBudget": 21881322588
+          "EBITDAYTDVsBudget": 9305634595,
+          "EBITYTDVsBudget": 8996374888,
+          "NetIncomeYTDVsBudget": 21834757897
         },
         {
           "year": 2026,
@@ -9230,31 +9230,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-02-01",
           "tag": "Actual",
-          "Revenue": 674368000000,
+          "Revenue": 674368175220,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 674368000000,
+          "RevenueVsBudget": 674368175220,
           "RevenueDiff": null,
           "CM": 15729773811,
           "CMBudget": 0,
           "CMVsBudget": 15729773811,
           "CMDiff": null,
-          "EBITDA": 7620285902,
+          "EBITDA": 7435284865,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 7620285902,
+          "EBITDAVsBudget": 7435284865,
           "EBITDADiff": null,
-          "EBIT": 7318952417,
+          "EBIT": 7133951380,
           "EBITBudget": 0,
-          "EBITVsBudget": 7318952417,
+          "EBITVsBudget": 7133951380,
           "EBITDiff": null,
-          "NetIncome": 13722395082,
+          "NetIncome": 13537394045,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 13722395082,
+          "NetIncomeVsBudget": 13537394045,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 1392334000000,
+          "RevenueYTDVsBudget": 1392333713000,
           "CMYTDVsBudget": 32511593751,
-          "EBITDAYTDVsBudget": 16972485188,
-          "EBITYTDVsBudget": 16361891996,
-          "NetIncomeYTDVsBudget": 35603717670
+          "EBITDAYTDVsBudget": 16740919460,
+          "EBITYTDVsBudget": 16130326268,
+          "NetIncomeYTDVsBudget": 35372151942
         },
         {
           "year": 2026,
@@ -9263,31 +9263,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-03-01",
           "tag": "Actual",
-          "Revenue": 703273000000,
+          "Revenue": 703273498860,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 703273000000,
+          "RevenueVsBudget": 703273498860,
           "RevenueDiff": null,
           "CM": 18419049614,
           "CMBudget": 0,
           "CMVsBudget": 18419049614,
           "CMDiff": null,
-          "EBITDA": 11922551696,
+          "EBITDA": 12102349504,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 11922551696,
+          "EBITDAVsBudget": 12102349504,
           "EBITDADiff": null,
-          "EBIT": 11628823192,
+          "EBIT": 11808621000,
           "EBITBudget": 0,
-          "EBITVsBudget": 11628823192,
+          "EBITVsBudget": 11808621000,
           "EBITDiff": null,
-          "NetIncome": 11361005157,
+          "NetIncome": 11540802965,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11361005157,
+          "NetIncomeVsBudget": 11540802965,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2095607000000,
+          "RevenueYTDVsBudget": 2095607211860,
           "CMYTDVsBudget": 50930643365,
-          "EBITDAYTDVsBudget": 28895036884,
-          "EBITYTDVsBudget": 27990715188,
-          "NetIncomeYTDVsBudget": 46964722827
+          "EBITDAYTDVsBudget": 28843268964,
+          "EBITYTDVsBudget": 27938947268,
+          "NetIncomeYTDVsBudget": 46912954907
         },
         {
           "year": 2026,
@@ -9296,31 +9296,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-04-01",
           "tag": "Actual",
-          "Revenue": 560781000000,
+          "Revenue": 560781238150,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 560781000000,
+          "RevenueVsBudget": 560781238150,
           "RevenueDiff": null,
           "CM": 12530076252,
           "CMBudget": 0,
           "CMVsBudget": 12530076252,
           "CMDiff": null,
-          "EBITDA": 4857987070,
+          "EBITDA": 4811415892,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 4857987070,
+          "EBITDAVsBudget": 4811415892,
           "EBITDADiff": null,
-          "EBIT": 4552401499,
+          "EBIT": 4505830321,
           "EBITBudget": 0,
-          "EBITVsBudget": 4552401499,
+          "EBITVsBudget": 4505830321,
           "EBITDiff": null,
-          "NetIncome": 11726760205,
+          "NetIncome": 11680189027,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11726760205,
+          "NetIncomeVsBudget": 11680189027,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2656388000000,
+          "RevenueYTDVsBudget": 2656388450010,
           "CMYTDVsBudget": 63460719617,
-          "EBITDAYTDVsBudget": 33753023954,
-          "EBITYTDVsBudget": 32543116687,
-          "NetIncomeYTDVsBudget": 58691483032
+          "EBITDAYTDVsBudget": 33654684856,
+          "EBITYTDVsBudget": 32444777589,
+          "NetIncomeYTDVsBudget": 58593143934
         },
         {
           "year": 2026,
@@ -9329,31 +9329,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-05-01",
           "tag": "Actual",
-          "Revenue": 428175000000,
+          "Revenue": 428175120917,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 428175000000,
+          "RevenueVsBudget": 428175120917,
           "RevenueDiff": null,
           "CM": 7944390082,
           "CMBudget": 0,
           "CMVsBudget": 7944390082,
           "CMDiff": null,
-          "EBITDA": 622058316,
+          "EBITDA": 578675629,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 622058316,
+          "EBITDAVsBudget": 578675629,
           "EBITDADiff": null,
-          "EBIT": 342648638,
+          "EBIT": 299265951,
           "EBITBudget": 0,
-          "EBITVsBudget": 342648638,
+          "EBITVsBudget": 299265951,
           "EBITDiff": null,
-          "NetIncome": 10644361405,
+          "NetIncome": 10600978718,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 10644361405,
+          "NetIncomeVsBudget": 10600978718,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3084563000000,
+          "RevenueYTDVsBudget": 3084563570927,
           "CMYTDVsBudget": 71405109699,
-          "EBITDAYTDVsBudget": 34375082270,
-          "EBITYTDVsBudget": 32885765325,
-          "NetIncomeYTDVsBudget": 69335844437
+          "EBITDAYTDVsBudget": 34233360485,
+          "EBITYTDVsBudget": 32744043540,
+          "NetIncomeYTDVsBudget": 69194122652
         },
         {
           "year": 2026,
@@ -9362,31 +9362,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-06-01",
           "tag": "Actual",
-          "Revenue": 400614000000,
+          "Revenue": 400614077810,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 400614000000,
+          "RevenueVsBudget": 400614077810,
           "RevenueDiff": null,
           "CM": 9584372282,
           "CMBudget": 0,
           "CMVsBudget": 9584372282,
           "CMDiff": null,
-          "EBITDA": 1860532474,
+          "EBITDA": 1813765097,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1860532474,
+          "EBITDAVsBudget": 1813765097,
           "EBITDADiff": null,
-          "EBIT": 1583459803,
+          "EBIT": 1536692426,
           "EBITBudget": 0,
-          "EBITVsBudget": 1583459803,
+          "EBITVsBudget": 1536692426,
           "EBITDiff": null,
-          "NetIncome": 7077325924,
+          "NetIncome": 7030558547,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 7077325924,
+          "NetIncomeVsBudget": 7030558547,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3485177000000,
+          "RevenueYTDVsBudget": 3485177648737,
           "CMYTDVsBudget": 80989481981,
-          "EBITDAYTDVsBudget": 36235614744,
-          "EBITYTDVsBudget": 34469225128,
-          "NetIncomeYTDVsBudget": 76413170361
+          "EBITDAYTDVsBudget": 36047125582,
+          "EBITYTDVsBudget": 34280735966,
+          "NetIncomeYTDVsBudget": 76224681199
         },
         {
           "year": 2026,
@@ -9395,9 +9395,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-07-01",
           "tag": "Run-rate",
-          "Revenue": 448184000000,
+          "Revenue": 448183688891,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 448184000000,
+          "RevenueVsBudget": 448183688891,
           "RevenueDiff": null,
           "CM": 12516954114,
           "CMBudget": 0,
@@ -9415,11 +9415,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 5735972952,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3933361000000,
+          "RevenueYTDVsBudget": 3933361337628,
           "CMYTDVsBudget": 93506436095,
-          "EBITDAYTDVsBudget": 41971587696,
-          "EBITYTDVsBudget": 40205198080,
-          "NetIncomeYTDVsBudget": 82149143313
+          "EBITDAYTDVsBudget": 41783098534,
+          "EBITYTDVsBudget": 40016708918,
+          "NetIncomeYTDVsBudget": 81960654151
         },
         {
           "year": 2026,
@@ -9428,9 +9428,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-08-01",
           "tag": "Forecast",
-          "Revenue": 412089000000,
+          "Revenue": 412089129589,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 412089000000,
+          "RevenueVsBudget": 412089129589,
           "RevenueDiff": null,
           "CM": 9966835794,
           "CMBudget": 0,
@@ -9448,11 +9448,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1494816220,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4345450000000,
+          "RevenueYTDVsBudget": 4345450467217,
           "CMYTDVsBudget": 103473271889,
-          "EBITDAYTDVsBudget": 44253117728,
-          "EBITYTDVsBudget": 41700014300,
-          "NetIncomeYTDVsBudget": 83643959533
+          "EBITDAYTDVsBudget": 44064628566,
+          "EBITYTDVsBudget": 41511525138,
+          "NetIncomeYTDVsBudget": 83455470371
         },
         {
           "year": 2026,
@@ -9461,9 +9461,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-09-01",
           "tag": "Forecast",
-          "Revenue": 415700000000,
+          "Revenue": 415699664001,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 415700000000,
+          "RevenueVsBudget": 415699664001,
           "RevenueDiff": null,
           "CM": 9790432149,
           "CMBudget": 0,
@@ -9481,11 +9481,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1191368053,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4761150000000,
+          "RevenueYTDVsBudget": 4761150131218,
           "CMYTDVsBudget": 113263704038,
-          "EBITDAYTDVsBudget": 46231199593,
-          "EBITYTDVsBudget": 42891382353,
-          "NetIncomeYTDVsBudget": 84835327586
+          "EBITDAYTDVsBudget": 46042710431,
+          "EBITYTDVsBudget": 42702893191,
+          "NetIncomeYTDVsBudget": 84646838424
         },
         {
           "year": 2026,
@@ -9494,9 +9494,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-10-01",
           "tag": "Forecast",
-          "Revenue": 430463000000,
+          "Revenue": 430462583062,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 430463000000,
+          "RevenueVsBudget": 430462583062,
           "RevenueDiff": null,
           "CM": 10193206645,
           "CMBudget": 0,
@@ -9514,11 +9514,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1804449968,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5191613000000,
+          "RevenueYTDVsBudget": 5191612714280,
           "CMYTDVsBudget": 123456910683,
-          "EBITDAYTDVsBudget": 48822363373,
-          "EBITYTDVsBudget": 44695832321,
-          "NetIncomeYTDVsBudget": 86639777554
+          "EBITDAYTDVsBudget": 48633874211,
+          "EBITYTDVsBudget": 44507343159,
+          "NetIncomeYTDVsBudget": 86451288392
         },
         {
           "year": 2026,
@@ -9527,9 +9527,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-11-01",
           "tag": "Forecast",
-          "Revenue": 451450000000,
+          "Revenue": 451449923545,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 451450000000,
+          "RevenueVsBudget": 451449923545,
           "RevenueDiff": null,
           "CM": 10950002795,
           "CMBudget": 0,
@@ -9547,11 +9547,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 2616476447,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5643063000000,
+          "RevenueYTDVsBudget": 5643062637825,
           "CMYTDVsBudget": 134406913478,
-          "EBITDAYTDVsBudget": 52225553632,
-          "EBITYTDVsBudget": 47312308768,
-          "NetIncomeYTDVsBudget": 89256254001
+          "EBITDAYTDVsBudget": 52037064470,
+          "EBITYTDVsBudget": 47123819606,
+          "NetIncomeYTDVsBudget": 89067764839
         },
         {
           "year": 2026,
@@ -9560,9 +9560,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-12-01",
           "tag": "Forecast",
-          "Revenue": 472496000000,
+          "Revenue": 472495715596,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 472496000000,
+          "RevenueVsBudget": 472495715596,
           "RevenueDiff": null,
           "CM": 11607931035,
           "CMBudget": 0,
@@ -9580,11 +9580,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 3062113413,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 6115559000000,
+          "RevenueYTDVsBudget": 6115558353421,
           "CMYTDVsBudget": 146014844513,
-          "EBITDAYTDVsBudget": 56074380857,
-          "EBITYTDVsBudget": 50374422181,
-          "NetIncomeYTDVsBudget": 92318367414
+          "EBITDAYTDVsBudget": 55885891695,
+          "EBITYTDVsBudget": 50185933019,
+          "NetIncomeYTDVsBudget": 92129878252
         }
       ],
       "Adj. EBIT (Direct)": [
@@ -9595,31 +9595,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-01-01",
           "tag": "Actual",
-          "Revenue": 717966000000,
+          "Revenue": 717965537780,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 717966000000,
+          "RevenueVsBudget": 717965537780,
           "RevenueDiff": null,
           "CM": 16781819940,
           "CMBudget": 0,
           "CMVsBudget": 16781819940,
           "CMDiff": null,
-          "EBITDA": 112538013,
+          "EBITDA": 10683507119,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 112538013,
+          "EBITDAVsBudget": 10683507119,
           "EBITDADiff": null,
-          "EBIT": -6374684423,
+          "EBIT": 10084256743,
           "EBITBudget": 0,
-          "EBITVsBudget": -6374684423,
+          "EBITVsBudget": 10084256743,
           "EBITDiff": null,
-          "NetIncome": 21881322588,
+          "NetIncome": 21834757897,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 21881322588,
+          "NetIncomeVsBudget": 21834757897,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 717966000000,
+          "RevenueYTDVsBudget": 717965537780,
           "CMYTDVsBudget": 16781819940,
-          "EBITDAYTDVsBudget": 112538013,
-          "EBITYTDVsBudget": -6374684423,
-          "NetIncomeYTDVsBudget": 21881322588
+          "EBITDAYTDVsBudget": 10683507119,
+          "EBITYTDVsBudget": 10084256743,
+          "NetIncomeYTDVsBudget": 21834757897
         },
         {
           "year": 2026,
@@ -9628,31 +9628,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-02-01",
           "tag": "Actual",
-          "Revenue": 674368000000,
+          "Revenue": 674368175220,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 674368000000,
+          "RevenueVsBudget": 674368175220,
           "RevenueDiff": null,
           "CM": 15729773811,
           "CMBudget": 0,
           "CMVsBudget": 15729773811,
           "CMDiff": null,
-          "EBITDA": -180608556,
+          "EBITDA": 8923424498,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -180608556,
+          "EBITDAVsBudget": 8923424498,
           "EBITDADiff": null,
-          "EBIT": -7075020931,
+          "EBIT": 8654752880,
           "EBITBudget": 0,
-          "EBITVsBudget": -7075020931,
+          "EBITVsBudget": 8654752880,
           "EBITDiff": null,
-          "NetIncome": 13722395082,
+          "NetIncome": 13537394045,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 13722395082,
+          "NetIncomeVsBudget": 13537394045,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 1392334000000,
+          "RevenueYTDVsBudget": 1392333713000,
           "CMYTDVsBudget": 32511593751,
-          "EBITDAYTDVsBudget": -68070543,
-          "EBITYTDVsBudget": -13449705354,
-          "NetIncomeYTDVsBudget": 35603717670
+          "EBITDAYTDVsBudget": 19606931617,
+          "EBITYTDVsBudget": 18739009623,
+          "NetIncomeYTDVsBudget": 35372151942
         },
         {
           "year": 2026,
@@ -9661,31 +9661,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-03-01",
           "tag": "Actual",
-          "Revenue": 703273000000,
+          "Revenue": 703273498860,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 703273000000,
+          "RevenueVsBudget": 703273498860,
           "RevenueDiff": null,
           "CM": 18419049614,
           "CMBudget": 0,
           "CMVsBudget": 18419049614,
           "CMDiff": null,
-          "EBITDA": 195594647,
+          "EBITDA": 12898762032,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 195594647,
+          "EBITDAVsBudget": 12898762032,
           "EBITDADiff": null,
-          "EBIT": -5783290427,
+          "EBIT": 12604165509,
           "EBITBudget": 0,
-          "EBITVsBudget": -5783290427,
+          "EBITVsBudget": 12604165509,
           "EBITDiff": null,
-          "NetIncome": 11361005157,
+          "NetIncome": 11540802965,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11361005157,
+          "NetIncomeVsBudget": 11540802965,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2095607000000,
+          "RevenueYTDVsBudget": 2095607211860,
           "CMYTDVsBudget": 50930643365,
-          "EBITDAYTDVsBudget": 127524104,
-          "EBITYTDVsBudget": -19232995781,
-          "NetIncomeYTDVsBudget": 46964722827
+          "EBITDAYTDVsBudget": 32505693649,
+          "EBITYTDVsBudget": 31343175132,
+          "NetIncomeYTDVsBudget": 46912954907
         },
         {
           "year": 2026,
@@ -9694,31 +9694,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-04-01",
           "tag": "Actual",
-          "Revenue": 560781000000,
+          "Revenue": 560781238150,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 560781000000,
+          "RevenueVsBudget": 560781238150,
           "RevenueDiff": null,
           "CM": 12530076252,
           "CMBudget": 0,
           "CMVsBudget": 12530076252,
           "CMDiff": null,
-          "EBITDA": 5894900,
+          "EBITDA": 5874399285,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 5894900,
+          "EBITDAVsBudget": 5874399285,
           "EBITDADiff": null,
-          "EBIT": -6927774394,
+          "EBIT": 5556713200,
           "EBITBudget": 0,
-          "EBITVsBudget": -6927774394,
+          "EBITVsBudget": 5556713200,
           "EBITDiff": null,
-          "NetIncome": 11726760205,
+          "NetIncome": 11680189027,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11726760205,
+          "NetIncomeVsBudget": 11680189027,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2656388000000,
+          "RevenueYTDVsBudget": 2656388450010,
           "CMYTDVsBudget": 63460719617,
-          "EBITDAYTDVsBudget": 133419004,
-          "EBITYTDVsBudget": -26160770175,
-          "NetIncomeYTDVsBudget": 58691483032
+          "EBITDAYTDVsBudget": 38380092934,
+          "EBITYTDVsBudget": 36899888332,
+          "NetIncomeYTDVsBudget": 58593143934
         },
         {
           "year": 2026,
@@ -9727,31 +9727,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-05-01",
           "tag": "Actual",
-          "Revenue": 428175000000,
+          "Revenue": 428175120917,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 428175000000,
+          "RevenueVsBudget": 428175120917,
           "RevenueDiff": null,
           "CM": 7944390082,
           "CMBudget": 0,
           "CMVsBudget": 7944390082,
           "CMDiff": null,
-          "EBITDA": -43382687,
+          "EBITDA": 1732123317,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -43382687,
+          "EBITDAVsBudget": 1732123317,
           "EBITDADiff": null,
-          "EBIT": -6464210130,
+          "EBIT": 1480179952,
           "EBITBudget": 0,
-          "EBITVsBudget": -6464210130,
+          "EBITVsBudget": 1480179952,
           "EBITDiff": null,
-          "NetIncome": 10644361405,
+          "NetIncome": 10600978718,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 10644361405,
+          "NetIncomeVsBudget": 10600978718,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3084563000000,
+          "RevenueYTDVsBudget": 3084563570927,
           "CMYTDVsBudget": 71405109699,
-          "EBITDAYTDVsBudget": 90036317,
-          "EBITYTDVsBudget": -32624980305,
-          "NetIncomeYTDVsBudget": 69335844437
+          "EBITDAYTDVsBudget": 40112216251,
+          "EBITYTDVsBudget": 38380068284,
+          "NetIncomeYTDVsBudget": 69194122652
         },
         {
           "year": 2026,
@@ -9760,31 +9760,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-06-01",
           "tag": "Actual",
-          "Revenue": 400614000000,
+          "Revenue": 400614077810,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 400614000000,
+          "RevenueVsBudget": 400614077810,
           "RevenueDiff": null,
           "CM": 9584372282,
           "CMBudget": 0,
           "CMVsBudget": 9584372282,
           "CMDiff": null,
-          "EBITDA": 499732973,
+          "EBITDA": 2800668458,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 499732973,
+          "EBITDAVsBudget": 2800668458,
           "EBITDADiff": null,
-          "EBIT": -7033294756,
+          "EBIT": 2529536350,
           "EBITBudget": 0,
-          "EBITVsBudget": -7033294756,
+          "EBITVsBudget": 2529536350,
           "EBITDiff": null,
-          "NetIncome": 7077325924,
+          "NetIncome": 7030558547,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 7077325924,
+          "NetIncomeVsBudget": 7030558547,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3485177000000,
+          "RevenueYTDVsBudget": 3485177648737,
           "CMYTDVsBudget": 80989481981,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": -39658275061,
-          "NetIncomeYTDVsBudget": 76413170361
+          "EBITDAYTDVsBudget": 42912884709,
+          "EBITYTDVsBudget": 40909604634,
+          "NetIncomeYTDVsBudget": 76224681199
         },
         {
           "year": 2026,
@@ -9793,31 +9793,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-07-01",
           "tag": "Run-rate",
-          "Revenue": 448184000000,
+          "Revenue": 448183688891,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 448184000000,
+          "RevenueVsBudget": 448183688891,
           "RevenueDiff": null,
           "CM": 12516954114,
           "CMBudget": 0,
           "CMVsBudget": 12516954114,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 6838242605,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 6838242605,
           "EBITDADiff": null,
-          "EBIT": -5678711509,
+          "EBIT": 6838242605,
           "EBITBudget": 0,
-          "EBITVsBudget": -5678711509,
+          "EBITVsBudget": 6838242605,
           "EBITDiff": null,
           "NetIncome": 5735972952,
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 5735972952,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3933361000000,
+          "RevenueYTDVsBudget": 3933361337628,
           "CMYTDVsBudget": 93506436095,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": -45336986570,
-          "NetIncomeYTDVsBudget": 82149143313
+          "EBITDAYTDVsBudget": 49751127314,
+          "EBITYTDVsBudget": 47747847239,
+          "NetIncomeYTDVsBudget": 81960654151
         },
         {
           "year": 2026,
@@ -9826,31 +9826,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-08-01",
           "tag": "Forecast",
-          "Revenue": 412089000000,
+          "Revenue": 412089129589,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 412089000000,
+          "RevenueVsBudget": 412089129589,
           "RevenueDiff": null,
           "CM": 9966835794,
           "CMBudget": 0,
           "CMVsBudget": 9966835794,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 3462233820,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 3462233820,
           "EBITDADiff": null,
-          "EBIT": -7291315786,
+          "EBIT": 2675520008,
           "EBITBudget": 0,
-          "EBITVsBudget": -7291315786,
+          "EBITVsBudget": 2675520008,
           "EBITDiff": null,
           "NetIncome": 1494816220,
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1494816220,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4345450000000,
+          "RevenueYTDVsBudget": 4345450467217,
           "CMYTDVsBudget": 103473271889,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": -52628302356,
-          "NetIncomeYTDVsBudget": 83643959533
+          "EBITDAYTDVsBudget": 53213361134,
+          "EBITYTDVsBudget": 50423367247,
+          "NetIncomeYTDVsBudget": 83455470371
         },
         {
           "year": 2026,
@@ -9859,31 +9859,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-09-01",
           "tag": "Forecast",
-          "Revenue": 415700000000,
+          "Revenue": 415699664001,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 415700000000,
+          "RevenueVsBudget": 415699664001,
           "RevenueDiff": null,
           "CM": 9790432149,
           "CMBudget": 0,
           "CMVsBudget": 9790432149,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 3332284779,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 3332284779,
           "EBITDADiff": null,
-          "EBIT": -7244861182,
+          "EBIT": 2545570967,
           "EBITBudget": 0,
-          "EBITVsBudget": -7244861182,
+          "EBITVsBudget": 2545570967,
           "EBITDiff": null,
           "NetIncome": 1191368053,
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1191368053,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4761150000000,
+          "RevenueYTDVsBudget": 4761150131218,
           "CMYTDVsBudget": 113263704038,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": -59873163538,
-          "NetIncomeYTDVsBudget": 84835327586
+          "EBITDAYTDVsBudget": 56545645913,
+          "EBITYTDVsBudget": 52968938214,
+          "NetIncomeYTDVsBudget": 84646838424
         },
         {
           "year": 2026,
@@ -9892,31 +9892,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-10-01",
           "tag": "Forecast",
-          "Revenue": 430463000000,
+          "Revenue": 430462583062,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 430463000000,
+          "RevenueVsBudget": 430462583062,
           "RevenueDiff": null,
           "CM": 10193206645,
           "CMBudget": 0,
           "CMVsBudget": 10193206645,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 3742024234,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 3742024234,
           "EBITDADiff": null,
-          "EBIT": -7237896223,
+          "EBIT": 2955310422,
           "EBITBudget": 0,
-          "EBITVsBudget": -7237896223,
+          "EBITVsBudget": 2955310422,
           "EBITDiff": null,
           "NetIncome": 1804449968,
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1804449968,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5191613000000,
+          "RevenueYTDVsBudget": 5191612714280,
           "CMYTDVsBudget": 123456910683,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": -67111059761,
-          "NetIncomeYTDVsBudget": 86639777554
+          "EBITDAYTDVsBudget": 60287670147,
+          "EBITYTDVsBudget": 55924248636,
+          "NetIncomeYTDVsBudget": 86451288392
         },
         {
           "year": 2026,
@@ -9925,31 +9925,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-11-01",
           "tag": "Forecast",
-          "Revenue": 451450000000,
+          "Revenue": 451449923545,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 451450000000,
+          "RevenueVsBudget": 451449923545,
           "RevenueDiff": null,
           "CM": 10950002795,
           "CMBudget": 0,
           "CMVsBudget": 10950002795,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 4553782885,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 4553782885,
           "EBITDADiff": null,
-          "EBIT": -7182933722,
+          "EBIT": 3767069073,
           "EBITBudget": 0,
-          "EBITVsBudget": -7182933722,
+          "EBITVsBudget": 3767069073,
           "EBITDiff": null,
           "NetIncome": 2616476447,
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 2616476447,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5643063000000,
+          "RevenueYTDVsBudget": 5643062637825,
           "CMYTDVsBudget": 134406913478,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": -74293993483,
-          "NetIncomeYTDVsBudget": 89256254001
+          "EBITDAYTDVsBudget": 64841453032,
+          "EBITYTDVsBudget": 59691317709,
+          "NetIncomeYTDVsBudget": 89067764839
         },
         {
           "year": 2026,
@@ -9958,31 +9958,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-12-01",
           "tag": "Forecast",
-          "Revenue": 472496000000,
+          "Revenue": 472495715596,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 472496000000,
+          "RevenueVsBudget": 472495715596,
           "RevenueDiff": null,
           "CM": 11607931035,
           "CMBudget": 0,
           "CMVsBudget": 11607931035,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 5147094424,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 5147094424,
           "EBITDADiff": null,
-          "EBIT": -7247550423,
+          "EBIT": 4360380612,
           "EBITBudget": 0,
-          "EBITVsBudget": -7247550423,
+          "EBITVsBudget": 4360380612,
           "EBITDiff": null,
           "NetIncome": 3062113413,
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 3062113413,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 6115559000000,
+          "RevenueYTDVsBudget": 6115558353421,
           "CMYTDVsBudget": 146014844513,
-          "EBITDAYTDVsBudget": 589769290,
-          "EBITYTDVsBudget": -81541543906,
-          "NetIncomeYTDVsBudget": 92318367414
+          "EBITDAYTDVsBudget": 69988547456,
+          "EBITYTDVsBudget": 64051698321,
+          "NetIncomeYTDVsBudget": 92129878252
         }
       ],
       "Adj. EBIT (Total)": [
@@ -9993,31 +9993,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-01-01",
           "tag": "Actual",
-          "Revenue": 717966000000,
+          "Revenue": 717965537780,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 717966000000,
+          "RevenueVsBudget": 717965537780,
           "RevenueDiff": null,
           "CM": 16781819940,
           "CMBudget": 0,
           "CMVsBudget": 16781819940,
           "CMDiff": null,
-          "EBITDA": 9352199286,
+          "EBITDA": 9305634595,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 9352199286,
+          "EBITDAVsBudget": 9305634595,
           "EBITDADiff": null,
-          "EBIT": 9042939579,
+          "EBIT": 8996374888,
           "EBITBudget": 0,
-          "EBITVsBudget": 9042939579,
+          "EBITVsBudget": 8996374888,
           "EBITDiff": null,
-          "NetIncome": 21881322588,
+          "NetIncome": 21834757897,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 21881322588,
+          "NetIncomeVsBudget": 21834757897,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 717966000000,
+          "RevenueYTDVsBudget": 717965537780,
           "CMYTDVsBudget": 16781819940,
-          "EBITDAYTDVsBudget": 9352199286,
-          "EBITYTDVsBudget": 9042939579,
-          "NetIncomeYTDVsBudget": 21881322588
+          "EBITDAYTDVsBudget": 9305634595,
+          "EBITYTDVsBudget": 8996374888,
+          "NetIncomeYTDVsBudget": 21834757897
         },
         {
           "year": 2026,
@@ -10026,31 +10026,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-02-01",
           "tag": "Actual",
-          "Revenue": 674368000000,
+          "Revenue": 674368175220,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 674368000000,
+          "RevenueVsBudget": 674368175220,
           "RevenueDiff": null,
           "CM": 15729773811,
           "CMBudget": 0,
           "CMVsBudget": 15729773811,
           "CMDiff": null,
-          "EBITDA": 7620285902,
+          "EBITDA": 7435284865,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 7620285902,
+          "EBITDAVsBudget": 7435284865,
           "EBITDADiff": null,
-          "EBIT": 7318952417,
+          "EBIT": 7133951380,
           "EBITBudget": 0,
-          "EBITVsBudget": 7318952417,
+          "EBITVsBudget": 7133951380,
           "EBITDiff": null,
-          "NetIncome": 13722395082,
+          "NetIncome": 13537394045,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 13722395082,
+          "NetIncomeVsBudget": 13537394045,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 1392334000000,
+          "RevenueYTDVsBudget": 1392333713000,
           "CMYTDVsBudget": 32511593751,
-          "EBITDAYTDVsBudget": 16972485188,
-          "EBITYTDVsBudget": 16361891996,
-          "NetIncomeYTDVsBudget": 35603717670
+          "EBITDAYTDVsBudget": 16740919460,
+          "EBITYTDVsBudget": 16130326268,
+          "NetIncomeYTDVsBudget": 35372151942
         },
         {
           "year": 2026,
@@ -10059,31 +10059,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 1,
           "date": "2026-03-01",
           "tag": "Actual",
-          "Revenue": 703273000000,
+          "Revenue": 703273498860,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 703273000000,
+          "RevenueVsBudget": 703273498860,
           "RevenueDiff": null,
           "CM": 18419049614,
           "CMBudget": 0,
           "CMVsBudget": 18419049614,
           "CMDiff": null,
-          "EBITDA": 11922551696,
+          "EBITDA": 12102349504,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 11922551696,
+          "EBITDAVsBudget": 12102349504,
           "EBITDADiff": null,
-          "EBIT": 11628823192,
+          "EBIT": 11808621000,
           "EBITBudget": 0,
-          "EBITVsBudget": 11628823192,
+          "EBITVsBudget": 11808621000,
           "EBITDiff": null,
-          "NetIncome": 11361005157,
+          "NetIncome": 11540802965,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11361005157,
+          "NetIncomeVsBudget": 11540802965,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2095607000000,
+          "RevenueYTDVsBudget": 2095607211860,
           "CMYTDVsBudget": 50930643365,
-          "EBITDAYTDVsBudget": 28895036884,
-          "EBITYTDVsBudget": 27990715188,
-          "NetIncomeYTDVsBudget": 46964722827
+          "EBITDAYTDVsBudget": 28843268964,
+          "EBITYTDVsBudget": 27938947268,
+          "NetIncomeYTDVsBudget": 46912954907
         },
         {
           "year": 2026,
@@ -10092,31 +10092,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-04-01",
           "tag": "Actual",
-          "Revenue": 560781000000,
+          "Revenue": 560781238150,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 560781000000,
+          "RevenueVsBudget": 560781238150,
           "RevenueDiff": null,
           "CM": 12530076252,
           "CMBudget": 0,
           "CMVsBudget": 12530076252,
           "CMDiff": null,
-          "EBITDA": 4857987070,
+          "EBITDA": 4811415892,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 4857987070,
+          "EBITDAVsBudget": 4811415892,
           "EBITDADiff": null,
-          "EBIT": 4552401499,
+          "EBIT": 4505830321,
           "EBITBudget": 0,
-          "EBITVsBudget": 4552401499,
+          "EBITVsBudget": 4505830321,
           "EBITDiff": null,
-          "NetIncome": 11726760205,
+          "NetIncome": 11680189027,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 11726760205,
+          "NetIncomeVsBudget": 11680189027,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 2656388000000,
+          "RevenueYTDVsBudget": 2656388450010,
           "CMYTDVsBudget": 63460719617,
-          "EBITDAYTDVsBudget": 33753023954,
-          "EBITYTDVsBudget": 32543116687,
-          "NetIncomeYTDVsBudget": 58691483032
+          "EBITDAYTDVsBudget": 33654684856,
+          "EBITYTDVsBudget": 32444777589,
+          "NetIncomeYTDVsBudget": 58593143934
         },
         {
           "year": 2026,
@@ -10125,31 +10125,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-05-01",
           "tag": "Actual",
-          "Revenue": 428175000000,
+          "Revenue": 428175120917,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 428175000000,
+          "RevenueVsBudget": 428175120917,
           "RevenueDiff": null,
           "CM": 7944390082,
           "CMBudget": 0,
           "CMVsBudget": 7944390082,
           "CMDiff": null,
-          "EBITDA": 622058316,
+          "EBITDA": 578675629,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 622058316,
+          "EBITDAVsBudget": 578675629,
           "EBITDADiff": null,
-          "EBIT": 342648638,
+          "EBIT": 299265951,
           "EBITBudget": 0,
-          "EBITVsBudget": 342648638,
+          "EBITVsBudget": 299265951,
           "EBITDiff": null,
-          "NetIncome": 10644361405,
+          "NetIncome": 10600978718,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 10644361405,
+          "NetIncomeVsBudget": 10600978718,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3084563000000,
+          "RevenueYTDVsBudget": 3084563570927,
           "CMYTDVsBudget": 71405109699,
-          "EBITDAYTDVsBudget": 34375082270,
-          "EBITYTDVsBudget": 32885765325,
-          "NetIncomeYTDVsBudget": 69335844437
+          "EBITDAYTDVsBudget": 34233360485,
+          "EBITYTDVsBudget": 32744043540,
+          "NetIncomeYTDVsBudget": 69194122652
         },
         {
           "year": 2026,
@@ -10158,31 +10158,31 @@ export const SEGMENT_VARIANTS = {
           "quarter": 2,
           "date": "2026-06-01",
           "tag": "Actual",
-          "Revenue": 400614000000,
+          "Revenue": 400614077810,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 400614000000,
+          "RevenueVsBudget": 400614077810,
           "RevenueDiff": null,
           "CM": 9584372282,
           "CMBudget": 0,
           "CMVsBudget": 9584372282,
           "CMDiff": null,
-          "EBITDA": 1860532474,
+          "EBITDA": 1813765097,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1860532474,
+          "EBITDAVsBudget": 1813765097,
           "EBITDADiff": null,
-          "EBIT": 1583459803,
+          "EBIT": 1536692426,
           "EBITBudget": 0,
-          "EBITVsBudget": 1583459803,
+          "EBITVsBudget": 1536692426,
           "EBITDiff": null,
-          "NetIncome": 7077325924,
+          "NetIncome": 7030558547,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 7077325924,
+          "NetIncomeVsBudget": 7030558547,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3485177000000,
+          "RevenueYTDVsBudget": 3485177648737,
           "CMYTDVsBudget": 80989481981,
-          "EBITDAYTDVsBudget": 36235614744,
-          "EBITYTDVsBudget": 34469225128,
-          "NetIncomeYTDVsBudget": 76413170361
+          "EBITDAYTDVsBudget": 36047125582,
+          "EBITYTDVsBudget": 34280735966,
+          "NetIncomeYTDVsBudget": 76224681199
         },
         {
           "year": 2026,
@@ -10191,9 +10191,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-07-01",
           "tag": "Run-rate",
-          "Revenue": 448184000000,
+          "Revenue": 448183688891,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 448184000000,
+          "RevenueVsBudget": 448183688891,
           "RevenueDiff": null,
           "CM": 12516954114,
           "CMBudget": 0,
@@ -10211,11 +10211,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 5735972952,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 3933361000000,
+          "RevenueYTDVsBudget": 3933361337628,
           "CMYTDVsBudget": 93506436095,
-          "EBITDAYTDVsBudget": 41971587696,
-          "EBITYTDVsBudget": 40205198080,
-          "NetIncomeYTDVsBudget": 82149143313
+          "EBITDAYTDVsBudget": 41783098534,
+          "EBITYTDVsBudget": 40016708918,
+          "NetIncomeYTDVsBudget": 81960654151
         },
         {
           "year": 2026,
@@ -10224,9 +10224,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-08-01",
           "tag": "Forecast",
-          "Revenue": 412089000000,
+          "Revenue": 412089129589,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 412089000000,
+          "RevenueVsBudget": 412089129589,
           "RevenueDiff": null,
           "CM": 9966835794,
           "CMBudget": 0,
@@ -10244,11 +10244,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1494816220,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4345450000000,
+          "RevenueYTDVsBudget": 4345450467217,
           "CMYTDVsBudget": 103473271889,
-          "EBITDAYTDVsBudget": 44253117728,
-          "EBITYTDVsBudget": 41700014300,
-          "NetIncomeYTDVsBudget": 83643959533
+          "EBITDAYTDVsBudget": 44064628566,
+          "EBITYTDVsBudget": 41511525138,
+          "NetIncomeYTDVsBudget": 83455470371
         },
         {
           "year": 2026,
@@ -10257,9 +10257,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 3,
           "date": "2026-09-01",
           "tag": "Forecast",
-          "Revenue": 415700000000,
+          "Revenue": 415699664001,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 415700000000,
+          "RevenueVsBudget": 415699664001,
           "RevenueDiff": null,
           "CM": 9790432149,
           "CMBudget": 0,
@@ -10277,11 +10277,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1191368053,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 4761150000000,
+          "RevenueYTDVsBudget": 4761150131218,
           "CMYTDVsBudget": 113263704038,
-          "EBITDAYTDVsBudget": 46231199593,
-          "EBITYTDVsBudget": 42891382353,
-          "NetIncomeYTDVsBudget": 84835327586
+          "EBITDAYTDVsBudget": 46042710431,
+          "EBITYTDVsBudget": 42702893191,
+          "NetIncomeYTDVsBudget": 84646838424
         },
         {
           "year": 2026,
@@ -10290,9 +10290,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-10-01",
           "tag": "Forecast",
-          "Revenue": 430463000000,
+          "Revenue": 430462583062,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 430463000000,
+          "RevenueVsBudget": 430462583062,
           "RevenueDiff": null,
           "CM": 10193206645,
           "CMBudget": 0,
@@ -10310,11 +10310,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 1804449968,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5191613000000,
+          "RevenueYTDVsBudget": 5191612714280,
           "CMYTDVsBudget": 123456910683,
-          "EBITDAYTDVsBudget": 48822363373,
-          "EBITYTDVsBudget": 44695832321,
-          "NetIncomeYTDVsBudget": 86639777554
+          "EBITDAYTDVsBudget": 48633874211,
+          "EBITYTDVsBudget": 44507343159,
+          "NetIncomeYTDVsBudget": 86451288392
         },
         {
           "year": 2026,
@@ -10323,9 +10323,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-11-01",
           "tag": "Forecast",
-          "Revenue": 451450000000,
+          "Revenue": 451449923545,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 451450000000,
+          "RevenueVsBudget": 451449923545,
           "RevenueDiff": null,
           "CM": 10950002795,
           "CMBudget": 0,
@@ -10343,11 +10343,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 2616476447,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 5643063000000,
+          "RevenueYTDVsBudget": 5643062637825,
           "CMYTDVsBudget": 134406913478,
-          "EBITDAYTDVsBudget": 52225553632,
-          "EBITYTDVsBudget": 47312308768,
-          "NetIncomeYTDVsBudget": 89256254001
+          "EBITDAYTDVsBudget": 52037064470,
+          "EBITYTDVsBudget": 47123819606,
+          "NetIncomeYTDVsBudget": 89067764839
         },
         {
           "year": 2026,
@@ -10356,9 +10356,9 @@ export const SEGMENT_VARIANTS = {
           "quarter": 4,
           "date": "2026-12-01",
           "tag": "Forecast",
-          "Revenue": 472496000000,
+          "Revenue": 472495715596,
           "RevenueBudget": 0,
-          "RevenueVsBudget": 472496000000,
+          "RevenueVsBudget": 472495715596,
           "RevenueDiff": null,
           "CM": 11607931035,
           "CMBudget": 0,
@@ -10376,11 +10376,11 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeBudget": 0,
           "NetIncomeVsBudget": 3062113413,
           "NetIncomeDiff": null,
-          "RevenueYTDVsBudget": 6115559000000,
+          "RevenueYTDVsBudget": 6115558353421,
           "CMYTDVsBudget": 146014844513,
-          "EBITDAYTDVsBudget": 56074380857,
-          "EBITYTDVsBudget": 50374422181,
-          "NetIncomeYTDVsBudget": 92318367414
+          "EBITDAYTDVsBudget": 55885891695,
+          "EBITYTDVsBudget": 50185933019,
+          "NetIncomeYTDVsBudget": 92129878252
         }
       ]
     }
@@ -10403,23 +10403,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3259390091,
           "CMDiff": null,
-          "EBITDA": -192638991,
+          "EBITDA": 224911772,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -192638991,
+          "EBITDAVsBudget": 224911772,
           "EBITDADiff": null,
-          "EBIT": -532279419,
+          "EBIT": -548035034,
           "EBITBudget": 0,
-          "EBITVsBudget": -532279419,
+          "EBITVsBudget": -548035034,
           "EBITDiff": null,
-          "NetIncome": -550875974,
+          "NetIncome": -566631589,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -550875974,
+          "NetIncomeVsBudget": -566631589,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 9491362934,
           "CMYTDVsBudget": 3259390091,
-          "EBITDAYTDVsBudget": -192638991,
-          "EBITYTDVsBudget": -532279419,
-          "NetIncomeYTDVsBudget": -550875974
+          "EBITDAYTDVsBudget": 224911772,
+          "EBITYTDVsBudget": -548035034,
+          "NetIncomeYTDVsBudget": -566631589
         },
         {
           "year": 2026,
@@ -10436,23 +10436,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2327704398,
           "CMDiff": null,
-          "EBITDA": -101716140,
+          "EBITDA": 103602658,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -101716140,
+          "EBITDAVsBudget": 103602658,
           "EBITDADiff": null,
-          "EBIT": -647060262,
+          "EBIT": -665399710,
           "EBITBudget": 0,
-          "EBITVsBudget": -647060262,
+          "EBITVsBudget": -665399710,
           "EBITDiff": null,
-          "NetIncome": -633532751,
+          "NetIncome": -651872199,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -633532751,
+          "NetIncomeVsBudget": -651872199,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 16675854324,
           "CMYTDVsBudget": 5587094489,
-          "EBITDAYTDVsBudget": -294355131,
-          "EBITYTDVsBudget": -1179339681,
-          "NetIncomeYTDVsBudget": -1184408725
+          "EBITDAYTDVsBudget": 328514430,
+          "EBITYTDVsBudget": -1213434744,
+          "NetIncomeYTDVsBudget": -1218503788
         },
         {
           "year": 2026,
@@ -10469,23 +10469,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1861392998,
           "CMDiff": null,
-          "EBITDA": -18171359,
+          "EBITDA": 123615769,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -18171359,
+          "EBITDAVsBudget": 123615769,
           "EBITDADiff": null,
-          "EBIT": -637303644,
+          "EBIT": -1365475003,
           "EBITBudget": 0,
-          "EBITVsBudget": -637303644,
+          "EBITVsBudget": -1365475003,
           "EBITDiff": null,
-          "NetIncome": -573082319,
+          "NetIncome": -1301253678,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -573082319,
+          "NetIncomeVsBudget": -1301253678,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 21714590773,
           "CMYTDVsBudget": 7448487487,
-          "EBITDAYTDVsBudget": -312526490,
-          "EBITYTDVsBudget": -1816643325,
-          "NetIncomeYTDVsBudget": -1757491044
+          "EBITDAYTDVsBudget": 452130199,
+          "EBITYTDVsBudget": -2578909747,
+          "NetIncomeYTDVsBudget": -2519757466
         },
         {
           "year": 2026,
@@ -10502,23 +10502,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1709826310,
           "CMDiff": null,
-          "EBITDA": -6099272,
+          "EBITDA": -520250906,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -6099272,
+          "EBITDAVsBudget": -520250906,
           "EBITDADiff": null,
-          "EBIT": -1208509313,
+          "EBIT": -1226219269,
           "EBITBudget": 0,
-          "EBITVsBudget": -1208509313,
+          "EBITVsBudget": -1226219269,
           "EBITDiff": null,
-          "NetIncome": -1191665386,
+          "NetIncome": -1209375342,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -1191665386,
+          "NetIncomeVsBudget": -1209375342,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 28687225238,
           "CMYTDVsBudget": 9158313797,
-          "EBITDAYTDVsBudget": -318625762,
-          "EBITYTDVsBudget": -3025152638,
-          "NetIncomeYTDVsBudget": -2949156430
+          "EBITDAYTDVsBudget": -68120707,
+          "EBITYTDVsBudget": -3805129016,
+          "NetIncomeYTDVsBudget": -3729132808
         },
         {
           "year": 2026,
@@ -10535,23 +10535,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3480743575,
           "CMDiff": null,
-          "EBITDA": -61617714,
+          "EBITDA": 1224478066,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -61617714,
+          "EBITDAVsBudget": 1224478066,
           "EBITDADiff": null,
-          "EBIT": 485221769,
+          "EBIT": 423604055,
           "EBITBudget": 0,
-          "EBITVsBudget": 485221769,
+          "EBITVsBudget": 423604055,
           "EBITDiff": null,
-          "NetIncome": 499787049,
+          "NetIncome": 438169335,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 499787049,
+          "NetIncomeVsBudget": 438169335,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 36947324151,
           "CMYTDVsBudget": 12639057372,
-          "EBITDAYTDVsBudget": -380243476,
-          "EBITYTDVsBudget": -2539930869,
-          "NetIncomeYTDVsBudget": -2449369381
+          "EBITDAYTDVsBudget": 1156357359,
+          "EBITYTDVsBudget": -3381524961,
+          "NetIncomeYTDVsBudget": -3290963473
         },
         {
           "year": 2026,
@@ -10568,23 +10568,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2388932111,
           "CMDiff": null,
-          "EBITDA": 189469488,
+          "EBITDA": 55077719,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 189469488,
+          "EBITDAVsBudget": 55077719,
           "EBITDADiff": null,
-          "EBIT": -617418527,
+          "EBIT": -637582424,
           "EBITBudget": 0,
-          "EBITVsBudget": -617418527,
+          "EBITVsBudget": -637582424,
           "EBITDiff": null,
-          "NetIncome": -556425237,
+          "NetIncome": -576589134,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -556425237,
+          "NetIncomeVsBudget": -576589134,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44413353691,
           "CMYTDVsBudget": 15027989483,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -3157349396,
-          "NetIncomeYTDVsBudget": -3005794618
+          "EBITDAYTDVsBudget": 1211435078,
+          "EBITYTDVsBudget": -4019107385,
+          "NetIncomeYTDVsBudget": -3867552607
         },
         {
           "year": 2026,
@@ -10601,9 +10601,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 96748854,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 96748854,
           "EBITDADiff": null,
           "EBIT": -616248317,
           "EBITBudget": 0,
@@ -10615,9 +10615,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 51386866107,
           "CMYTDVsBudget": 17335738266,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -3773597713,
-          "NetIncomeYTDVsBudget": -3622042935
+          "EBITDAYTDVsBudget": 1308183932,
+          "EBITYTDVsBudget": -4635355702,
+          "NetIncomeYTDVsBudget": -4483800924
         },
         {
           "year": 2026,
@@ -10634,9 +10634,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 189534021,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 189534021,
           "EBITDADiff": null,
           "EBIT": -710176117,
           "EBITBudget": 0,
@@ -10648,9 +10648,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 58360378523,
           "CMYTDVsBudget": 19643487049,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -4483773830,
-          "NetIncomeYTDVsBudget": -4332219052
+          "EBITDAYTDVsBudget": 1497717953,
+          "EBITYTDVsBudget": -5345531819,
+          "NetIncomeYTDVsBudget": -5193977041
         },
         {
           "year": 2026,
@@ -10667,9 +10667,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2203506347,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 65117337,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 65117337,
           "EBITDADiff": null,
           "EBIT": -894587825,
           "EBITBudget": 0,
@@ -10681,9 +10681,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 64693777324,
           "CMYTDVsBudget": 21846993396,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -5378361655,
-          "NetIncomeYTDVsBudget": -5226806877
+          "EBITDAYTDVsBudget": 1562835290,
+          "EBITYTDVsBudget": -6240119644,
+          "NetIncomeYTDVsBudget": -6088564866
         },
         {
           "year": 2026,
@@ -10700,9 +10700,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 179315635,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 179315635,
           "EBITDADiff": null,
           "EBIT": -710074845,
           "EBITBudget": 0,
@@ -10714,9 +10714,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 71667289740,
           "CMYTDVsBudget": 24154742179,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -6088436500,
-          "NetIncomeYTDVsBudget": -5936881722
+          "EBITDAYTDVsBudget": 1742150925,
+          "EBITYTDVsBudget": -6950194489,
+          "NetIncomeYTDVsBudget": -6798639711
         },
         {
           "year": 2026,
@@ -10733,9 +10733,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 193794584,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 193794584,
           "EBITDADiff": null,
           "EBIT": -695503283,
           "EBITBudget": 0,
@@ -10747,9 +10747,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 78640802156,
           "CMYTDVsBudget": 26462490962,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -6783939783,
-          "NetIncomeYTDVsBudget": -6632385005
+          "EBITDAYTDVsBudget": 1935945509,
+          "EBITYTDVsBudget": -7645697772,
+          "NetIncomeYTDVsBudget": -7494142994
         },
         {
           "year": 2026,
@@ -10766,9 +10766,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 159803296,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 159803296,
           "EBITDADiff": null,
           "EBIT": -780559609,
           "EBITBudget": 0,
@@ -10780,9 +10780,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 85614314572,
           "CMYTDVsBudget": 28770239745,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -7564499392,
-          "NetIncomeYTDVsBudget": -7412944614
+          "EBITDAYTDVsBudget": 2095748805,
+          "EBITYTDVsBudget": -8426257381,
+          "NetIncomeYTDVsBudget": -8274702603
         }
       ],
       "Adj. EBITDA (Total)": [
@@ -10801,23 +10801,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3259390091,
           "CMDiff": null,
-          "EBITDA": -247487781,
+          "EBITDA": -263243396,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -247487781,
+          "EBITDAVsBudget": -263243396,
           "EBITDADiff": null,
-          "EBIT": -532279419,
+          "EBIT": -548035034,
           "EBITBudget": 0,
-          "EBITVsBudget": -532279419,
+          "EBITVsBudget": -548035034,
           "EBITDiff": null,
-          "NetIncome": -550875974,
+          "NetIncome": -566631589,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -550875974,
+          "NetIncomeVsBudget": -566631589,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 9491362934,
           "CMYTDVsBudget": 3259390091,
-          "EBITDAYTDVsBudget": -247487781,
-          "EBITYTDVsBudget": -532279419,
-          "NetIncomeYTDVsBudget": -550875974
+          "EBITDAYTDVsBudget": -263243396,
+          "EBITYTDVsBudget": -548035034,
+          "NetIncomeYTDVsBudget": -566631589
         },
         {
           "year": 2026,
@@ -10834,23 +10834,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2327704398,
           "CMDiff": null,
-          "EBITDA": -361362473,
+          "EBITDA": -379701921,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -361362473,
+          "EBITDAVsBudget": -379701921,
           "EBITDADiff": null,
-          "EBIT": -647060262,
+          "EBIT": -665399710,
           "EBITBudget": 0,
-          "EBITVsBudget": -647060262,
+          "EBITVsBudget": -665399710,
           "EBITDiff": null,
-          "NetIncome": -633532751,
+          "NetIncome": -651872199,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -633532751,
+          "NetIncomeVsBudget": -651872199,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 16675854324,
           "CMYTDVsBudget": 5587094489,
-          "EBITDAYTDVsBudget": -608850254,
-          "EBITYTDVsBudget": -1179339681,
-          "NetIncomeYTDVsBudget": -1184408725
+          "EBITDAYTDVsBudget": -642945317,
+          "EBITYTDVsBudget": -1213434744,
+          "NetIncomeYTDVsBudget": -1218503788
         },
         {
           "year": 2026,
@@ -10867,23 +10867,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1861392998,
           "CMDiff": null,
-          "EBITDA": -233278332,
+          "EBITDA": -961449691,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -233278332,
+          "EBITDAVsBudget": -961449691,
           "EBITDADiff": null,
-          "EBIT": -637303644,
+          "EBIT": -1365475003,
           "EBITBudget": 0,
-          "EBITVsBudget": -637303644,
+          "EBITVsBudget": -1365475003,
           "EBITDiff": null,
-          "NetIncome": -573082319,
+          "NetIncome": -1301253678,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -573082319,
+          "NetIncomeVsBudget": -1301253678,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 21714590773,
           "CMYTDVsBudget": 7448487487,
-          "EBITDAYTDVsBudget": -842128586,
-          "EBITYTDVsBudget": -1816643325,
-          "NetIncomeYTDVsBudget": -1757491044
+          "EBITDAYTDVsBudget": -1604395008,
+          "EBITYTDVsBudget": -2578909747,
+          "NetIncomeYTDVsBudget": -2519757466
         },
         {
           "year": 2026,
@@ -10900,23 +10900,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1709826310,
           "CMDiff": null,
-          "EBITDA": -893879107,
+          "EBITDA": -911589063,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -893879107,
+          "EBITDAVsBudget": -911589063,
           "EBITDADiff": null,
-          "EBIT": -1208509313,
+          "EBIT": -1226219269,
           "EBITBudget": 0,
-          "EBITVsBudget": -1208509313,
+          "EBITVsBudget": -1226219269,
           "EBITDiff": null,
-          "NetIncome": -1191665386,
+          "NetIncome": -1209375342,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -1191665386,
+          "NetIncomeVsBudget": -1209375342,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 28687225238,
           "CMYTDVsBudget": 9158313797,
-          "EBITDAYTDVsBudget": -1736007693,
-          "EBITYTDVsBudget": -3025152638,
-          "NetIncomeYTDVsBudget": -2949156430
+          "EBITDAYTDVsBudget": -2515984071,
+          "EBITYTDVsBudget": -3805129016,
+          "NetIncomeYTDVsBudget": -3729132808
         },
         {
           "year": 2026,
@@ -10933,23 +10933,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3480743575,
           "CMDiff": null,
-          "EBITDA": 790104805,
+          "EBITDA": 728487091,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 790104805,
+          "EBITDAVsBudget": 728487091,
           "EBITDADiff": null,
-          "EBIT": 485221769,
+          "EBIT": 423604055,
           "EBITBudget": 0,
-          "EBITVsBudget": 485221769,
+          "EBITVsBudget": 423604055,
           "EBITDiff": null,
-          "NetIncome": 499787049,
+          "NetIncome": 438169335,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 499787049,
+          "NetIncomeVsBudget": 438169335,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 36947324151,
           "CMYTDVsBudget": 12639057372,
-          "EBITDAYTDVsBudget": -945902888,
-          "EBITYTDVsBudget": -2539930869,
-          "NetIncomeYTDVsBudget": -2449369381
+          "EBITDAYTDVsBudget": -1787496980,
+          "EBITYTDVsBudget": -3381524961,
+          "NetIncomeYTDVsBudget": -3290963473
         },
         {
           "year": 2026,
@@ -10966,23 +10966,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2388932111,
           "CMDiff": null,
-          "EBITDA": -312801579,
+          "EBITDA": -332965476,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -312801579,
+          "EBITDAVsBudget": -332965476,
           "EBITDADiff": null,
-          "EBIT": -617418527,
+          "EBIT": -637582424,
           "EBITBudget": 0,
-          "EBITVsBudget": -617418527,
+          "EBITVsBudget": -637582424,
           "EBITDiff": null,
-          "NetIncome": -556425237,
+          "NetIncome": -576589134,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -556425237,
+          "NetIncomeVsBudget": -576589134,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44413353691,
           "CMYTDVsBudget": 15027989483,
-          "EBITDAYTDVsBudget": -1258704467,
-          "EBITYTDVsBudget": -3157349396,
-          "NetIncomeYTDVsBudget": -3005794618
+          "EBITDAYTDVsBudget": -2120462456,
+          "EBITYTDVsBudget": -4019107385,
+          "NetIncomeYTDVsBudget": -3867552607
         },
         {
           "year": 2026,
@@ -11013,9 +11013,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 51386866107,
           "CMYTDVsBudget": 17335738266,
-          "EBITDAYTDVsBudget": -1595897450,
-          "EBITYTDVsBudget": -3773597713,
-          "NetIncomeYTDVsBudget": -3622042935
+          "EBITDAYTDVsBudget": -2457655439,
+          "EBITYTDVsBudget": -4635355702,
+          "NetIncomeYTDVsBudget": -4483800924
         },
         {
           "year": 2026,
@@ -11046,9 +11046,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 58360378523,
           "CMYTDVsBudget": 19643487049,
-          "EBITDAYTDVsBudget": -1814644178,
-          "EBITYTDVsBudget": -4483773830,
-          "NetIncomeYTDVsBudget": -4332219052
+          "EBITDAYTDVsBudget": -2676402167,
+          "EBITYTDVsBudget": -5345531819,
+          "NetIncomeYTDVsBudget": -5193977041
         },
         {
           "year": 2026,
@@ -11079,9 +11079,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 64693777324,
           "CMYTDVsBudget": 21846993396,
-          "EBITDAYTDVsBudget": -2217802614,
-          "EBITYTDVsBudget": -5378361655,
-          "NetIncomeYTDVsBudget": -5226806877
+          "EBITDAYTDVsBudget": -3079560603,
+          "EBITYTDVsBudget": -6240119644,
+          "NetIncomeYTDVsBudget": -6088564866
         },
         {
           "year": 2026,
@@ -11112,9 +11112,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 71667289740,
           "CMYTDVsBudget": 24154742179,
-          "EBITDAYTDVsBudget": -2436448070,
-          "EBITYTDVsBudget": -6088436500,
-          "NetIncomeYTDVsBudget": -5936881722
+          "EBITDAYTDVsBudget": -3298206059,
+          "EBITYTDVsBudget": -6950194489,
+          "NetIncomeYTDVsBudget": -6798639711
         },
         {
           "year": 2026,
@@ -11145,9 +11145,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 78640802156,
           "CMYTDVsBudget": 26462490962,
-          "EBITDAYTDVsBudget": -2640521964,
-          "EBITYTDVsBudget": -6783939783,
-          "NetIncomeYTDVsBudget": -6632385005
+          "EBITDAYTDVsBudget": -3502279953,
+          "EBITYTDVsBudget": -7645697772,
+          "NetIncomeYTDVsBudget": -7494142994
         },
         {
           "year": 2026,
@@ -11178,9 +11178,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 85614314572,
           "CMYTDVsBudget": 28770239745,
-          "EBITDAYTDVsBudget": -2929652184,
-          "EBITYTDVsBudget": -7564499392,
-          "NetIncomeYTDVsBudget": -7412944614
+          "EBITDAYTDVsBudget": -3791410173,
+          "EBITYTDVsBudget": -8426257381,
+          "NetIncomeYTDVsBudget": -8274702603
         }
       ],
       "Adj. EBIT (Direct)": [
@@ -11199,23 +11199,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3259390091,
           "CMDiff": null,
-          "EBITDA": -192638991,
+          "EBITDA": 224911772,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -192638991,
+          "EBITDAVsBudget": 224911772,
           "EBITDADiff": null,
-          "EBIT": -3307599984,
+          "EBIT": -48209893,
           "EBITBudget": 0,
-          "EBITVsBudget": -3307599984,
+          "EBITVsBudget": -48209893,
           "EBITDiff": null,
-          "NetIncome": -550875974,
+          "NetIncome": -566631589,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -550875974,
+          "NetIncomeVsBudget": -566631589,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 9491362934,
           "CMYTDVsBudget": 3259390091,
-          "EBITDAYTDVsBudget": -192638991,
-          "EBITYTDVsBudget": -3307599984,
-          "NetIncomeYTDVsBudget": -550875974
+          "EBITDAYTDVsBudget": 224911772,
+          "EBITYTDVsBudget": -48209893,
+          "NetIncomeYTDVsBudget": -566631589
         },
         {
           "year": 2026,
@@ -11232,23 +11232,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2327704398,
           "CMDiff": null,
-          "EBITDA": -101716140,
+          "EBITDA": 103602658,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -101716140,
+          "EBITDAVsBudget": 103602658,
           "EBITDADiff": null,
-          "EBIT": -2497728839,
+          "EBIT": -170024441,
           "EBITBudget": 0,
-          "EBITVsBudget": -2497728839,
+          "EBITVsBudget": -170024441,
           "EBITDiff": null,
-          "NetIncome": -633532751,
+          "NetIncome": -651872199,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -633532751,
+          "NetIncomeVsBudget": -651872199,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 16675854324,
           "CMYTDVsBudget": 5587094489,
-          "EBITDAYTDVsBudget": -294355131,
-          "EBITYTDVsBudget": -5805328823,
-          "NetIncomeYTDVsBudget": -1184408725
+          "EBITDAYTDVsBudget": 328514430,
+          "EBITYTDVsBudget": -218234334,
+          "NetIncomeYTDVsBudget": -1218503788
         },
         {
           "year": 2026,
@@ -11265,23 +11265,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1861392998,
           "CMDiff": null,
-          "EBITDA": -18171359,
+          "EBITDA": 123615769,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -18171359,
+          "EBITDAVsBudget": 123615769,
           "EBITDADiff": null,
-          "EBIT": -2130569504,
+          "EBIT": -269176506,
           "EBITBudget": 0,
-          "EBITVsBudget": -2130569504,
+          "EBITVsBudget": -269176506,
           "EBITDiff": null,
-          "NetIncome": -573082319,
+          "NetIncome": -1301253678,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -573082319,
+          "NetIncomeVsBudget": -1301253678,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 21714590773,
           "CMYTDVsBudget": 7448487487,
-          "EBITDAYTDVsBudget": -312526490,
-          "EBITYTDVsBudget": -7935898327,
-          "NetIncomeYTDVsBudget": -1757491044
+          "EBITDAYTDVsBudget": 452130199,
+          "EBITYTDVsBudget": -487410840,
+          "NetIncomeYTDVsBudget": -2519757466
         },
         {
           "year": 2026,
@@ -11298,23 +11298,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1709826310,
           "CMDiff": null,
-          "EBITDA": -6099272,
+          "EBITDA": -520250906,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -6099272,
+          "EBITDAVsBudget": -520250906,
           "EBITDADiff": null,
-          "EBIT": -2531603365,
+          "EBIT": -821777055,
           "EBITBudget": 0,
-          "EBITVsBudget": -2531603365,
+          "EBITVsBudget": -821777055,
           "EBITDiff": null,
-          "NetIncome": -1191665386,
+          "NetIncome": -1209375342,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -1191665386,
+          "NetIncomeVsBudget": -1209375342,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 28687225238,
           "CMYTDVsBudget": 9158313797,
-          "EBITDAYTDVsBudget": -318625762,
-          "EBITYTDVsBudget": -10467501692,
-          "NetIncomeYTDVsBudget": -2949156430
+          "EBITDAYTDVsBudget": -68120707,
+          "EBITYTDVsBudget": -1309187895,
+          "NetIncomeYTDVsBudget": -3729132808
         },
         {
           "year": 2026,
@@ -11331,23 +11331,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3480743575,
           "CMDiff": null,
-          "EBITDA": -61617714,
+          "EBITDA": 1224478066,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -61617714,
+          "EBITDAVsBudget": 1224478066,
           "EBITDADiff": null,
-          "EBIT": -2550400857,
+          "EBIT": 930342719,
           "EBITBudget": 0,
-          "EBITVsBudget": -2550400857,
+          "EBITVsBudget": 930342719,
           "EBITDiff": null,
-          "NetIncome": 499787049,
+          "NetIncome": 438169335,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 499787049,
+          "NetIncomeVsBudget": 438169335,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 36947324151,
           "CMYTDVsBudget": 12639057372,
-          "EBITDAYTDVsBudget": -380243476,
-          "EBITYTDVsBudget": -13017902549,
-          "NetIncomeYTDVsBudget": -2449369381
+          "EBITDAYTDVsBudget": 1156357359,
+          "EBITYTDVsBudget": -378845176,
+          "NetIncomeYTDVsBudget": -3290963473
         },
         {
           "year": 2026,
@@ -11364,23 +11364,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2388932111,
           "CMDiff": null,
-          "EBITDA": 189469488,
+          "EBITDA": 55077719,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 189469488,
+          "EBITDAVsBudget": 55077719,
           "EBITDADiff": null,
-          "EBIT": -2627717616,
+          "EBIT": -238785505,
           "EBITBudget": 0,
-          "EBITVsBudget": -2627717616,
+          "EBITVsBudget": -238785505,
           "EBITDiff": null,
-          "NetIncome": -556425237,
+          "NetIncome": -576589134,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -556425237,
+          "NetIncomeVsBudget": -576589134,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44413353691,
           "CMYTDVsBudget": 15027989483,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -15645620165,
-          "NetIncomeYTDVsBudget": -3005794618
+          "EBITDAYTDVsBudget": 1211435078,
+          "EBITYTDVsBudget": -617630681,
+          "NetIncomeYTDVsBudget": -3867552607
         },
         {
           "year": 2026,
@@ -11397,13 +11397,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 96748854,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 96748854,
           "EBITDADiff": null,
-          "EBIT": -2490055263,
+          "EBIT": -182306480,
           "EBITBudget": 0,
-          "EBITVsBudget": -2490055263,
+          "EBITVsBudget": -182306480,
           "EBITDiff": null,
           "NetIncome": -616248317,
           "NetIncomeBudget": 0,
@@ -11411,9 +11411,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 51386866107,
           "CMYTDVsBudget": 17335738266,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -18135675428,
-          "NetIncomeYTDVsBudget": -3622042935
+          "EBITDAYTDVsBudget": 1308183932,
+          "EBITYTDVsBudget": -799937161,
+          "NetIncomeYTDVsBudget": -4483800924
         },
         {
           "year": 2026,
@@ -11430,13 +11430,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 189534021,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 189534021,
           "EBITDADiff": null,
-          "EBIT": -2609644151,
+          "EBIT": -301895368,
           "EBITBudget": 0,
-          "EBITVsBudget": -2609644151,
+          "EBITVsBudget": -301895368,
           "EBITDiff": null,
           "NetIncome": -710176117,
           "NetIncomeBudget": 0,
@@ -11444,9 +11444,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 58360378523,
           "CMYTDVsBudget": 19643487049,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -20745319579,
-          "NetIncomeYTDVsBudget": -4332219052
+          "EBITDAYTDVsBudget": 1497717953,
+          "EBITYTDVsBudget": -1101832529,
+          "NetIncomeYTDVsBudget": -5193977041
         },
         {
           "year": 2026,
@@ -11463,13 +11463,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2203506347,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 65117337,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 65117337,
           "EBITDADiff": null,
-          "EBIT": -2629818399,
+          "EBIT": -426312052,
           "EBITBudget": 0,
-          "EBITVsBudget": -2629818399,
+          "EBITVsBudget": -426312052,
           "EBITDiff": null,
           "NetIncome": -894587825,
           "NetIncomeBudget": 0,
@@ -11477,9 +11477,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 64693777324,
           "CMYTDVsBudget": 21846993396,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -23375137978,
-          "NetIncomeYTDVsBudget": -5226806877
+          "EBITDAYTDVsBudget": 1562835290,
+          "EBITYTDVsBudget": -1528144581,
+          "NetIncomeYTDVsBudget": -6088564866
         },
         {
           "year": 2026,
@@ -11496,13 +11496,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 179315635,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 179315635,
           "EBITDADiff": null,
-          "EBIT": -2619862537,
+          "EBIT": -312113754,
           "EBITBudget": 0,
-          "EBITVsBudget": -2619862537,
+          "EBITVsBudget": -312113754,
           "EBITDiff": null,
           "NetIncome": -710074845,
           "NetIncomeBudget": 0,
@@ -11510,9 +11510,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 71667289740,
           "CMYTDVsBudget": 24154742179,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -25995000515,
-          "NetIncomeYTDVsBudget": -5936881722
+          "EBITDAYTDVsBudget": 1742150925,
+          "EBITYTDVsBudget": -1840258335,
+          "NetIncomeYTDVsBudget": -6798639711
         },
         {
           "year": 2026,
@@ -11529,13 +11529,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 193794584,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 193794584,
           "EBITDADiff": null,
-          "EBIT": -2605383588,
+          "EBIT": -297634805,
           "EBITBudget": 0,
-          "EBITVsBudget": -2605383588,
+          "EBITVsBudget": -297634805,
           "EBITDiff": null,
           "NetIncome": -695503283,
           "NetIncomeBudget": 0,
@@ -11543,9 +11543,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 78640802156,
           "CMYTDVsBudget": 26462490962,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -28600384103,
-          "NetIncomeYTDVsBudget": -6632385005
+          "EBITDAYTDVsBudget": 1935945509,
+          "EBITYTDVsBudget": -2137893140,
+          "NetIncomeYTDVsBudget": -7494142994
         },
         {
           "year": 2026,
@@ -11562,13 +11562,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2307748783,
           "CMDiff": null,
-          "EBITDA": 0,
+          "EBITDA": 159803296,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 0,
+          "EBITDAVsBudget": 159803296,
           "EBITDADiff": null,
-          "EBIT": -2639374876,
+          "EBIT": -331626093,
           "EBITBudget": 0,
-          "EBITVsBudget": -2639374876,
+          "EBITVsBudget": -331626093,
           "EBITDiff": null,
           "NetIncome": -780559609,
           "NetIncomeBudget": 0,
@@ -11576,9 +11576,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 85614314572,
           "CMYTDVsBudget": 28770239745,
-          "EBITDAYTDVsBudget": -190773988,
-          "EBITYTDVsBudget": -31239758979,
-          "NetIncomeYTDVsBudget": -7412944614
+          "EBITDAYTDVsBudget": 2095748805,
+          "EBITYTDVsBudget": -2469519233,
+          "NetIncomeYTDVsBudget": -8274702603
         }
       ],
       "Adj. EBIT (Total)": [
@@ -11597,23 +11597,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3259390091,
           "CMDiff": null,
-          "EBITDA": -247487781,
+          "EBITDA": -263243396,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -247487781,
+          "EBITDAVsBudget": -263243396,
           "EBITDADiff": null,
-          "EBIT": -532279419,
+          "EBIT": -548035034,
           "EBITBudget": 0,
-          "EBITVsBudget": -532279419,
+          "EBITVsBudget": -548035034,
           "EBITDiff": null,
-          "NetIncome": -550875974,
+          "NetIncome": -566631589,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -550875974,
+          "NetIncomeVsBudget": -566631589,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 9491362934,
           "CMYTDVsBudget": 3259390091,
-          "EBITDAYTDVsBudget": -247487781,
-          "EBITYTDVsBudget": -532279419,
-          "NetIncomeYTDVsBudget": -550875974
+          "EBITDAYTDVsBudget": -263243396,
+          "EBITYTDVsBudget": -548035034,
+          "NetIncomeYTDVsBudget": -566631589
         },
         {
           "year": 2026,
@@ -11630,23 +11630,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2327704398,
           "CMDiff": null,
-          "EBITDA": -361362473,
+          "EBITDA": -379701921,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -361362473,
+          "EBITDAVsBudget": -379701921,
           "EBITDADiff": null,
-          "EBIT": -647060262,
+          "EBIT": -665399710,
           "EBITBudget": 0,
-          "EBITVsBudget": -647060262,
+          "EBITVsBudget": -665399710,
           "EBITDiff": null,
-          "NetIncome": -633532751,
+          "NetIncome": -651872199,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -633532751,
+          "NetIncomeVsBudget": -651872199,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 16675854324,
           "CMYTDVsBudget": 5587094489,
-          "EBITDAYTDVsBudget": -608850254,
-          "EBITYTDVsBudget": -1179339681,
-          "NetIncomeYTDVsBudget": -1184408725
+          "EBITDAYTDVsBudget": -642945317,
+          "EBITYTDVsBudget": -1213434744,
+          "NetIncomeYTDVsBudget": -1218503788
         },
         {
           "year": 2026,
@@ -11663,23 +11663,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1861392998,
           "CMDiff": null,
-          "EBITDA": -233278332,
+          "EBITDA": -961449691,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -233278332,
+          "EBITDAVsBudget": -961449691,
           "EBITDADiff": null,
-          "EBIT": -637303644,
+          "EBIT": -1365475003,
           "EBITBudget": 0,
-          "EBITVsBudget": -637303644,
+          "EBITVsBudget": -1365475003,
           "EBITDiff": null,
-          "NetIncome": -573082319,
+          "NetIncome": -1301253678,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -573082319,
+          "NetIncomeVsBudget": -1301253678,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 21714590773,
           "CMYTDVsBudget": 7448487487,
-          "EBITDAYTDVsBudget": -842128586,
-          "EBITYTDVsBudget": -1816643325,
-          "NetIncomeYTDVsBudget": -1757491044
+          "EBITDAYTDVsBudget": -1604395008,
+          "EBITYTDVsBudget": -2578909747,
+          "NetIncomeYTDVsBudget": -2519757466
         },
         {
           "year": 2026,
@@ -11696,23 +11696,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 1709826310,
           "CMDiff": null,
-          "EBITDA": -893879107,
+          "EBITDA": -911589063,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -893879107,
+          "EBITDAVsBudget": -911589063,
           "EBITDADiff": null,
-          "EBIT": -1208509313,
+          "EBIT": -1226219269,
           "EBITBudget": 0,
-          "EBITVsBudget": -1208509313,
+          "EBITVsBudget": -1226219269,
           "EBITDiff": null,
-          "NetIncome": -1191665386,
+          "NetIncome": -1209375342,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -1191665386,
+          "NetIncomeVsBudget": -1209375342,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 28687225238,
           "CMYTDVsBudget": 9158313797,
-          "EBITDAYTDVsBudget": -1736007693,
-          "EBITYTDVsBudget": -3025152638,
-          "NetIncomeYTDVsBudget": -2949156430
+          "EBITDAYTDVsBudget": -2515984071,
+          "EBITYTDVsBudget": -3805129016,
+          "NetIncomeYTDVsBudget": -3729132808
         },
         {
           "year": 2026,
@@ -11729,23 +11729,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 3480743575,
           "CMDiff": null,
-          "EBITDA": 790104805,
+          "EBITDA": 728487091,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 790104805,
+          "EBITDAVsBudget": 728487091,
           "EBITDADiff": null,
-          "EBIT": 485221769,
+          "EBIT": 423604055,
           "EBITBudget": 0,
-          "EBITVsBudget": 485221769,
+          "EBITVsBudget": 423604055,
           "EBITDiff": null,
-          "NetIncome": 499787049,
+          "NetIncome": 438169335,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 499787049,
+          "NetIncomeVsBudget": 438169335,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 36947324151,
           "CMYTDVsBudget": 12639057372,
-          "EBITDAYTDVsBudget": -945902888,
-          "EBITYTDVsBudget": -2539930869,
-          "NetIncomeYTDVsBudget": -2449369381
+          "EBITDAYTDVsBudget": -1787496980,
+          "EBITYTDVsBudget": -3381524961,
+          "NetIncomeYTDVsBudget": -3290963473
         },
         {
           "year": 2026,
@@ -11762,23 +11762,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 2388932111,
           "CMDiff": null,
-          "EBITDA": -312801579,
+          "EBITDA": -332965476,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -312801579,
+          "EBITDAVsBudget": -332965476,
           "EBITDADiff": null,
-          "EBIT": -617418527,
+          "EBIT": -637582424,
           "EBITBudget": 0,
-          "EBITVsBudget": -617418527,
+          "EBITVsBudget": -637582424,
           "EBITDiff": null,
-          "NetIncome": -556425237,
+          "NetIncome": -576589134,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -556425237,
+          "NetIncomeVsBudget": -576589134,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 44413353691,
           "CMYTDVsBudget": 15027989483,
-          "EBITDAYTDVsBudget": -1258704467,
-          "EBITYTDVsBudget": -3157349396,
-          "NetIncomeYTDVsBudget": -3005794618
+          "EBITDAYTDVsBudget": -2120462456,
+          "EBITYTDVsBudget": -4019107385,
+          "NetIncomeYTDVsBudget": -3867552607
         },
         {
           "year": 2026,
@@ -11809,9 +11809,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 51386866107,
           "CMYTDVsBudget": 17335738266,
-          "EBITDAYTDVsBudget": -1595897450,
-          "EBITYTDVsBudget": -3773597713,
-          "NetIncomeYTDVsBudget": -3622042935
+          "EBITDAYTDVsBudget": -2457655439,
+          "EBITYTDVsBudget": -4635355702,
+          "NetIncomeYTDVsBudget": -4483800924
         },
         {
           "year": 2026,
@@ -11842,9 +11842,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 58360378523,
           "CMYTDVsBudget": 19643487049,
-          "EBITDAYTDVsBudget": -1814644178,
-          "EBITYTDVsBudget": -4483773830,
-          "NetIncomeYTDVsBudget": -4332219052
+          "EBITDAYTDVsBudget": -2676402167,
+          "EBITYTDVsBudget": -5345531819,
+          "NetIncomeYTDVsBudget": -5193977041
         },
         {
           "year": 2026,
@@ -11875,9 +11875,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 64693777324,
           "CMYTDVsBudget": 21846993396,
-          "EBITDAYTDVsBudget": -2217802614,
-          "EBITYTDVsBudget": -5378361655,
-          "NetIncomeYTDVsBudget": -5226806877
+          "EBITDAYTDVsBudget": -3079560603,
+          "EBITYTDVsBudget": -6240119644,
+          "NetIncomeYTDVsBudget": -6088564866
         },
         {
           "year": 2026,
@@ -11908,9 +11908,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 71667289740,
           "CMYTDVsBudget": 24154742179,
-          "EBITDAYTDVsBudget": -2436448070,
-          "EBITYTDVsBudget": -6088436500,
-          "NetIncomeYTDVsBudget": -5936881722
+          "EBITDAYTDVsBudget": -3298206059,
+          "EBITYTDVsBudget": -6950194489,
+          "NetIncomeYTDVsBudget": -6798639711
         },
         {
           "year": 2026,
@@ -11941,9 +11941,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 78640802156,
           "CMYTDVsBudget": 26462490962,
-          "EBITDAYTDVsBudget": -2640521964,
-          "EBITYTDVsBudget": -6783939783,
-          "NetIncomeYTDVsBudget": -6632385005
+          "EBITDAYTDVsBudget": -3502279953,
+          "EBITYTDVsBudget": -7645697772,
+          "NetIncomeYTDVsBudget": -7494142994
         },
         {
           "year": 2026,
@@ -11974,9 +11974,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 85614314572,
           "CMYTDVsBudget": 28770239745,
-          "EBITDAYTDVsBudget": -2929652184,
-          "EBITYTDVsBudget": -7564499392,
-          "NetIncomeYTDVsBudget": -7412944614
+          "EBITDAYTDVsBudget": -3791410173,
+          "EBITYTDVsBudget": -8426257381,
+          "NetIncomeYTDVsBudget": -8274702603
         }
       ]
     }
@@ -11999,23 +11999,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -67897498,
           "CMDiff": null,
-          "EBITDA": 249427594,
+          "EBITDA": 42789242808,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 249427594,
+          "EBITDAVsBudget": 42789242808,
           "EBITDADiff": null,
-          "EBIT": -7941796782,
+          "EBIT": 40144367527,
           "EBITBudget": 0,
-          "EBITVsBudget": -7941796782,
+          "EBITVsBudget": 40144367527,
           "EBITDiff": null,
-          "NetIncome": 76655936687,
+          "NetIncome": 124742100996,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 76655936687,
+          "NetIncomeVsBudget": 124742100996,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 265435835,
           "CMYTDVsBudget": -67897498,
-          "EBITDAYTDVsBudget": 249427594,
-          "EBITYTDVsBudget": -7941796782,
-          "NetIncomeYTDVsBudget": 76655936687
+          "EBITDAYTDVsBudget": 42789242808,
+          "EBITYTDVsBudget": 40144367527,
+          "NetIncomeYTDVsBudget": 124742100996
         },
         {
           "year": 2026,
@@ -12032,23 +12032,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -57654492,
           "CMDiff": null,
-          "EBITDA": -261473587,
+          "EBITDA": -123450615635,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -261473587,
+          "EBITDAVsBudget": -123450615635,
           "EBITDADiff": null,
-          "EBIT": -7215720029,
+          "EBIT": -126225666174,
           "EBITBudget": 0,
-          "EBITVsBudget": -7215720029,
+          "EBITVsBudget": -126225666174,
           "EBITDiff": null,
-          "NetIncome": -103623000000,
+          "NetIncome": -222633412702,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -103623000000,
+          "NetIncomeVsBudget": -222633412702,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 541114676,
           "CMYTDVsBudget": -125551990,
-          "EBITDAYTDVsBudget": -12045993,
-          "EBITYTDVsBudget": -15157516811,
-          "NetIncomeYTDVsBudget": -26967063313
+          "EBITDAYTDVsBudget": -80661372827,
+          "EBITYTDVsBudget": -86081298647,
+          "NetIncomeYTDVsBudget": -97891311706
         },
         {
           "year": 2026,
@@ -12065,23 +12065,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 569991182,
           "CMDiff": null,
-          "EBITDA": -737321934,
+          "EBITDA": -443895044495,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -737321934,
+          "EBITDAVsBudget": -443895044495,
           "EBITDADiff": null,
-          "EBIT": -9402653744,
+          "EBIT": -446486437442,
           "EBITBudget": 0,
-          "EBITVsBudget": -9402653744,
+          "EBITVsBudget": -446486437442,
           "EBITDiff": null,
-          "NetIncome": -428434000000,
+          "NetIncome": -865517420446,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -428434000000,
+          "NetIncomeVsBudget": -865517420446,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1452978917,
           "CMYTDVsBudget": 444439192,
-          "EBITDAYTDVsBudget": -749367927,
-          "EBITYTDVsBudget": -24560170555,
-          "NetIncomeYTDVsBudget": -455401063313
+          "EBITDAYTDVsBudget": -524556417322,
+          "EBITYTDVsBudget": -532567736089,
+          "NetIncomeYTDVsBudget": -963408732152
         },
         {
           "year": 2026,
@@ -12098,23 +12098,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -317745496,
           "CMDiff": null,
-          "EBITDA": 1130868150,
+          "EBITDA": 287595203505,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1130868150,
+          "EBITDAVsBudget": 287595203505,
           "EBITDADiff": null,
-          "EBIT": -6685550545,
+          "EBIT": 285379290895,
           "EBITBudget": 0,
-          "EBITVsBudget": -6685550545,
+          "EBITVsBudget": 285379290895,
           "EBITDiff": null,
-          "NetIncome": 309323000000,
+          "NetIncome": 601388038941,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 309323000000,
+          "NetIncomeVsBudget": 601388038941,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1468619754,
           "CMYTDVsBudget": 126693696,
-          "EBITDAYTDVsBudget": 381500223,
-          "EBITYTDVsBudget": -31245721100,
-          "NetIncomeYTDVsBudget": -146078063313
+          "EBITDAYTDVsBudget": -236961213817,
+          "EBITYTDVsBudget": -247188445194,
+          "NetIncomeYTDVsBudget": -362020693211
         },
         {
           "year": 2026,
@@ -12131,23 +12131,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -185773173,
           "CMDiff": null,
-          "EBITDA": -1125523664,
+          "EBITDA": -357005986508,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1125523664,
+          "EBITDAVsBudget": -357005986508,
           "EBITDADiff": null,
-          "EBIT": -1298870447,
+          "EBIT": -359801348973,
           "EBITBudget": 0,
-          "EBITVsBudget": -1298870447,
+          "EBITVsBudget": -359801348973,
           "EBITDiff": null,
-          "NetIncome": -334096000000,
+          "NetIncome": -692598584642,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -334096000000,
+          "NetIncomeVsBudget": -692598584642,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1616323505,
           "CMYTDVsBudget": -59079477,
-          "EBITDAYTDVsBudget": -744023441,
-          "EBITYTDVsBudget": -32544591547,
-          "NetIncomeYTDVsBudget": -480174063313
+          "EBITDAYTDVsBudget": -593967200325,
+          "EBITYTDVsBudget": -606989794167,
+          "NetIncomeYTDVsBudget": -1054619277853
         },
         {
           "year": 2026,
@@ -12164,23 +12164,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -9288135055,
           "CMDiff": null,
-          "EBITDA": 10851161219,
+          "EBITDA": -406394254048,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 10851161219,
+          "EBITDAVsBudget": -406394254048,
           "EBITDADiff": null,
-          "EBIT": -6955543269,
+          "EBIT": -409037341078,
           "EBITBudget": 0,
-          "EBITVsBudget": -6955543269,
+          "EBITVsBudget": -409037341078,
           "EBITDiff": null,
-          "NetIncome": -402618000000,
+          "NetIncome": -804699413513,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -402618000000,
+          "NetIncomeVsBudget": -804699413513,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -9347214532,
-          "EBITDAYTDVsBudget": 10107137778,
-          "EBITYTDVsBudget": -39500134816,
-          "NetIncomeYTDVsBudget": -882792063313
+          "EBITDAYTDVsBudget": -1000361454373,
+          "EBITYTDVsBudget": -1016027135245,
+          "NetIncomeYTDVsBudget": -1859318691366
         },
         {
           "year": 2026,
@@ -12197,9 +12197,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -1699470230,
           "CMDiff": null,
-          "EBITDA": 2245491630,
+          "EBITDA": -3919789974,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 2245491630,
+          "EBITDAVsBudget": -3919789974,
           "EBITDADiff": null,
           "EBIT": -4136760892,
           "EBITBudget": 0,
@@ -12211,9 +12211,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11046684762,
-          "EBITDAYTDVsBudget": 12352629408,
-          "EBITYTDVsBudget": -43636895708,
-          "NetIncomeYTDVsBudget": -886928824205
+          "EBITDAYTDVsBudget": -1004281244347,
+          "EBITYTDVsBudget": -1020163896137,
+          "NetIncomeYTDVsBudget": -1863455452258
         },
         {
           "year": 2026,
@@ -12230,9 +12230,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4876978596,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4876978596,
           "EBITDADiff": null,
           "EBIT": -6989500251,
           "EBITBudget": 0,
@@ -12244,9 +12244,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11380018095,
-          "EBITDAYTDVsBudget": 11645629408,
-          "EBITYTDVsBudget": -50626395959,
-          "NetIncomeYTDVsBudget": -893918324456
+          "EBITDAYTDVsBudget": -1009158222943,
+          "EBITYTDVsBudget": -1027153396388,
+          "NetIncomeYTDVsBudget": -1870444952509
         },
         {
           "year": 2026,
@@ -12263,9 +12263,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4958788929,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4958788929,
           "EBITDADiff": null,
           "EBIT": -7079077662,
           "EBITBudget": 0,
@@ -12277,9 +12277,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11713351428,
-          "EBITDAYTDVsBudget": 10938629408,
-          "EBITYTDVsBudget": -57705473621,
-          "NetIncomeYTDVsBudget": -900997402118
+          "EBITDAYTDVsBudget": -1014117011872,
+          "EBITYTDVsBudget": -1034232474050,
+          "NetIncomeYTDVsBudget": -1877524030171
         },
         {
           "year": 2026,
@@ -12296,9 +12296,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4879483568,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4879483568,
           "EBITDADiff": null,
           "EBIT": -6966229575,
           "EBITBudget": 0,
@@ -12310,9 +12310,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12046684761,
-          "EBITDAYTDVsBudget": 10231629408,
-          "EBITYTDVsBudget": -64671703196,
-          "NetIncomeYTDVsBudget": -907963631693
+          "EBITDAYTDVsBudget": -1018996495440,
+          "EBITYTDVsBudget": -1041198703625,
+          "NetIncomeYTDVsBudget": -1884490259746
         },
         {
           "year": 2026,
@@ -12329,9 +12329,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4863050216,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4863050216,
           "EBITDADiff": null,
           "EBIT": -6954222963,
           "EBITBudget": 0,
@@ -12343,9 +12343,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12380018094,
-          "EBITDAYTDVsBudget": 9524629408,
-          "EBITYTDVsBudget": -71625926159,
-          "NetIncomeYTDVsBudget": -914917854656
+          "EBITDAYTDVsBudget": -1023859545656,
+          "EBITYTDVsBudget": -1048152926588,
+          "NetIncomeYTDVsBudget": -1891444482709
         },
         {
           "year": 2026,
@@ -12362,9 +12362,9 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4829953892,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4829953892,
           "EBITDADiff": null,
           "EBIT": -6941828682,
           "EBITBudget": 0,
@@ -12376,9 +12376,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12713351427,
-          "EBITDAYTDVsBudget": 8817629408,
-          "EBITYTDVsBudget": -78567754841,
-          "NetIncomeYTDVsBudget": -921859683338
+          "EBITDAYTDVsBudget": -1028689499548,
+          "EBITYTDVsBudget": -1055094755270,
+          "NetIncomeYTDVsBudget": -1898386311391
         }
       ],
       "Adj. EBITDA (Total)": [
@@ -12397,23 +12397,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -67897498,
           "CMDiff": null,
-          "EBITDA": -5483018294,
+          "EBITDA": 42603146015,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -5483018294,
+          "EBITDAVsBudget": 42603146015,
           "EBITDADiff": null,
-          "EBIT": -7941796782,
+          "EBIT": 40144367527,
           "EBITBudget": 0,
-          "EBITVsBudget": -7941796782,
+          "EBITVsBudget": 40144367527,
           "EBITDiff": null,
-          "NetIncome": 76655936687,
+          "NetIncome": 124742100996,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 76655936687,
+          "NetIncomeVsBudget": 124742100996,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 265435835,
           "CMYTDVsBudget": -67897498,
-          "EBITDAYTDVsBudget": -5483018294,
-          "EBITYTDVsBudget": -7941796782,
-          "NetIncomeYTDVsBudget": 76655936687
+          "EBITDAYTDVsBudget": 42603146015,
+          "EBITYTDVsBudget": 40144367527,
+          "NetIncomeYTDVsBudget": 124742100996
         },
         {
           "year": 2026,
@@ -12430,23 +12430,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -57654492,
           "CMDiff": null,
-          "EBITDA": -4755542350,
+          "EBITDA": -123765488495,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -4755542350,
+          "EBITDAVsBudget": -123765488495,
           "EBITDADiff": null,
-          "EBIT": -7215720029,
+          "EBIT": -126225666174,
           "EBITBudget": 0,
-          "EBITVsBudget": -7215720029,
+          "EBITVsBudget": -126225666174,
           "EBITDiff": null,
-          "NetIncome": -103623000000,
+          "NetIncome": -222633412702,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -103623000000,
+          "NetIncomeVsBudget": -222633412702,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 541114676,
           "CMYTDVsBudget": -125551990,
-          "EBITDAYTDVsBudget": -10238560644,
-          "EBITYTDVsBudget": -15157516811,
-          "NetIncomeYTDVsBudget": -26967063313
+          "EBITDAYTDVsBudget": -81162342480,
+          "EBITYTDVsBudget": -86081298647,
+          "NetIncomeYTDVsBudget": -97891311706
         },
         {
           "year": 2026,
@@ -12463,23 +12463,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 569991182,
           "CMDiff": null,
-          "EBITDA": -6944975242,
+          "EBITDA": -444028758940,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -6944975242,
+          "EBITDAVsBudget": -444028758940,
           "EBITDADiff": null,
-          "EBIT": -9402653744,
+          "EBIT": -446486437442,
           "EBITBudget": 0,
-          "EBITVsBudget": -9402653744,
+          "EBITVsBudget": -446486437442,
           "EBITDiff": null,
-          "NetIncome": -428434000000,
+          "NetIncome": -865517420446,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -428434000000,
+          "NetIncomeVsBudget": -865517420446,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1452978917,
           "CMYTDVsBudget": 444439192,
-          "EBITDAYTDVsBudget": -17183535886,
-          "EBITYTDVsBudget": -24560170555,
-          "NetIncomeYTDVsBudget": -455401063313
+          "EBITDAYTDVsBudget": -525191101420,
+          "EBITYTDVsBudget": -532567736089,
+          "NetIncomeYTDVsBudget": -963408732152
         },
         {
           "year": 2026,
@@ -12496,23 +12496,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -317745496,
           "CMDiff": null,
-          "EBITDA": -4271305759,
+          "EBITDA": 287793535681,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -4271305759,
+          "EBITDAVsBudget": 287793535681,
           "EBITDADiff": null,
-          "EBIT": -6685550545,
+          "EBIT": 285379290895,
           "EBITBudget": 0,
-          "EBITVsBudget": -6685550545,
+          "EBITVsBudget": 285379290895,
           "EBITDiff": null,
-          "NetIncome": 309323000000,
+          "NetIncome": 601388038941,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 309323000000,
+          "NetIncomeVsBudget": 601388038941,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1468619754,
           "CMYTDVsBudget": 126693696,
-          "EBITDAYTDVsBudget": -21454841645,
-          "EBITYTDVsBudget": -31245721100,
-          "NetIncomeYTDVsBudget": -146078063313
+          "EBITDAYTDVsBudget": -237397565739,
+          "EBITYTDVsBudget": -247188445194,
+          "NetIncomeYTDVsBudget": -362020693211
         },
         {
           "year": 2026,
@@ -12529,23 +12529,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -185773173,
           "CMDiff": null,
-          "EBITDA": 1162420887,
+          "EBITDA": -357340057639,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1162420887,
+          "EBITDAVsBudget": -357340057639,
           "EBITDADiff": null,
-          "EBIT": -1298870447,
+          "EBIT": -359801348973,
           "EBITBudget": 0,
-          "EBITVsBudget": -1298870447,
+          "EBITVsBudget": -359801348973,
           "EBITDiff": null,
-          "NetIncome": -334096000000,
+          "NetIncome": -692598584642,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -334096000000,
+          "NetIncomeVsBudget": -692598584642,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1616323505,
           "CMYTDVsBudget": -59079477,
-          "EBITDAYTDVsBudget": -20292420758,
-          "EBITYTDVsBudget": -32544591547,
-          "NetIncomeYTDVsBudget": -480174063313
+          "EBITDAYTDVsBudget": -594737623378,
+          "EBITYTDVsBudget": -606989794167,
+          "NetIncomeYTDVsBudget": -1054619277853
         },
         {
           "year": 2026,
@@ -12562,23 +12562,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -9288135055,
           "CMDiff": null,
-          "EBITDA": -4496395888,
+          "EBITDA": -406578193697,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -4496395888,
+          "EBITDAVsBudget": -406578193697,
           "EBITDADiff": null,
-          "EBIT": -6955543269,
+          "EBIT": -409037341078,
           "EBITBudget": 0,
-          "EBITVsBudget": -6955543269,
+          "EBITVsBudget": -409037341078,
           "EBITDiff": null,
-          "NetIncome": -402618000000,
+          "NetIncome": -804699413513,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -402618000000,
+          "NetIncomeVsBudget": -804699413513,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -9347214532,
-          "EBITDAYTDVsBudget": -24788816646,
-          "EBITYTDVsBudget": -39500134816,
-          "NetIncomeYTDVsBudget": -882792063313
+          "EBITDAYTDVsBudget": -1001315817075,
+          "EBITYTDVsBudget": -1016027135245,
+          "NetIncomeYTDVsBudget": -1859318691366
         },
         {
           "year": 2026,
@@ -12609,9 +12609,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11046684762,
-          "EBITDAYTDVsBudget": -28925577538,
-          "EBITYTDVsBudget": -43636895708,
-          "NetIncomeYTDVsBudget": -886928824205
+          "EBITDAYTDVsBudget": -1005452577967,
+          "EBITYTDVsBudget": -1020163896137,
+          "NetIncomeYTDVsBudget": -1863455452258
         },
         {
           "year": 2026,
@@ -12642,9 +12642,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11380018095,
-          "EBITDAYTDVsBudget": -33977275357,
-          "EBITYTDVsBudget": -50626395959,
-          "NetIncomeYTDVsBudget": -893918324456
+          "EBITDAYTDVsBudget": -1010504275786,
+          "EBITYTDVsBudget": -1027153396388,
+          "NetIncomeYTDVsBudget": -1870444952509
         },
         {
           "year": 2026,
@@ -12675,9 +12675,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11713351428,
-          "EBITDAYTDVsBudget": -39135105816,
-          "EBITYTDVsBudget": -57705473621,
-          "NetIncomeYTDVsBudget": -900997402118
+          "EBITDAYTDVsBudget": -1015662106245,
+          "EBITYTDVsBudget": -1034232474050,
+          "NetIncomeYTDVsBudget": -1877524030171
         },
         {
           "year": 2026,
@@ -12708,9 +12708,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12046684761,
-          "EBITDAYTDVsBudget": -44185124961,
-          "EBITYTDVsBudget": -64671703196,
-          "NetIncomeYTDVsBudget": -907963631693
+          "EBITDAYTDVsBudget": -1020712125390,
+          "EBITYTDVsBudget": -1041198703625,
+          "NetIncomeYTDVsBudget": -1884490259746
         },
         {
           "year": 2026,
@@ -12741,9 +12741,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12380018094,
-          "EBITDAYTDVsBudget": -49218673208,
-          "EBITYTDVsBudget": -71625926159,
-          "NetIncomeYTDVsBudget": -914917854656
+          "EBITDAYTDVsBudget": -1025745673637,
+          "EBITYTDVsBudget": -1048152926588,
+          "NetIncomeYTDVsBudget": -1891444482709
         },
         {
           "year": 2026,
@@ -12774,9 +12774,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12713351427,
-          "EBITDAYTDVsBudget": -54239827174,
-          "EBITYTDVsBudget": -78567754841,
-          "NetIncomeYTDVsBudget": -921859683338
+          "EBITDAYTDVsBudget": -1030766827603,
+          "EBITYTDVsBudget": -1055094755270,
+          "NetIncomeYTDVsBudget": -1898386311391
         }
       ],
       "Adj. EBIT (Direct)": [
@@ -12795,23 +12795,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -67897498,
           "CMDiff": null,
-          "EBITDA": 249427594,
+          "EBITDA": 42789242808,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 249427594,
+          "EBITDAVsBudget": 42789242808,
           "EBITDADiff": null,
-          "EBIT": -7683205228,
+          "EBIT": 46811631900,
           "EBITBudget": 0,
-          "EBITVsBudget": -7683205228,
+          "EBITVsBudget": 46811631900,
           "EBITDiff": null,
-          "NetIncome": 76655936687,
+          "NetIncome": 124742100996,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 76655936687,
+          "NetIncomeVsBudget": 124742100996,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 265435835,
           "CMYTDVsBudget": -67897498,
-          "EBITDAYTDVsBudget": 249427594,
-          "EBITYTDVsBudget": -7683205228,
-          "NetIncomeYTDVsBudget": 76655936687
+          "EBITDAYTDVsBudget": 42789242808,
+          "EBITYTDVsBudget": 46811631900,
+          "NetIncomeYTDVsBudget": 124742100996
         },
         {
           "year": 2026,
@@ -12828,23 +12828,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -57654492,
           "CMDiff": null,
-          "EBITDA": -261473587,
+          "EBITDA": -123450615635,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -261473587,
+          "EBITDAVsBudget": -123450615635,
           "EBITDADiff": null,
-          "EBIT": -6838577413,
+          "EBIT": -126071667788,
           "EBITBudget": 0,
-          "EBITVsBudget": -6838577413,
+          "EBITVsBudget": -126071667788,
           "EBITDiff": null,
-          "NetIncome": -103623000000,
+          "NetIncome": -222633412702,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -103623000000,
+          "NetIncomeVsBudget": -222633412702,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 541114676,
           "CMYTDVsBudget": -125551990,
-          "EBITDAYTDVsBudget": -12045993,
-          "EBITYTDVsBudget": -14521782641,
-          "NetIncomeYTDVsBudget": -26967063313
+          "EBITDAYTDVsBudget": -80661372827,
+          "EBITYTDVsBudget": -79260035888,
+          "NetIncomeYTDVsBudget": -97891311706
         },
         {
           "year": 2026,
@@ -12861,23 +12861,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 569991182,
           "CMDiff": null,
-          "EBITDA": -737321934,
+          "EBITDA": -443895044495,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -737321934,
+          "EBITDAVsBudget": -443895044495,
           "EBITDADiff": null,
-          "EBIT": -9834305113,
+          "EBIT": -445971627837,
           "EBITBudget": 0,
-          "EBITVsBudget": -9834305113,
+          "EBITVsBudget": -445971627837,
           "EBITDiff": null,
-          "NetIncome": -428434000000,
+          "NetIncome": -865517420446,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -428434000000,
+          "NetIncomeVsBudget": -865517420446,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1452978917,
           "CMYTDVsBudget": 444439192,
-          "EBITDAYTDVsBudget": -749367927,
-          "EBITYTDVsBudget": -24356087754,
-          "NetIncomeYTDVsBudget": -455401063313
+          "EBITDAYTDVsBudget": -524556417322,
+          "EBITYTDVsBudget": -525231663725,
+          "NetIncomeYTDVsBudget": -963408732152
         },
         {
           "year": 2026,
@@ -12894,23 +12894,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -317745496,
           "CMDiff": null,
-          "EBITDA": 1130868150,
+          "EBITDA": 287595203505,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1130868150,
+          "EBITDAVsBudget": 287595203505,
           "EBITDADiff": null,
-          "EBIT": -6559949198,
+          "EBIT": 294044219840,
           "EBITBudget": 0,
-          "EBITVsBudget": -6559949198,
+          "EBITVsBudget": 294044219840,
           "EBITDiff": null,
-          "NetIncome": 309323000000,
+          "NetIncome": 601388038941,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 309323000000,
+          "NetIncomeVsBudget": 601388038941,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1468619754,
           "CMYTDVsBudget": 126693696,
-          "EBITDAYTDVsBudget": 381500223,
-          "EBITYTDVsBudget": -30916036952,
-          "NetIncomeYTDVsBudget": -146078063313
+          "EBITDAYTDVsBudget": -236961213817,
+          "EBITYTDVsBudget": -231187443885,
+          "NetIncomeYTDVsBudget": -362020693211
         },
         {
           "year": 2026,
@@ -12927,23 +12927,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -185773173,
           "CMDiff": null,
-          "EBITDA": -1125523664,
+          "EBITDA": -357005986508,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -1125523664,
+          "EBITDAVsBudget": -357005986508,
           "EBITDADiff": null,
-          "EBIT": -773652299,
+          "EBIT": -350994868138,
           "EBITBudget": 0,
-          "EBITVsBudget": -773652299,
+          "EBITVsBudget": -350994868138,
           "EBITDiff": null,
-          "NetIncome": -334096000000,
+          "NetIncome": -692598584642,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -334096000000,
+          "NetIncomeVsBudget": -692598584642,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1616323505,
           "CMYTDVsBudget": -59079477,
-          "EBITDAYTDVsBudget": -744023441,
-          "EBITYTDVsBudget": -31689689251,
-          "NetIncomeYTDVsBudget": -480174063313
+          "EBITDAYTDVsBudget": -593967200325,
+          "EBITYTDVsBudget": -582182312023,
+          "NetIncomeYTDVsBudget": -1054619277853
         },
         {
           "year": 2026,
@@ -12960,23 +12960,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -9288135055,
           "CMDiff": null,
-          "EBITDA": 10851161219,
+          "EBITDA": -406394254048,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 10851161219,
+          "EBITDAVsBudget": -406394254048,
           "EBITDADiff": null,
-          "EBIT": 2521908298,
+          "EBIT": -382181541588,
           "EBITBudget": 0,
-          "EBITVsBudget": 2521908298,
+          "EBITVsBudget": -382181541588,
           "EBITDiff": null,
-          "NetIncome": -402618000000,
+          "NetIncome": -804699413513,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -402618000000,
+          "NetIncomeVsBudget": -804699413513,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -9347214532,
-          "EBITDAYTDVsBudget": 10107137778,
-          "EBITYTDVsBudget": -29167780953,
-          "NetIncomeYTDVsBudget": -882792063313
+          "EBITDAYTDVsBudget": -1000361454373,
+          "EBITYTDVsBudget": -964363853611,
+          "NetIncomeYTDVsBudget": -1859318691366
         },
         {
           "year": 2026,
@@ -12993,13 +12993,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -1699470230,
           "CMDiff": null,
-          "EBITDA": 2245491630,
+          "EBITDA": -3919789974,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 2245491630,
+          "EBITDAVsBudget": -3919789974,
           "EBITDADiff": null,
-          "EBIT": -2220319744,
+          "EBIT": -3919789974,
           "EBITBudget": 0,
-          "EBITVsBudget": -2220319744,
+          "EBITVsBudget": -3919789974,
           "EBITDiff": null,
           "NetIncome": -4136760892,
           "NetIncomeBudget": 0,
@@ -13007,9 +13007,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11046684762,
-          "EBITDAYTDVsBudget": 12352629408,
-          "EBITYTDVsBudget": -31388100697,
-          "NetIncomeYTDVsBudget": -886928824205
+          "EBITDAYTDVsBudget": -1004281244347,
+          "EBITYTDVsBudget": -968283643585,
+          "NetIncomeYTDVsBudget": -1863455452258
         },
         {
           "year": 2026,
@@ -13026,13 +13026,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4876978596,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4876978596,
           "EBITDADiff": null,
-          "EBIT": -5962427909,
+          "EBIT": -6295761242,
           "EBITBudget": 0,
-          "EBITVsBudget": -5962427909,
+          "EBITVsBudget": -6295761242,
           "EBITDiff": null,
           "NetIncome": -6989500251,
           "NetIncomeBudget": 0,
@@ -13040,9 +13040,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11380018095,
-          "EBITDAYTDVsBudget": 11645629408,
-          "EBITYTDVsBudget": -37350528606,
-          "NetIncomeYTDVsBudget": -893918324456
+          "EBITDAYTDVsBudget": -1009158222943,
+          "EBITYTDVsBudget": -974579404827,
+          "NetIncomeYTDVsBudget": -1870444952509
         },
         {
           "year": 2026,
@@ -13059,13 +13059,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4958788929,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4958788929,
           "EBITDADiff": null,
-          "EBIT": -6027683013,
+          "EBIT": -6361016346,
           "EBITBudget": 0,
-          "EBITVsBudget": -6027683013,
+          "EBITVsBudget": -6361016346,
           "EBITDiff": null,
           "NetIncome": -7079077662,
           "NetIncomeBudget": 0,
@@ -13073,9 +13073,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11713351428,
-          "EBITDAYTDVsBudget": 10938629408,
-          "EBITYTDVsBudget": -43378211619,
-          "NetIncomeYTDVsBudget": -900997402118
+          "EBITDAYTDVsBudget": -1014117011872,
+          "EBITYTDVsBudget": -980940421173,
+          "NetIncomeYTDVsBudget": -1877524030171
         },
         {
           "year": 2026,
@@ -13092,13 +13092,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4879483568,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4879483568,
           "EBITDADiff": null,
-          "EBIT": -5943340879,
+          "EBIT": -6276674212,
           "EBITBudget": 0,
-          "EBITVsBudget": -5943340879,
+          "EBITVsBudget": -6276674212,
           "EBITDiff": null,
           "NetIncome": -6966229575,
           "NetIncomeBudget": 0,
@@ -13106,9 +13106,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12046684761,
-          "EBITDAYTDVsBudget": 10231629408,
-          "EBITYTDVsBudget": -49321552498,
-          "NetIncomeYTDVsBudget": -907963631693
+          "EBITDAYTDVsBudget": -1018996495440,
+          "EBITYTDVsBudget": -987217095385,
+          "NetIncomeYTDVsBudget": -1884490259746
         },
         {
           "year": 2026,
@@ -13125,13 +13125,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4863050216,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4863050216,
           "EBITDADiff": null,
-          "EBIT": -5931371813,
+          "EBIT": -6264705146,
           "EBITBudget": 0,
-          "EBITVsBudget": -5931371813,
+          "EBITVsBudget": -6264705146,
           "EBITDiff": null,
           "NetIncome": -6954222963,
           "NetIncomeBudget": 0,
@@ -13139,9 +13139,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12380018094,
-          "EBITDAYTDVsBudget": 9524629408,
-          "EBITYTDVsBudget": -55252924311,
-          "NetIncomeYTDVsBudget": -914917854656
+          "EBITDAYTDVsBudget": -1023859545656,
+          "EBITYTDVsBudget": -993481800531,
+          "NetIncomeYTDVsBudget": -1891444482709
         },
         {
           "year": 2026,
@@ -13158,13 +13158,13 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -333333333,
           "CMDiff": null,
-          "EBITDA": -707000000,
+          "EBITDA": -4829953892,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -707000000,
+          "EBITDAVsBudget": -4829953892,
           "EBITDADiff": null,
-          "EBIT": -5898275489,
+          "EBIT": -6231608822,
           "EBITBudget": 0,
-          "EBITVsBudget": -5898275489,
+          "EBITVsBudget": -6231608822,
           "EBITDiff": null,
           "NetIncome": -6941828682,
           "NetIncomeBudget": 0,
@@ -13172,9 +13172,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12713351427,
-          "EBITDAYTDVsBudget": 8817629408,
-          "EBITYTDVsBudget": -61151199800,
-          "NetIncomeYTDVsBudget": -921859683338
+          "EBITDAYTDVsBudget": -1028689499548,
+          "EBITYTDVsBudget": -999713409353,
+          "NetIncomeYTDVsBudget": -1898386311391
         }
       ],
       "Adj. EBIT (Total)": [
@@ -13193,23 +13193,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -67897498,
           "CMDiff": null,
-          "EBITDA": -5483018294,
+          "EBITDA": 42603146015,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -5483018294,
+          "EBITDAVsBudget": 42603146015,
           "EBITDADiff": null,
-          "EBIT": -7941796782,
+          "EBIT": 40144367527,
           "EBITBudget": 0,
-          "EBITVsBudget": -7941796782,
+          "EBITVsBudget": 40144367527,
           "EBITDiff": null,
-          "NetIncome": 76655936687,
+          "NetIncome": 124742100996,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 76655936687,
+          "NetIncomeVsBudget": 124742100996,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 265435835,
           "CMYTDVsBudget": -67897498,
-          "EBITDAYTDVsBudget": -5483018294,
-          "EBITYTDVsBudget": -7941796782,
-          "NetIncomeYTDVsBudget": 76655936687
+          "EBITDAYTDVsBudget": 42603146015,
+          "EBITYTDVsBudget": 40144367527,
+          "NetIncomeYTDVsBudget": 124742100996
         },
         {
           "year": 2026,
@@ -13226,23 +13226,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -57654492,
           "CMDiff": null,
-          "EBITDA": -4755542350,
+          "EBITDA": -123765488495,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -4755542350,
+          "EBITDAVsBudget": -123765488495,
           "EBITDADiff": null,
-          "EBIT": -7215720029,
+          "EBIT": -126225666174,
           "EBITBudget": 0,
-          "EBITVsBudget": -7215720029,
+          "EBITVsBudget": -126225666174,
           "EBITDiff": null,
-          "NetIncome": -103623000000,
+          "NetIncome": -222633412702,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -103623000000,
+          "NetIncomeVsBudget": -222633412702,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 541114676,
           "CMYTDVsBudget": -125551990,
-          "EBITDAYTDVsBudget": -10238560644,
-          "EBITYTDVsBudget": -15157516811,
-          "NetIncomeYTDVsBudget": -26967063313
+          "EBITDAYTDVsBudget": -81162342480,
+          "EBITYTDVsBudget": -86081298647,
+          "NetIncomeYTDVsBudget": -97891311706
         },
         {
           "year": 2026,
@@ -13259,23 +13259,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": 569991182,
           "CMDiff": null,
-          "EBITDA": -6944975242,
+          "EBITDA": -444028758940,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -6944975242,
+          "EBITDAVsBudget": -444028758940,
           "EBITDADiff": null,
-          "EBIT": -9402653744,
+          "EBIT": -446486437442,
           "EBITBudget": 0,
-          "EBITVsBudget": -9402653744,
+          "EBITVsBudget": -446486437442,
           "EBITDiff": null,
-          "NetIncome": -428434000000,
+          "NetIncome": -865517420446,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -428434000000,
+          "NetIncomeVsBudget": -865517420446,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1452978917,
           "CMYTDVsBudget": 444439192,
-          "EBITDAYTDVsBudget": -17183535886,
-          "EBITYTDVsBudget": -24560170555,
-          "NetIncomeYTDVsBudget": -455401063313
+          "EBITDAYTDVsBudget": -525191101420,
+          "EBITYTDVsBudget": -532567736089,
+          "NetIncomeYTDVsBudget": -963408732152
         },
         {
           "year": 2026,
@@ -13292,23 +13292,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -317745496,
           "CMDiff": null,
-          "EBITDA": -4271305759,
+          "EBITDA": 287793535681,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -4271305759,
+          "EBITDAVsBudget": 287793535681,
           "EBITDADiff": null,
-          "EBIT": -6685550545,
+          "EBIT": 285379290895,
           "EBITBudget": 0,
-          "EBITVsBudget": -6685550545,
+          "EBITVsBudget": 285379290895,
           "EBITDiff": null,
-          "NetIncome": 309323000000,
+          "NetIncome": 601388038941,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": 309323000000,
+          "NetIncomeVsBudget": 601388038941,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1468619754,
           "CMYTDVsBudget": 126693696,
-          "EBITDAYTDVsBudget": -21454841645,
-          "EBITYTDVsBudget": -31245721100,
-          "NetIncomeYTDVsBudget": -146078063313
+          "EBITDAYTDVsBudget": -237397565739,
+          "EBITYTDVsBudget": -247188445194,
+          "NetIncomeYTDVsBudget": -362020693211
         },
         {
           "year": 2026,
@@ -13325,23 +13325,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -185773173,
           "CMDiff": null,
-          "EBITDA": 1162420887,
+          "EBITDA": -357340057639,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": 1162420887,
+          "EBITDAVsBudget": -357340057639,
           "EBITDADiff": null,
-          "EBIT": -1298870447,
+          "EBIT": -359801348973,
           "EBITBudget": 0,
-          "EBITVsBudget": -1298870447,
+          "EBITVsBudget": -359801348973,
           "EBITDiff": null,
-          "NetIncome": -334096000000,
+          "NetIncome": -692598584642,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -334096000000,
+          "NetIncomeVsBudget": -692598584642,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1616323505,
           "CMYTDVsBudget": -59079477,
-          "EBITDAYTDVsBudget": -20292420758,
-          "EBITYTDVsBudget": -32544591547,
-          "NetIncomeYTDVsBudget": -480174063313
+          "EBITDAYTDVsBudget": -594737623378,
+          "EBITYTDVsBudget": -606989794167,
+          "NetIncomeYTDVsBudget": -1054619277853
         },
         {
           "year": 2026,
@@ -13358,23 +13358,23 @@ export const SEGMENT_VARIANTS = {
           "CMBudget": 0,
           "CMVsBudget": -9288135055,
           "CMDiff": null,
-          "EBITDA": -4496395888,
+          "EBITDA": -406578193697,
           "EBITDABudget": 0,
-          "EBITDAVsBudget": -4496395888,
+          "EBITDAVsBudget": -406578193697,
           "EBITDADiff": null,
-          "EBIT": -6955543269,
+          "EBIT": -409037341078,
           "EBITBudget": 0,
-          "EBITVsBudget": -6955543269,
+          "EBITVsBudget": -409037341078,
           "EBITDiff": null,
-          "NetIncome": -402618000000,
+          "NetIncome": -804699413513,
           "NetIncomeBudget": 0,
-          "NetIncomeVsBudget": -402618000000,
+          "NetIncomeVsBudget": -804699413513,
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -9347214532,
-          "EBITDAYTDVsBudget": -24788816646,
-          "EBITYTDVsBudget": -39500134816,
-          "NetIncomeYTDVsBudget": -882792063313
+          "EBITDAYTDVsBudget": -1001315817075,
+          "EBITYTDVsBudget": -1016027135245,
+          "NetIncomeYTDVsBudget": -1859318691366
         },
         {
           "year": 2026,
@@ -13405,9 +13405,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11046684762,
-          "EBITDAYTDVsBudget": -28925577538,
-          "EBITYTDVsBudget": -43636895708,
-          "NetIncomeYTDVsBudget": -886928824205
+          "EBITDAYTDVsBudget": -1005452577967,
+          "EBITYTDVsBudget": -1020163896137,
+          "NetIncomeYTDVsBudget": -1863455452258
         },
         {
           "year": 2026,
@@ -13438,9 +13438,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11380018095,
-          "EBITDAYTDVsBudget": -33977275357,
-          "EBITYTDVsBudget": -50626395959,
-          "NetIncomeYTDVsBudget": -893918324456
+          "EBITDAYTDVsBudget": -1010504275786,
+          "EBITYTDVsBudget": -1027153396388,
+          "NetIncomeYTDVsBudget": -1870444952509
         },
         {
           "year": 2026,
@@ -13471,9 +13471,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -11713351428,
-          "EBITDAYTDVsBudget": -39135105816,
-          "EBITYTDVsBudget": -57705473621,
-          "NetIncomeYTDVsBudget": -900997402118
+          "EBITDAYTDVsBudget": -1015662106245,
+          "EBITYTDVsBudget": -1034232474050,
+          "NetIncomeYTDVsBudget": -1877524030171
         },
         {
           "year": 2026,
@@ -13504,9 +13504,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12046684761,
-          "EBITDAYTDVsBudget": -44185124961,
-          "EBITYTDVsBudget": -64671703196,
-          "NetIncomeYTDVsBudget": -907963631693
+          "EBITDAYTDVsBudget": -1020712125390,
+          "EBITYTDVsBudget": -1041198703625,
+          "NetIncomeYTDVsBudget": -1884490259746
         },
         {
           "year": 2026,
@@ -13537,9 +13537,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12380018094,
-          "EBITDAYTDVsBudget": -49218673208,
-          "EBITYTDVsBudget": -71625926159,
-          "NetIncomeYTDVsBudget": -914917854656
+          "EBITDAYTDVsBudget": -1025745673637,
+          "EBITYTDVsBudget": -1048152926588,
+          "NetIncomeYTDVsBudget": -1891444482709
         },
         {
           "year": 2026,
@@ -13570,9 +13570,9 @@ export const SEGMENT_VARIANTS = {
           "NetIncomeDiff": null,
           "RevenueYTDVsBudget": 1838340059,
           "CMYTDVsBudget": -12713351427,
-          "EBITDAYTDVsBudget": -54239827174,
-          "EBITYTDVsBudget": -78567754841,
-          "NetIncomeYTDVsBudget": -921859683338
+          "EBITDAYTDVsBudget": -1030766827603,
+          "EBITYTDVsBudget": -1055094755270,
+          "NetIncomeYTDVsBudget": -1898386311391
         }
       ]
     }
@@ -13581,24 +13581,24 @@ export const SEGMENT_VARIANTS = {
 
 export const SEGMENT_PERFORMANCE = [
   {
-    "Segment": "Corporate",
-    "AdjEBITDA": 8817629408
-  },
-  {
     "Segment": "Gaming",
-    "AdjEBITDA": 589769290
-  },
-  {
-    "Segment": "Investment",
-    "AdjEBITDA": -190773988
-  },
-  {
-    "Segment": "Retail",
-    "AdjEBITDA": -236531722
+    "AdjEBITDA": 69988547456
   },
   {
     "Segment": "Mitra",
-    "AdjEBITDA": -1847517682
+    "AdjEBITDA": 25922554639
+  },
+  {
+    "Segment": "Investment",
+    "AdjEBITDA": 2095748805
+  },
+  {
+    "Segment": "Retail",
+    "AdjEBITDA": -4694105417
+  },
+  {
+    "Segment": "Corporate",
+    "AdjEBITDA": -1028689499548
   }
 ];
 
@@ -21995,9 +21995,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-01-01",
         "tag": "Actual",
-        "Revenue": 717965792312,
-        "RevenueBudget": 556474485719,
-        "RevenueVsBudget": 161491306593,
+        "Revenue": 717965537780,
+        "RevenueBudget": 556474245052,
+        "RevenueVsBudget": 161491292728,
         "RevenueDiff": null,
         "CM": 16781819940,
         "CMBudget": 12427914790,
@@ -22007,7 +22007,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": 161491306593,
+        "RevenueYTDVsBudget": 161491292728,
         "CMYTDVsBudget": 4353905150,
         "EBITDAYTDVsBudget": 0
       },
@@ -22018,9 +22018,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-02-01",
         "tag": "Actual",
-        "Revenue": 674367912136,
-        "RevenueBudget": 482946481412,
-        "RevenueVsBudget": 191421430724,
+        "Revenue": 674368175220,
+        "RevenueBudget": 482946835947,
+        "RevenueVsBudget": 191421339273,
         "RevenueDiff": null,
         "CM": 15729773811,
         "CMBudget": 10842536001,
@@ -22030,7 +22030,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": 352912737317,
+        "RevenueYTDVsBudget": 352912632001,
         "CMYTDVsBudget": 9241142960,
         "EBITDAYTDVsBudget": 0
       },
@@ -22041,9 +22041,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-03-01",
         "tag": "Actual",
-        "Revenue": 703273153500,
-        "RevenueBudget": 598402176346,
-        "RevenueVsBudget": 104870977154,
+        "Revenue": 703273498860,
+        "RevenueBudget": 598402642975,
+        "RevenueVsBudget": 104870855885,
         "RevenueDiff": null,
         "CM": 18419049614,
         "CMBudget": 14043574508,
@@ -22053,7 +22053,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": 457783714471,
+        "RevenueYTDVsBudget": 457783487886,
         "CMYTDVsBudget": 13616618066,
         "EBITDAYTDVsBudget": 0
       },
@@ -22064,9 +22064,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-04-01",
         "tag": "Actual",
-        "Revenue": 560781324905,
-        "RevenueBudget": 543235762697,
-        "RevenueVsBudget": 17545562208,
+        "Revenue": 560781238150,
+        "RevenueBudget": 543235921302,
+        "RevenueVsBudget": 17545316848,
         "RevenueDiff": null,
         "CM": 12530076252,
         "CMBudget": 12652638109,
@@ -22076,7 +22076,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": 475329276679,
+        "RevenueYTDVsBudget": 475328804734,
         "CMYTDVsBudget": 13494056209,
         "EBITDAYTDVsBudget": 0
       },
@@ -22087,9 +22087,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-05-01",
         "tag": "Actual",
-        "Revenue": 428174846508,
-        "RevenueBudget": 540301367301,
-        "RevenueVsBudget": -112126520793,
+        "Revenue": 428175120917,
+        "RevenueBudget": 540301856764,
+        "RevenueVsBudget": -112126735847,
         "RevenueDiff": null,
         "CM": 7944390082,
         "CMBudget": 11813082823,
@@ -22099,7 +22099,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": 363202755886,
+        "RevenueYTDVsBudget": 363202068887,
         "CMYTDVsBudget": 9625363468,
         "EBITDAYTDVsBudget": 0
       },
@@ -22110,9 +22110,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-06-01",
         "tag": "Actual",
-        "Revenue": 400614077085,
-        "RevenueBudget": 575652365437,
-        "RevenueVsBudget": -175038288352,
+        "Revenue": 400614077810,
+        "RevenueBudget": 575652331995,
+        "RevenueVsBudget": -175038254185,
         "RevenueDiff": null,
         "CM": 9584372282,
         "CMBudget": 12740876446,
@@ -22122,7 +22122,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": 188164467534,
+        "RevenueYTDVsBudget": 188163814702,
         "CMYTDVsBudget": 6468859304,
         "EBITDAYTDVsBudget": 0
       },
@@ -22133,9 +22133,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-07-01",
         "tag": "Run-rate",
-        "Revenue": 448183882210,
-        "RevenueBudget": 592621730161,
-        "RevenueVsBudget": -144437847951,
+        "Revenue": 448183688891,
+        "RevenueBudget": 592621260005,
+        "RevenueVsBudget": -144437571114,
         "RevenueDiff": null,
         "CM": 12516954114,
         "CMBudget": 13141422696,
@@ -22145,7 +22145,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": 43726619583,
+        "RevenueYTDVsBudget": 43726243588,
         "CMYTDVsBudget": 5844390722,
         "EBITDAYTDVsBudget": 0
       },
@@ -22156,9 +22156,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-08-01",
         "tag": "Forecast",
-        "Revenue": 412088781104,
-        "RevenueBudget": 532645541802,
-        "RevenueVsBudget": -120556760698,
+        "Revenue": 412089129589,
+        "RevenueBudget": 532645176053,
+        "RevenueVsBudget": -120556046464,
         "RevenueDiff": null,
         "CM": 9966835794,
         "CMBudget": 12014222027,
@@ -22168,7 +22168,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": -76830141115,
+        "RevenueYTDVsBudget": -76829802876,
         "CMYTDVsBudget": 3797004489,
         "EBITDAYTDVsBudget": 0
       },
@@ -22179,9 +22179,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-09-01",
         "tag": "Forecast",
-        "Revenue": 415699335746,
-        "RevenueBudget": 490534670851,
-        "RevenueVsBudget": -74835335105,
+        "Revenue": 415699664001,
+        "RevenueBudget": 490534248324,
+        "RevenueVsBudget": -74834584323,
         "RevenueDiff": null,
         "CM": 9790432149,
         "CMBudget": 11558436649,
@@ -22191,7 +22191,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": -151665476220,
+        "RevenueYTDVsBudget": -151664387199,
         "CMYTDVsBudget": 2028999989,
         "EBITDAYTDVsBudget": 0
       },
@@ -22202,9 +22202,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-10-01",
         "tag": "Forecast",
-        "Revenue": 430462388384,
-        "RevenueBudget": 536921250205,
-        "RevenueVsBudget": -106458861821,
+        "Revenue": 430462583062,
+        "RevenueBudget": 536921597954,
+        "RevenueVsBudget": -106459014892,
         "RevenueDiff": null,
         "CM": 10193206645,
         "CMBudget": 12180931176,
@@ -22214,7 +22214,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": -258124338041,
+        "RevenueYTDVsBudget": -258123402091,
         "CMYTDVsBudget": 41275458,
         "EBITDAYTDVsBudget": 0
       },
@@ -22225,9 +22225,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-11-01",
         "tag": "Forecast",
-        "Revenue": 451450041484,
-        "RevenueBudget": 628283825613,
-        "RevenueVsBudget": -176833784129,
+        "Revenue": 451449923545,
+        "RevenueBudget": 628283467459,
+        "RevenueVsBudget": -176833543914,
         "RevenueDiff": null,
         "CM": 10950002795,
         "CMBudget": 14638056903,
@@ -22237,7 +22237,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": -434958122170,
+        "RevenueYTDVsBudget": -434956946005,
         "CMYTDVsBudget": -3646778650,
         "EBITDAYTDVsBudget": 0
       },
@@ -22248,9 +22248,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-12-01",
         "tag": "Forecast",
-        "Revenue": 472496158825,
-        "RevenueBudget": 659145556481,
-        "RevenueVsBudget": -186649397656,
+        "Revenue": 472495715596,
+        "RevenueBudget": 659145796745,
+        "RevenueVsBudget": -186650081149,
         "RevenueDiff": null,
         "CM": 11607931035,
         "CMBudget": 15280317906,
@@ -22260,7 +22260,7 @@ export const SUBSEGMENT_MONTHLY = {
         "EBITDABudget": 0,
         "EBITDAVsBudget": 0,
         "EBITDADiff": null,
-        "RevenueYTDVsBudget": -621607519826,
+        "RevenueYTDVsBudget": -621607027154,
         "CMYTDVsBudget": -7319165521,
         "EBITDAYTDVsBudget": 0
       }
@@ -22612,9 +22612,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-01-01",
         "tag": "Actual",
-        "Revenue": 712276000000,
-        "RevenueBudget": 551408000000,
-        "RevenueVsBudget": 160868000000,
+        "Revenue": 712275745468,
+        "RevenueBudget": 551407759333,
+        "RevenueVsBudget": 160867986135,
         "RevenueDiff": null,
         "CM": 15143468463,
         "CMBudget": 9195212406,
@@ -22628,7 +22628,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 160868000000,
+        "RevenueYTDVsBudget": 160867986135,
         "CMYTDVsBudget": 5948256057,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22640,9 +22640,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-02-01",
         "tag": "Actual",
-        "Revenue": 669678000000,
-        "RevenueBudget": 478431000000,
-        "RevenueVsBudget": 191247000000,
+        "Revenue": 669678263084,
+        "RevenueBudget": 478431354535,
+        "RevenueVsBudget": 191246908549,
         "RevenueDiff": null,
         "CM": 15092007062,
         "CMBudget": 8168503770,
@@ -22656,7 +22656,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 352115000000,
+        "RevenueYTDVsBudget": 352114894684,
         "CMYTDVsBudget": 12871759349,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22668,9 +22668,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 1,
         "date": "2026-03-01",
         "tag": "Actual",
-        "Revenue": 697703000000,
-        "RevenueBudget": 592651000000,
-        "RevenueVsBudget": 105052000000,
+        "Revenue": 697703345360,
+        "RevenueBudget": 592651466629,
+        "RevenueVsBudget": 105051878731,
         "RevenueDiff": null,
         "CM": 17587079001,
         "CMBudget": 10535518952,
@@ -22684,7 +22684,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 457167000000,
+        "RevenueYTDVsBudget": 457166773415,
         "CMYTDVsBudget": 19923319398,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22696,9 +22696,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-04-01",
         "tag": "Actual",
-        "Revenue": 555955000000,
-        "RevenueBudget": 537695000000,
-        "RevenueVsBudget": 18260000000,
+        "Revenue": 555954913245,
+        "RevenueBudget": 537695158605,
+        "RevenueVsBudget": 18259754640,
         "RevenueDiff": null,
         "CM": 8986137308,
         "CMBudget": 9365203003,
@@ -22712,7 +22712,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 475427000000,
+        "RevenueYTDVsBudget": 475426528055,
         "CMYTDVsBudget": 19544253703,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22724,9 +22724,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-05-01",
         "tag": "Actual",
-        "Revenue": 425746000000,
-        "RevenueBudget": 534845000000,
-        "RevenueVsBudget": -109099000000,
+        "Revenue": 425746274409,
+        "RevenueBudget": 534845489463,
+        "RevenueVsBudget": -109099215054,
         "RevenueDiff": null,
         "CM": 8547949804,
         "CMBudget": 8649454788,
@@ -22740,7 +22740,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 366328000000,
+        "RevenueYTDVsBudget": 366327313001,
         "CMYTDVsBudget": 19442748719,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22752,9 +22752,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 2,
         "date": "2026-06-01",
         "tag": "Actual",
-        "Revenue": 396145000000,
-        "RevenueBudget": 569770000000,
-        "RevenueVsBudget": -173625000000,
+        "Revenue": 396145000725,
+        "RevenueBudget": 569769966558,
+        "RevenueVsBudget": -173624965833,
         "RevenueDiff": null,
         "CM": 6618144301,
         "CMBudget": 9262245432,
@@ -22768,7 +22768,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 192703000000,
+        "RevenueYTDVsBudget": 192702347168,
         "CMYTDVsBudget": 16798647588,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22780,9 +22780,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-07-01",
         "tag": "Run-rate",
-        "Revenue": 443600000000,
-        "RevenueBudget": 586308000000,
-        "RevenueVsBudget": -142708000000,
+        "Revenue": 443599806681,
+        "RevenueBudget": 586307529844,
+        "RevenueVsBudget": -142707723163,
         "RevenueDiff": null,
         "CM": 9357024381,
         "CMBudget": 9468670025,
@@ -22796,7 +22796,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": 49995000000,
+        "RevenueYTDVsBudget": 49994624005,
         "CMYTDVsBudget": 16687001944,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22808,9 +22808,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-08-01",
         "tag": "Forecast",
-        "Revenue": 407715000000,
-        "RevenueBudget": 526373000000,
-        "RevenueVsBudget": -118658000000,
+        "Revenue": 407715348485,
+        "RevenueBudget": 526372634251,
+        "RevenueVsBudget": -118657285766,
         "RevenueDiff": null,
         "CM": 6900019649,
         "CMBudget": 8442409917,
@@ -22824,7 +22824,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": -68663000000,
+        "RevenueYTDVsBudget": -68662661761,
         "CMYTDVsBudget": 15144611676,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22836,9 +22836,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 3,
         "date": "2026-09-01",
         "tag": "Forecast",
-        "Revenue": 411188000000,
-        "RevenueBudget": 484374000000,
-        "RevenueVsBudget": -73186000000,
+        "Revenue": 411188328255,
+        "RevenueBudget": 484373577473,
+        "RevenueVsBudget": -73185249218,
         "RevenueDiff": null,
         "CM": 6707240369,
         "CMBudget": 8103716536,
@@ -22852,7 +22852,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": -141849000000,
+        "RevenueYTDVsBudget": -141847910979,
         "CMYTDVsBudget": 13748135509,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22864,9 +22864,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-10-01",
         "tag": "Forecast",
-        "Revenue": 425792000000,
-        "RevenueBudget": 530820000000,
-        "RevenueVsBudget": -105028000000,
+        "Revenue": 425792194678,
+        "RevenueBudget": 530820347749,
+        "RevenueVsBudget": -105028153071,
         "RevenueDiff": null,
         "CM": 7019893647,
         "CMBudget": 8817103187,
@@ -22880,7 +22880,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": -246877000000,
+        "RevenueYTDVsBudget": -246876064050,
         "CMYTDVsBudget": 11950925969,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22892,9 +22892,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-11-01",
         "tag": "Forecast",
-        "Revenue": 446421000000,
-        "RevenueBudget": 621384000000,
-        "RevenueVsBudget": -174963000000,
+        "Revenue": 446420882061,
+        "RevenueBudget": 621383641846,
+        "RevenueVsBudget": -174962759785,
         "RevenueDiff": null,
         "CM": 7525767781,
         "CMBudget": 10658571885,
@@ -22908,7 +22908,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": -421840000000,
+        "RevenueYTDVsBudget": -421838823835,
         "CMYTDVsBudget": 8818121865,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -22920,9 +22920,9 @@ export const SUBSEGMENT_MONTHLY = {
         "quarter": 4,
         "date": "2026-12-01",
         "tag": "Forecast",
-        "Revenue": 467202000000,
-        "RevenueBudget": 651831000000,
-        "RevenueVsBudget": -184629000000,
+        "Revenue": 467201556771,
+        "RevenueBudget": 651831240264,
+        "RevenueVsBudget": -184629683493,
         "RevenueDiff": null,
         "CM": 8001636035,
         "CMBudget": 10988503928,
@@ -22936,7 +22936,7 @@ export const SUBSEGMENT_MONTHLY = {
         "NetIncomeBudget": 0,
         "NetIncomeVsBudget": 0,
         "NetIncomeDiff": null,
-        "RevenueYTDVsBudget": -606469000000,
+        "RevenueYTDVsBudget": -606468507328,
         "CMYTDVsBudget": 5831253972,
         "EBITDAYTDVsBudget": 0,
         "NetIncomeYTDVsBudget": 0
@@ -24943,7 +24943,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 807532937534
+            "amount": 807532475314
           },
           {
             "year": 2026,
@@ -24952,7 +24952,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 755559817832
+            "amount": 755559993052
           },
           {
             "year": 2026,
@@ -24961,7 +24961,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 810493075378
+            "amount": 810493574238
           },
           {
             "year": 2026,
@@ -24970,7 +24970,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 644319807946
+            "amount": 644320046096
           },
           {
             "year": 2026,
@@ -24979,7 +24979,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 505742688462
+            "amount": 505742809379
           },
           {
             "year": 2026,
@@ -24988,7 +24988,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 474542080501
+            "amount": 474542158311
           },
           {
             "year": 2026,
@@ -24997,7 +24997,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 526567804975
+            "amount": 526567493866
           },
           {
             "year": 2026,
@@ -25006,7 +25006,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": 491613460010
+            "amount": 491613589599
           },
           {
             "year": 2026,
@@ -25015,7 +25015,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": 496101083172
+            "amount": 496100747173
           },
           {
             "year": 2026,
@@ -25024,7 +25024,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": 513300997717
+            "amount": 513300580779
           },
           {
             "year": 2026,
@@ -25033,7 +25033,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": 535235133824
+            "amount": 535235057369
           },
           {
             "year": 2026,
@@ -25042,10 +25042,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": 562655302570
+            "amount": 562655018166
           }
         ],
-        "total": 7123664189921
+        "total": 7123663543342
       },
       {
         "subcat": "COGS",
@@ -25057,7 +25057,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -752472531077
+            "amount": -752472379464
           },
           {
             "year": 2026,
@@ -25066,7 +25066,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -705851796423
+            "amount": -705851495113
           },
           {
             "year": 2026,
@@ -25075,7 +25075,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -750838670509
+            "amount": -750838179142
           },
           {
             "year": 2026,
@@ -25084,7 +25084,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -595786043138
+            "amount": -595786408556
           },
           {
             "year": 2026,
@@ -25093,7 +25093,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -460978143136
+            "amount": -460978252513
           },
           {
             "year": 2026,
@@ -25102,7 +25102,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -429572380242
+            "amount": -429571930209
           },
           {
             "year": 2026,
@@ -25111,7 +25111,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -477010662905
+            "amount": -477010824845
           },
           {
             "year": 2026,
@@ -25120,7 +25120,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -445258424222
+            "amount": -445257990342
           },
           {
             "year": 2026,
@@ -25129,7 +25129,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -449898243371
+            "amount": -449898518520
           },
           {
             "year": 2026,
@@ -25138,7 +25138,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -465111624408
+            "amount": -465111127350
           },
           {
             "year": 2026,
@@ -25147,7 +25147,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -485996426596
+            "amount": -485996357419
           },
           {
             "year": 2026,
@@ -25156,10 +25156,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -509327142746
+            "amount": -509327536229
           }
         ],
-        "total": -6528102088773
+        "total": -6528100999702
       },
       {
         "subcat": "GP",
@@ -26425,7 +26425,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -14591952015
+            "amount": -15301823433
           },
           {
             "year": 2026,
@@ -26434,7 +26434,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -14532411105
+            "amount": -15069708979
           },
           {
             "year": 2026,
@@ -26443,7 +26443,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -14076093971
+            "amount": -15041188487
           },
           {
             "year": 2026,
@@ -26452,7 +26452,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -12088218428
+            "amount": 11738480162
           },
           {
             "year": 2026,
@@ -26461,7 +26461,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -21698396304
+            "amount": -24712433406
           },
           {
             "year": 2026,
@@ -26470,7 +26470,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -15572033809
+            "amount": -16038365641
           },
           {
             "year": 2026,
@@ -26527,7 +26527,7 @@ export const PNL = {
             "amount": -15581843908
           }
         ],
-        "total": -186275996275
+        "total": -168141930427
       },
       {
         "subcat": "G&A - Other staff cost",
@@ -27223,7 +27223,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 4863752789
+            "amount": 53659788516
           },
           {
             "year": 2026,
@@ -27232,7 +27232,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -881428257
+            "amount": -119354076527
           },
           {
             "year": 2026,
@@ -27241,7 +27241,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -3018638954
+            "amount": -439137328136
           },
           {
             "year": 2026,
@@ -27250,7 +27250,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 8063987886
+            "amount": 276302130736
           },
           {
             "year": 2026,
@@ -27259,7 +27259,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 9935782832
+            "amount": -345552658592
           },
           {
             "year": 2026,
@@ -27268,7 +27268,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 25912306609
+            "amount": -375703159368
           },
           {
             "year": 2026,
@@ -27325,7 +27325,7 @@ export const PNL = {
             "amount": -844191002
           }
         ],
-        "total": 42725708806
+        "total": -951935357470
       },
       {
         "subcat": "Total G&A (Include Depre + Others)",
@@ -27337,7 +27337,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -29399842963
+            "amount": 18686321346
           },
           {
             "year": 2026,
@@ -27346,7 +27346,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -33590975943
+            "amount": -152600922088
           },
           {
             "year": 2026,
@@ -27355,7 +27355,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -37170723357
+            "amount": -474254507055
           },
           {
             "year": 2026,
@@ -27364,7 +27364,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -19753909265
+            "amount": 272310932175
           },
           {
             "year": 2026,
@@ -27373,7 +27373,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -14420075506
+            "amount": -372922554032
           },
           {
             "year": 2026,
@@ -27382,7 +27382,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -10804646004
+            "amount": -412886443813
           },
           {
             "year": 2026,
@@ -27439,7 +27439,7 @@ export const PNL = {
             "amount": -34123022386
           }
         ],
-        "total": -342135218761
+        "total": -1318662219190
       },
       {
         "subcat": "EBITDA (Direct)",
@@ -27451,7 +27451,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 9850293764
+            "amount": 57936458073
           },
           {
             "year": 2026,
@@ -27460,7 +27460,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 1443816830
+            "amount": -117566129315
           },
           {
             "year": 2026,
@@ -27469,7 +27469,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 6659989529
+            "amount": -430423794169
           },
           {
             "year": 2026,
@@ -27478,7 +27478,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 14743918193
+            "amount": 306808759632
           },
           {
             "year": 2026,
@@ -27487,7 +27487,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 17871515165
+            "amount": -340630963361
           },
           {
             "year": 2026,
@@ -27496,7 +27496,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 12928850223
+            "amount": -389152947586
           },
           {
             "year": 2026,
@@ -27553,7 +27553,7 @@ export const PNL = {
             "amount": 4631673705
           }
         ],
-        "total": 76743379863
+        "total": -899783620567
       },
       {
         "subcat": "EBIT (Direct)",
@@ -27565,7 +27565,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 3312431984
+            "amount": 51398596293
           },
           {
             "year": 2026,
@@ -27574,7 +27574,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -5061048740
+            "amount": -124070994885
           },
           {
             "year": 2026,
@@ -27583,7 +27583,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -587568064
+            "amount": -437671351762
           },
           {
             "year": 2026,
@@ -27592,7 +27592,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 8370921152
+            "amount": 300435762592
           },
           {
             "year": 2026,
@@ -27601,7 +27601,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 11525405263
+            "amount": -346977073263
           },
           {
             "year": 2026,
@@ -27610,7 +27610,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 6505716233
+            "amount": -395576081576
           },
           {
             "year": 2026,
@@ -27667,7 +27667,7 @@ export const PNL = {
             "amount": -2172174611
           }
         ],
-        "total": 292552157
+        "total": -976234448272
       },
       {
         "subcat": "Total Adjustment (Direct)",
@@ -27793,7 +27793,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -430630430
+            "amount": 52642074855
           },
           {
             "year": 2026,
@@ -27802,7 +27802,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -264078434
+            "amount": -116948779492
           },
           {
             "year": 2026,
@@ -27811,7 +27811,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -2830987602
+            "amount": -430236142817
           },
           {
             "year": 2026,
@@ -27820,7 +27820,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 905581497
+            "amount": 299650353244
           },
           {
             "year": 2026,
@@ -27829,7 +27829,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -2036651792
+            "amount": -352603397985
           },
           {
             "year": 2026,
@@ -27838,7 +27838,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 13939396166
+            "amount": -401125858029
           },
           {
             "year": 2026,
@@ -27847,7 +27847,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 2070900911
+            "amount": 4375073743
           },
           {
             "year": 2026,
@@ -27856,7 +27856,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -844191002
+            "amount": 227141139
           },
           {
             "year": 2026,
@@ -27865,7 +27865,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -844191002
+            "amount": 429412247
           },
           {
             "year": 2026,
@@ -27874,7 +27874,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -844191002
+            "amount": 1215130410
           },
           {
             "year": 2026,
@@ -27883,7 +27883,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -844191002
+            "amount": 2366564915
           },
           {
             "year": 2026,
@@ -27892,10 +27892,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -844191002
+            "amount": 4631673705
           }
         ],
-        "total": 7132575306
+        "total": -935376754065
       },
       {
         "subcat": "Adj. EBIT (Direct)",
@@ -27907,7 +27907,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -34694226181
+            "amount": 56692979511
           },
           {
             "year": 2026,
@@ -27916,7 +27916,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -32973626120
+            "amount": -124688344708
           },
           {
             "year": 2026,
@@ -27925,7 +27925,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -36983072005
+            "amount": -437859003114
           },
           {
             "year": 2026,
@@ -27934,7 +27934,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -26912315654
+            "amount": 307594168981
           },
           {
             "year": 2026,
@@ -27943,7 +27943,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -26392510130
+            "amount": -335004638639
           },
           {
             "year": 2026,
@@ -27952,7 +27952,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -22777556447
+            "amount": -383603171133
           },
           {
             "year": 2026,
@@ -27961,7 +27961,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -26583772564
+            "amount": 1389249410
           },
           {
             "year": 2026,
@@ -27970,7 +27970,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -34233776950
+            "amount": -6593834893
           },
           {
             "year": 2026,
@@ -27979,7 +27979,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -34201136742
+            "amount": -6375008556
           },
           {
             "year": 2026,
@@ -27988,7 +27988,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -34114359786
+            "amount": -5584253620
           },
           {
             "year": 2026,
@@ -27997,7 +27997,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -33738977295
+            "amount": -4437283401
           },
           {
             "year": 2026,
@@ -28006,10 +28006,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -34123022386
+            "amount": -2172174611
           }
         ],
-        "total": -377728352260
+        "total": -940641314773
       },
       {
         "subcat": "EBITDA (Total)",
@@ -28021,7 +28021,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 53684862094
+            "amount": 101684270312
           },
           {
             "year": 2026,
@@ -28030,7 +28030,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -121734018479
+            "amount": -240975325920
           },
           {
             "year": 2026,
@@ -28039,7 +28039,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -433615081318
+            "amount": -871271440345
           },
           {
             "year": 2026,
@@ -28048,7 +28048,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 303475207429
+            "amount": 595447611134
           },
           {
             "year": 2026,
@@ -28057,7 +28057,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -344337177464
+            "amount": -702972542607
           },
           {
             "year": 2026,
@@ -28066,7 +28066,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -392300407151
+            "amount": -794399609720
           },
           {
             "year": 2026,
@@ -28123,7 +28123,7 @@ export const PNL = {
             "amount": 436471993
           }
         ],
-        "total": -945126797074
+        "total": -1922787219331
       },
       {
         "subcat": "EBIT (Total)",
@@ -28135,7 +28135,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 47041970556
+            "amount": 95041378774
           },
           {
             "year": 2026,
@@ -28144,7 +28144,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -128344147401
+            "amount": -247585632521
           },
           {
             "year": 2026,
@@ -28153,7 +28153,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -440962396972
+            "amount": -878619434501
           },
           {
             "year": 2026,
@@ -28162,7 +28162,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 296991434695
+            "amount": 588963593614
           },
           {
             "year": 2026,
@@ -28171,7 +28171,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -350774948473
+            "amount": -709410604950
           },
           {
             "year": 2026,
@@ -28180,7 +28180,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -398815397846
+            "amount": -800914747796
           },
           {
             "year": 2026,
@@ -28237,7 +28237,7 @@ export const PNL = {
             "amount": -6886396109
           }
         ],
-        "total": -1024777068385
+        "total": -2002439030324
       },
       {
         "subcat": "Total Adjustment (Total)",
@@ -28258,7 +28258,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -119494604954
+            "amount": -119494846508
           },
           {
             "year": 2026,
@@ -28267,7 +28267,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -437284886248
+            "amount": -437284676999
           },
           {
             "year": 2026,
@@ -28276,7 +28276,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 298872869842
+            "amount": 298873247829
           },
           {
             "year": 2026,
@@ -28285,7 +28285,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -346413083306
+            "amount": -346413159402
           },
           {
             "year": 2026,
@@ -28294,7 +28294,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -390109331046
+            "amount": -390108887366
           },
           {
             "year": 2026,
@@ -28351,7 +28351,7 @@ export const PNL = {
             "amount": 0
           }
         ],
-        "total": -941048488184
+        "total": -941047774918
       },
       {
         "subcat": "Adj. EBITDA (Total)",
@@ -28363,7 +28363,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 304314567
+            "amount": 48303722785
           },
           {
             "year": 2026,
@@ -28372,7 +28372,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -2238955875
+            "amount": -121480479412
           },
           {
             "year": 2026,
@@ -28381,7 +28381,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 3669829688
+            "amount": -433986763346
           },
           {
             "year": 2026,
@@ -28390,7 +28390,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 4602031828
+            "amount": 296574363305
           },
           {
             "year": 2026,
@@ -28399,7 +28399,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 2076326729
+            "amount": -356559383205
           },
           {
             "year": 2026,
@@ -28408,7 +28408,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -2191471993
+            "amount": -404290722354
           },
           {
             "year": 2026,
@@ -28465,7 +28465,7 @@ export const PNL = {
             "amount": 436471993
           }
         ],
-        "total": -4078107241
+        "total": -981739444412
       },
       {
         "subcat": "Adj. EBIT (Total)",
@@ -28477,7 +28477,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -6338576972
+            "amount": 41660831246
           },
           {
             "year": 2026,
@@ -28486,7 +28486,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -8849262476
+            "amount": -128090786013
           },
           {
             "year": 2026,
@@ -28495,7 +28495,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -3678164468
+            "amount": -441334757502
           },
           {
             "year": 2026,
@@ -28504,7 +28504,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -1881985692
+            "amount": 290090345785
           },
           {
             "year": 2026,
@@ -28513,7 +28513,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -4361735614
+            "amount": -362997445548
           },
           {
             "year": 2026,
@@ -28522,7 +28522,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -8706610069
+            "amount": -410805860430
           },
           {
             "year": 2026,
@@ -28579,7 +28579,7 @@ export const PNL = {
             "amount": -6886396109
           }
         ],
-        "total": -83729918235
+        "total": -1061391255406
       },
       {
         "subcat": "Finance Income / Expenses, Etc",
@@ -28705,7 +28705,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 94171846475
+            "amount": 142171254693
           },
           {
             "year": 2026,
@@ -28714,7 +28714,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -98426506177
+            "amount": -217668496271
           },
           {
             "year": 2026,
@@ -28723,7 +28723,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -421753712073
+            "amount": -859409941855
           },
           {
             "year": 2026,
@@ -28732,7 +28732,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 324550848627
+            "amount": 616523377605
           },
           {
             "year": 2026,
@@ -28741,7 +28741,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -316828848216
+            "amount": -675464664266
           },
           {
             "year": 2026,
@@ -28750,7 +28750,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -394511991337
+            "amount": -796610857402
           },
           {
             "year": 2026,
@@ -28807,7 +28807,7 @@ export const PNL = {
             "amount": -6886396109
           }
         ],
-        "total": -862711945645
+        "total": -1840372910440
       }
     ],
     "After Elim": [
@@ -28821,7 +28821,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 806646589100
+            "amount": 806646126880
           },
           {
             "year": 2026,
@@ -28830,7 +28830,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 754547154950
+            "amount": 754547330170
           },
           {
             "year": 2026,
@@ -28839,7 +28839,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 808638337866
+            "amount": 808638836726
           },
           {
             "year": 2026,
@@ -28848,7 +28848,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 643815087028
+            "amount": 643815325178
           },
           {
             "year": 2026,
@@ -28857,7 +28857,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 504696475976
+            "amount": 504696596893
           },
           {
             "year": 2026,
@@ -28866,7 +28866,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 473417136593
+            "amount": 473417214403
           },
           {
             "year": 2026,
@@ -28875,7 +28875,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 526567804975
+            "amount": 526567493866
           },
           {
             "year": 2026,
@@ -28884,7 +28884,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": 491613460010
+            "amount": 491613589599
           },
           {
             "year": 2026,
@@ -28893,7 +28893,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": 496101083172
+            "amount": 496100747173
           },
           {
             "year": 2026,
@@ -28902,7 +28902,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": 513300997717
+            "amount": 513300580779
           },
           {
             "year": 2026,
@@ -28911,7 +28911,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": 535235133824
+            "amount": 535235057369
           },
           {
             "year": 2026,
@@ -28920,10 +28920,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": 562655302570
+            "amount": 562655018166
           }
         ],
-        "total": 7117234563781
+        "total": 7117233917202
       },
       {
         "subcat": "COGS",
@@ -28935,7 +28935,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -751950414756
+            "amount": -751950263143
           },
           {
             "year": 2026,
@@ -28944,7 +28944,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -705011466957
+            "amount": -705011165647
           },
           {
             "year": 2026,
@@ -28953,7 +28953,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -749872830248
+            "amount": -749872338881
           },
           {
             "year": 2026,
@@ -28962,7 +28962,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -595197465888
+            "amount": -595197831306
           },
           {
             "year": 2026,
@@ -28971,7 +28971,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -460283581410
+            "amount": -460283690787
           },
           {
             "year": 2026,
@@ -28980,7 +28980,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -428967159773
+            "amount": -428966709740
           },
           {
             "year": 2026,
@@ -28989,7 +28989,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -477010662905
+            "amount": -477010824845
           },
           {
             "year": 2026,
@@ -28998,7 +28998,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -445258424222
+            "amount": -445257990342
           },
           {
             "year": 2026,
@@ -29007,7 +29007,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -449898243371
+            "amount": -449898518520
           },
           {
             "year": 2026,
@@ -29016,7 +29016,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -465111624408
+            "amount": -465111127350
           },
           {
             "year": 2026,
@@ -29025,7 +29025,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -485996426596
+            "amount": -485996357419
           },
           {
             "year": 2026,
@@ -29034,10 +29034,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -509327142746
+            "amount": -509327536229
           }
         ],
-        "total": -6523885443280
+        "total": -6523884354209
       },
       {
         "subcat": "GP",
@@ -31110,7 +31110,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -119038361983
+            "amount": -119038260194
           },
           {
             "year": 2026,
@@ -31119,7 +31119,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -439279399292
+            "amount": -439279847839
           },
           {
             "year": 2026,
@@ -31128,7 +31128,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 276798431739
+            "amount": 276798851868
           },
           {
             "year": 2026,
@@ -31137,7 +31137,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -352592086419
+            "amount": -352592354946
           },
           {
             "year": 2026,
@@ -31146,7 +31146,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -375318017254
+            "amount": -375317540079
           },
           {
             "year": 2026,
@@ -31203,7 +31203,7 @@ export const PNL = {
             "amount": -853391002
           }
         ],
-        "total": -956432705736
+        "total": -956432423717
       },
       {
         "subcat": "Total G&A (Include Depre + Others)",
@@ -31224,7 +31224,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -156470808941
+            "amount": -156470550676
           },
           {
             "year": 2026,
@@ -31233,7 +31233,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -476952633856
+            "amount": -476952707052
           },
           {
             "year": 2026,
@@ -31242,7 +31242,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 269136614258
+            "amount": 269136723105
           },
           {
             "year": 2026,
@@ -31251,7 +31251,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -383745807350
+            "amount": -383745332061
           },
           {
             "year": 2026,
@@ -31260,7 +31260,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -416240947073
+            "amount": -416240764204
           },
           {
             "year": 2026,
@@ -31317,7 +31317,7 @@ export const PNL = {
             "amount": -38837243884
           }
         ],
-        "total": -1371436761303
+        "total": -1371435809229
       },
       {
         "subcat": "EBITDA",
@@ -31338,7 +31338,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -120795367602
+            "amount": -120795689819
           },
           {
             "year": 2026,
@@ -31347,7 +31347,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -433242506529
+            "amount": -433242199110
           },
           {
             "year": 2026,
@@ -31356,7 +31356,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 304448257297
+            "amount": 304448594417
           },
           {
             "year": 2026,
@@ -31365,7 +31365,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -351129767834
+            "amount": -351129902963
           },
           {
             "year": 2026,
@@ -31374,7 +31374,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -392482622577
+            "amount": -392482868764
           },
           {
             "year": 2026,
@@ -31431,7 +31431,7 @@ export const PNL = {
             "amount": 436471993
           }
         ],
-        "total": -947829866492
+        "total": -947829925486
       },
       {
         "subcat": "EBIT",
@@ -31452,7 +31452,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -127435141725
+            "amount": -127435216793
           },
           {
             "year": 2026,
@@ -31461,7 +31461,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -440619732757
+            "amount": -440619679012
           },
           {
             "year": 2026,
@@ -31470,7 +31470,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 297934307150
+            "amount": 297934029664
           },
           {
             "year": 2026,
@@ -31479,7 +31479,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -357539048122
+            "amount": -357539049757
           },
           {
             "year": 2026,
@@ -31488,7 +31488,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -398969122551
+            "amount": -398969091291
           },
           {
             "year": 2026,
@@ -31545,7 +31545,7 @@ export const PNL = {
             "amount": -6886396109
           }
         ],
-        "total": -1027539835382
+        "total": -1027540104566
       },
       {
         "subcat": "Total Adjustment (Total)",
@@ -31566,7 +31566,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -119494604954
+            "amount": -119494846508
           },
           {
             "year": 2026,
@@ -31575,7 +31575,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -437284886248
+            "amount": -437284676999
           },
           {
             "year": 2026,
@@ -31584,7 +31584,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 298872869842
+            "amount": 298873247829
           },
           {
             "year": 2026,
@@ -31593,7 +31593,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -346413083306
+            "amount": -346413159402
           },
           {
             "year": 2026,
@@ -31602,7 +31602,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -390109331046
+            "amount": -390108887366
           },
           {
             "year": 2026,
@@ -31659,7 +31659,7 @@ export const PNL = {
             "amount": 0
           }
         ],
-        "total": -941048488184
+        "total": -941047774918
       },
       {
         "subcat": "Total Adjustment Elimination (Total)",
@@ -32136,7 +32136,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -97484900154
+            "amount": -97484864699
           },
           {
             "year": 2026,
@@ -32145,7 +32145,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -421550577627
+            "amount": -421551077155
           },
           {
             "year": 2026,
@@ -32154,7 +32154,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 325520685782
+            "amount": 325520458825
           },
           {
             "year": 2026,
@@ -32163,7 +32163,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -323554975261
+            "amount": -323554784973
           },
           {
             "year": 2026,
@@ -32172,7 +32172,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -394183716042
+            "amount": -394183348049
           },
           {
             "year": 2026,
@@ -32229,7 +32229,7 @@ export const PNL = {
             "amount": -6886396109
           }
         ],
-        "total": -865001224241
+        "total": -865001356990
       }
     ]
   },
@@ -35095,7 +35095,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -445778535
+            "amount": -1971688873
           },
           {
             "year": 2026,
@@ -35104,7 +35104,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 581938217
+            "amount": -1246917980
           },
           {
             "year": 2026,
@@ -35113,7 +35113,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -1895869398
+            "amount": -1658738843
           },
           {
             "year": 2026,
@@ -35122,7 +35122,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -20204248
+            "amount": 406677335
           },
           {
             "year": 2026,
@@ -35131,7 +35131,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -383573377
+            "amount": -1035715256
           },
           {
             "year": 2026,
@@ -35140,7 +35140,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 1864355336
+            "amount": -768103989
           },
           {
             "year": 2026,
@@ -35149,7 +35149,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 62600283
+            "amount": -170644590
           },
           {
             "year": 2026,
@@ -35158,7 +35158,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": -216145751
           },
           {
             "year": 2026,
@@ -35167,7 +35167,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 170392483
           },
           {
             "year": 2026,
@@ -35176,7 +35176,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 176258386
           },
           {
             "year": 2026,
@@ -35185,7 +35185,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 238700977
           },
           {
             "year": 2026,
@@ -35194,10 +35194,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 1381820684
           }
         ],
-        "total": -236531722
+        "total": -4694105417
       },
       {
         "subcat": "Adj. EBIT (Direct)",
@@ -35209,7 +35209,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -9832103377
+            "amount": -445470963
           },
           {
             "year": 2026,
@@ -35218,7 +35218,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -8593348738
+            "amount": -5012750887
           },
           {
             "year": 2026,
@@ -35227,7 +35227,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -11796851861
+            "amount": -5888489108
           },
           {
             "year": 2026,
@@ -35236,7 +35236,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -6929464211
+            "amount": 2986924930
           },
           {
             "year": 2026,
@@ -35245,7 +35245,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -9022584917
+            "amount": 11703633674
           },
           {
             "year": 2026,
@@ -35254,7 +35254,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -8479570686
+            "amount": -6288732682
           },
           {
             "year": 2026,
@@ -35263,7 +35263,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -8947171187
+            "amount": -2877413589
           },
           {
             "year": 2026,
@@ -35272,7 +35272,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -9485103503
+            "amount": -3076975842
           },
           {
             "year": 2026,
@@ -35281,7 +35281,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -9464164385
+            "amount": -2690437608
           },
           {
             "year": 2026,
@@ -35290,7 +35290,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -9515020868
+            "amount": -2684571705
           },
           {
             "year": 2026,
@@ -35299,7 +35299,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -9333703957
+            "amount": -2622129114
           },
           {
             "year": 2026,
@@ -35308,10 +35308,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -9522724162
+            "amount": -1479009407
           }
         ],
-        "total": -110921811852
+        "total": -18375422301
       },
       {
         "subcat": "EBITDA (Total)",
@@ -35323,7 +35323,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -512853739
+            "amount": -537289524
           },
           {
             "year": 2026,
@@ -35332,7 +35332,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -2427893881
+            "amount": -2456130788
           },
           {
             "year": 2026,
@@ -35341,7 +35341,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -2579011363
+            "amount": -2603447148
           },
           {
             "year": 2026,
@@ -35350,7 +35350,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 2493328936
+            "amount": 2465100107
           },
           {
             "year": 2026,
@@ -35359,7 +35359,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 6062076802
+            "amount": 6033845795
           },
           {
             "year": 2026,
@@ -35368,7 +35368,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -2679702264
+            "amount": -2630223542
           },
           {
             "year": 2026,
@@ -35425,7 +35425,7 @@ export const PNL = {
             "amount": 496086989
           }
         ],
-        "total": -2911946268
+        "total": -2996035859
       },
       {
         "subcat": "EBIT (Total)",
@@ -35437,7 +35437,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -3440453408
+            "amount": -3464889193
           },
           {
             "year": 2026,
@@ -35446,7 +35446,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -5333907693
+            "amount": -5362144600
           },
           {
             "year": 2026,
@@ -35455,7 +35455,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -6119720911
+            "amount": -6144156696
           },
           {
             "year": 2026,
@@ -35464,7 +35464,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -290102395
+            "amount": -318331224
           },
           {
             "year": 2026,
@@ -35473,7 +35473,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 3307470813
+            "amount": 3279239806
           },
           {
             "year": 2026,
@@ -35482,7 +35482,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -5517639342
+            "amount": -5468160620
           },
           {
             "year": 2026,
@@ -35539,7 +35539,7 @@ export const PNL = {
             "amount": -2364743102
           }
         ],
-        "total": -37673163149
+        "total": -37757252740
       },
       {
         "subcat": "Total Adjustment (Total)",
@@ -35665,7 +35665,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -2730391186
+            "amount": -2754826971
           },
           {
             "year": 2026,
@@ -35674,7 +35674,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -1988753805
+            "amount": -2016990712
           },
           {
             "year": 2026,
@@ -35683,7 +35683,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -2225570652
+            "amount": -2250006437
           },
           {
             "year": 2026,
@@ -35692,7 +35692,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -178864485
+            "amount": -207093314
           },
           {
             "year": 2026,
@@ -35701,7 +35701,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -1676839892
+            "amount": -1705070899
           },
           {
             "year": 2026,
@@ -35710,7 +35710,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -1330141806
+            "amount": -1280663084
           },
           {
             "year": 2026,
@@ -35767,7 +35767,7 @@ export const PNL = {
             "amount": 496086989
           }
         ],
-        "total": -13398452585
+        "total": -13482542176
       },
       {
         "subcat": "Adj. EBIT (Total)",
@@ -35779,7 +35779,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -5657990855
+            "amount": -5682426640
           },
           {
             "year": 2026,
@@ -35788,7 +35788,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -4894767617
+            "amount": -4923004524
           },
           {
             "year": 2026,
@@ -35797,7 +35797,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -5766280200
+            "amount": -5790715985
           },
           {
             "year": 2026,
@@ -35806,7 +35806,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -2962295816
+            "amount": -2990524645
           },
           {
             "year": 2026,
@@ -35815,7 +35815,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -4431445881
+            "amount": -4459676888
           },
           {
             "year": 2026,
@@ -35824,7 +35824,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -4168078884
+            "amount": -4118600162
           },
           {
             "year": 2026,
@@ -35881,7 +35881,7 @@ export const PNL = {
             "amount": -2364743102
           }
         ],
-        "total": -48159669466
+        "total": -48243759057
       },
       {
         "subcat": "Finance Income / Expenses, Etc",
@@ -36007,7 +36007,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -2944274685
+            "amount": -2968710470
           },
           {
             "year": 2026,
@@ -36016,7 +36016,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -4586531200
+            "amount": -4614768107
           },
           {
             "year": 2026,
@@ -36025,7 +36025,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -7513293343
+            "amount": -7537729128
           },
           {
             "year": 2026,
@@ -36034,7 +36034,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -178253914
+            "amount": -206482743
           },
           {
             "year": 2026,
@@ -36043,7 +36043,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 4849596583
+            "amount": 4821365576
           },
           {
             "year": 2026,
@@ -36052,7 +36052,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -3354063478
+            "amount": -3304584756
           },
           {
             "year": 2026,
@@ -36109,7 +36109,7 @@ export const PNL = {
             "amount": -2364743102
           }
         ],
-        "total": -34005630250
+        "total": -34089719841
       }
     ],
     "After Elim": [
@@ -42397,7 +42397,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -154178511
+            "amount": 916102029
           },
           {
             "year": 2026,
@@ -42406,7 +42406,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -302218368
+            "amount": -1278273033
           },
           {
             "year": 2026,
@@ -42415,7 +42415,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -375219558
+            "amount": 2295262720
           },
           {
             "year": 2026,
@@ -42424,7 +42424,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -204878033
+            "amount": 6294324025
           },
           {
             "year": 2026,
@@ -42433,7 +42433,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -422554350
+            "amount": 2481702396
           },
           {
             "year": 2026,
@@ -42442,7 +42442,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 534677150
+            "amount": 3180753831
           },
           {
             "year": 2026,
@@ -42451,7 +42451,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -237191002
+            "amount": 1530516848
           },
           {
             "year": 2026,
@@ -42460,7 +42460,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -137191002
+            "amount": 1668497645
           },
           {
             "year": 2026,
@@ -42469,7 +42469,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -137191002
+            "amount": 1820406577
           },
           {
             "year": 2026,
@@ -42478,7 +42478,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -137191002
+            "amount": 1997015723
           },
           {
             "year": 2026,
@@ -42487,7 +42487,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -137191002
+            "amount": 2243336685
           },
           {
             "year": 2026,
@@ -42496,10 +42496,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -137191002
+            "amount": 2772909193
           }
         ],
-        "total": -1847517682
+        "total": 25922554639
       },
       {
         "subcat": "Adj. EBIT (Direct)",
@@ -42511,7 +42511,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -7496633169
+            "amount": 290771725
           },
           {
             "year": 2026,
@@ -42520,7 +42520,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -7968950199
+            "amount": -2088654472
           },
           {
             "year": 2026,
@@ -42529,7 +42529,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -7438055100
+            "amount": 1666124828
           },
           {
             "year": 2026,
@@ -42538,7 +42538,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -3963524486
+            "amount": 5828088066
           },
           {
             "year": 2026,
@@ -42547,7 +42547,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -7581661927
+            "amount": 1876073154
           },
           {
             "year": 2026,
@@ -42556,7 +42556,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -7158881687
+            "amount": 2576352292
           },
           {
             "year": 2026,
@@ -42565,7 +42565,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -7247514861
+            "amount": 1530516848
           },
           {
             "year": 2026,
@@ -42574,7 +42574,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -8885285601
+            "amount": 405277551
           },
           {
             "year": 2026,
@@ -42583,7 +42583,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -8834609763
+            "amount": 557186483
           },
           {
             "year": 2026,
@@ -42592,7 +42592,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -8798239279
+            "amount": 733795629
           },
           {
             "year": 2026,
@@ -42601,7 +42601,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -8685584215
+            "amount": 980116591
           },
           {
             "year": 2026,
@@ -42610,10 +42610,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -8815097436
+            "amount": 1509689099
           }
         ],
-        "total": -92874037723
+        "total": 15865337794
       },
       {
         "subcat": "EBITDA (Total)",
@@ -46849,7 +46849,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 717966000000
+            "amount": 717965537780
           },
           {
             "year": 2026,
@@ -46858,7 +46858,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 674368000000
+            "amount": 674368175220
           },
           {
             "year": 2026,
@@ -46867,7 +46867,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 703273000000
+            "amount": 703273498860
           },
           {
             "year": 2026,
@@ -46876,7 +46876,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 560781000000
+            "amount": 560781238150
           },
           {
             "year": 2026,
@@ -46885,7 +46885,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 428175000000
+            "amount": 428175120917
           },
           {
             "year": 2026,
@@ -46894,7 +46894,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 400614000000
+            "amount": 400614077810
           },
           {
             "year": 2026,
@@ -46903,7 +46903,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 448184000000
+            "amount": 448183688891
           },
           {
             "year": 2026,
@@ -46912,7 +46912,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": 412089000000
+            "amount": 412089129589
           },
           {
             "year": 2026,
@@ -46921,7 +46921,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": 415700000000
+            "amount": 415699664001
           },
           {
             "year": 2026,
@@ -46930,7 +46930,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": 430463000000
+            "amount": 430462583062
           },
           {
             "year": 2026,
@@ -46939,7 +46939,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": 451450000000
+            "amount": 451449923545
           },
           {
             "year": 2026,
@@ -46948,10 +46948,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": 472496000000
+            "amount": 472495715596
           }
         ],
-        "total": 6115559000000
+        "total": 6115558353421
       },
       {
         "subcat": "COGS",
@@ -46963,7 +46963,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -693883000000
+            "amount": -693882848387
           },
           {
             "year": 2026,
@@ -46972,7 +46972,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -650813000000
+            "amount": -650812698690
           },
           {
             "year": 2026,
@@ -46981,7 +46981,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -675187000000
+            "amount": -675186508633
           },
           {
             "year": 2026,
@@ -46990,7 +46990,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -540307000000
+            "amount": -540307365418
           },
           {
             "year": 2026,
@@ -46999,7 +46999,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -413086000000
+            "amount": -413086109377
           },
           {
             "year": 2026,
@@ -47008,7 +47008,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -383895000000
+            "amount": -383894549967
           },
           {
             "year": 2026,
@@ -47017,7 +47017,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -427756000000
+            "amount": -427756161940
           },
           {
             "year": 2026,
@@ -47026,7 +47026,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -394841000000
+            "amount": -394840566120
           },
           {
             "year": 2026,
@@ -47035,7 +47035,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -398624000000
+            "amount": -398624275149
           },
           {
             "year": 2026,
@@ -47044,7 +47044,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -412667000000
+            "amount": -412666502942
           },
           {
             "year": 2026,
@@ -47053,7 +47053,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -432330000000
+            "amount": -432329930823
           },
           {
             "year": 2026,
@@ -47062,10 +47062,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -452027000000
+            "amount": -452027393483
           }
         ],
-        "total": -5875416000000
+        "total": -5875414910929
       },
       {
         "subcat": "GP",
@@ -49699,7 +49699,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 112538013
+            "amount": 10683507119
           },
           {
             "year": 2026,
@@ -49708,7 +49708,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -180608556
+            "amount": 8923424498
           },
           {
             "year": 2026,
@@ -49717,7 +49717,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 195594647
+            "amount": 12898762032
           },
           {
             "year": 2026,
@@ -49726,7 +49726,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 5894900
+            "amount": 5874399285
           },
           {
             "year": 2026,
@@ -49735,7 +49735,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -43382687
+            "amount": 1732123317
           },
           {
             "year": 2026,
@@ -49744,7 +49744,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 499732973
+            "amount": 2800668458
           },
           {
             "year": 2026,
@@ -49753,7 +49753,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 0
+            "amount": 6838242605
           },
           {
             "year": 2026,
@@ -49762,7 +49762,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 3462233820
           },
           {
             "year": 2026,
@@ -49771,7 +49771,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 3332284779
           },
           {
             "year": 2026,
@@ -49780,7 +49780,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 3742024234
           },
           {
             "year": 2026,
@@ -49789,7 +49789,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 4553782885
           },
           {
             "year": 2026,
@@ -49798,10 +49798,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 5147094424
           }
         ],
-        "total": 589769290
+        "total": 69988547456
       },
       {
         "subcat": "Adj. EBIT (Direct)",
@@ -49813,7 +49813,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -6374684423
+            "amount": 10084256743
           },
           {
             "year": 2026,
@@ -49822,7 +49822,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -7075020931
+            "amount": 8654752880
           },
           {
             "year": 2026,
@@ -49831,7 +49831,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -5783290427
+            "amount": 12604165509
           },
           {
             "year": 2026,
@@ -49840,7 +49840,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -6927774394
+            "amount": 5556713200
           },
           {
             "year": 2026,
@@ -49849,7 +49849,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -6464210130
+            "amount": 1480179952
           },
           {
             "year": 2026,
@@ -49858,7 +49858,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -7033294756
+            "amount": 2529536350
           },
           {
             "year": 2026,
@@ -49867,7 +49867,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -5678711509
+            "amount": 6838242605
           },
           {
             "year": 2026,
@@ -49876,7 +49876,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -7291315786
+            "amount": 2675520008
           },
           {
             "year": 2026,
@@ -49885,7 +49885,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -7244861182
+            "amount": 2545570967
           },
           {
             "year": 2026,
@@ -49894,7 +49894,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -7237896223
+            "amount": 2955310422
           },
           {
             "year": 2026,
@@ -49903,7 +49903,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -7182933722
+            "amount": 3767069073
           },
           {
             "year": 2026,
@@ -49912,10 +49912,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -7247550423
+            "amount": 4360380612
           }
         ],
-        "total": -81541543906
+        "total": 64051698321
       },
       {
         "subcat": "EBITDA (Total)",
@@ -49927,7 +49927,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 9190759899
+            "amount": 9144195208
           },
           {
             "year": 2026,
@@ -49936,7 +49936,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 7620285902
+            "amount": 7435284865
           },
           {
             "year": 2026,
@@ -49945,7 +49945,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 11906754857
+            "amount": 12086552665
           },
           {
             "year": 2026,
@@ -49954,7 +49954,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 4835192741
+            "amount": 4788621563
           },
           {
             "year": 2026,
@@ -49963,7 +49963,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 622058316
+            "amount": 578675629
           },
           {
             "year": 2026,
@@ -49972,7 +49972,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 1849761886
+            "amount": 1802994509
           },
           {
             "year": 2026,
@@ -50029,7 +50029,7 @@ export const PNL = {
             "amount": 3848827225
           }
         ],
-        "total": 55863579714
+        "total": 55675090552
       },
       {
         "subcat": "EBIT (Total)",
@@ -50041,7 +50041,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 8881500192
+            "amount": 8834935501
           },
           {
             "year": 2026,
@@ -50050,7 +50050,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 7318952417
+            "amount": 7133951380
           },
           {
             "year": 2026,
@@ -50059,7 +50059,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 11613026353
+            "amount": 11792824161
           },
           {
             "year": 2026,
@@ -50068,7 +50068,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 4529607170
+            "amount": 4483035992
           },
           {
             "year": 2026,
@@ -50077,7 +50077,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 342648638
+            "amount": 299265951
           },
           {
             "year": 2026,
@@ -50086,7 +50086,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 1572689215
+            "amount": 1525921838
           },
           {
             "year": 2026,
@@ -50143,7 +50143,7 @@ export const PNL = {
             "amount": 3062113413
           }
         ],
-        "total": 50163621038
+        "total": 49975131876
       },
       {
         "subcat": "Total Adjustment (Total)",
@@ -50269,7 +50269,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 9352199286
+            "amount": 9305634595
           },
           {
             "year": 2026,
@@ -50278,7 +50278,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 7620285902
+            "amount": 7435284865
           },
           {
             "year": 2026,
@@ -50287,7 +50287,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 11922551696
+            "amount": 12102349504
           },
           {
             "year": 2026,
@@ -50296,7 +50296,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 4857987070
+            "amount": 4811415892
           },
           {
             "year": 2026,
@@ -50305,7 +50305,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 622058316
+            "amount": 578675629
           },
           {
             "year": 2026,
@@ -50314,7 +50314,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 1860532474
+            "amount": 1813765097
           },
           {
             "year": 2026,
@@ -50371,7 +50371,7 @@ export const PNL = {
             "amount": 3848827225
           }
         ],
-        "total": 56074380857
+        "total": 55885891695
       },
       {
         "subcat": "Adj. EBIT (Total)",
@@ -50383,7 +50383,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 9042939579
+            "amount": 8996374888
           },
           {
             "year": 2026,
@@ -50392,7 +50392,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 7318952417
+            "amount": 7133951380
           },
           {
             "year": 2026,
@@ -50401,7 +50401,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 11628823192
+            "amount": 11808621000
           },
           {
             "year": 2026,
@@ -50410,7 +50410,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 4552401499
+            "amount": 4505830321
           },
           {
             "year": 2026,
@@ -50419,7 +50419,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 342648638
+            "amount": 299265951
           },
           {
             "year": 2026,
@@ -50428,7 +50428,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 1583459803
+            "amount": 1536692426
           },
           {
             "year": 2026,
@@ -50485,7 +50485,7 @@ export const PNL = {
             "amount": 3062113413
           }
         ],
-        "total": 50374422181
+        "total": 50185933019
       },
       {
         "subcat": "Finance Income / Expenses, Etc",
@@ -50611,7 +50611,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 21881322588
+            "amount": 21834757897
           },
           {
             "year": 2026,
@@ -50620,7 +50620,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 13722395082
+            "amount": 13537394045
           },
           {
             "year": 2026,
@@ -50629,7 +50629,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 11361005157
+            "amount": 11540802965
           },
           {
             "year": 2026,
@@ -50638,7 +50638,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 11726760205
+            "amount": 11680189027
           },
           {
             "year": 2026,
@@ -50647,7 +50647,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 10644361405
+            "amount": 10600978718
           },
           {
             "year": 2026,
@@ -50656,7 +50656,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 7077325924
+            "amount": 7030558547
           },
           {
             "year": 2026,
@@ -50713,7 +50713,7 @@ export const PNL = {
             "amount": 3062113413
           }
         ],
-        "total": 92318367414
+        "total": 92129878252
       }
     ],
     "After Elim": [
@@ -50727,7 +50727,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 717966000000
+            "amount": 717965537780
           },
           {
             "year": 2026,
@@ -50736,7 +50736,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": 674368000000
+            "amount": 674368175220
           },
           {
             "year": 2026,
@@ -50745,7 +50745,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": 703273000000
+            "amount": 703273498860
           },
           {
             "year": 2026,
@@ -50754,7 +50754,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 560781000000
+            "amount": 560781238150
           },
           {
             "year": 2026,
@@ -50763,7 +50763,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 428175000000
+            "amount": 428175120917
           },
           {
             "year": 2026,
@@ -50772,7 +50772,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 400614000000
+            "amount": 400614077810
           },
           {
             "year": 2026,
@@ -50781,7 +50781,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 448184000000
+            "amount": 448183688891
           },
           {
             "year": 2026,
@@ -50790,7 +50790,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": 412089000000
+            "amount": 412089129589
           },
           {
             "year": 2026,
@@ -50799,7 +50799,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": 415700000000
+            "amount": 415699664001
           },
           {
             "year": 2026,
@@ -50808,7 +50808,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": 430463000000
+            "amount": 430462583062
           },
           {
             "year": 2026,
@@ -50817,7 +50817,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": 451450000000
+            "amount": 451449923545
           },
           {
             "year": 2026,
@@ -50826,10 +50826,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": 472496000000
+            "amount": 472495715596
           }
         ],
-        "total": 6115559000000
+        "total": 6115558353421
       },
       {
         "subcat": "COGS",
@@ -50841,7 +50841,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -693883000000
+            "amount": -693882848387
           },
           {
             "year": 2026,
@@ -50850,7 +50850,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -650813000000
+            "amount": -650812698690
           },
           {
             "year": 2026,
@@ -50859,7 +50859,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -675187000000
+            "amount": -675186508633
           },
           {
             "year": 2026,
@@ -50868,7 +50868,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -540307000000
+            "amount": -540307365418
           },
           {
             "year": 2026,
@@ -50877,7 +50877,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -413086000000
+            "amount": -413086109377
           },
           {
             "year": 2026,
@@ -50886,7 +50886,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -383895000000
+            "amount": -383894549967
           },
           {
             "year": 2026,
@@ -50895,7 +50895,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -427756000000
+            "amount": -427756161940
           },
           {
             "year": 2026,
@@ -50904,7 +50904,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -394841000000
+            "amount": -394840566120
           },
           {
             "year": 2026,
@@ -50913,7 +50913,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -398624000000
+            "amount": -398624275149
           },
           {
             "year": 2026,
@@ -50922,7 +50922,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -412667000000
+            "amount": -412666502942
           },
           {
             "year": 2026,
@@ -50931,7 +50931,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -432330000000
+            "amount": -432329930823
           },
           {
             "year": 2026,
@@ -50940,10 +50940,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -452027000000
+            "amount": -452027393483
           }
         ],
-        "total": -5875416000000
+        "total": -5875414910929
       },
       {
         "subcat": "GP",
@@ -57001,7 +57001,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -192638991
+            "amount": 224911772
           },
           {
             "year": 2026,
@@ -57010,7 +57010,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -101716140
+            "amount": 103602658
           },
           {
             "year": 2026,
@@ -57019,7 +57019,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -18171359
+            "amount": 123615769
           },
           {
             "year": 2026,
@@ -57028,7 +57028,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -6099272
+            "amount": -520250906
           },
           {
             "year": 2026,
@@ -57037,7 +57037,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -61617714
+            "amount": 1224478066
           },
           {
             "year": 2026,
@@ -57046,7 +57046,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 189469488
+            "amount": 55077719
           },
           {
             "year": 2026,
@@ -57055,7 +57055,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 0
+            "amount": 96748854
           },
           {
             "year": 2026,
@@ -57064,7 +57064,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 189534021
           },
           {
             "year": 2026,
@@ -57073,7 +57073,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 65117337
           },
           {
             "year": 2026,
@@ -57082,7 +57082,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 179315635
           },
           {
             "year": 2026,
@@ -57091,7 +57091,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 193794584
           },
           {
             "year": 2026,
@@ -57100,10 +57100,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": 0
+            "amount": 159803296
           }
         ],
-        "total": -190773988
+        "total": 2095748805
       },
       {
         "subcat": "Adj. EBIT (Direct)",
@@ -57115,7 +57115,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -3307599984
+            "amount": -48209893
           },
           {
             "year": 2026,
@@ -57124,7 +57124,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -2497728839
+            "amount": -170024441
           },
           {
             "year": 2026,
@@ -57133,7 +57133,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -2130569504
+            "amount": -269176506
           },
           {
             "year": 2026,
@@ -57142,7 +57142,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -2531603365
+            "amount": -821777055
           },
           {
             "year": 2026,
@@ -57151,7 +57151,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -2550400857
+            "amount": 930342719
           },
           {
             "year": 2026,
@@ -57160,7 +57160,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -2627717616
+            "amount": -238785505
           },
           {
             "year": 2026,
@@ -57169,7 +57169,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -2490055263
+            "amount": -182306480
           },
           {
             "year": 2026,
@@ -57178,7 +57178,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -2609644151
+            "amount": -301895368
           },
           {
             "year": 2026,
@@ -57187,7 +57187,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -2629818399
+            "amount": -426312052
           },
           {
             "year": 2026,
@@ -57196,7 +57196,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -2619862537
+            "amount": -312113754
           },
           {
             "year": 2026,
@@ -57205,7 +57205,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -2605383588
+            "amount": -297634805
           },
           {
             "year": 2026,
@@ -57214,10 +57214,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -2639374876
+            "amount": -331626093
           }
         ],
-        "total": -31239758979
+        "total": -2469519233
       },
       {
         "subcat": "EBITDA (Total)",
@@ -57229,7 +57229,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -247487781
+            "amount": -263243396
           },
           {
             "year": 2026,
@@ -57238,7 +57238,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -361362473
+            "amount": -379701921
           },
           {
             "year": 2026,
@@ -57247,7 +57247,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -233278332
+            "amount": -961449691
           },
           {
             "year": 2026,
@@ -57256,7 +57256,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -893879107
+            "amount": -911589063
           },
           {
             "year": 2026,
@@ -57265,7 +57265,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 790104805
+            "amount": 728487091
           },
           {
             "year": 2026,
@@ -57274,7 +57274,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -312801579
+            "amount": -332965476
           },
           {
             "year": 2026,
@@ -57331,7 +57331,7 @@ export const PNL = {
             "amount": -289130220
           }
         ],
-        "total": -2929652184
+        "total": -3791410173
       },
       {
         "subcat": "EBIT (Total)",
@@ -57343,7 +57343,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -532279419
+            "amount": -548035034
           },
           {
             "year": 2026,
@@ -57352,7 +57352,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -647060262
+            "amount": -665399710
           },
           {
             "year": 2026,
@@ -57361,7 +57361,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -637303644
+            "amount": -1365475003
           },
           {
             "year": 2026,
@@ -57370,7 +57370,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -1208509313
+            "amount": -1226219269
           },
           {
             "year": 2026,
@@ -57379,7 +57379,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 485221769
+            "amount": 423604055
           },
           {
             "year": 2026,
@@ -57388,7 +57388,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -617418527
+            "amount": -637582424
           },
           {
             "year": 2026,
@@ -57445,7 +57445,7 @@ export const PNL = {
             "amount": -780559609
           }
         ],
-        "total": -7564499392
+        "total": -8426257381
       },
       {
         "subcat": "Total Adjustment (Total)",
@@ -57571,7 +57571,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -247487781
+            "amount": -263243396
           },
           {
             "year": 2026,
@@ -57580,7 +57580,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -361362473
+            "amount": -379701921
           },
           {
             "year": 2026,
@@ -57589,7 +57589,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -233278332
+            "amount": -961449691
           },
           {
             "year": 2026,
@@ -57598,7 +57598,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -893879107
+            "amount": -911589063
           },
           {
             "year": 2026,
@@ -57607,7 +57607,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 790104805
+            "amount": 728487091
           },
           {
             "year": 2026,
@@ -57616,7 +57616,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -312801579
+            "amount": -332965476
           },
           {
             "year": 2026,
@@ -57673,7 +57673,7 @@ export const PNL = {
             "amount": -289130220
           }
         ],
-        "total": -2929652184
+        "total": -3791410173
       },
       {
         "subcat": "Adj. EBIT (Total)",
@@ -57685,7 +57685,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -532279419
+            "amount": -548035034
           },
           {
             "year": 2026,
@@ -57694,7 +57694,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -647060262
+            "amount": -665399710
           },
           {
             "year": 2026,
@@ -57703,7 +57703,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -637303644
+            "amount": -1365475003
           },
           {
             "year": 2026,
@@ -57712,7 +57712,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -1208509313
+            "amount": -1226219269
           },
           {
             "year": 2026,
@@ -57721,7 +57721,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 485221769
+            "amount": 423604055
           },
           {
             "year": 2026,
@@ -57730,7 +57730,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -617418527
+            "amount": -637582424
           },
           {
             "year": 2026,
@@ -57787,7 +57787,7 @@ export const PNL = {
             "amount": -780559609
           }
         ],
-        "total": -7564499392
+        "total": -8426257381
       },
       {
         "subcat": "Finance Income / Expenses, Etc",
@@ -57913,7 +57913,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -550875974
+            "amount": -566631589
           },
           {
             "year": 2026,
@@ -57922,7 +57922,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -633532751
+            "amount": -651872199
           },
           {
             "year": 2026,
@@ -57931,7 +57931,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -573082319
+            "amount": -1301253678
           },
           {
             "year": 2026,
@@ -57940,7 +57940,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -1191665386
+            "amount": -1209375342
           },
           {
             "year": 2026,
@@ -57949,7 +57949,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 499787049
+            "amount": 438169335
           },
           {
             "year": 2026,
@@ -57958,7 +57958,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -556425237
+            "amount": -576589134
           },
           {
             "year": 2026,
@@ -58015,7 +58015,7 @@ export const PNL = {
             "amount": -780559609
           }
         ],
-        "total": -7412944614
+        "total": -8274702603
       }
     ],
     "After Elim": [
@@ -62935,7 +62935,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -2019107656
+            "amount": -2728979074
           },
           {
             "year": 2026,
@@ -62944,7 +62944,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -1276699823
+            "amount": -1813997697
           },
           {
             "year": 2026,
@@ -62953,7 +62953,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -2500315186
+            "amount": -3465409702
           },
           {
             "year": 2026,
@@ -62962,7 +62962,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -2387560539
+            "amount": 21439138051
           },
           {
             "year": 2026,
@@ -62971,7 +62971,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -8908119097
+            "amount": -11922156199
           },
           {
             "year": 2026,
@@ -62980,7 +62980,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -2684752870
+            "amount": -3151084702
           },
           {
             "year": 2026,
@@ -63037,7 +63037,7 @@ export const PNL = {
             "amount": -2148161562
           }
         ],
-        "total": -33217065759
+        "total": -15082999911
       },
       {
         "subcat": "G&A - Other staff cost",
@@ -63733,7 +63733,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 3487712753
+            "amount": 52283748480
           },
           {
             "year": 2026,
@@ -63742,7 +63742,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -344218456
+            "amount": -118816866727
           },
           {
             "year": 2026,
@@ -63751,7 +63751,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -549087038
+            "amount": -436667776220
           },
           {
             "year": 2026,
@@ -63760,7 +63760,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 5559404697
+            "amount": 273797547547
           },
           {
             "year": 2026,
@@ -63769,7 +63769,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 3107994266
+            "amount": -352380447158
           },
           {
             "year": 2026,
@@ -63778,7 +63778,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 24184402708
+            "amount": -377431063269
           },
           {
             "year": 2026,
@@ -63835,7 +63835,7 @@ export const PNL = {
             "amount": -707000000
           }
         ],
-        "total": 34156700560
+        "total": -960504365717
       },
       {
         "subcat": "Total G&A (Include Depre + Others)",
@@ -63847,7 +63847,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -4444920070
+            "amount": 43641244239
           },
           {
             "year": 2026,
@@ -63856,7 +63856,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -6921322282
+            "amount": -125931268427
           },
           {
             "year": 2026,
@@ -63865,7 +63865,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -9646070217
+            "amount": -446729853915
           },
           {
             "year": 2026,
@@ -63874,7 +63874,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -2131412651
+            "amount": 289933428789
           },
           {
             "year": 2026,
@@ -63883,7 +63883,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 3459865631
+            "amount": -355042612895
           },
           {
             "year": 2026,
@@ -63892,7 +63892,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 15855149787
+            "amount": -386226648022
           },
           {
             "year": 2026,
@@ -63949,7 +63949,7 @@ export const PNL = {
             "amount": -5898275489
           }
         ],
-        "total": -35812128649
+        "total": -1012339129078
       },
       {
         "subcat": "EBITDA (Direct)",
@@ -63961,7 +63961,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -2058636343
+            "amount": 46027527966
           },
           {
             "year": 2026,
@@ -63970,7 +63970,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -4523414359
+            "amount": -123533360504
           },
           {
             "year": 2026,
@@ -63979,7 +63979,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -6623025901
+            "amount": -443706809599
           },
           {
             "year": 2026,
@@ -63988,7 +63988,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -41101388
+            "amount": 292023740052
           },
           {
             "year": 2026,
@@ -63997,7 +63997,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 5730009948
+            "amount": -352772468578
           },
           {
             "year": 2026,
@@ -64006,7 +64006,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 9020785250
+            "amount": -393061012559
           },
           {
             "year": 2026,
@@ -64063,7 +64063,7 @@ export const PNL = {
             "amount": -4829953892
           }
         ],
-        "total": -26823427968
+        "total": -1003350428397
       },
       {
         "subcat": "EBIT (Direct)",
@@ -64075,7 +64075,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -4512817568
+            "amount": 43573346741
           },
           {
             "year": 2026,
@@ -64084,7 +64084,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -6978976774
+            "amount": -125988922919
           },
           {
             "year": 2026,
@@ -64093,7 +64093,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -9076079035
+            "amount": -446159862733
           },
           {
             "year": 2026,
@@ -64102,7 +64102,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -2449158147
+            "amount": 289615683293
           },
           {
             "year": 2026,
@@ -64111,7 +64111,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 3274092458
+            "amount": -355228386068
           },
           {
             "year": 2026,
@@ -64120,7 +64120,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 6567014732
+            "amount": -395514783077
           },
           {
             "year": 2026,
@@ -64177,7 +64177,7 @@ export const PNL = {
             "amount": -6231608822
           }
         ],
-        "total": -48525480076
+        "total": -1025052480505
       },
       {
         "subcat": "Total Adjustment (Direct)",
@@ -64303,7 +64303,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 249427594
+            "amount": 42789242808
           },
           {
             "year": 2026,
@@ -64312,7 +64312,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -261473587
+            "amount": -123450615635
           },
           {
             "year": 2026,
@@ -64321,7 +64321,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -737321934
+            "amount": -443895044495
           },
           {
             "year": 2026,
@@ -64330,7 +64330,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 1130868150
+            "amount": 287595203505
           },
           {
             "year": 2026,
@@ -64339,7 +64339,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -1125523664
+            "amount": -357005986508
           },
           {
             "year": 2026,
@@ -64348,7 +64348,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 10851161219
+            "amount": -406394254048
           },
           {
             "year": 2026,
@@ -64357,7 +64357,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": 2245491630
+            "amount": -3919789974
           },
           {
             "year": 2026,
@@ -64366,7 +64366,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -707000000
+            "amount": -4876978596
           },
           {
             "year": 2026,
@@ -64375,7 +64375,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -707000000
+            "amount": -4958788929
           },
           {
             "year": 2026,
@@ -64384,7 +64384,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -707000000
+            "amount": -4879483568
           },
           {
             "year": 2026,
@@ -64393,7 +64393,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -707000000
+            "amount": -4863050216
           },
           {
             "year": 2026,
@@ -64402,10 +64402,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -707000000
+            "amount": -4829953892
           }
         ],
-        "total": 8817629408
+        "total": -1028689499548
       },
       {
         "subcat": "Adj. EBIT (Direct)",
@@ -64417,7 +64417,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -7683205228
+            "amount": 46811631900
           },
           {
             "year": 2026,
@@ -64426,7 +64426,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -6838577413
+            "amount": -126071667788
           },
           {
             "year": 2026,
@@ -64435,7 +64435,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -9834305113
+            "amount": -445971627837
           },
           {
             "year": 2026,
@@ -64444,7 +64444,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -6559949198
+            "amount": 294044219840
           },
           {
             "year": 2026,
@@ -64453,7 +64453,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -773652299
+            "amount": -350994868138
           },
           {
             "year": 2026,
@@ -64462,7 +64462,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": 2521908298
+            "amount": -382181541588
           },
           {
             "year": 2026,
@@ -64471,7 +64471,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-07-01",
             "tag": "Run-rate",
-            "amount": -2220319744
+            "amount": -3919789974
           },
           {
             "year": 2026,
@@ -64480,7 +64480,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-08-01",
             "tag": "Forecast",
-            "amount": -5962427909
+            "amount": -6295761242
           },
           {
             "year": 2026,
@@ -64489,7 +64489,7 @@ export const PNL = {
             "quarter": 3,
             "date": "2026-09-01",
             "tag": "Forecast",
-            "amount": -6027683013
+            "amount": -6361016346
           },
           {
             "year": 2026,
@@ -64498,7 +64498,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-10-01",
             "tag": "Forecast",
-            "amount": -5943340879
+            "amount": -6276674212
           },
           {
             "year": 2026,
@@ -64507,7 +64507,7 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-11-01",
             "tag": "Forecast",
-            "amount": -5931371813
+            "amount": -6264705146
           },
           {
             "year": 2026,
@@ -64516,10 +64516,10 @@ export const PNL = {
             "quarter": 4,
             "date": "2026-12-01",
             "tag": "Forecast",
-            "amount": -5898275489
+            "amount": -6231608822
           }
         ],
-        "total": -61151199800
+        "total": -999713409353
       },
       {
         "subcat": "EBITDA (Total)",
@@ -64531,7 +64531,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 45841431173
+            "amount": 93927595482
           },
           {
             "year": 2026,
@@ -64540,7 +64540,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -123716000000
+            "amount": -242725730049
           },
           {
             "year": 2026,
@@ -64549,7 +64549,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -443854000000
+            "amount": -880937549691
           },
           {
             "year": 2026,
@@ -64558,7 +64558,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 291872000000
+            "amount": 583936913668
           },
           {
             "year": 2026,
@@ -64567,7 +64567,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -352990000000
+            "amount": -711492133735
           },
           {
             "year": 2026,
@@ -64576,7 +64576,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -393245000000
+            "amount": -795326750017
           },
           {
             "year": 2026,
@@ -64633,7 +64633,7 @@ export const PNL = {
             "amount": -5021153966
           }
         ],
-        "total": -1005542579355
+        "total": -1982068664870
       },
       {
         "subcat": "EBIT (Total)",
@@ -64645,7 +64645,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 43382652686
+            "amount": 91468816995
           },
           {
             "year": 2026,
@@ -64654,7 +64654,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -126176000000
+            "amount": -245185907728
           },
           {
             "year": 2026,
@@ -64663,7 +64663,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -446311000000
+            "amount": -883395228193
           },
           {
             "year": 2026,
@@ -64672,7 +64672,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 289458000000
+            "amount": 581522668882
           },
           {
             "year": 2026,
@@ -64681,7 +64681,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -355451000000
+            "amount": -713953425069
           },
           {
             "year": 2026,
@@ -64690,7 +64690,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -395704000000
+            "amount": -797785897398
           },
           {
             "year": 2026,
@@ -64747,7 +64747,7 @@ export const PNL = {
             "amount": -6941828682
           }
         ],
-        "total": -1029868967339
+        "total": -2006396592536
       },
       {
         "subcat": "Total Adjustment (Total)",
@@ -64768,7 +64768,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -118960000000
+            "amount": -118960241554
           },
           {
             "year": 2026,
@@ -64777,7 +64777,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -436909000000
+            "amount": -436908790751
           },
           {
             "year": 2026,
@@ -64786,7 +64786,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 296143000000
+            "amount": 296143377987
           },
           {
             "year": 2026,
@@ -64795,7 +64795,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -354152000000
+            "amount": -354152076096
           },
           {
             "year": 2026,
@@ -64804,7 +64804,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -388749000000
+            "amount": -388748556320
           },
           {
             "year": 2026,
@@ -64861,7 +64861,7 @@ export const PNL = {
             "amount": 0
           }
         ],
-        "total": -951302550532
+        "total": -951301837266
       },
       {
         "subcat": "Adj. EBITDA (Total)",
@@ -64873,7 +64873,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -5483018294
+            "amount": 42603146015
           },
           {
             "year": 2026,
@@ -64882,7 +64882,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -4755542350
+            "amount": -123765488495
           },
           {
             "year": 2026,
@@ -64891,7 +64891,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -6944975242
+            "amount": -444028758940
           },
           {
             "year": 2026,
@@ -64900,7 +64900,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -4271305759
+            "amount": 287793535681
           },
           {
             "year": 2026,
@@ -64909,7 +64909,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": 1162420887
+            "amount": -357340057639
           },
           {
             "year": 2026,
@@ -64918,7 +64918,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -4496395888
+            "amount": -406578193697
           },
           {
             "year": 2026,
@@ -64975,7 +64975,7 @@ export const PNL = {
             "amount": -5021153966
           }
         ],
-        "total": -54239827174
+        "total": -1030766827603
       },
       {
         "subcat": "Adj. EBIT (Total)",
@@ -64987,7 +64987,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": -7941796782
+            "amount": 40144367527
           },
           {
             "year": 2026,
@@ -64996,7 +64996,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -7215720029
+            "amount": -126225666174
           },
           {
             "year": 2026,
@@ -65005,7 +65005,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -9402653744
+            "amount": -446486437442
           },
           {
             "year": 2026,
@@ -65014,7 +65014,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": -6685550545
+            "amount": 285379290895
           },
           {
             "year": 2026,
@@ -65023,7 +65023,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -1298870447
+            "amount": -359801348973
           },
           {
             "year": 2026,
@@ -65032,7 +65032,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -6955543269
+            "amount": -409037341078
           },
           {
             "year": 2026,
@@ -65089,7 +65089,7 @@ export const PNL = {
             "amount": -6941828682
           }
         ],
-        "total": -78567754841
+        "total": -1055094755270
       },
       {
         "subcat": "Finance Income / Expenses, Etc",
@@ -65215,7 +65215,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-01-01",
             "tag": "Actual",
-            "amount": 76655936687
+            "amount": 124742100996
           },
           {
             "year": 2026,
@@ -65224,7 +65224,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -103623000000
+            "amount": -222633412702
           },
           {
             "year": 2026,
@@ -65233,7 +65233,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -428434000000
+            "amount": -865517420446
           },
           {
             "year": 2026,
@@ -65242,7 +65242,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 309323000000
+            "amount": 601388038941
           },
           {
             "year": 2026,
@@ -65251,7 +65251,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -334096000000
+            "amount": -692598584642
           },
           {
             "year": 2026,
@@ -65260,7 +65260,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -402618000000
+            "amount": -804699413513
           },
           {
             "year": 2026,
@@ -65317,7 +65317,7 @@ export const PNL = {
             "amount": -6941828682
           }
         ],
-        "total": -921859683338
+        "total": -1898386311391
       }
     ],
     "After Elim": [
@@ -67620,7 +67620,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -118981000000
+            "amount": -118980898211
           },
           {
             "year": 2026,
@@ -67629,7 +67629,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -436841000000
+            "amount": -436841448547
           },
           {
             "year": 2026,
@@ -67638,7 +67638,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 273847000000
+            "amount": 273847420129
           },
           {
             "year": 2026,
@@ -67647,7 +67647,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -352328000000
+            "amount": -352328268527
           },
           {
             "year": 2026,
@@ -67656,7 +67656,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -377997000000
+            "amount": -377996522825
           },
           {
             "year": 2026,
@@ -67713,7 +67713,7 @@ export const PNL = {
             "amount": -716200000
           }
         ],
-        "total": -960247582884
+        "total": -960247300865
       },
       {
         "subcat": "Total G&A (Include Depre + Others)",
@@ -67734,7 +67734,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -129219000000
+            "amount": -129218741735
           },
           {
             "year": 2026,
@@ -67743,7 +67743,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -453969000000
+            "amount": -453969073196
           },
           {
             "year": 2026,
@@ -67752,7 +67752,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 283969000000
+            "amount": 283969108847
           },
           {
             "year": 2026,
@@ -67761,7 +67761,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -355404000000
+            "amount": -355403524711
           },
           {
             "year": 2026,
@@ -67770,7 +67770,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -392546000000
+            "amount": -392545817131
           },
           {
             "year": 2026,
@@ -67827,7 +67827,7 @@ export const PNL = {
             "amount": -6608495349
           }
         ],
-        "total": -1044331674651
+        "total": -1044330722577
       },
       {
         "subcat": "EBITDA",
@@ -67848,7 +67848,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -127097000000
+            "amount": -127097322217
           },
           {
             "year": 2026,
@@ -67857,7 +67857,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -451859000000
+            "amount": -451858692581
           },
           {
             "year": 2026,
@@ -67866,7 +67866,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 286103000000
+            "amount": 286103337120
           },
           {
             "year": 2026,
@@ -67875,7 +67875,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -353281000000
+            "amount": -353281135129
           },
           {
             "year": 2026,
@@ -67884,7 +67884,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -399602000000
+            "amount": -399602246187
           },
           {
             "year": 2026,
@@ -67941,7 +67941,7 @@ export const PNL = {
             "amount": -5021153966
           }
         ],
-        "total": -1034528181723
+        "total": -1034528240717
       },
       {
         "subcat": "EBIT",
@@ -67962,7 +67962,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -129552000000
+            "amount": -129552075068
           },
           {
             "year": 2026,
@@ -67971,7 +67971,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -454311000000
+            "amount": -454310946255
           },
           {
             "year": 2026,
@@ -67980,7 +67980,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 283636000000
+            "amount": 283635722514
           },
           {
             "year": 2026,
@@ -67989,7 +67989,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -355737000000
+            "amount": -355737001635
           },
           {
             "year": 2026,
@@ -67998,7 +67998,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -402056000000
+            "amount": -402055968740
           },
           {
             "year": 2026,
@@ -68055,7 +68055,7 @@ export const PNL = {
             "amount": -6941828682
           }
         ],
-        "total": -1058882144879
+        "total": -1058882414063
       },
       {
         "subcat": "Total Adjustment (Total)",
@@ -68076,7 +68076,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -118960000000
+            "amount": -118960241554
           },
           {
             "year": 2026,
@@ -68085,7 +68085,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -436909000000
+            "amount": -436908790751
           },
           {
             "year": 2026,
@@ -68094,7 +68094,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 296143000000
+            "amount": 296143377987
           },
           {
             "year": 2026,
@@ -68103,7 +68103,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -354152000000
+            "amount": -354152076096
           },
           {
             "year": 2026,
@@ -68112,7 +68112,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -388749000000
+            "amount": -388748556320
           },
           {
             "year": 2026,
@@ -68169,7 +68169,7 @@ export const PNL = {
             "amount": 0
           }
         ],
-        "total": -951302550532
+        "total": -951301837266
       },
       {
         "subcat": "Total Adjustment Elimination (Total)",
@@ -68646,7 +68646,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-02-01",
             "tag": "Actual",
-            "amount": -107224000000
+            "amount": -107223964545
           },
           {
             "year": 2026,
@@ -68655,7 +68655,7 @@ export const PNL = {
             "quarter": 1,
             "date": "2026-03-01",
             "tag": "Actual",
-            "amount": -436844000000
+            "amount": -436844499528
           },
           {
             "year": 2026,
@@ -68664,7 +68664,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-04-01",
             "tag": "Actual",
-            "amount": 303246000000
+            "amount": 303245773043
           },
           {
             "year": 2026,
@@ -68673,7 +68673,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-05-01",
             "tag": "Actual",
-            "amount": -334563000000
+            "amount": -334562809712
           },
           {
             "year": 2026,
@@ -68682,7 +68682,7 @@ export const PNL = {
             "quarter": 2,
             "date": "2026-06-01",
             "tag": "Actual",
-            "amount": -408488000000
+            "amount": -408487632007
           },
           {
             "year": 2026,
@@ -68739,7 +68739,7 @@ export const PNL = {
             "amount": -6941828682
           }
         ],
-        "total": -951742289678
+        "total": -951742422427
       }
     ]
   }
@@ -68754,7 +68754,7 @@ export const SEGMENTS = [
 ];
 
 export const KPIS = {
-  "revenue": 7123664189921,
-  "adjEbitda": -4078107241,
-  "netIncome": -862711945645
+  "revenue": 7123663543342,
+  "adjEbitda": -981739444412,
+  "netIncome": -1840372910440
 };

@@ -103,14 +103,15 @@ function parseRows(csvText) {
     const diffStr = cols[9]?.trim() ?? '';
     const diffYtdStr = cols[10]?.trim() ?? '';
 
-    if (!year?.match(/^\d{4}$/) || parseInt(year, 10) !== DATA_YEAR) continue;
+    const yearNum = year == null ? NaN : parseInt(String(year).replace(/\.0+$/, ''), 10);
+    if (!Number.isFinite(yearNum) || yearNum !== DATA_YEAR) continue;
     if (!month || !subcat || !amtStr) continue;
 
     const amount = parseNumber(amtStr);
     if (amount == null) continue;
 
     rows.push({
-      year: parseInt(year, 10),
+      year: yearNum,
       month,
       segment,
       subSegment,
