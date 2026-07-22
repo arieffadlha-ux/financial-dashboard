@@ -405,6 +405,34 @@ export const PNL_MAIN_LINES_BEFORE = [
   'Net Income',
 ];
 
+/** Segment-page P&L when Direct is selected */
+export const PNL_LINES_DIRECT = [
+  'Revenue',
+  'GP',
+  'Total S&M',
+  'CM',
+  'Total G&A (Include Depre + Others) (Direct)',
+  'EBITDA (Direct)',
+  'EBIT (Direct)',
+  'Total Adjustment (Direct)',
+  'Adj. EBITDA (Direct)',
+  'Adj. EBIT (Direct)',
+];
+
+/** Segment-page P&L when Total is selected */
+export const PNL_LINES_TOTAL = [
+  'Revenue',
+  'GP',
+  'Total S&M',
+  'CM',
+  'Total G&A (Include Depre + Others) (Total)',
+  'Total Adjustment (Total)',
+  'Adj. EBITDA (Total)',
+  'Adj. EBIT (Total)',
+  'Finance Income / Expenses, Etc',
+  'Net Income',
+];
+
 export const PNL_MAIN_LINES_AFTER = [
   'Revenue',
   'COGS',
@@ -595,24 +623,89 @@ function aggregatePnLTree(pnlRows, scope, category, mainLines) {
   return lines;
 }
 
+/**
+ * Total G&A (Total) = G&A Direct + G&A Shared.
+ * After block parsing, "(Total)" holds the Shared block only — convert to Direct+Shared.
+ */
+function applyGaTotalAsDirectPlusShared(lines) {
+  if (!Array.isArray(lines)) return lines;
+  const directId = 'Total G&A (Include Depre + Others) (Direct)';
+  const totalId = 'Total G&A (Include Depre + Others) (Total)';
+  const direct = lines.find((l) => (l.id || l.subcat) === directId);
+  const total = lines.find((l) => (l.id || l.subcat) === totalId);
+  if (!direct || !total) return lines;
+
+  const monthKey = (m) => `${m.year}-${m.month}`;
+  const directMap = new Map((direct.months || []).map((m) => [monthKey(m), m]));
+  const sharedMap = new Map((total.months || []).map((m) => [monthKey(m), m]));
+  const keys = new Set([...directMap.keys(), ...sharedMap.keys()]);
+
+  total.months = [...keys].map((k) => {
+    const d = directMap.get(k);
+    const s = sharedMap.get(k);
+    const base = d || s;
+    return {
+      year: base.year,
+      month: base.month,
+      monthNum: base.monthNum,
+      quarter: base.quarter,
+      date: base.date,
+      tag: d?.tag || s?.tag || '',
+      amount: Math.round((d?.amount ?? 0) + (s?.amount ?? 0)),
+    };
+  }).sort((a, b) => MONTH_IDX[a.month] - MONTH_IDX[b.month]);
+  total.total = total.months.reduce((s, m) => s + m.amount, 0);
+
+  const directChildren = new Map((direct.children || []).map((c) => [c.label || c.subcat, c]));
+  if (total.children?.length) {
+    total.children = total.children.map((ch) => {
+      const label = ch.label || ch.subcat;
+      const dCh = directChildren.get(label);
+      const dMap = new Map((dCh?.months || []).map((m) => [monthKey(m), m]));
+      const sMap = new Map((ch.months || []).map((m) => [monthKey(m), m]));
+      const cKeys = new Set([...dMap.keys(), ...sMap.keys()]);
+      const months = [...cKeys].map((k) => {
+        const d = dMap.get(k);
+        const s = sMap.get(k);
+        const base = d || s;
+        return {
+          year: base.year,
+          month: base.month,
+          monthNum: base.monthNum,
+          quarter: base.quarter,
+          date: base.date,
+          tag: d?.tag || s?.tag || '',
+          amount: Math.round((d?.amount ?? 0) + (s?.amount ?? 0)),
+        };
+      }).sort((a, b) => MONTH_IDX[a.month] - MONTH_IDX[b.month]);
+      return {
+        ...ch,
+        months,
+        total: months.reduce((s, m) => s + m.amount, 0),
+      };
+    });
+  }
+  return lines;
+}
+
 function buildPnLBundle(pnlRows, primaryRows, category) {
   const mainLines = category === 'After Elim' ? PNL_MAIN_LINES_AFTER : PNL_MAIN_LINES_BEFORE;
 
-  const consolidated = aggregatePnLTree(
+  const consolidated = applyGaTotalAsDirectPlusShared(aggregatePnLTree(
     pnlRows,
     { mode: 'consolidated' },
     category,
     mainLines,
-  );
+  ));
 
   const bySegment = {};
   for (const seg of SEGMENTS) {
-    bySegment[seg] = aggregatePnLTree(
+    bySegment[seg] = applyGaTotalAsDirectPlusShared(aggregatePnLTree(
       pnlRows,
       { mode: 'segment-dashboard', segment: seg },
       category,
       mainLines,
-    );
+    ));
   }
 
   const bySubSegment = {};
@@ -621,12 +714,12 @@ function buildPnLBundle(pnlRows, primaryRows, category) {
     const subs = listSubSegments(primaryRows, seg);
     for (const sub of subs) {
       bySubSegment[seg][sub] = {
-        full: aggregatePnLTree(
+        full: applyGaTotalAsDirectPlusShared(aggregatePnLTree(
           pnlRows,
           { mode: 'subsegment', segment: seg, subSegment: sub },
           category,
           mainLines,
-        ),
+        )),
         simple: aggregatePnLTree(
           pnlRows,
           { mode: 'subsegment', segment: seg, subSegment: sub },
@@ -637,7 +730,14 @@ function buildPnLBundle(pnlRows, primaryRows, category) {
     }
   }
 
-  return { lines: consolidated, bySegment, bySubSegment, mainLines };
+  return {
+    lines: consolidated,
+    bySegment,
+    bySubSegment,
+    mainLines,
+    directLines: PNL_LINES_DIRECT,
+    totalLines: PNL_LINES_TOTAL,
+  };
 }
 
 function dashboardMetricSubcats(category, ebitdaVariant, ebitVariant, metrics) {

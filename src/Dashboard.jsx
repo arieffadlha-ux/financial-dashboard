@@ -4,7 +4,7 @@ import {
   ResponsiveContainer, BarChart, Bar, Cell, ReferenceLine, Legend,
 } from 'recharts';
 import * as DEFAULT_DATA from './data.js';
-import { processCSV, SEGMENTS as ALL_SEGMENTS } from './dataProcessor.js';
+import { processCSV, SEGMENTS as ALL_SEGMENTS, PNL_LINES_DIRECT, PNL_LINES_TOTAL } from './dataProcessor.js';
 
 /* ─── Theme ─────────────────────────────────────────────────────────── */
 const ThemeCtx = createContext({ theme: 'dark', toggle: () => {} });
@@ -739,7 +739,15 @@ function PnLAmount({ value }) {
   );
 }
 
-function PnLBox({ lines, columns, subtitle }) {
+function PnLBox({
+  lines,
+  columns,
+  subtitle,
+  showVariantToggle = false,
+  variant = 'Direct',
+  onVariantChange,
+}) {
+  const [panelOpen, setPanelOpen] = useState(false);
   const [openIds, setOpenIds] = useState(() => new Set());
   const toggle = (id) => {
     setOpenIds(prev => {
@@ -753,79 +761,112 @@ function PnLBox({ lines, columns, subtitle }) {
   const colKeys = columns?.map(c => c.key) ?? [];
 
   return (
-    <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 mb-5 card-shadow">
-      <div className="mb-5">
-        <h3 className="text-sm font-semibold text-[var(--text-primary)]">Performance P&L</h3>
-        <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-          {subtitle || 'Sub-Category from Revenue to Net Income · follows active filters'}
-        </p>
-      </div>
-      {!lines?.length ? (
-        <div className="py-10 text-center text-[var(--text-very-faint)] text-sm">No P&L data</div>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs min-w-[520px]">
-            <thead>
-              <tr className="border-b border-[var(--border-default)]">
-                <th className="py-2.5 text-left text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium pr-3 sticky left-0 bg-[var(--surface-card)]">
-                  Sub-Category
-                </th>
-                {columns?.map(col => (
-                  <th key={col.key} className="py-2.5 text-right text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium px-2 whitespace-nowrap">
-                    {col.label}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {lines.map((line) => {
-                const hasChildren = Array.isArray(line.children) && line.children.length > 0;
-                const opened = openIds.has(line.id || line.subcat);
-                const isTotalish = /^(Revenue|CM|GP|Total |EBITDA|EBIT|Adj\.|Net Income|Finance)/i.test(line.label || line.subcat);
-                return (
-                  <Fragment key={line.id || line.subcat}>
-                    <tr className="border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors">
-                      <td className={`py-2 pr-3 sticky left-0 bg-[var(--surface-card)] ${isTotalish ? 'font-semibold text-[var(--text-primary)]' : 'text-[var(--text-tertiary)]'}`}>
-                        <span className="inline-flex items-center gap-1.5">
-                          {hasChildren ? (
-                            <button
-                              type="button"
-                              onClick={() => toggle(line.id || line.subcat)}
-                              className="w-4 h-4 rounded border border-[var(--border-default)] text-[10px] leading-none
-                                flex items-center justify-center text-[var(--text-faint)] hover:text-[var(--text-primary)] cursor-pointer"
-                              aria-label={opened ? 'Collapse' : 'Expand'}
-                            >
-                              {opened ? '−' : '+'}
-                            </button>
-                          ) : (
-                            <span className="w-4 inline-block" />
-                          )}
-                          {line.label || line.subcat}
-                        </span>
-                      </td>
-                      {colKeys.map(key => (
-                        <td key={key} className="py-2 text-right px-2">
-                          <PnLAmount value={line.values?.[key] ?? 0} />
-                        </td>
-                      ))}
-                    </tr>
-                    {hasChildren && opened && line.children.map(child => (
-                      <tr key={`${line.id}-${child.id || child.subcat}`} className="border-b border-[var(--border-faint)] bg-[var(--surface-elevated)]/40">
-                        <td className="py-1.5 pr-3 pl-8 text-[var(--text-muted)] sticky left-0 bg-[var(--surface-elevated)]">
-                          {child.label || child.subcat}
-                        </td>
-                        {colKeys.map(key => (
-                          <td key={key} className="py-1.5 text-right px-2">
-                            <PnLAmount value={child.values?.[key] ?? 0} />
-                          </td>
-                        ))}
-                      </tr>
+    <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl mb-5 card-shadow overflow-hidden">
+      <button
+        type="button"
+        onClick={() => setPanelOpen(v => !v)}
+        className="w-full flex items-center justify-between gap-3 px-6 py-4 text-left cursor-pointer
+          hover:bg-[var(--surface-elevated)] transition-colors"
+      >
+        <div className="min-w-0">
+          <h3 className="text-sm font-semibold text-[var(--text-primary)]">Performance P&L</h3>
+          <p className="text-[11px] text-[var(--text-faint)] mt-0.5 truncate">
+            {panelOpen
+              ? (subtitle || 'Sub-Category from Revenue to Net Income · follows active filters')
+              : 'Click to expand'}
+          </p>
+        </div>
+        <div className="flex items-center gap-2 shrink-0" onClick={e => e.stopPropagation()}>
+          {showVariantToggle && panelOpen && (
+            <select
+              value={variant}
+              onChange={e => onVariantChange?.(e.target.value)}
+              className="text-[11px] font-semibold px-2.5 py-1 rounded-lg
+                bg-[var(--surface-elevated)] text-[var(--text-primary)]
+                border border-[var(--border-default)] outline-none cursor-pointer
+                focus:ring-1 focus:ring-blue-600"
+            >
+              <option value="Direct">Direct</option>
+              <option value="Total">Total</option>
+            </select>
+          )}
+          <span className="w-7 h-7 rounded-lg border border-[var(--border-default)]
+            flex items-center justify-center text-sm text-[var(--text-faint)] bg-[var(--surface-elevated)]">
+            {panelOpen ? '−' : '+'}
+          </span>
+        </div>
+      </button>
+
+      {panelOpen && (
+        <div className="px-6 pb-6 pt-1 border-t border-[var(--border-default)]">
+          {!lines?.length ? (
+            <div className="py-10 text-center text-[var(--text-very-faint)] text-sm">No P&L data</div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs min-w-[520px]">
+                <thead>
+                  <tr className="border-b border-[var(--border-default)]">
+                    <th className="py-2.5 text-left text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium pr-3 sticky left-0 bg-[var(--surface-card)]">
+                      Sub-Category
+                    </th>
+                    {columns?.map(col => (
+                      <th key={col.key} className="py-2.5 text-right text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium px-2 whitespace-nowrap">
+                        {col.label}
+                      </th>
                     ))}
-                  </Fragment>
-                );
-              })}
-            </tbody>
-          </table>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lines.map((line) => {
+                    const hasChildren = Array.isArray(line.children) && line.children.length > 0;
+                    const opened = openIds.has(line.id || line.subcat);
+                    const isTotalish = /^(Revenue|CM|GP|Total |EBITDA|EBIT|Adj\.|Net Income|Finance)/i.test(line.label || line.subcat);
+                    return (
+                      <Fragment key={line.id || line.subcat}>
+                        <tr className="border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors">
+                          <td className={`py-2 pr-3 sticky left-0 bg-[var(--surface-card)] ${isTotalish ? 'font-semibold text-[var(--text-primary)]' : 'text-[var(--text-tertiary)]'}`}>
+                            <span className="inline-flex items-center gap-1.5">
+                              {hasChildren ? (
+                                <button
+                                  type="button"
+                                  onClick={() => toggle(line.id || line.subcat)}
+                                  className="w-4 h-4 rounded border border-[var(--border-default)] text-[10px] leading-none
+                                    flex items-center justify-center text-[var(--text-faint)] hover:text-[var(--text-primary)] cursor-pointer"
+                                  aria-label={opened ? 'Collapse' : 'Expand'}
+                                >
+                                  {opened ? '−' : '+'}
+                                </button>
+                              ) : (
+                                <span className="w-4 inline-block" />
+                              )}
+                              {line.label || line.subcat}
+                            </span>
+                          </td>
+                          {colKeys.map(key => (
+                            <td key={key} className="py-2 text-right px-2">
+                              <PnLAmount value={line.values?.[key] ?? 0} />
+                            </td>
+                          ))}
+                        </tr>
+                        {hasChildren && opened && line.children.map(child => (
+                          <tr key={`${line.id}-${child.id || child.subcat}`} className="border-b border-[var(--border-faint)] bg-[var(--surface-elevated)]/40">
+                            <td className="py-1.5 pr-3 pl-8 text-[var(--text-muted)] sticky left-0 bg-[var(--surface-elevated)]">
+                              {child.label || child.subcat}
+                            </td>
+                            {colKeys.map(key => (
+                              <td key={key} className="py-1.5 text-right px-2">
+                                <PnLAmount value={child.values?.[key] ?? 0} />
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </Fragment>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -856,6 +897,7 @@ function DashboardInner() {
   const [ebitVariant, setEbitVariant] = useState('Adj. EBIT (Direct)');
   const [chartType, setChartType] = useState('area');
   const [trendMetric, setTrendMetric] = useState('ebitda');
+  const [pnlGaVariant, setPnlGaVariant] = useState('Direct'); // Direct | Total for segment P&L
 
   const isSegmentPage = page !== 'consolidated';
   const isCorporate = page === 'Corporate';
@@ -946,6 +988,7 @@ function DashboardInner() {
   const activeTrend = TREND_OPTIONS.find(o => o.id === trendMetric) ?? TREND_OPTIONS[0];
 
   useEffect(() => { setSubSegmentsSelected([]); }, [page]);
+  useEffect(() => { setPnlGaVariant('Direct'); }, [page]);
 
   useEffect(() => {
     if (!TREND_OPTIONS.some(o => o.id === trendMetric)) {
@@ -1024,26 +1067,14 @@ function DashboardInner() {
   const highlightedLabels = trendChart.filter(d => d.highlighted).map(d => d.label);
 
   const performanceData = useMemo(() => {
-    if (page === 'consolidated') {
+    // Consolidated + Corporate: Adj. EBITDA by all segments (same visual)
+    if (page === 'consolidated' || isCorporate) {
       return filteredSegmentAdjEbitda(
         activeData.SEGMENT_MONTHLY ?? {},
         activeData.SEGMENTS ?? ALL_SEGMENTS,
         filteredKeys,
         category,
       );
-    }
-    // Corporate: same visual as Consolidated Segment Performance (Adj. EBITDA by sub-segment)
-    if (isCorporate && useDashboardScope) {
-      const subs = activeData.SUB_SEGMENTS?.[page] ?? [];
-      return subs.map(sub => {
-        const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
-          .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
-        return {
-          Segment: sub,
-          AdjEBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
-        };
-      }).filter(s => s.AdjEBITDA !== 0)
-        .sort((a, b) => b.AdjEBITDA - a.AdjEBITDA);
     }
     if (!useDashboardScope) {
       const series = subSegmentsSelected
@@ -1058,7 +1089,6 @@ function DashboardInner() {
               EBIT: rows.reduce((s, m) => s + (m.EBIT ?? 0), 0),
             };
           }
-          // Mitra / Gaming / Investment / Corporate selected subs
           return {
             Segment: sub,
             Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
@@ -1082,7 +1112,7 @@ function DashboardInner() {
     );
   }, [activeData, page, filteredKeys, subSegments, useDashboardScope, subSegmentsSelected, isCorporate, isRetail, category]);
 
-  const showConsolidatedStylePerf = page === 'consolidated' || (isCorporate && useDashboardScope);
+  const showConsolidatedStylePerf = page === 'consolidated' || isCorporate;
 
   const perfMetrics = showConsolidatedStylePerf
     ? [{ key: 'AdjEBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA }]
@@ -1101,8 +1131,20 @@ function DashboardInner() {
   const pnlView = useMemo(() => {
     const bundle = activeData.PNL?.[category];
     const monthFilter = (months) => sumPnLMonths(months, filter, selectedMonthNums);
+    const showPnlVariant = isSegmentPage && !isCorporate && ['Retail', 'Mitra', 'Gaming', 'Investment'].includes(page);
+    const allowedLineIds = showPnlVariant
+      ? (pnlGaVariant === 'Total'
+        ? (bundle?.totalLines ?? PNL_LINES_TOTAL)
+        : (bundle?.directLines ?? PNL_LINES_DIRECT))
+      : null;
 
-    const projectLines = (sourceLines, valueKey) => (sourceLines || []).map(line => {
+    const filterLinesByVariant = (sourceLines) => {
+      if (!allowedLineIds) return sourceLines || [];
+      const allow = new Set(allowedLineIds);
+      return (sourceLines || []).filter(l => allow.has(l.id || l.subcat) || allow.has(l.label));
+    };
+
+    const projectLines = (sourceLines, valueKey) => filterLinesByVariant(sourceLines).map(line => {
       const projected = {
         id: line.id || line.subcat,
         subcat: line.subcat,
@@ -1121,7 +1163,8 @@ function DashboardInner() {
     });
 
     const mergeColumns = (baseLines, colDefs) => {
-      const byId = new Map((baseLines || []).map(l => [l.id || l.subcat, {
+      const filteredBase = filterLinesByVariant(baseLines);
+      const byId = new Map(filteredBase.map(l => [l.id || l.subcat, {
         id: l.id || l.subcat,
         subcat: l.subcat,
         label: l.label || l.subcat,
@@ -1135,7 +1178,7 @@ function DashboardInner() {
       }]));
 
       for (const col of colDefs) {
-        for (const line of (col.lines || [])) {
+        for (const line of filterLinesByVariant(col.lines)) {
           const id = line.id || line.subcat;
           if (!byId.has(id)) {
             byId.set(id, {
@@ -1153,7 +1196,7 @@ function DashboardInner() {
           }
           const target = byId.get(id);
           target.values[col.key] = monthFilter(line.months);
-          (line.children || []).forEach((ch, idx) => {
+          (line.children || []).forEach((ch) => {
             const childId = ch.id || ch.subcat;
             let child = target.children.find(c => (c.id || c.subcat) === childId);
             if (!child) {
@@ -1165,8 +1208,7 @@ function DashboardInner() {
         }
       }
 
-      // Preserve base line order when available
-      const order = (baseLines || []).map(l => l.id || l.subcat);
+      const order = filteredBase.map(l => l.id || l.subcat);
       const ordered = order.map(id => byId.get(id)).filter(Boolean);
       for (const [id, line] of byId) {
         if (!order.includes(id)) ordered.push(line);
@@ -1174,7 +1216,7 @@ function DashboardInner() {
       return ordered;
     };
 
-    // 5) Sub-segment(s) selected → simple P&L for those subs
+    // Sub-segment(s) selected → simple P&L for those subs (no Direct/Total split in source)
     if (isSegmentPage && !useDashboardScope) {
       const cols = subSegmentsSelected.map(sub => ({
         key: sub,
@@ -1188,17 +1230,18 @@ function DashboardInner() {
           columns: [{ key: cols[0].key, label: cols[0].label }],
           lines: projectLines(cols[0].lines, cols[0].key),
           subtitle: `Sub-Segment ${cols[0].label} · Revenue to EBIT`,
+          showVariantToggle: false,
         };
       }
-      const lines = mergeColumns(cols[0]?.lines, cols);
       return {
         columns: cols.map(c => ({ key: c.key, label: c.label })),
-        lines,
+        lines: mergeColumns(cols[0]?.lines, cols),
         subtitle: 'Selected Sub-Segments · Revenue to EBIT',
+        showVariantToggle: false,
       };
     }
 
-    // Consolidated + Corporate: Point A lines + per-segment columns
+    // Consolidated + Corporate: full lines + per-segment columns
     if (page === 'consolidated' || isCorporate) {
       const segOrder = ['Retail', 'Mitra', 'Gaming', 'Investment', 'Corporate'];
       const mainLines = isCorporate
@@ -1216,12 +1259,11 @@ function DashboardInner() {
         columns: cols.map(c => ({ key: c.key, label: c.label })),
         lines: mergeColumns(mainLines, cols),
         subtitle: 'P&L lines · per segment comparison',
+        showVariantToggle: false,
       };
     }
 
-    // Retail: main + Top 5 subsegments by EBIT (Adj EBIT proxy at subseg level)
-    // Mitra: main + Top 5 by EBITDA
-    // Gaming / Investment: main + all subsegments
+    // Retail / Mitra / Gaming / Investment — Direct/Total filtered lines
     const mainLines = bundle?.bySegment?.[page] ?? [];
     const subs = activeData.SUB_SEGMENTS?.[page] ?? [];
     const ranked = subs.map(sub => {
@@ -1251,23 +1293,25 @@ function DashboardInner() {
     ];
 
     const subtitle = page === 'Retail'
-      ? 'Top 5 Sub-Segments by Adj. EBIT'
+      ? `Top 5 Sub-Segments by Adj. EBIT · ${pnlGaVariant}`
       : page === 'Mitra'
-        ? 'Top 5 Sub-Segments by Adj. EBITDA'
-        : 'Sub-Segments comparison';
+        ? `Top 5 Sub-Segments by Adj. EBITDA · ${pnlGaVariant}`
+        : `Sub-Segments comparison · ${pnlGaVariant}`;
 
     return {
       columns: cols.map(c => ({ key: c.key, label: c.label })),
       lines: mergeColumns(mainLines, cols),
       subtitle,
+      showVariantToggle: showPnlVariant,
     };
   }, [
     activeData, page, category, filter, selectedMonthNums,
     isCorporate, isSegmentPage, useDashboardScope, subSegmentsSelected, filteredKeys,
+    pnlGaVariant,
   ]);
 
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
-  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 21 July 19.26.xlsx';
+  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 22 July 11.47.csv';
 
   const tableHeaders = useMemo(() => {
     const cols = ['Period', 'Tag'];
@@ -1456,11 +1500,11 @@ function DashboardInner() {
         <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 card-shadow">
           <div className="mb-5">
             <h3 className="text-sm font-semibold text-[var(--text-primary)]">
-              {page === 'consolidated' ? 'Segment Performance' : (isCorporate && useDashboardScope ? 'Sub-Segment Performance' : 'Sub-Segment Performance')}
+              {page === 'consolidated' || isCorporate ? 'Segment Performance' : 'Sub-Segment Performance'}
             </h3>
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
               {showConsolidatedStylePerf
-                ? (page === 'consolidated' ? 'Adj. EBITDA by segment' : 'Adj. EBITDA by sub-segment')
+                ? 'Adj. EBITDA by segment'
                 : isRetail
                   ? 'Revenue · CM · EBIT'
                   : 'Revenue · CM · EBITDA'}
@@ -1482,11 +1526,7 @@ function DashboardInner() {
                   {showConsolidatedStylePerf ? (
                     <Bar dataKey="AdjEBITDA" name="Adj. EBITDA" fillOpacity={0.95} radius={[2, 2, 0, 0]} maxBarSize={28}>
                       {performanceData.map((row, i) => (
-                        <Cell key={i} fill={
-                          page === 'consolidated'
-                            ? (SEGMENT_COLORS[row.Segment] ?? PERF_COLORS.EBITDA)
-                            : (SUB_SEGMENT_PALETTE[i % SUB_SEGMENT_PALETTE.length])
-                        } />
+                        <Cell key={i} fill={SEGMENT_COLORS[row.Segment] ?? PERF_COLORS.EBITDA} />
                       ))}
                     </Bar>
                   ) : (
@@ -1499,22 +1539,12 @@ function DashboardInner() {
               </ResponsiveContainer>
             </div>
           )}
-          {page === 'consolidated' && performanceData.length > 0 && (
+          {showConsolidatedStylePerf && performanceData.length > 0 && (
             <div className="mt-3 pt-3 border-t border-[var(--border-default)] flex flex-wrap gap-x-4 gap-y-2">
               {ALL_SEGMENTS.map(seg => (
                 <div key={seg} className="flex items-center gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: SEGMENT_COLORS[seg] }} />
                   <span className="text-[11px] text-[var(--text-faint)]">{seg}</span>
-                </div>
-              ))}
-            </div>
-          )}
-          {isCorporate && useDashboardScope && performanceData.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-[var(--border-default)] flex flex-wrap gap-x-4 gap-y-2">
-              {performanceData.map((row, i) => (
-                <div key={row.Segment} className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: SUB_SEGMENT_PALETTE[i % SUB_SEGMENT_PALETTE.length] }} />
-                  <span className="text-[11px] text-[var(--text-faint)]">{row.Segment}</span>
                 </div>
               ))}
             </div>
@@ -1592,6 +1622,9 @@ function DashboardInner() {
         lines={pnlView.lines}
         columns={pnlView.columns}
         subtitle={pnlView.subtitle}
+        showVariantToggle={!!pnlView.showVariantToggle}
+        variant={pnlGaVariant}
+        onVariantChange={setPnlGaVariant}
       />
 
       <footer className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-[var(--text-very-faint)]">
