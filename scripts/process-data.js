@@ -42,6 +42,8 @@ export const PNL_ORDER = ${JSON.stringify(data.PNL_ORDER, null, 2)};
 
 export const PNL = ${JSON.stringify(data.PNL, null, 2)};
 
+export const PNL_FLAT = ${JSON.stringify(data.PNL_FLAT, null, 2)};
+
 export const SEGMENTS = ${JSON.stringify(data.SEGMENTS, null, 2)};
 
 export const KPIS = ${JSON.stringify(data.KPIS, null, 2)};

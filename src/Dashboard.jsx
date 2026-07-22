@@ -1,4 +1,4 @@
-import { useState, useMemo, createContext, useContext, useLayoutEffect, useCallback, useRef, useEffect } from 'react';
+import { useState, useMemo, createContext, useContext, useLayoutEffect, useCallback, useRef, useEffect, Fragment } from 'react';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, BarChart, Bar, Cell, ReferenceLine, Legend,
@@ -229,12 +229,18 @@ const METRIC_INFO = {
     body: 'Adjusted EBIT is similar to Adjusted EBITDA but includes depreciation and amortization, providing a measure of operating profit after these non-cash expenses while still excluding non-operating items and incorporating approved adjustments.',
     formula: 'Adjusted EBIT = Adjusted EBITDA − Depreciation & Amortization',
   },
+  'Net Income': {
+    title: 'Net Income',
+    body: "Net Income represents the company's final profit after deducting all operating expenses, interest, taxes, depreciation, amortization, and other non-operating items from total revenue. It reflects the overall profitability of the business.",
+    formula: 'Net Income = Revenue − Total Expenses (including Operating Expenses, Interest, Taxes, Depreciation & Amortization, and Other Non-Operating Items)',
+  },
 };
 
 function resolveMetricInfoKey(label) {
   if (!label) return null;
   if (label === 'Revenue' || label.startsWith('Revenue')) return 'Revenue';
   if (label === 'CM' || label.includes('Contribution')) return 'CM';
+  if (label.includes('Net Income')) return 'Net Income';
   if (label.includes('EBITDA')) return label.startsWith('Adj') ? 'Adj. EBITDA' : 'EBITDA';
   if (label.includes('EBIT')) return label.startsWith('Adj') ? 'Adj. EBIT' : 'EBIT';
   return null;
@@ -283,15 +289,23 @@ function filteredSegmentAdjEbitda(segmentMonthly, segments, filteredKeys, catego
   }).sort((a, b) => b.AdjEBITDA - a.AdjEBITDA);
 }
 
-function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys, { retail = false } = {}) {
+function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys, { mode = 'default' } = {}) {
   return subSegments.map(sub => {
     const rows = (subSegMonthly[sub] ?? []).filter(m => filteredKeys.has(`${m.year}-${m.month}`));
-    if (retail) {
+    if (mode === 'retail') {
       return {
         Segment: sub,
         Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
         CM: rows.reduce((s, m) => s + (m.CM ?? 0), 0),
         EBIT: rows.reduce((s, m) => s + (m.EBIT ?? 0), 0),
+      };
+    }
+    if (mode === 'cmEbitda') {
+      return {
+        Segment: sub,
+        Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
+        CM: rows.reduce((s, m) => s + (m.CM ?? 0), 0),
+        EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
       };
     }
     return {
@@ -301,7 +315,8 @@ function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys,
       NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
     };
   }).filter(s => {
-    if (retail) return s.Revenue !== 0 || s.CM !== 0 || s.EBIT !== 0;
+    if (mode === 'retail') return s.Revenue !== 0 || s.CM !== 0 || s.EBIT !== 0;
+    if (mode === 'cmEbitda') return s.Revenue !== 0 || s.CM !== 0 || s.EBITDA !== 0;
     return s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0;
   }).sort((a, b) => b.Revenue - a.Revenue);
 }
@@ -704,38 +719,109 @@ function CustomTooltip({ active, payload, label }) {
   );
 }
 
-function PnLBox({ rows }) {
+function filterPnLMonths(months, filter, selectedMonthNums) {
+  return (months || []).filter(m => {
+    if (filter.quarter !== 'all' && m.quarter !== parseInt(filter.quarter.replace('Q', ''), 10)) return false;
+    if (selectedMonthNums.length > 0 && !selectedMonthNums.includes(m.monthNum)) return false;
+    return true;
+  });
+}
+
+function sumPnLMonths(months, filter, selectedMonthNums) {
+  return filterPnLMonths(months, filter, selectedMonthNums).reduce((s, m) => s + m.amount, 0);
+}
+
+function PnLAmount({ value }) {
+  return (
+    <span className={`tabular font-medium ${value >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+      {idrCompact(value)}
+    </span>
+  );
+}
+
+function PnLBox({ lines, columns, subtitle }) {
+  const [openIds, setOpenIds] = useState(() => new Set());
+  const toggle = (id) => {
+    setOpenIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const colKeys = columns?.map(c => c.key) ?? [];
+
   return (
     <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 mb-5 card-shadow">
       <div className="mb-5">
         <h3 className="text-sm font-semibold text-[var(--text-primary)]">Performance P&L</h3>
         <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
-          Sub-Category from Revenue to Net Income · follows active filters
+          {subtitle || 'Sub-Category from Revenue to Net Income · follows active filters'}
         </p>
       </div>
-      {rows.length === 0 ? (
+      {!lines?.length ? (
         <div className="py-10 text-center text-[var(--text-very-faint)] text-sm">No P&L data</div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="w-full text-xs">
+          <table className="w-full text-xs min-w-[520px]">
             <thead>
               <tr className="border-b border-[var(--border-default)]">
-                <th className="py-2.5 text-left text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium pr-3">Sub-Category</th>
-                <th className="py-2.5 text-right text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium">Amount</th>
+                <th className="py-2.5 text-left text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium pr-3 sticky left-0 bg-[var(--surface-card)]">
+                  Sub-Category
+                </th>
+                {columns?.map(col => (
+                  <th key={col.key} className="py-2.5 text-right text-[11px] uppercase tracking-wider text-[var(--text-very-faint)] font-medium px-2 whitespace-nowrap">
+                    {col.label}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {rows.map((row) => {
-                const isTotalish = /^(Revenue|CM|GP|Total |EBITDA|EBIT|Adj\.|Net Income|Finance)/i.test(row.subcat);
+              {lines.map((line) => {
+                const hasChildren = Array.isArray(line.children) && line.children.length > 0;
+                const opened = openIds.has(line.id || line.subcat);
+                const isTotalish = /^(Revenue|CM|GP|Total |EBITDA|EBIT|Adj\.|Net Income|Finance)/i.test(line.label || line.subcat);
                 return (
-                  <tr key={row.subcat} className="border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors">
-                    <td className={`py-2 pr-3 ${isTotalish ? 'font-semibold text-[var(--text-primary)]' : 'text-[var(--text-tertiary)]'}`}>
-                      {row.subcat}
-                    </td>
-                    <td className={`py-2 text-right tabular font-medium ${row.amount >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
-                      {idrCompact(row.amount)}
-                    </td>
-                  </tr>
+                  <Fragment key={line.id || line.subcat}>
+                    <tr className="border-b border-[var(--border-faint)] hover:bg-[var(--surface-elevated)] transition-colors">
+                      <td className={`py-2 pr-3 sticky left-0 bg-[var(--surface-card)] ${isTotalish ? 'font-semibold text-[var(--text-primary)]' : 'text-[var(--text-tertiary)]'}`}>
+                        <span className="inline-flex items-center gap-1.5">
+                          {hasChildren ? (
+                            <button
+                              type="button"
+                              onClick={() => toggle(line.id || line.subcat)}
+                              className="w-4 h-4 rounded border border-[var(--border-default)] text-[10px] leading-none
+                                flex items-center justify-center text-[var(--text-faint)] hover:text-[var(--text-primary)] cursor-pointer"
+                              aria-label={opened ? 'Collapse' : 'Expand'}
+                            >
+                              {opened ? '−' : '+'}
+                            </button>
+                          ) : (
+                            <span className="w-4 inline-block" />
+                          )}
+                          {line.label || line.subcat}
+                        </span>
+                      </td>
+                      {colKeys.map(key => (
+                        <td key={key} className="py-2 text-right px-2">
+                          <PnLAmount value={line.values?.[key] ?? 0} />
+                        </td>
+                      ))}
+                    </tr>
+                    {hasChildren && opened && line.children.map(child => (
+                      <tr key={`${line.id}-${child.id || child.subcat}`} className="border-b border-[var(--border-faint)] bg-[var(--surface-elevated)]/40">
+                        <td className="py-1.5 pr-3 pl-8 text-[var(--text-muted)] sticky left-0 bg-[var(--surface-elevated)]">
+                          {child.label || child.subcat}
+                        </td>
+                        {colKeys.map(key => (
+                          <td key={key} className="py-1.5 text-right px-2">
+                            <PnLAmount value={child.values?.[key] ?? 0} />
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </Fragment>
                 );
               })}
             </tbody>
@@ -797,12 +883,20 @@ function DashboardInner() {
 
   // KPI field configs per page
   const kpiFields = useMemo(() => {
-    // Consolidated + Corporate: Revenue · Adj. EBITDA · Net Income
-    if (!isSegmentPage || isCorporate) {
+    if (!isSegmentPage) {
+      // Consolidated: Revenue · Adj. EBITDA · Net Income
       return [
         { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', infoKey: 'Revenue' },
         { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', infoKey: 'Adj. EBITDA' },
-        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget' },
+        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget', infoKey: 'Net Income' },
+      ];
+    }
+    if (isCorporate) {
+      // Corporate: CM · Adj. EBITDA · Net Income
+      return [
+        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', infoKey: 'CM' },
+        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', infoKey: 'Adj. EBITDA' },
+        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget', infoKey: 'Net Income' },
       ];
     }
     if (isRetail) {
@@ -821,9 +915,16 @@ function DashboardInner() {
   }, [isSegmentPage, isCorporate, isRetail, ebitdaLabel, ebitLabel, useDashboardScope]);
 
   const TREND_OPTIONS = useMemo(() => {
-    if (!isSegmentPage || isCorporate) {
+    if (!isSegmentPage) {
       return [
         { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
+        { id: 'ebitda', label: ebitdaLabel, actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
+        { id: 'netIncome', label: 'Net Income', actualKey: 'NetIncome', budgetKey: 'NetIncomeBudget', color: '#a855f7' },
+      ];
+    }
+    if (isCorporate) {
+      return [
+        { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
         { id: 'ebitda', label: ebitdaLabel, actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
         { id: 'netIncome', label: 'Net Income', actualKey: 'NetIncome', budgetKey: 'NetIncomeBudget', color: '#a855f7' },
       ];
@@ -957,25 +1058,27 @@ function DashboardInner() {
               EBIT: rows.reduce((s, m) => s + (m.EBIT ?? 0), 0),
             };
           }
+          // Mitra / Gaming / Investment / Corporate selected subs
           return {
             Segment: sub,
             Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
+            CM: rows.reduce((s, m) => s + (m.CM ?? 0), 0),
             EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
-            NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
           };
         })
         .filter(s => {
           if (isRetail) return s.Revenue !== 0 || s.CM !== 0 || s.EBIT !== 0;
-          return s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0;
+          return s.Revenue !== 0 || s.CM !== 0 || s.EBITDA !== 0;
         })
         .sort((a, b) => b.Revenue - a.Revenue);
       return series;
     }
+    const perfMode = isRetail ? 'retail' : 'cmEbitda';
     return filteredSubSegmentPerformance(
       activeData.SUBSEGMENT_MONTHLY?.[page] ?? {},
       subSegments,
       filteredKeys,
-      { retail: isRetail },
+      { mode: perfMode },
     );
   }, [activeData, page, filteredKeys, subSegments, useDashboardScope, subSegmentsSelected, isCorporate, isRetail, category]);
 
@@ -991,26 +1094,177 @@ function DashboardInner() {
         ]
       : [
           { key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
-          { key: 'EBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA },
-          { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome },
+          { key: 'CM', label: 'CM', color: PERF_COLORS.CM },
+          { key: 'EBITDA', label: 'EBITDA', color: PERF_COLORS.EBITDA },
         ];
 
-  const pnlRows = useMemo(() => {
-    if (!useDashboardScope) return [];
-    const key = page === 'consolidated' ? 'consolidated' : page;
-    const pnl = activeData.PNL?.[key]?.[category] ?? [];
-    return pnl.map(line => {
-      const months = line.months.filter(m => {
-        if (filter.quarter !== 'all' && m.quarter !== parseInt(filter.quarter.replace('Q', ''), 10)) return false;
-        if (selectedMonthNums.length > 0 && !selectedMonthNums.includes(m.monthNum)) return false;
-        return true;
-      });
-      return {
+  const pnlView = useMemo(() => {
+    const bundle = activeData.PNL?.[category];
+    const monthFilter = (months) => sumPnLMonths(months, filter, selectedMonthNums);
+
+    const projectLines = (sourceLines, valueKey) => (sourceLines || []).map(line => {
+      const projected = {
+        id: line.id || line.subcat,
         subcat: line.subcat,
-        amount: months.reduce((s, m) => s + m.amount, 0),
+        label: line.label || line.subcat,
+        values: { [valueKey]: monthFilter(line.months) },
       };
+      if (line.children) {
+        projected.children = line.children.map(ch => ({
+          id: ch.id || ch.subcat,
+          subcat: ch.subcat,
+          label: ch.label || ch.subcat,
+          values: { [valueKey]: monthFilter(ch.months) },
+        }));
+      }
+      return projected;
     });
-  }, [activeData, page, category, filter, selectedMonthNums, useDashboardScope]);
+
+    const mergeColumns = (baseLines, colDefs) => {
+      const byId = new Map((baseLines || []).map(l => [l.id || l.subcat, {
+        id: l.id || l.subcat,
+        subcat: l.subcat,
+        label: l.label || l.subcat,
+        values: {},
+        children: (l.children || []).map(ch => ({
+          id: ch.id || ch.subcat,
+          subcat: ch.subcat,
+          label: ch.label || ch.subcat,
+          values: {},
+        })),
+      }]));
+
+      for (const col of colDefs) {
+        for (const line of (col.lines || [])) {
+          const id = line.id || line.subcat;
+          if (!byId.has(id)) {
+            byId.set(id, {
+              id,
+              subcat: line.subcat,
+              label: line.label || line.subcat,
+              values: {},
+              children: (line.children || []).map(ch => ({
+                id: ch.id || ch.subcat,
+                subcat: ch.subcat,
+                label: ch.label || ch.subcat,
+                values: {},
+              })),
+            });
+          }
+          const target = byId.get(id);
+          target.values[col.key] = monthFilter(line.months);
+          (line.children || []).forEach((ch, idx) => {
+            const childId = ch.id || ch.subcat;
+            let child = target.children.find(c => (c.id || c.subcat) === childId);
+            if (!child) {
+              child = { id: childId, subcat: ch.subcat, label: ch.label || ch.subcat, values: {} };
+              target.children.push(child);
+            }
+            child.values[col.key] = monthFilter(ch.months);
+          });
+        }
+      }
+
+      // Preserve base line order when available
+      const order = (baseLines || []).map(l => l.id || l.subcat);
+      const ordered = order.map(id => byId.get(id)).filter(Boolean);
+      for (const [id, line] of byId) {
+        if (!order.includes(id)) ordered.push(line);
+      }
+      return ordered;
+    };
+
+    // 5) Sub-segment(s) selected → simple P&L for those subs
+    if (isSegmentPage && !useDashboardScope) {
+      const cols = subSegmentsSelected.map(sub => ({
+        key: sub,
+        label: sub,
+        lines: bundle?.bySubSegment?.[page]?.[sub]?.simple
+          ?? bundle?.bySubSegment?.[page]?.[sub]?.full
+          ?? [],
+      }));
+      if (cols.length === 1) {
+        return {
+          columns: [{ key: cols[0].key, label: cols[0].label }],
+          lines: projectLines(cols[0].lines, cols[0].key),
+          subtitle: `Sub-Segment ${cols[0].label} · Revenue to EBIT`,
+        };
+      }
+      const lines = mergeColumns(cols[0]?.lines, cols);
+      return {
+        columns: cols.map(c => ({ key: c.key, label: c.label })),
+        lines,
+        subtitle: 'Selected Sub-Segments · Revenue to EBIT',
+      };
+    }
+
+    // Consolidated + Corporate: Point A lines + per-segment columns
+    if (page === 'consolidated' || isCorporate) {
+      const segOrder = ['Retail', 'Mitra', 'Gaming', 'Investment', 'Corporate'];
+      const mainLines = isCorporate
+        ? (bundle?.bySegment?.Corporate ?? bundle?.lines ?? [])
+        : (bundle?.lines ?? []);
+      const cols = [
+        { key: '_main', label: isCorporate ? 'Corporate' : 'Consolidated', lines: mainLines },
+        ...segOrder.map(seg => ({
+          key: seg,
+          label: seg,
+          lines: bundle?.bySegment?.[seg] ?? [],
+        })),
+      ];
+      return {
+        columns: cols.map(c => ({ key: c.key, label: c.label })),
+        lines: mergeColumns(mainLines, cols),
+        subtitle: 'P&L lines · per segment comparison',
+      };
+    }
+
+    // Retail: main + Top 5 subsegments by EBIT (Adj EBIT proxy at subseg level)
+    // Mitra: main + Top 5 by EBITDA
+    // Gaming / Investment: main + all subsegments
+    const mainLines = bundle?.bySegment?.[page] ?? [];
+    const subs = activeData.SUB_SEGMENTS?.[page] ?? [];
+    const ranked = subs.map(sub => {
+      const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
+        .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
+      const ebit = rows.reduce((s, m) => s + (m.EBIT ?? 0), 0);
+      const ebitda = rows.reduce((s, m) => s + (m.EBITDA ?? 0), 0);
+      return { sub, ebit, ebitda };
+    });
+
+    let selectedSubs = [...subs];
+    if (page === 'Retail') {
+      selectedSubs = ranked.sort((a, b) => b.ebit - a.ebit).slice(0, 5).map(r => r.sub);
+    } else if (page === 'Mitra') {
+      selectedSubs = ranked.sort((a, b) => b.ebitda - a.ebitda).slice(0, 5).map(r => r.sub);
+    }
+
+    const cols = [
+      { key: '_main', label: page, lines: mainLines },
+      ...selectedSubs.map(sub => ({
+        key: sub,
+        label: sub,
+        lines: bundle?.bySubSegment?.[page]?.[sub]?.full
+          ?? bundle?.bySubSegment?.[page]?.[sub]?.simple
+          ?? [],
+      })),
+    ];
+
+    const subtitle = page === 'Retail'
+      ? 'Top 5 Sub-Segments by Adj. EBIT'
+      : page === 'Mitra'
+        ? 'Top 5 Sub-Segments by Adj. EBITDA'
+        : 'Sub-Segments comparison';
+
+    return {
+      columns: cols.map(c => ({ key: c.key, label: c.label })),
+      lines: mergeColumns(mainLines, cols),
+      subtitle,
+    };
+  }, [
+    activeData, page, category, filter, selectedMonthNums,
+    isCorporate, isSegmentPage, useDashboardScope, subSegmentsSelected, filteredKeys,
+  ]);
 
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
   const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 21 July 19.26.xlsx';
@@ -1209,7 +1463,7 @@ function DashboardInner() {
                 ? (page === 'consolidated' ? 'Adj. EBITDA by segment' : 'Adj. EBITDA by sub-segment')
                 : isRetail
                   ? 'Revenue · CM · EBIT'
-                  : `Revenue · Adj. EBITDA · Net Income`}
+                  : 'Revenue · CM · EBITDA'}
             </p>
           </div>
           {performanceData.length === 0 ? (
@@ -1334,7 +1588,11 @@ function DashboardInner() {
         </div>
       </div>
 
-      <PnLBox rows={pnlRows} />
+      <PnLBox
+        lines={pnlView.lines}
+        columns={pnlView.columns}
+        subtitle={pnlView.subtitle}
+      />
 
       <footer className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-[var(--text-very-faint)]">
         <span>Source: {dataSourceLabel} · Values in IDR</span>

@@ -121,7 +121,9 @@ function parseRows(csvText) {
       tag,
       amount,
       difference: parseNumber(diffStr),
+      differenceLabel: diffStr,
       differenceYtdBudget: parseNumber(diffYtdStr),
+      ord: rows.length,
     });
   }
 
@@ -345,57 +347,297 @@ function listSubSegments(rows, segment) {
   return [...subs].sort();
 }
 
-function pnlOrder(rows, category) {
-  const order = [];
-  const seen = new Set();
-  for (const r of rows) {
-    if (r.subSegment !== DASHBOARD_SUB_SEGMENT) continue;
-    if (r.category !== category) continue;
-    if (!r.subcat || seen.has(r.subcat)) continue;
-    seen.add(r.subcat);
-    order.push(r.subcat);
+/** Keep all primary-tagged rows in CSV order (allows duplicate G&A Direct/Total blocks). */
+function rowsForPnL(allRows) {
+  const bestTag = new Map();
+  for (const r of allRows) {
+    if (r.tag === 'Budget') continue;
+    const key = rowKey(r);
+    const priority = PRIMARY_TAG_PRIORITY[r.tag] ?? 0;
+    const existing = bestTag.get(key);
+    if (!existing || priority > existing.priority) {
+      bestTag.set(key, { tag: r.tag, priority });
+    }
   }
-  return order;
+  return allRows
+    .filter((r) => r.tag !== 'Budget' && bestTag.get(rowKey(r))?.tag === r.tag)
+    .sort((a, b) => a.ord - b.ord);
 }
 
-function aggregatePnL(primaryRows, scope, category, order) {
-  // Returns [{ subcat, months: [{monthNum, amount, tag}], total }]
-  const bySub = new Map();
-  for (const subcat of order) {
-    bySub.set(subcat, {});
+const GA_DETAIL_SUBCATS = [
+  'G&A - Staff Cost',
+  'G&A - Other staff cost',
+  'G&A - Facility Management and Travelling',
+  'G&A - Consultancy cost',
+  'G&A - Corporate Action (Adj. Total)',
+  'G&A - IT Cost',
+  'G&A - Depreciation',
+  'Other income/(expenses)',
+];
+
+const SM_DETAIL_SUBCATS = [
+  'S&M - O2O',
+  'S&M - Offline',
+  'S&M - Online',
+  'S&M - Others',
+  'S&M - Payment Channel',
+  'S&M - PCV',
+  'S&M - Distribution Cost',
+];
+
+export const PNL_MAIN_LINES_BEFORE = [
+  'Revenue',
+  'COGS',
+  'GP',
+  'Total S&M',
+  'CM',
+  'Total G&A (Include Depre + Others) (Direct)',
+  'EBITDA (Direct)',
+  'EBIT (Direct)',
+  'Total Adjustment (Direct)',
+  'Adj. EBITDA (Direct)',
+  'Adj. EBIT (Direct)',
+  'Total G&A (Include Depre + Others) (Total)',
+  'Total Adjustment (Total)',
+  'Adj. EBITDA (Total)',
+  'Adj. EBIT (Total)',
+  'Finance Income / Expenses, Etc',
+  'Net Income',
+];
+
+export const PNL_MAIN_LINES_AFTER = [
+  'Revenue',
+  'COGS',
+  'GP',
+  'Total S&M',
+  'CM',
+  'Total G&A (Include Depre + Others)',
+  'EBITDA',
+  'EBIT',
+  'Total Adjustment (Total)',
+  'Adj. EBITDA',
+  'Adj. EBIT',
+  'Finance Income / Expenses, Etc',
+  'Net Income',
+];
+
+export const PNL_SUBSEGMENT_LINES = [
+  'Revenue',
+  'GP',
+  'Total S&M',
+  'CM',
+  'Total G&A (Include Depre + Others)',
+  'EBITDA',
+  'EBIT',
+];
+
+export const PNL_CHILDREN = {
+  'Total S&M': SM_DETAIL_SUBCATS,
+  'Total G&A (Include Depre + Others) (Direct)': GA_DETAIL_SUBCATS,
+  'Total G&A (Include Depre + Others) (Total)': GA_DETAIL_SUBCATS,
+  'Total G&A (Include Depre + Others)': GA_DETAIL_SUBCATS,
+};
+
+function isGaDetail(subcat) {
+  return GA_DETAIL_SUBCATS.includes(subcat);
+}
+
+function resolveGaModeFromLabel(label) {
+  const s = String(label || '').toLowerCase();
+  if (s.includes('g&a direct') || s === 'direct') return 'Direct';
+  if (s.includes('g&a shared') || s.includes('shared') || s === 'total') return 'Total';
+  return null;
+}
+
+/**
+ * Map raw Dashboard rows → canonical P&L line ids, splitting the two G&A blocks
+ * into Direct vs Total (via Difference label when present, else CSV block order).
+ */
+function mapDashboardRowToLineId(r, gaModeRef) {
+  const sub = r.subcat;
+  const fromDiff = resolveGaModeFromLabel(r.differenceLabel);
+
+  if (isGaDetail(sub)) {
+    if (fromDiff) gaModeRef.mode = fromDiff;
+    return { lineId: `${sub}::${gaModeRef.mode}`, parentGa: gaModeRef.mode };
   }
 
-  for (const r of primaryRows) {
-    if (!matchesScope(r, { ...scope, category, requireCategory: true })) continue;
-    if (!bySub.has(r.subcat)) continue;
+  if (sub === 'Total G&A (Include Depre + Others)') {
+    const mode = fromDiff || gaModeRef.mode;
+    const lineId = `Total G&A (Include Depre + Others) (${mode})`;
+    // After emitting Direct total, next G&A block is Total/Shared
+    if (mode === 'Direct') gaModeRef.mode = 'Total';
+    return { lineId, parentGa: mode };
+  }
+
+  // Explicit Direct/Total metric subcats stay as-is (do NOT reset G&A block mode —
+  // the Shared/Total G&A detail block follows Adj. EBIT (Direct) in the CSV).
+  if (/\(Direct\)|\(Total\)$/.test(sub)) {
+    return { lineId: sub, parentGa: null };
+  }
+
+  // After Elim plain names
+  return { lineId: sub, parentGa: null };
+}
+
+function emptyMonthBucket(year, month) {
+  return { ...monthMeta(year, month), amount: 0, tag: '' };
+}
+
+function finalizePnLLine(id, label, bucketMap, childDefs) {
+  const months = Object.values(bucketMap || {})
+    .sort((a, b) => MONTH_IDX[a.month] - MONTH_IDX[b.month])
+    .map((d) => ({
+      year: d.year,
+      month: d.month,
+      monthNum: d.monthNum,
+      quarter: d.quarter,
+      date: d.date,
+      tag: d.tag,
+      amount: Math.round(d.amount),
+    }));
+  const line = {
+    id,
+    subcat: label,
+    label,
+    months,
+    total: months.reduce((s, m) => s + m.amount, 0),
+  };
+  if (childDefs) line.childIds = childDefs;
+  return line;
+}
+
+function aggregatePnLTree(pnlRows, scope, category, mainLines) {
+  const isSub = scope.mode === 'subsegment';
+  const requireCategory = !isSub && (category === 'Before Elim' || category === 'After Elim');
+  const lineBuckets = new Map();
+  const gaModeRef = { mode: 'Direct' };
+  let groupKey = '';
+
+  const ensure = (lineId) => {
+    if (!lineBuckets.has(lineId)) lineBuckets.set(lineId, {});
+    return lineBuckets.get(lineId);
+  };
+
+  const addAmount = (lineId, r) => {
+    if (!lineId) return;
+    const buckets = ensure(lineId);
     const mk = `${r.year}-${r.month}`;
-    const bucket = bySub.get(r.subcat);
-    if (!bucket[mk]) {
-      bucket[mk] = { ...monthMeta(r.year, r.month), amount: 0, tag: '' };
-    }
-    const d = bucket[mk];
+    if (!buckets[mk]) buckets[mk] = emptyMonthBucket(r.year, r.month);
+    const d = buckets[mk];
     d.amount += r.amount;
     if ((PRIMARY_TAG_PRIORITY[r.tag] ?? 0) > (PRIMARY_TAG_PRIORITY[d.tag] ?? 0)) d.tag = r.tag;
+  };
+
+  for (const r of pnlRows) {
+    if (!matchesScope(r, { ...scope, category, requireCategory })) continue;
+
+    if (isSub) {
+      addAmount(r.subcat, r);
+      // Also mirror into Direct slots used by Point A layout when present as columns
+      if (r.subcat === 'Total G&A (Include Depre + Others)') {
+        addAmount('Total G&A (Include Depre + Others) (Direct)', r);
+      } else if (r.subcat === 'EBITDA') {
+        addAmount('EBITDA (Direct)', r);
+      } else if (r.subcat === 'EBIT') {
+        addAmount('EBIT (Direct)', r);
+      }
+      continue;
+    }
+
+    const gk = `${r.year}|${r.month}|${r.segment}|${r.subSegment}|${r.category}`;
+    if (gk !== groupKey) {
+      groupKey = gk;
+      gaModeRef.mode = 'Direct';
+    }
+
+    if (category === 'After Elim') {
+      if (isGaDetail(r.subcat)) {
+        addAmount(`${r.subcat}::After`, r);
+        continue;
+      }
+      if (r.subcat === 'Total G&A (Include Depre + Others)') {
+        addAmount('Total G&A (Include Depre + Others)', r);
+        continue;
+      }
+      addAmount(r.subcat, r);
+      continue;
+    }
+
+    const { lineId } = mapDashboardRowToLineId(r, gaModeRef);
+    addAmount(lineId, r);
   }
 
-  return order.map((subcat) => {
-    const months = Object.values(bySub.get(subcat) || {})
-      .sort((a, b) => MONTH_IDX[a.month] - MONTH_IDX[b.month])
-      .map((d) => ({
-        year: d.year,
-        month: d.month,
-        monthNum: d.monthNum,
-        quarter: d.quarter,
-        date: d.date,
-        tag: d.tag,
-        amount: Math.round(d.amount),
-      }));
-    return {
-      subcat,
-      months,
-      total: months.reduce((s, m) => s + m.amount, 0),
-    };
-  });
+  const lines = [];
+  for (const mainId of mainLines) {
+    const childrenSpec = PNL_CHILDREN[mainId];
+    let children;
+    if (childrenSpec) {
+      const mode = mainId.includes('(Direct)')
+        ? 'Direct'
+        : mainId.includes('(Total)')
+          ? 'Total'
+          : (category === 'After Elim' || mainId === 'Total G&A (Include Depre + Others)' ? 'After' : null);
+      children = childrenSpec.map((childName) => {
+        const childId = mode && mode !== 'After'
+          ? `${childName}::${mode}`
+          : (mode === 'After' ? `${childName}::After` : childName);
+        const altId = childName;
+        const buckets = lineBuckets.get(childId) || lineBuckets.get(altId) || {};
+        return finalizePnLLine(childId, childName, buckets, null);
+      });
+    }
+    const buckets = lineBuckets.get(mainId) || {};
+    const line = finalizePnLLine(mainId, mainId, buckets, childrenSpec || null);
+    if (children) line.children = children;
+    lines.push(line);
+  }
+  return lines;
+}
+
+function buildPnLBundle(pnlRows, primaryRows, category) {
+  const mainLines = category === 'After Elim' ? PNL_MAIN_LINES_AFTER : PNL_MAIN_LINES_BEFORE;
+
+  const consolidated = aggregatePnLTree(
+    pnlRows,
+    { mode: 'consolidated' },
+    category,
+    mainLines,
+  );
+
+  const bySegment = {};
+  for (const seg of SEGMENTS) {
+    bySegment[seg] = aggregatePnLTree(
+      pnlRows,
+      { mode: 'segment-dashboard', segment: seg },
+      category,
+      mainLines,
+    );
+  }
+
+  const bySubSegment = {};
+  for (const seg of SEGMENTS) {
+    bySubSegment[seg] = {};
+    const subs = listSubSegments(primaryRows, seg);
+    for (const sub of subs) {
+      bySubSegment[seg][sub] = {
+        full: aggregatePnLTree(
+          pnlRows,
+          { mode: 'subsegment', segment: seg, subSegment: sub },
+          category,
+          mainLines,
+        ),
+        simple: aggregatePnLTree(
+          pnlRows,
+          { mode: 'subsegment', segment: seg, subSegment: sub },
+          category,
+          PNL_SUBSEGMENT_LINES,
+        ),
+      };
+    }
+  }
+
+  return { lines: consolidated, bySegment, bySubSegment, mainLines };
 }
 
 function dashboardMetricSubcats(category, ebitdaVariant, ebitVariant, metrics) {
@@ -422,12 +664,8 @@ export function processCSV(csvText) {
   if (allRows.length === 0) throw new Error('No 2026 data found in the CSV file');
 
   const primaryRows = pickPrimaryRows(allRows);
+  const pnlSourceRows = rowsForPnL(allRows);
   const budgetRows = allRows.filter((r) => r.tag === 'Budget');
-
-  const PNL_ORDER = {
-    'Before Elim': pnlOrder(allRows, 'Before Elim'),
-    'After Elim': pnlOrder(allRows, 'After Elim'),
-  };
 
   const buildDashboardMonthly = (scope, category, ebitdaVariant = 'Adj. EBITDA (Total)') =>
     aggregateMonthly(primaryRows, budgetRows, { ...scope, category, requireCategory: true }, {
@@ -503,15 +741,21 @@ export function processCSV(csvText) {
   }
 
   const PNL = {
+    'Before Elim': buildPnLBundle(pnlSourceRows, primaryRows, 'Before Elim'),
+    'After Elim': buildPnLBundle(pnlSourceRows, primaryRows, 'After Elim'),
+  };
+
+  // Flat compatibility shape used by older UI snippets (segment dashboard totals)
+  const PNL_FLAT = {
     consolidated: {
-      'Before Elim': aggregatePnL(primaryRows, { mode: 'consolidated' }, 'Before Elim', PNL_ORDER['Before Elim']),
-      'After Elim': aggregatePnL(primaryRows, { mode: 'consolidated' }, 'After Elim', PNL_ORDER['After Elim']),
+      'Before Elim': PNL['Before Elim'].lines,
+      'After Elim': PNL['After Elim'].lines,
     },
   };
   for (const seg of SEGMENTS) {
-    PNL[seg] = {
-      'Before Elim': aggregatePnL(primaryRows, { mode: 'segment-dashboard', segment: seg }, 'Before Elim', PNL_ORDER['Before Elim']),
-      'After Elim': aggregatePnL(primaryRows, { mode: 'segment-dashboard', segment: seg }, 'After Elim', PNL_ORDER['After Elim']),
+    PNL_FLAT[seg] = {
+      'Before Elim': PNL['Before Elim'].bySegment[seg],
+      'After Elim': PNL['After Elim'].bySegment[seg],
     };
   }
 
@@ -530,8 +774,12 @@ export function processCSV(csvText) {
     SUB_SEGMENTS,
     SUBSEGMENT_MONTHLY,
     SEGMENTS,
-    PNL_ORDER,
+    PNL_ORDER: {
+      'Before Elim': PNL_MAIN_LINES_BEFORE,
+      'After Elim': PNL_MAIN_LINES_AFTER,
+    },
     PNL,
+    PNL_FLAT,
     KPIS,
   };
 }
