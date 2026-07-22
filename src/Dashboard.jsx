@@ -733,7 +733,7 @@ function sumPnLMonths(months, filter, selectedMonthNums) {
 
 function PnLAmount({ value }) {
   return (
-    <span className={`tabular font-medium ${value >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+    <span className="tabular font-medium text-[var(--text-primary)]">
       {idrCompact(value)}
     </span>
   );
@@ -1131,7 +1131,10 @@ function DashboardInner() {
   const pnlView = useMemo(() => {
     const bundle = activeData.PNL?.[category];
     const monthFilter = (months) => sumPnLMonths(months, filter, selectedMonthNums);
-    const showPnlVariant = isSegmentPage && !isCorporate && ['Retail', 'Mitra', 'Gaming', 'Investment'].includes(page);
+    const showPnlVariant = useDashboardScope
+      && isSegmentPage
+      && !isCorporate
+      && ['Retail', 'Mitra', 'Gaming', 'Investment'].includes(page);
     const allowedLineIds = showPnlVariant
       ? (pnlGaVariant === 'Total'
         ? (bundle?.totalLines ?? PNL_LINES_TOTAL)
