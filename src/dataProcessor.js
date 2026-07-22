@@ -14,6 +14,7 @@ export const CATEGORIES = ['Before Elim', 'After Elim'];
 export const EXCLUDED_SUB_SEGMENTS = new Set([
   'Elimination',
   'Adjustment',
+  'Adjustment Elimination',
   'G&A Direct HQ',
   'G&A Shared',
 ]);
@@ -305,14 +306,33 @@ function aggregateMonthly(primaryRows, budgetRows, scope, {
   return monthly;
 }
 
-function sumBudget(budgetRows, year, month, subcat, scope) {
-  let total = 0;
-  for (const r of budgetRows) {
-    if (r.year !== year || r.month !== month || r.subcat !== subcat) continue;
-    if (!matchesScope(r, scope)) continue;
-    total += r.amount;
+/** Budget CSV has no Before/After Elim — map Adj.* (Direct|Total) to plain budget subcats. */
+function budgetSubcatCandidates(subcat) {
+  if (!subcat) return [];
+  if (subcat.startsWith('Adj. EBITDA')) {
+    return [subcat, 'Adj. EBITDA', 'EBITDA'];
   }
-  return total;
+  if (subcat.startsWith('Adj. EBIT')) {
+    return [subcat, 'Adj. EBIT', 'EBIT'];
+  }
+  return [subcat];
+}
+
+function sumBudget(budgetRows, year, month, subcat, scope) {
+  // Budget applies to both Before Elim and After Elim (no category remarks in source).
+  const budgetScope = { ...scope, requireCategory: false, category: null };
+  for (const candidate of budgetSubcatCandidates(subcat)) {
+    let total = 0;
+    let found = false;
+    for (const r of budgetRows) {
+      if (r.year !== year || r.month !== month || r.subcat !== candidate) continue;
+      if (!matchesScope(r, budgetScope)) continue;
+      total += r.amount;
+      found = true;
+    }
+    if (found) return total;
+  }
+  return 0;
 }
 
 function listSubSegments(rows, segment) {
@@ -387,7 +407,15 @@ function dashboardMetricSubcats(category, ebitdaVariant, ebitVariant, metrics) {
 }
 
 const FULL_METRICS = ['Revenue', 'CM', 'EBITDA', 'EBIT', 'Net Income'];
-const SEGMENT_PERF_METRICS = ['Revenue', 'CM', 'EBITDA']; // sub-segment charts (non-category)
+// Sub-segment rows use plain EBITDA/EBIT (not Adj. * Direct/Total).
+const SUBSEGMENT_METRICS = ['Revenue', 'CM', 'EBITDA', 'EBIT', 'Net Income'];
+const SUBSEGMENT_SUBCATS = {
+  Revenue: 'Revenue',
+  CM: 'CM',
+  EBITDA: 'EBITDA',
+  EBIT: 'EBIT',
+  'Net Income': 'Net Income',
+};
 
 export function processCSV(csvText) {
   const allRows = parseRows(csvText);
@@ -461,7 +489,7 @@ export function processCSV(csvText) {
         primaryRows,
         budgetRows,
         { mode: 'segment-total', segment: seg },
-        { metrics: SEGMENT_PERF_METRICS },
+        { metrics: SUBSEGMENT_METRICS, metricSubcats: SUBSEGMENT_SUBCATS },
       ),
     };
     for (const sub of SUB_SEGMENTS[seg]) {
@@ -469,7 +497,7 @@ export function processCSV(csvText) {
         primaryRows,
         budgetRows,
         { mode: 'subsegment', segment: seg, subSegment: sub },
-        { metrics: [...SEGMENT_PERF_METRICS, 'Net Income'] },
+        { metrics: SUBSEGMENT_METRICS, metricSubcats: SUBSEGMENT_SUBCATS },
       );
     }
   }

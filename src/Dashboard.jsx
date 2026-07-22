@@ -169,7 +169,7 @@ const MONTHS_EN = [
   'January','February','March','April','May','June',
   'July','August','September','October','November','December',
 ];
-const PERF_COLORS = { Revenue: '#3b82f6', EBITDA: '#10b981', NetIncome: '#f59e0b' };
+const PERF_COLORS = { Revenue: '#3b82f6', CM: '#06b6d4', EBITDA: '#10b981', EBIT: '#f59e0b', NetIncome: '#a855f7' };
 
 const SEGMENT_COLORS = {
   Retail: 'rgb(58, 60, 169)',
@@ -191,13 +191,54 @@ const PAGES = [
 ];
 
 const EBITDA_VARIANT_OPTS = [
-  { id: 'Adj. EBITDA (Direct)', label: 'Adj. EBITDA (Direct)' },
-  { id: 'Adj. EBITDA (Total)', label: 'Adj. EBITDA (Total)' },
+  { id: 'Adj. EBITDA (Direct)', label: 'Direct' },
+  { id: 'Adj. EBITDA (Total)', label: 'Total' },
 ];
 const EBIT_VARIANT_OPTS = [
-  { id: 'Adj. EBIT (Direct)', label: 'Adj. EBIT (Direct)' },
-  { id: 'Adj. EBIT (Total)', label: 'Adj. EBIT (Total)' },
+  { id: 'Adj. EBIT (Direct)', label: 'Direct' },
+  { id: 'Adj. EBIT (Total)', label: 'Total' },
 ];
+
+const METRIC_INFO = {
+  Revenue: {
+    title: 'Revenue',
+    body: 'The total income generated from business activities before deducting any costs or expenses.',
+  },
+  CM: {
+    title: 'Contribution Margin',
+    body: 'Contribution Margin represents the profit remaining after Gross Profit (Revenue − COGS) is reduced by Selling & Marketing (S&M) expenses. It indicates the profitability of the business after covering direct operating costs related to sales and marketing.',
+    formula: 'Contribution Margin = Gross Profit − Total Selling & Marketing (S&M) Expenses',
+  },
+  'Adj. EBITDA': {
+    title: 'Adj. EBITDA',
+    body: 'Adjusted EBITDA measures operating profitability after deducting Selling & Marketing (S&M) and General & Administrative (G&A) expenses from Gross Profit, while excluding interest, taxes, depreciation, amortization, and incorporating approved business adjustments.',
+    formula: 'Adjusted EBITDA = Gross Profit − S&M Expenses − G&A Expenses (Exc Depreciation) ± Adjustments',
+  },
+  'Adj. EBIT': {
+    title: 'Adj. EBIT',
+    body: 'Adjusted EBIT is similar to Adjusted EBITDA but includes depreciation and amortization, providing a measure of operating profit after these non-cash expenses while still excluding non-operating items and incorporating approved adjustments.',
+    formula: 'Adjusted EBIT = Adjusted EBITDA − Depreciation & Amortization',
+  },
+  EBITDA: {
+    title: 'Adj. EBITDA',
+    body: 'Adjusted EBITDA measures operating profitability after deducting Selling & Marketing (S&M) and General & Administrative (G&A) expenses from Gross Profit, while excluding interest, taxes, depreciation, amortization, and incorporating approved business adjustments.',
+    formula: 'Adjusted EBITDA = Gross Profit − S&M Expenses − G&A Expenses (Exc Depreciation) ± Adjustments',
+  },
+  EBIT: {
+    title: 'Adj. EBIT',
+    body: 'Adjusted EBIT is similar to Adjusted EBITDA but includes depreciation and amortization, providing a measure of operating profit after these non-cash expenses while still excluding non-operating items and incorporating approved adjustments.',
+    formula: 'Adjusted EBIT = Adjusted EBITDA − Depreciation & Amortization',
+  },
+};
+
+function resolveMetricInfoKey(label) {
+  if (!label) return null;
+  if (label === 'Revenue' || label.startsWith('Revenue')) return 'Revenue';
+  if (label === 'CM' || label.includes('Contribution')) return 'CM';
+  if (label.includes('EBITDA')) return label.startsWith('Adj') ? 'Adj. EBITDA' : 'EBITDA';
+  if (label.includes('EBIT')) return label.startsWith('Adj') ? 'Adj. EBIT' : 'EBIT';
+  return null;
+}
 
 /* ─── Data helpers ──────────────────────────────────────────────────── */
 function asMonthlyArray(monthlyLike, category = 'Before Elim') {
@@ -242,17 +283,27 @@ function filteredSegmentAdjEbitda(segmentMonthly, segments, filteredKeys, catego
   }).sort((a, b) => b.AdjEBITDA - a.AdjEBITDA);
 }
 
-function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys) {
+function filteredSubSegmentPerformance(subSegMonthly, subSegments, filteredKeys, { retail = false } = {}) {
   return subSegments.map(sub => {
     const rows = (subSegMonthly[sub] ?? []).filter(m => filteredKeys.has(`${m.year}-${m.month}`));
+    if (retail) {
+      return {
+        Segment: sub,
+        Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
+        CM: rows.reduce((s, m) => s + (m.CM ?? 0), 0),
+        EBIT: rows.reduce((s, m) => s + (m.EBIT ?? 0), 0),
+      };
+    }
     return {
       Segment: sub,
       Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
       EBITDA: rows.reduce((s, m) => s + m.EBITDA, 0),
       NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
     };
-  }).filter(s => s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0)
-    .sort((a, b) => b.Revenue - a.Revenue);
+  }).filter(s => {
+    if (retail) return s.Revenue !== 0 || s.CM !== 0 || s.EBIT !== 0;
+    return s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0;
+  }).sort((a, b) => b.Revenue - a.Revenue);
 }
 
 function mergeMonthlySeries(seriesList) {
@@ -541,6 +592,56 @@ function FilterBar({
   );
 }
 
+function MetricInfoButton({ infoKey }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const info = METRIC_INFO[infoKey];
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDoc = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('mousedown', onDoc);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDoc);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  if (!info) return null;
+
+  return (
+    <span className="relative inline-flex" ref={ref}>
+      <button
+        type="button"
+        aria-label={`About ${info.title}`}
+        onClick={(e) => { e.stopPropagation(); setOpen(v => !v); }}
+        className="w-3.5 h-3.5 rounded-full border border-[var(--text-faint)] text-[9px] leading-none
+          text-[var(--text-faint)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)]
+          flex items-center justify-center cursor-pointer shrink-0 font-semibold"
+      >
+        i
+      </button>
+      {open && (
+        <div className="absolute left-0 top-5 z-50 w-72 max-w-[80vw] rounded-xl border border-[var(--border-default)]
+          bg-[var(--surface-card)] p-3.5 shadow-xl card-shadow">
+          <p className="text-xs font-semibold text-[var(--text-primary)] mb-1.5">{info.title}</p>
+          <p className="text-[11px] leading-relaxed text-[var(--text-muted)]">{info.body}</p>
+          {info.formula && (
+            <p className="text-[11px] leading-relaxed text-[var(--text-secondary)] mt-2 pt-2 border-t border-[var(--border-faint)]">
+              <span className="font-semibold text-[var(--text-primary)]">Formula: </span>
+              {info.formula}
+            </p>
+          )}
+        </div>
+      )}
+    </span>
+  );
+}
+
 function DiffPill({ label, value }) {
   if (value == null) return null;
   const positive = value >= 0;
@@ -552,23 +653,29 @@ function DiffPill({ label, value }) {
   );
 }
 
-function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsYtdBudget, dropdown }) {
+function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsYtdBudget, dropdown, infoKey }) {
+  const resolvedInfo = infoKey ?? resolveMetricInfoKey(label);
   return (
     <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-5 card-shadow hover:border-[var(--border-hover)] transition-all">
       <div className="flex items-start justify-between gap-2 mb-3">
-        {dropdown ? (
+        <div className="flex items-center gap-1.5 min-w-0 flex-wrap">
+          <p className="text-[11px] uppercase tracking-widest text-[var(--text-faint)] font-medium">{label}</p>
+          <MetricInfoButton infoKey={resolvedInfo} />
+        </div>
+        {dropdown && (
           <select
             value={dropdown.value}
             onChange={e => dropdown.onChange(e.target.value)}
             disabled={dropdown.disabled}
-            className="text-[11px] uppercase tracking-widest text-[var(--text-faint)] font-medium bg-transparent border-0 outline-none cursor-pointer max-w-full pr-1 disabled:cursor-default disabled:opacity-70"
+            className="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-lg
+              bg-[var(--surface-elevated)] text-[var(--text-primary)]
+              border border-[var(--border-default)] outline-none cursor-pointer
+              focus:ring-1 focus:ring-blue-600 disabled:cursor-default disabled:opacity-60"
           >
             {dropdown.options.map(o => (
               <option key={o.id} value={o.id}>{o.label}</option>
             ))}
           </select>
-        ) : (
-          <p className="text-[11px] uppercase tracking-widest text-[var(--text-faint)] font-medium">{label}</p>
         )}
       </div>
       <p className="text-[1.6rem] font-semibold leading-none text-[var(--text-primary)] tabular mb-3">{idr(value)}</p>
@@ -667,60 +774,56 @@ function DashboardInner() {
   const isSegmentPage = page !== 'consolidated';
   const isCorporate = page === 'Corporate';
   const isRetail = page === 'Retail';
-  const showEbitdaVariant = isSegmentPage && !isRetail && category === 'Before Elim';
-  const showEbitVariant = isRetail && category === 'Before Elim';
   const useDashboardScope = !isSegmentPage || subSegmentsSelected.length === 0;
+  // Direct/Total only on segment pages that expose Adj. EBITDA/EBIT variants (not Corporate).
+  const showEbitdaVariant = isSegmentPage && !isRetail && !isCorporate && category === 'Before Elim' && useDashboardScope;
+  const showEbitVariant = isRetail && category === 'Before Elim' && useDashboardScope;
 
   const subSegments = isSegmentPage ? (activeData.SUB_SEGMENTS?.[page] ?? []) : [];
   const selectedMonthNums = filter.months;
   const isFiltered = filter.quarter !== 'all' || filter.months.length > 0 || subSegmentsSelected.length > 0 || category !== 'Before Elim';
 
-  const ebitdaLabel = category === 'After Elim'
-    ? 'Adj. EBITDA'
-    : (isSegmentPage && !isRetail ? ebitdaVariant : 'Adj. EBITDA');
-  const ebitLabel = category === 'After Elim' ? 'Adj. EBIT' : ebitVariant;
+  // When a sub-segment is selected, show plain EBIT (Retail) / EBITDA (other segments).
+  const ebitdaLabel = !useDashboardScope && isSegmentPage && !isRetail
+    ? 'EBITDA'
+    : category === 'After Elim'
+      ? 'Adj. EBITDA'
+      : (showEbitdaVariant ? 'Adj. EBITDA' : (isSegmentPage && !isRetail && !isCorporate ? ebitdaVariant : 'Adj. EBITDA'));
+  const ebitLabel = !useDashboardScope && isRetail
+    ? 'EBIT'
+    : category === 'After Elim'
+      ? 'Adj. EBIT'
+      : (showEbitVariant ? 'Adj. EBIT' : ebitVariant);
 
   // KPI field configs per page
   const kpiFields = useMemo(() => {
-    if (!isSegmentPage) {
+    // Consolidated + Corporate: Revenue · Adj. EBITDA · Net Income
+    if (!isSegmentPage || isCorporate) {
       return [
-        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget' },
-        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget' },
-        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget' },
-      ];
-    }
-    if (isCorporate) {
-      return [
-        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget' },
-        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget' },
+        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', infoKey: 'Revenue' },
+        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', infoKey: 'Adj. EBITDA' },
         { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget' },
       ];
     }
     if (isRetail) {
       return [
-        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget' },
-        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget' },
-        { key: 'ebit', label: ebitLabel, actual: 'EBIT', vsBudget: 'EBITVsBudget', diff: 'EBITDiff', ytd: 'EBITYTDVsBudget' },
+        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', infoKey: 'Revenue' },
+        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', infoKey: 'CM' },
+        { key: 'ebit', label: ebitLabel, actual: 'EBIT', vsBudget: 'EBITVsBudget', diff: 'EBITDiff', ytd: 'EBITYTDVsBudget', infoKey: useDashboardScope ? 'Adj. EBIT' : 'EBIT' },
       ];
     }
+    // Mitra, Gaming, Investment
     return [
-      { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget' },
-      { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget' },
-      { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget' },
+      { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', infoKey: 'Revenue' },
+      { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', infoKey: 'CM' },
+      { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', infoKey: useDashboardScope ? 'Adj. EBITDA' : 'EBITDA' },
     ];
-  }, [isSegmentPage, isCorporate, isRetail, ebitdaLabel, ebitLabel]);
+  }, [isSegmentPage, isCorporate, isRetail, ebitdaLabel, ebitLabel, useDashboardScope]);
 
   const TREND_OPTIONS = useMemo(() => {
-    if (!isSegmentPage) {
+    if (!isSegmentPage || isCorporate) {
       return [
         { id: 'revenue', label: 'Revenue', actualKey: 'Revenue', budgetKey: 'RevenueBudget', color: '#3b82f6' },
-        { id: 'ebitda', label: ebitdaLabel, actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
-        { id: 'netIncome', label: 'Net Income', actualKey: 'NetIncome', budgetKey: 'NetIncomeBudget', color: '#a855f7' },
-      ];
-    }
-    if (isCorporate) {
-      return [
-        { id: 'cm', label: 'CM', actualKey: 'CM', budgetKey: 'CMBudget', color: '#06b6d4' },
         { id: 'ebitda', label: ebitdaLabel, actualKey: 'EBITDA', budgetKey: 'EBITDABudget', color: '#10b981' },
         { id: 'netIncome', label: 'Net Income', actualKey: 'NetIncome', budgetKey: 'NetIncomeBudget', color: '#a855f7' },
       ];
@@ -757,14 +860,18 @@ function DashboardInner() {
     if (isRetail && variantsByCategory?.['Before Elim']?.[ebitVariant]) {
       return variantsByCategory['Before Elim'][ebitVariant];
     }
-    if (isSegmentPage && !isRetail && variantsByCategory?.['Before Elim']?.[ebitdaVariant]) {
+    // Corporate aligns with Consolidated (Adj. EBITDA Total, no Direct/Total UI)
+    if (isCorporate && variantsByCategory?.['Before Elim']?.['Adj. EBITDA (Total)']) {
+      return variantsByCategory['Before Elim']['Adj. EBITDA (Total)'];
+    }
+    if (isSegmentPage && !isRetail && !isCorporate && variantsByCategory?.['Before Elim']?.[ebitdaVariant]) {
       return variantsByCategory['Before Elim'][ebitdaVariant];
     }
     if (!isSegmentPage && variantsByCategory?.['Before Elim']?.['Adj. EBITDA (Total)']) {
       return variantsByCategory['Before Elim']['Adj. EBITDA (Total)'];
     }
     return asMonthlyArray(baseByCategory, 'Before Elim');
-  }, [category, isRetail, isSegmentPage, ebitVariant, ebitdaVariant]);
+  }, [category, isRetail, isCorporate, isSegmentPage, ebitVariant, ebitdaVariant]);
 
   const sourceMonthly = useMemo(() => {
     if (page === 'consolidated') {
@@ -842,6 +949,14 @@ function DashboardInner() {
         .map(sub => {
           const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
             .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
+          if (isRetail) {
+            return {
+              Segment: sub,
+              Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
+              CM: rows.reduce((s, m) => s + (m.CM ?? 0), 0),
+              EBIT: rows.reduce((s, m) => s + (m.EBIT ?? 0), 0),
+            };
+          }
           return {
             Segment: sub,
             Revenue: rows.reduce((s, m) => s + m.Revenue, 0),
@@ -849,7 +964,10 @@ function DashboardInner() {
             NetIncome: rows.reduce((s, m) => s + (m.NetIncome ?? 0), 0),
           };
         })
-        .filter(s => s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0)
+        .filter(s => {
+          if (isRetail) return s.Revenue !== 0 || s.CM !== 0 || s.EBIT !== 0;
+          return s.Revenue !== 0 || s.EBITDA !== 0 || s.NetIncome !== 0;
+        })
         .sort((a, b) => b.Revenue - a.Revenue);
       return series;
     }
@@ -857,16 +975,25 @@ function DashboardInner() {
       activeData.SUBSEGMENT_MONTHLY?.[page] ?? {},
       subSegments,
       filteredKeys,
+      { retail: isRetail },
     );
-  }, [activeData, page, filteredKeys, subSegments, useDashboardScope, subSegmentsSelected, isCorporate, category]);
+  }, [activeData, page, filteredKeys, subSegments, useDashboardScope, subSegmentsSelected, isCorporate, isRetail, category]);
 
   const showConsolidatedStylePerf = page === 'consolidated' || (isCorporate && useDashboardScope);
 
   const perfMetrics = showConsolidatedStylePerf
     ? [{ key: 'AdjEBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA }]
-    : [{ key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
-       { key: 'EBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA },
-       { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome }];
+    : isRetail
+      ? [
+          { key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
+          { key: 'CM', label: 'CM', color: PERF_COLORS.CM },
+          { key: 'EBIT', label: 'EBIT', color: PERF_COLORS.EBIT },
+        ]
+      : [
+          { key: 'Revenue', label: 'Revenue', color: PERF_COLORS.Revenue },
+          { key: 'EBITDA', label: 'Adj. EBITDA', color: PERF_COLORS.EBITDA },
+          { key: 'NetIncome', label: 'Net Income', color: PERF_COLORS.NetIncome },
+        ];
 
   const pnlRows = useMemo(() => {
     if (!useDashboardScope) return [];
@@ -943,6 +1070,7 @@ function DashboardInner() {
             <KPICardWithDiffs
               key={f.key}
               label={f.label}
+              infoKey={f.infoKey}
               value={kpis[f.key]}
               vsBudget={kpis[`vsBudget_${f.key}`]}
               vsPrevMonth={kpis[`vsPrev_${f.key}`]}
@@ -1079,7 +1207,9 @@ function DashboardInner() {
             <p className="text-[11px] text-[var(--text-faint)] mt-0.5">
               {showConsolidatedStylePerf
                 ? (page === 'consolidated' ? 'Adj. EBITDA by segment' : 'Adj. EBITDA by sub-segment')
-                : `Revenue · Adj. EBITDA · Net Income`}
+                : isRetail
+                  ? 'Revenue · CM · EBIT'
+                  : `Revenue · Adj. EBITDA · Net Income`}
             </p>
           </div>
           {performanceData.length === 0 ? (
