@@ -940,8 +940,12 @@ function DashboardInner() {
   const [trendMetric, setTrendMetric] = useState('ebitda');
   const [pnlGaVariant, setPnlGaVariant] = useState('Direct'); // Direct | Total for segment P&L
 
+  // Mutate synchronously during render (not in an effect) so that the module-level
+  // formatter picks up the new mode before this render's children (KPI cards, charts,
+  // tooltips) run — an effect would fire one paint too late, leaving stale numbers
+  // on screen until an unrelated re-render happened to occur.
+  setGlobalAmountMode(amountFormat);
   useEffect(() => {
-    setGlobalAmountMode(amountFormat);
     localStorage.setItem('fd-amount-fmt', amountFormat);
   }, [amountFormat]);
 
