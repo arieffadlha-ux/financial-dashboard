@@ -122,7 +122,13 @@ function DataProvider({ children }) {
 }
 
 /* ─── Formatters ────────────────────────────────────────────────────── */
-const idr = (v, opts = {}) => {
+/** Module-level mode so existing idr() call sites pick up the dropdown without prop drilling */
+let _amountMode = 'compact';
+function setGlobalAmountMode(mode) {
+  _amountMode = mode === 'full' ? 'full' : 'compact';
+}
+
+const idrCompactCore = (v, opts = {}) => {
   if (v == null) return '—';
   const { axis = false } = opts;
   const abs = Math.abs(v);
@@ -134,20 +140,25 @@ const idr = (v, opts = {}) => {
   return `${sign}${pfx}${abs.toLocaleString('en-US')}`;
 };
 
-const idrCompact = (v) => {
+const idrFullCore = (v, opts = {}) => {
   if (v == null) return '—';
-  const abs = Math.abs(v);
+  const { axis = false } = opts;
   const sign = v < 0 ? '-' : '';
-  if (abs >= 1e12) return `${sign}Rp ${(abs / 1e12).toFixed(2)}T`;
-  if (abs >= 1e9)  return `${sign}Rp ${(abs / 1e9).toFixed(1)}B`;
-  if (abs >= 1e6)  return `${sign}Rp ${(abs / 1e6).toFixed(0)}M`;
-  return `${sign}Rp ${abs.toLocaleString('en-US')}`;
+  const pfx = axis ? '' : 'Rp ';
+  return `${sign}${pfx}${Math.abs(Math.round(v)).toLocaleString('en-US')}`;
 };
+
+const idrByMode = (v, mode, opts = {}) =>
+  (mode === 'full' ? idrFullCore : idrCompactCore)(v, opts);
+
+const idr = (v, opts = {}) => idrByMode(v, _amountMode, opts);
+
+const idrCompact = (v) => idrByMode(v, _amountMode);
 
 const diffFmt = (v) => {
   if (v == null) return '—';
   const sign = v > 0 ? '+' : '';
-  return `${sign}${idrCompact(v)}`;
+  return `${sign}${idr(v)}`;
 };
 
 const monthLabel = (m) =>
@@ -268,12 +279,27 @@ function sumField(rows, field) {
 
 function computePeriodKPIs(filtered, fields) {
   const last = filtered[filtered.length - 1];
+  const sumNullable = (field) => {
+    let sum = 0;
+    let any = false;
+    for (const m of filtered) {
+      const v = m[field];
+      if (v != null && Number.isFinite(v)) {
+        sum += v;
+        any = true;
+      }
+    }
+    return any ? sum : null;
+  };
   const out = {};
   for (const f of fields) {
     out[f.key] = sumField(filtered, f.actual);
     out[`vsBudget_${f.key}`] = sumField(filtered, f.vsBudget);
-    out[`vsPrev_${f.key}`] = last ? (last[f.diff] ?? null) : null;
+    // vs Previous Month: CSV Difference (Dashboard) or computed MoM — sum over filtered months
+    out[`vsPrev_${f.key}`] = sumNullable(f.diff);
     out[`vsYtd_${f.key}`] = last ? (last[f.ytd] ?? null) : null;
+    // vs Last Year: Σ(2026 − 2025) for filtered months
+    out[`vsYoy_${f.key}`] = sumNullable(f.yoy);
   }
   return out;
 }
@@ -537,6 +563,7 @@ function FilterBar({
   quarter, months, onChange, onReset, isActive,
   subSegmentsSelected, subSegments, onSubSegmentsChange, showSubSegment,
   category, onCategoryChange, dataStatus,
+  amountFormat, onAmountFormatChange,
 }) {
   const Pill = ({ active, onClick, children }) => (
     <button onClick={onClick}
@@ -586,6 +613,18 @@ function FilterBar({
           className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none">
           <option value="Before Elim">Before Elim</option>
           <option value="After Elim">After Elim</option>
+        </select>
+      </div>
+      <div className="h-4 w-px bg-[var(--border-default)]" />
+      <div className="relative">
+        <select
+          value={amountFormat}
+          onChange={e => onAmountFormatChange(e.target.value)}
+          className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none"
+          title="Display format for amounts"
+        >
+          <option value="compact">Compact (T/B/M)</option>
+          <option value="full">Full Amount</option>
         </select>
       </div>
       {dataStatus && (
@@ -668,7 +707,7 @@ function DiffPill({ label, value }) {
   );
 }
 
-function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsYtdBudget, dropdown, infoKey }) {
+function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsLastYear, vsYtdBudget, dropdown, infoKey }) {
   const resolvedInfo = infoKey ?? resolveMetricInfoKey(label);
   return (
     <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-5 card-shadow hover:border-[var(--border-hover)] transition-all">
@@ -696,7 +735,8 @@ function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsYtdBudget, dr
       <p className="text-[1.6rem] font-semibold leading-none text-[var(--text-primary)] tabular mb-3">{idr(value)}</p>
       <div className="flex flex-wrap gap-1.5">
         <DiffPill label="vs Budget" value={vsBudget} />
-        <DiffPill label="vs Prev Month" value={vsPrevMonth} />
+        <DiffPill label="vs Previous Month" value={vsPrevMonth} />
+        <DiffPill label="vs Last Year" value={vsLastYear} />
         <DiffPill label="vs YTD Budget" value={vsYtdBudget} />
       </div>
     </div>
@@ -893,11 +933,17 @@ function DashboardInner() {
   const [subSegmentsSelected, setSubSegmentsSelected] = useState([]); // [] = all
   const [filter, setFilter] = useState({ quarter: 'all', months: [] }); // months [] = all
   const [category, setCategory] = useState('Before Elim');
+  const [amountFormat, setAmountFormat] = useState(() => localStorage.getItem('fd-amount-fmt') ?? 'compact');
   const [ebitdaVariant, setEbitdaVariant] = useState('Adj. EBITDA (Direct)');
   const [ebitVariant, setEbitVariant] = useState('Adj. EBIT (Direct)');
   const [chartType, setChartType] = useState('area');
   const [trendMetric, setTrendMetric] = useState('ebitda');
   const [pnlGaVariant, setPnlGaVariant] = useState('Direct'); // Direct | Total for segment P&L
+
+  useEffect(() => {
+    setGlobalAmountMode(amountFormat);
+    localStorage.setItem('fd-amount-fmt', amountFormat);
+  }, [amountFormat]);
 
   const isSegmentPage = page !== 'consolidated';
   const isCorporate = page === 'Corporate';
@@ -928,31 +974,31 @@ function DashboardInner() {
     if (!isSegmentPage) {
       // Consolidated: Revenue · Adj. EBITDA · Net Income
       return [
-        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', infoKey: 'Revenue' },
-        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', infoKey: 'Adj. EBITDA' },
-        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget', infoKey: 'Net Income' },
+        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', yoy: 'RevenueYoY', infoKey: 'Revenue' },
+        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', yoy: 'EBITDAYoY', infoKey: 'Adj. EBITDA' },
+        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget', yoy: 'NetIncomeYoY', infoKey: 'Net Income' },
       ];
     }
     if (isCorporate) {
       // Corporate: CM · Adj. EBITDA · Net Income
       return [
-        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', infoKey: 'CM' },
-        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', infoKey: 'Adj. EBITDA' },
-        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget', infoKey: 'Net Income' },
+        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', yoy: 'CMYoY', infoKey: 'CM' },
+        { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', yoy: 'EBITDAYoY', infoKey: 'Adj. EBITDA' },
+        { key: 'netIncome', label: 'Net Income', actual: 'NetIncome', vsBudget: 'NetIncomeVsBudget', diff: 'NetIncomeDiff', ytd: 'NetIncomeYTDVsBudget', yoy: 'NetIncomeYoY', infoKey: 'Net Income' },
       ];
     }
     if (isRetail) {
       return [
-        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', infoKey: 'Revenue' },
-        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', infoKey: 'CM' },
-        { key: 'ebit', label: ebitLabel, actual: 'EBIT', vsBudget: 'EBITVsBudget', diff: 'EBITDiff', ytd: 'EBITYTDVsBudget', infoKey: useDashboardScope ? 'Adj. EBIT' : 'EBIT' },
+        { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', yoy: 'RevenueYoY', infoKey: 'Revenue' },
+        { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', yoy: 'CMYoY', infoKey: 'CM' },
+        { key: 'ebit', label: ebitLabel, actual: 'EBIT', vsBudget: 'EBITVsBudget', diff: 'EBITDiff', ytd: 'EBITYTDVsBudget', yoy: 'EBITYoY', infoKey: useDashboardScope ? 'Adj. EBIT' : 'EBIT' },
       ];
     }
     // Mitra, Gaming, Investment
     return [
-      { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', infoKey: 'Revenue' },
-      { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', infoKey: 'CM' },
-      { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', infoKey: useDashboardScope ? 'Adj. EBITDA' : 'EBITDA' },
+      { key: 'revenue', label: 'Revenue', actual: 'Revenue', vsBudget: 'RevenueVsBudget', diff: 'RevenueDiff', ytd: 'RevenueYTDVsBudget', yoy: 'RevenueYoY', infoKey: 'Revenue' },
+      { key: 'cm', label: 'CM', actual: 'CM', vsBudget: 'CMVsBudget', diff: 'CMDiff', ytd: 'CMYTDVsBudget', yoy: 'CMYoY', infoKey: 'CM' },
+      { key: 'ebitda', label: ebitdaLabel, actual: 'EBITDA', vsBudget: 'EBITDAVsBudget', diff: 'EBITDADiff', ytd: 'EBITDAYTDVsBudget', yoy: 'EBITDAYoY', infoKey: useDashboardScope ? 'Adj. EBITDA' : 'EBITDA' },
     ];
   }, [isSegmentPage, isCorporate, isRetail, ebitdaLabel, ebitLabel, useDashboardScope]);
 
@@ -1359,6 +1405,8 @@ function DashboardInner() {
         onSubSegmentsChange={setSubSegmentsSelected}
         category={category}
         onCategoryChange={setCategory}
+        amountFormat={amountFormat}
+        onAmountFormatChange={setAmountFormat}
         dataStatus={dataStatus}
       />
 
@@ -1369,12 +1417,13 @@ function DashboardInner() {
           const isEbitCard = f.key === 'ebit' && showEbitVariant;
           return (
             <KPICardWithDiffs
-              key={f.key}
+              key={`${f.key}-${amountFormat}`}
               label={f.label}
               infoKey={f.infoKey}
               value={kpis[f.key]}
               vsBudget={kpis[`vsBudget_${f.key}`]}
               vsPrevMonth={kpis[`vsPrev_${f.key}`]}
+              vsLastYear={kpis[`vsYoy_${f.key}`]}
               vsYtdBudget={kpis[`vsYtd_${f.key}`]}
               dropdown={isEbitdaCard ? {
                 value: ebitdaVariant,
@@ -1393,7 +1442,7 @@ function DashboardInner() {
       </div>
 
       {/* Charts Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
+      <div key={`charts-${amountFormat}`} className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
         <div className="lg:col-span-2 bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-6 card-shadow">
           <div className="flex flex-col gap-3 mb-5">
             <div className="flex flex-wrap justify-between items-start gap-3">
@@ -1509,8 +1558,8 @@ function DashboardInner() {
               {showConsolidatedStylePerf
                 ? 'Adj. EBITDA by segment'
                 : isRetail
-                  ? 'Revenue · CM · EBIT'
-                  : 'Revenue · CM · EBITDA'}
+                  ? 'Revenue · CM · EBIT (Direct)'
+                  : 'Revenue · CM · EBITDA (Direct)'}
             </p>
           </div>
           {performanceData.length === 0 ? (

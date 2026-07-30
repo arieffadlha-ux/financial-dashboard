@@ -10,6 +10,7 @@
 export const SEGMENTS = ['Retail', 'Mitra', 'Gaming', 'Investment', 'Corporate'];
 export const DASHBOARD_SUB_SEGMENT = 'Dashboard';
 export const DATA_YEAR = 2026;
+export const PRIOR_YEAR = 2025;
 export const CATEGORIES = ['Before Elim', 'After Elim'];
 export const EXCLUDED_SUB_SEGMENTS = new Set([
   'Elimination',
@@ -33,11 +34,11 @@ const PRIMARY_TAG_PRIORITY = {
 };
 
 const METRIC_DEFS = {
-  Revenue: { field: 'Revenue', budget: 'RevenueBudget', diff: 'RevenueDiff', vsBudget: 'RevenueVsBudget', ytdVsBudget: 'RevenueYTDVsBudget', hasDiff: 'hasRevenueDiff' },
-  CM: { field: 'CM', budget: 'CMBudget', diff: 'CMDiff', vsBudget: 'CMVsBudget', ytdVsBudget: 'CMYTDVsBudget', hasDiff: 'hasCMDiff' },
-  EBITDA: { field: 'EBITDA', budget: 'EBITDABudget', diff: 'EBITDADiff', vsBudget: 'EBITDAVsBudget', ytdVsBudget: 'EBITDAYTDVsBudget', hasDiff: 'hasEBITDADiff' },
-  EBIT: { field: 'EBIT', budget: 'EBITBudget', diff: 'EBITDiff', vsBudget: 'EBITVsBudget', ytdVsBudget: 'EBITYTDVsBudget', hasDiff: 'hasEBITDiff' },
-  'Net Income': { field: 'NetIncome', budget: 'NetIncomeBudget', diff: 'NetIncomeDiff', vsBudget: 'NetIncomeVsBudget', ytdVsBudget: 'NetIncomeYTDVsBudget', hasDiff: 'hasNetIncomeDiff' },
+  Revenue: { field: 'Revenue', budget: 'RevenueBudget', diff: 'RevenueDiff', vsBudget: 'RevenueVsBudget', ytdVsBudget: 'RevenueYTDVsBudget', hasDiff: 'hasRevenueDiff', yoy: 'RevenueYoY' },
+  CM: { field: 'CM', budget: 'CMBudget', diff: 'CMDiff', vsBudget: 'CMVsBudget', ytdVsBudget: 'CMYTDVsBudget', hasDiff: 'hasCMDiff', yoy: 'CMYoY' },
+  EBITDA: { field: 'EBITDA', budget: 'EBITDABudget', diff: 'EBITDADiff', vsBudget: 'EBITDAVsBudget', ytdVsBudget: 'EBITDAYTDVsBudget', hasDiff: 'hasEBITDADiff', yoy: 'EBITDAYoY' },
+  EBIT: { field: 'EBIT', budget: 'EBITBudget', diff: 'EBITDiff', vsBudget: 'EBITVsBudget', ytdVsBudget: 'EBITYTDVsBudget', hasDiff: 'hasEBITDiff', yoy: 'EBITYoY' },
+  'Net Income': { field: 'NetIncome', budget: 'NetIncomeBudget', diff: 'NetIncomeDiff', vsBudget: 'NetIncomeVsBudget', ytdVsBudget: 'NetIncomeYTDVsBudget', hasDiff: 'hasNetIncomeDiff', yoy: 'NetIncomeYoY' },
 };
 
 export function resolveDashboardSubcat(metric, {
@@ -105,7 +106,8 @@ function parseRows(csvText) {
     const diffYtdStr = cols[10]?.trim() ?? '';
 
     const yearNum = year == null ? NaN : parseInt(String(year).replace(/\.0+$/, ''), 10);
-    if (!Number.isFinite(yearNum) || yearNum !== DATA_YEAR) continue;
+    // Keep current FY + prior FY (for vs Last Year). Difference MoM uses current FY.
+    if (!Number.isFinite(yearNum) || (yearNum !== DATA_YEAR && yearNum !== PRIOR_YEAR)) continue;
     if (!month || !subcat || !amtStr) continue;
 
     const amount = parseNumber(amtStr);
@@ -209,6 +211,59 @@ function emptyBucket(year, month, metrics) {
   return bucket;
 }
 
+function sumMetricAmount(rows, year, month, subcat, scope) {
+  const scopeNoCat = { ...scope, requireCategory: scope.requireCategory === true, category: scope.category };
+  for (const candidate of budgetSubcatCandidates(subcat)) {
+    let total = 0;
+    let found = false;
+    for (const r of rows) {
+      if (r.year !== year || r.month !== month || r.subcat !== candidate) continue;
+      if (!matchesScope(r, scopeNoCat)) continue;
+      total += r.amount;
+      found = true;
+    }
+    if (found) return total;
+  }
+  return null;
+}
+
+/**
+ * Fill MoM (Difference) when CSV is blank on Dashboard rows, and attach vs Last Year
+ * (= amount FY − amount prior FY) per month / metric.
+ */
+function finalizeMonthlyMomYoy(monthly, priorRows, scope, {
+  metrics = ['Revenue', 'EBITDA', 'Net Income'],
+  metricSubcats = null,
+} = {}) {
+  const subcatOf = (metric) => {
+    if (metricSubcats?.[metric]) return metricSubcats[metric];
+    if (metric === 'EBITDA') return 'Adj. EBITDA';
+    if (metric === 'EBIT') return 'Adj. EBIT';
+    return metric;
+  };
+
+  for (let i = 0; i < monthly.length; i++) {
+    const row = monthly[i];
+    const prev = i > 0 ? monthly[i - 1] : null;
+    for (const metric of metrics) {
+      const def = METRIC_DEFS[metric];
+      if (!def) continue;
+      const subcat = subcatOf(metric);
+
+      // vs Previous Month: prefer CSV Difference; else compute MoM from series
+      if (row[def.diff] == null && prev != null) {
+        row[def.diff] = Math.round(row[def.field] - prev[def.field]);
+      }
+
+      const priorAmt = sumMetricAmount(priorRows, PRIOR_YEAR, row.month, subcat, scope);
+      row[def.yoy] = priorAmt != null
+        ? Math.round(row[def.field] - priorAmt)
+        : null;
+    }
+  }
+  return monthly;
+}
+
 /**
  * Aggregate monthly metrics.
  * metricSubcats: { Revenue: 'Revenue', EBITDA: 'Adj. EBITDA (Direct)', ... }
@@ -217,6 +272,7 @@ function emptyBucket(year, month, metrics) {
 function aggregateMonthly(primaryRows, budgetRows, scope, {
   metrics = ['Revenue', 'EBITDA', 'Net Income'],
   metricSubcats = null,
+  priorRows = [],
 } = {}) {
   const resolvedMetrics = metrics.map((m) => (m === 'EBITDA' || m === 'EBIT' ? m : m));
   const subcatOf = (metric) => {
@@ -305,7 +361,10 @@ function aggregateMonthly(primaryRows, budgetRows, scope, {
     }
   }
 
-  return monthly;
+  return finalizeMonthlyMomYoy(monthly, priorRows, scope, {
+    metrics: resolvedMetrics,
+    metricSubcats,
+  });
 }
 
 /** Budget CSV has no Before/After Elim — map Adj.* (Direct|Total) to plain budget subcats. */
@@ -761,16 +820,20 @@ const SUBSEGMENT_SUBCATS = {
 
 export function processCSV(csvText) {
   const allRows = parseRows(csvText);
-  if (allRows.length === 0) throw new Error('No 2026 data found in the CSV file');
+  const rows2026 = allRows.filter((r) => r.year === DATA_YEAR);
+  const rows2025 = allRows.filter((r) => r.year === PRIOR_YEAR);
+  if (rows2026.length === 0) throw new Error('No 2026 data found in the CSV file');
 
-  const primaryRows = pickPrimaryRows(allRows);
-  const pnlSourceRows = rowsForPnL(allRows);
-  const budgetRows = allRows.filter((r) => r.tag === 'Budget');
+  const primaryRows = pickPrimaryRows(rows2026);
+  const priorRows = pickPrimaryRows(rows2025);
+  const pnlSourceRows = rowsForPnL(rows2026);
+  const budgetRows = rows2026.filter((r) => r.tag === 'Budget');
 
-  const buildDashboardMonthly = (scope, category, ebitdaVariant = 'Adj. EBITDA (Total)') =>
+  const buildDashboardMonthly = (scope, category, ebitdaVariant = 'Adj. EBITDA (Total)', ebitVariant = 'Adj. EBIT (Total)') =>
     aggregateMonthly(primaryRows, budgetRows, { ...scope, category, requireCategory: true }, {
       metrics: FULL_METRICS,
-      metricSubcats: dashboardMetricSubcats(category, ebitdaVariant, 'Adj. EBIT (Total)', FULL_METRICS),
+      metricSubcats: dashboardMetricSubcats(category, ebitdaVariant, ebitVariant, FULL_METRICS),
+      priorRows,
     });
 
   // Consolidated: default Before Elim Adj. EBITDA uses Total (no Direct/Total UI on consolidated)
@@ -801,10 +864,12 @@ export function processCSV(csvText) {
         'Adj. EBIT (Direct)': aggregateMonthly(primaryRows, budgetRows, { ...scope, category: 'Before Elim', requireCategory: true }, {
           metrics: FULL_METRICS,
           metricSubcats: dashboardMetricSubcats('Before Elim', 'Adj. EBITDA (Direct)', 'Adj. EBIT (Direct)', FULL_METRICS),
+          priorRows,
         }),
         'Adj. EBIT (Total)': aggregateMonthly(primaryRows, budgetRows, { ...scope, category: 'Before Elim', requireCategory: true }, {
           metrics: FULL_METRICS,
           metricSubcats: dashboardMetricSubcats('Before Elim', 'Adj. EBITDA (Total)', 'Adj. EBIT (Total)', FULL_METRICS),
+          priorRows,
         }),
       },
     };
@@ -827,7 +892,7 @@ export function processCSV(csvText) {
         primaryRows,
         budgetRows,
         { mode: 'segment-total', segment: seg },
-        { metrics: SUBSEGMENT_METRICS, metricSubcats: SUBSEGMENT_SUBCATS },
+        { metrics: SUBSEGMENT_METRICS, metricSubcats: SUBSEGMENT_SUBCATS, priorRows },
       ),
     };
     for (const sub of SUB_SEGMENTS[seg]) {
@@ -835,7 +900,7 @@ export function processCSV(csvText) {
         primaryRows,
         budgetRows,
         { mode: 'subsegment', segment: seg, subSegment: sub },
-        { metrics: SUBSEGMENT_METRICS, metricSubcats: SUBSEGMENT_SUBCATS },
+        { metrics: SUBSEGMENT_METRICS, metricSubcats: SUBSEGMENT_SUBCATS, priorRows },
       );
     }
   }
