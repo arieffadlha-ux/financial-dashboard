@@ -201,6 +201,17 @@ const PAGES = [
   ...ALL_SEGMENTS.map(s => ({ id: s, label: s })),
 ];
 
+/** Sub-segments hidden from every box/dropdown on their segment's page (data still rolls up into totals). */
+const HIDDEN_SUB_SEGMENTS = {
+  Retail: ['Fulfillment Business', 'Marketplace'],
+};
+
+function visibleSubSegments(page, subs) {
+  const hidden = HIDDEN_SUB_SEGMENTS[page];
+  if (!hidden || !subs?.length) return subs ?? [];
+  return subs.filter(s => !hidden.includes(s));
+}
+
 const EBITDA_VARIANT_OPTS = [
   { id: 'Adj. EBITDA (Direct)', label: 'Direct' },
   { id: 'Adj. EBITDA (Total)', label: 'Total' },
@@ -562,7 +573,7 @@ function MultiSelect({ label, allLabel, options, values, onChange, minWidth = 16
 function FilterBar({
   quarter, months, onChange, onReset, isActive,
   subSegmentsSelected, subSegments, onSubSegmentsChange, showSubSegment,
-  category, onCategoryChange, dataStatus,
+  category, onCategoryChange, showCategory = true, dataStatus,
   amountFormat, onAmountFormatChange,
 }) {
   const Pill = ({ active, onClick, children }) => (
@@ -607,14 +618,18 @@ function FilterBar({
           />
         </>
       )}
-      <div className="h-4 w-px bg-[var(--border-default)]" />
-      <div className="relative">
-        <select value={category} onChange={e => onCategoryChange(e.target.value)}
-          className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none">
-          <option value="Before Elim">Before Elim</option>
-          <option value="After Elim">After Elim</option>
-        </select>
-      </div>
+      {showCategory && (
+        <>
+          <div className="h-4 w-px bg-[var(--border-default)]" />
+          <div className="relative">
+            <select value={category} onChange={e => onCategoryChange(e.target.value)}
+              className="pl-3 pr-7 py-1.5 bg-[var(--surface-elevated)] text-[var(--text-muted)] text-xs rounded-lg border-0 outline-none focus:ring-1 focus:ring-blue-600 cursor-pointer appearance-none">
+              <option value="Before Elim">Before Elim</option>
+              <option value="After Elim">After Elim</option>
+            </select>
+          </div>
+        </>
+      )}
       <div className="h-4 w-px bg-[var(--border-default)]" />
       <div className="relative">
         <select
@@ -786,6 +801,7 @@ function PnLBox({
   showVariantToggle = false,
   variant = 'Direct',
   onVariantChange,
+  pagination = null,
 }) {
   const [panelOpen, setPanelOpen] = useState(false);
   const [openIds, setOpenIds] = useState(() => new Set());
@@ -817,6 +833,35 @@ function PnLBox({
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0" onClick={e => e.stopPropagation()}>
+          {pagination && panelOpen && (
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={pagination.onPrev}
+                disabled={pagination.page === 0}
+                aria-label="Previous sub-segments"
+                className="w-6 h-6 rounded-lg border border-[var(--border-default)] text-xs
+                  flex items-center justify-center text-[var(--text-faint)] bg-[var(--surface-elevated)]
+                  hover:text-[var(--text-primary)] disabled:opacity-35 disabled:cursor-default cursor-pointer"
+              >
+                ‹
+              </button>
+              <span className="text-[11px] text-[var(--text-faint)] tabular whitespace-nowrap px-0.5">
+                {pagination.page + 1}/{pagination.totalPages}
+              </span>
+              <button
+                type="button"
+                onClick={pagination.onNext}
+                disabled={pagination.page === pagination.totalPages - 1}
+                aria-label="Next sub-segments"
+                className="w-6 h-6 rounded-lg border border-[var(--border-default)] text-xs
+                  flex items-center justify-center text-[var(--text-faint)] bg-[var(--surface-elevated)]
+                  hover:text-[var(--text-primary)] disabled:opacity-35 disabled:cursor-default cursor-pointer"
+              >
+                ›
+              </button>
+            </div>
+          )}
           {showVariantToggle && panelOpen && (
             <select
               value={variant}
@@ -939,6 +984,7 @@ function DashboardInner() {
   const [chartType, setChartType] = useState('area');
   const [trendMetric, setTrendMetric] = useState('ebitda');
   const [pnlGaVariant, setPnlGaVariant] = useState('Direct'); // Direct | Total for segment P&L
+  const [subPnlPage, setSubPnlPage] = useState(0); // paging through sub-segment columns in Performance P&L
 
   // Mutate synchronously during render (not in an effect) so that the module-level
   // formatter picks up the new mode before this render's children (KPI cards, charts,
@@ -952,24 +998,26 @@ function DashboardInner() {
   const isSegmentPage = page !== 'consolidated';
   const isCorporate = page === 'Corporate';
   const isRetail = page === 'Retail';
+  // Retail/Mitra/Gaming/Investment/Corporate: Before Elim only — Before/After Elim toggle is Consolidated-only.
+  const effectiveCategory = isSegmentPage ? 'Before Elim' : category;
   const useDashboardScope = !isSegmentPage || subSegmentsSelected.length === 0;
   // Direct/Total only on segment pages that expose Adj. EBITDA/EBIT variants (not Corporate).
-  const showEbitdaVariant = isSegmentPage && !isRetail && !isCorporate && category === 'Before Elim' && useDashboardScope;
-  const showEbitVariant = isRetail && category === 'Before Elim' && useDashboardScope;
+  const showEbitdaVariant = isSegmentPage && !isRetail && !isCorporate && effectiveCategory === 'Before Elim' && useDashboardScope;
+  const showEbitVariant = isRetail && effectiveCategory === 'Before Elim' && useDashboardScope;
 
-  const subSegments = isSegmentPage ? (activeData.SUB_SEGMENTS?.[page] ?? []) : [];
+  const subSegments = isSegmentPage ? visibleSubSegments(page, activeData.SUB_SEGMENTS?.[page] ?? []) : [];
   const selectedMonthNums = filter.months;
-  const isFiltered = filter.quarter !== 'all' || filter.months.length > 0 || subSegmentsSelected.length > 0 || category !== 'Before Elim';
+  const isFiltered = filter.quarter !== 'all' || filter.months.length > 0 || subSegmentsSelected.length > 0 || effectiveCategory !== 'Before Elim';
 
   // When a sub-segment is selected, show plain EBIT (Retail) / EBITDA (other segments).
   const ebitdaLabel = !useDashboardScope && isSegmentPage && !isRetail
     ? 'EBITDA'
-    : category === 'After Elim'
+    : effectiveCategory === 'After Elim'
       ? 'Adj. EBITDA'
       : (showEbitdaVariant ? 'Adj. EBITDA' : (isSegmentPage && !isRetail && !isCorporate ? ebitdaVariant : 'Adj. EBITDA'));
   const ebitLabel = !useDashboardScope && isRetail
     ? 'EBIT'
-    : category === 'After Elim'
+    : effectiveCategory === 'After Elim'
       ? 'Adj. EBIT'
       : (showEbitVariant ? 'Adj. EBIT' : ebitVariant);
 
@@ -1039,6 +1087,9 @@ function DashboardInner() {
 
   useEffect(() => { setSubSegmentsSelected([]); }, [page]);
   useEffect(() => { setPnlGaVariant('Direct'); }, [page]);
+  useEffect(() => { setSubPnlPage(0); }, [page]);
+  // Retail/Mitra/Gaming/Investment/Corporate: Before Elim only — no Before/After Elim toggle.
+  useEffect(() => { if (isSegmentPage) setCategory('Before Elim'); }, [isSegmentPage, page]);
 
   useEffect(() => {
     if (!TREND_OPTIONS.some(o => o.id === trendMetric)) {
@@ -1047,16 +1098,16 @@ function DashboardInner() {
   }, [page, TREND_OPTIONS, trendMetric]);
 
   const pickVariantSeries = useCallback((baseByCategory, variantsByCategory) => {
-    if (category === 'After Elim') {
+    if (effectiveCategory === 'After Elim') {
       return asMonthlyArray(baseByCategory, 'After Elim');
     }
     // Before Elim — prefer Direct/Total variant series when applicable
     if (isRetail && variantsByCategory?.['Before Elim']?.[ebitVariant]) {
       return variantsByCategory['Before Elim'][ebitVariant];
     }
-    // Corporate aligns with Consolidated (Adj. EBITDA Total, no Direct/Total UI)
-    if (isCorporate && variantsByCategory?.['Before Elim']?.['Adj. EBITDA (Total)']) {
-      return variantsByCategory['Before Elim']['Adj. EBITDA (Total)'];
+    // Corporate: Adj. EBITDA (Direct) vs Budget (Direct), Dashboard sub-segment — no Direct/Total UI
+    if (isCorporate && variantsByCategory?.['Before Elim']?.['Adj. EBITDA (Direct)']) {
+      return variantsByCategory['Before Elim']['Adj. EBITDA (Direct)'];
     }
     if (isSegmentPage && !isRetail && !isCorporate && variantsByCategory?.['Before Elim']?.[ebitdaVariant]) {
       return variantsByCategory['Before Elim'][ebitdaVariant];
@@ -1065,7 +1116,7 @@ function DashboardInner() {
       return variantsByCategory['Before Elim']['Adj. EBITDA (Total)'];
     }
     return asMonthlyArray(baseByCategory, 'Before Elim');
-  }, [category, isRetail, isCorporate, isSegmentPage, ebitVariant, ebitdaVariant]);
+  }, [effectiveCategory, isRetail, isCorporate, isSegmentPage, ebitVariant, ebitdaVariant]);
 
   const sourceMonthly = useMemo(() => {
     if (page === 'consolidated') {
@@ -1123,7 +1174,7 @@ function DashboardInner() {
         activeData.SEGMENT_MONTHLY ?? {},
         activeData.SEGMENTS ?? ALL_SEGMENTS,
         filteredKeys,
-        category,
+        effectiveCategory,
       );
     }
     if (!useDashboardScope) {
@@ -1160,7 +1211,7 @@ function DashboardInner() {
       filteredKeys,
       { mode: perfMode },
     );
-  }, [activeData, page, filteredKeys, subSegments, useDashboardScope, subSegmentsSelected, isCorporate, isRetail, category]);
+  }, [activeData, page, filteredKeys, subSegments, useDashboardScope, subSegmentsSelected, isCorporate, isRetail, effectiveCategory]);
 
   const showConsolidatedStylePerf = page === 'consolidated' || isCorporate;
 
@@ -1179,7 +1230,7 @@ function DashboardInner() {
         ];
 
   const pnlView = useMemo(() => {
-    const bundle = activeData.PNL?.[category];
+    const bundle = activeData.PNL?.[effectiveCategory];
     const monthFilter = (months) => sumPnLMonths(months, filter, selectedMonthNums);
     const showPnlVariant = useDashboardScope
       && isSegmentPage
@@ -1316,27 +1367,32 @@ function DashboardInner() {
       };
     }
 
-    // Retail / Mitra / Gaming / Investment — Direct/Total filtered lines
+    // Retail / Mitra / Gaming / Investment — full segment + ALL sub-segments, paginated 5 at a time.
+    // Ranked by the segment's headline profit metric (Adj. EBIT for Retail, Adj. EBITDA for others).
     const mainLines = bundle?.bySegment?.[page] ?? [];
-    const subs = activeData.SUB_SEGMENTS?.[page] ?? [];
-    const ranked = subs.map(sub => {
-      const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
-        .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
-      const ebit = rows.reduce((s, m) => s + (m.EBIT ?? 0), 0);
-      const ebitda = rows.reduce((s, m) => s + (m.EBITDA ?? 0), 0);
-      return { sub, ebit, ebitda };
-    });
+    const subs = visibleSubSegments(page, activeData.SUB_SEGMENTS?.[page] ?? []);
+    const rankMetric = page === 'Retail' ? 'ebit' : 'ebitda';
+    const ranked = subs
+      .map(sub => {
+        const rows = (activeData.SUBSEGMENT_MONTHLY?.[page]?.[sub] ?? [])
+          .filter(m => filteredKeys.has(`${m.year}-${m.month}`));
+        return {
+          sub,
+          ebit: rows.reduce((s, m) => s + (m.EBIT ?? 0), 0),
+          ebitda: rows.reduce((s, m) => s + (m.EBITDA ?? 0), 0),
+        };
+      })
+      .sort((a, b) => b[rankMetric] - a[rankMetric])
+      .map(r => r.sub);
 
-    let selectedSubs = [...subs];
-    if (page === 'Retail') {
-      selectedSubs = ranked.sort((a, b) => b.ebit - a.ebit).slice(0, 5).map(r => r.sub);
-    } else if (page === 'Mitra') {
-      selectedSubs = ranked.sort((a, b) => b.ebitda - a.ebitda).slice(0, 5).map(r => r.sub);
-    }
+    const PAGE_SIZE = 5;
+    const totalPages = Math.max(1, Math.ceil(ranked.length / PAGE_SIZE));
+    const safePage = Math.min(Math.max(subPnlPage, 0), totalPages - 1);
+    const pageSubs = ranked.slice(safePage * PAGE_SIZE, safePage * PAGE_SIZE + PAGE_SIZE);
 
     const cols = [
       { key: '_main', label: page, lines: mainLines },
-      ...selectedSubs.map(sub => ({
+      ...pageSubs.map(sub => ({
         key: sub,
         label: sub,
         lines: bundle?.bySubSegment?.[page]?.[sub]?.full
@@ -1345,26 +1401,29 @@ function DashboardInner() {
       })),
     ];
 
-    const subtitle = page === 'Retail'
-      ? `Top 5 Sub-Segments by Adj. EBIT · ${pnlGaVariant}`
-      : page === 'Mitra'
-        ? `Top 5 Sub-Segments by Adj. EBITDA · ${pnlGaVariant}`
-        : `Sub-Segments comparison · ${pnlGaVariant}`;
+    const metricLabel = page === 'Retail' ? 'Adj. EBIT' : 'Adj. EBITDA';
+    const subtitle = `${page} + all Sub-Segments · ranked by ${metricLabel} · ${pnlGaVariant}`;
 
     return {
       columns: cols.map(c => ({ key: c.key, label: c.label })),
       lines: mergeColumns(mainLines, cols),
       subtitle,
       showVariantToggle: showPnlVariant,
+      pagination: totalPages > 1 ? {
+        page: safePage,
+        totalPages,
+        onPrev: () => setSubPnlPage(p => Math.max(0, p - 1)),
+        onNext: () => setSubPnlPage(p => Math.min(totalPages - 1, p + 1)),
+      } : null,
     };
   }, [
-    activeData, page, category, filter, selectedMonthNums,
+    activeData, page, effectiveCategory, filter, selectedMonthNums,
     isCorporate, isSegmentPage, useDashboardScope, subSegmentsSelected, filteredKeys,
-    pnlGaVariant,
+    pnlGaVariant, subPnlPage,
   ]);
 
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
-  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 30 July 15.50.csv';
+  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 3 August 12.20.csv';
 
   const tableHeaders = useMemo(() => {
     const cols = ['Period', 'Tag'];
@@ -1409,6 +1468,7 @@ function DashboardInner() {
         onSubSegmentsChange={setSubSegmentsSelected}
         category={category}
         onCategoryChange={setCategory}
+        showCategory={!isSegmentPage}
         amountFormat={amountFormat}
         onAmountFormatChange={setAmountFormat}
         dataStatus={dataStatus}
@@ -1681,6 +1741,7 @@ function DashboardInner() {
         showVariantToggle={!!pnlView.showVariantToggle}
         variant={pnlGaVariant}
         onVariantChange={setPnlGaVariant}
+        pagination={pnlView.pagination}
       />
 
       <footer className="mt-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-[var(--text-very-faint)]">
