@@ -288,31 +288,60 @@ function sumField(rows, field) {
   return rows.reduce((s, m) => s + (m[field] ?? 0), 0);
 }
 
+function sumNullable(rows, field) {
+  let sum = 0;
+  let any = false;
+  for (const m of rows) {
+    const v = m[field];
+    if (v != null && Number.isFinite(v)) {
+      sum += v;
+      any = true;
+    }
+  }
+  return any ? sum : null;
+}
+
 function computePeriodKPIs(filtered, fields) {
   const last = filtered[filtered.length - 1];
-  const sumNullable = (field) => {
-    let sum = 0;
-    let any = false;
-    for (const m of filtered) {
-      const v = m[field];
-      if (v != null && Number.isFinite(v)) {
-        sum += v;
-        any = true;
-      }
-    }
-    return any ? sum : null;
-  };
   const out = {};
   for (const f of fields) {
     out[f.key] = sumField(filtered, f.actual);
     out[`vsBudget_${f.key}`] = sumField(filtered, f.vsBudget);
-    // vs Previous Month: CSV Difference (Dashboard) or computed MoM — sum over filtered months
-    out[`vsPrev_${f.key}`] = sumNullable(f.diff);
     out[`vsYtd_${f.key}`] = last ? (last[f.ytd] ?? null) : null;
     // vs Last Year: Σ(2026 − 2025) for filtered months
-    out[`vsYoy_${f.key}`] = sumNullable(f.yoy);
+    out[`vsYoy_${f.key}`] = sumNullable(filtered, f.yoy);
   }
   return out;
+}
+
+/**
+ * "vs Previous Month/Period" indicator (4th KPI pill):
+ * - Specific month(s) selected → vs Previous Month, using CSV Difference / computed MoM summed over the selection.
+ * - Quarter view (Q2/Q3/Q4) with no specific month → vs Previous Period = current quarter total − prior quarter total.
+ * - FY view, or Q1 with no specific month → hidden (no prior period in scope).
+ */
+function computeVsPeriodIndicator(sourceMonthly, filteredMonthly, filter, selectedMonthNums, fields) {
+  if (selectedMonthNums.length > 0) {
+    const values = {};
+    for (const f of fields) values[f.key] = sumNullable(filteredMonthly, f.diff);
+    return { label: 'vs Previous Month', values };
+  }
+
+  const quarterNum = filter.quarter === 'all' ? null : parseInt(filter.quarter.replace('Q', ''), 10);
+  if (quarterNum && quarterNum > 1) {
+    const curRows = sourceMonthly.filter(m => m.quarter === quarterNum);
+    const prevRows = sourceMonthly.filter(m => m.quarter === quarterNum - 1);
+    const values = {};
+    for (const f of fields) {
+      values[f.key] = prevRows.length ? (sumField(curRows, f.actual) - sumField(prevRows, f.actual)) : null;
+    }
+    return { label: 'vs Previous Period', values };
+  }
+
+  // FY view or Q1 with no specific month selected — nothing meaningful to compare against.
+  const values = {};
+  for (const f of fields) values[f.key] = null;
+  return { label: 'vs Previous Month', values };
 }
 
 function filteredSegmentAdjEbitda(segmentMonthly, segments, filteredKeys, category) {
@@ -722,7 +751,7 @@ function DiffPill({ label, value }) {
   );
 }
 
-function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsLastYear, vsYtdBudget, dropdown, infoKey }) {
+function KPICardWithDiffs({ label, value, vsBudget, vsPeriod, vsPeriodLabel = 'vs Previous Month', vsLastYear, vsYtdBudget, dropdown, infoKey }) {
   const resolvedInfo = infoKey ?? resolveMetricInfoKey(label);
   return (
     <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-5 card-shadow hover:border-[var(--border-hover)] transition-all">
@@ -750,7 +779,7 @@ function KPICardWithDiffs({ label, value, vsBudget, vsPrevMonth, vsLastYear, vsY
       <p className="text-[1.6rem] font-semibold leading-none text-[var(--text-primary)] tabular mb-3">{idr(value)}</p>
       <div className="flex flex-wrap gap-1.5">
         <DiffPill label="vs Budget" value={vsBudget} />
-        <DiffPill label="vs Previous Month" value={vsPrevMonth} />
+        <DiffPill label={vsPeriodLabel} value={vsPeriod} />
         <DiffPill label="vs Last Year" value={vsLastYear} />
         <DiffPill label="vs YTD Budget" value={vsYtdBudget} />
       </div>
@@ -1139,6 +1168,10 @@ function DashboardInner() {
   const filteredKeys = useMemo(() => new Set(filteredMonthly.map(m => `${m.year}-${m.month}`)), [filteredMonthly]);
 
   const kpis = useMemo(() => computePeriodKPIs(filteredMonthly, kpiFields), [filteredMonthly, kpiFields]);
+  const vsPeriodIndicator = useMemo(
+    () => computeVsPeriodIndicator(sourceMonthly, filteredMonthly, filter, selectedMonthNums, kpiFields),
+    [sourceMonthly, filteredMonthly, filter, selectedMonthNums, kpiFields],
+  );
 
   const dataStatus = useMemo(() => {
     if (selectedMonthNums.length === 0) return null;
@@ -1423,7 +1456,7 @@ function DashboardInner() {
   ]);
 
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
-  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 3 August 12.20.csv';
+  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 4 August 16.15.csv';
 
   const tableHeaders = useMemo(() => {
     const cols = ['Period', 'Tag'];
@@ -1486,7 +1519,8 @@ function DashboardInner() {
               infoKey={f.infoKey}
               value={kpis[f.key]}
               vsBudget={kpis[`vsBudget_${f.key}`]}
-              vsPrevMonth={kpis[`vsPrev_${f.key}`]}
+              vsPeriod={vsPeriodIndicator.values[f.key]}
+              vsPeriodLabel={vsPeriodIndicator.label}
               vsLastYear={kpis[`vsYoy_${f.key}`]}
               vsYtdBudget={kpis[`vsYtd_${f.key}`]}
               dropdown={isEbitdaCard ? {
