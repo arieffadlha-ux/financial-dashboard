@@ -367,14 +367,19 @@ function aggregateMonthly(primaryRows, budgetRows, scope, {
   });
 }
 
-/** Budget CSV has no Before/After Elim — map Adj.* (Direct|Total) to plain budget subcats. */
+/**
+ * Budget CSV has no Before/After Elim — map Adj.* (Direct|Total) to plain budget subcats.
+ * The Budget tag never carries a plain "Adj. EBITDA"/"Adj. EBIT" row (Dashboard-level Budget
+ * only breaks out Direct/Total), so After Elim's plain subcat falls back to the Total variant
+ * — the closest available proxy for the fully-loaded (Direct + Shared) after-elimination view.
+ */
 function budgetSubcatCandidates(subcat) {
   if (!subcat) return [];
   if (subcat.startsWith('Adj. EBITDA')) {
-    return [subcat, 'Adj. EBITDA', 'EBITDA'];
+    return [subcat, 'Adj. EBITDA (Total)', 'Adj. EBITDA (Direct)', 'Adj. EBITDA', 'EBITDA'];
   }
   if (subcat.startsWith('Adj. EBIT')) {
-    return [subcat, 'Adj. EBIT', 'EBIT'];
+    return [subcat, 'Adj. EBIT (Total)', 'Adj. EBIT (Direct)', 'Adj. EBIT', 'EBIT'];
   }
   return [subcat];
 }
