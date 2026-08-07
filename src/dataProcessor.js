@@ -18,6 +18,8 @@ export const EXCLUDED_SUB_SEGMENTS = new Set([
   'Adjustment Elimination',
   'G&A Direct HQ',
   'G&A Shared',
+  'Pengurangan Elim Retail', // Retail page: hide option + data in all sub-segment boxes
+  'Non-performing', // Corporate page: hide option + data in all sub-segment boxes
 ]);
 
 const MONTH_ORDER = [
