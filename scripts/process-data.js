@@ -47,6 +47,8 @@ export const PNL_FLAT = ${JSON.stringify(data.PNL_FLAT, null, 2)};
 export const SEGMENTS = ${JSON.stringify(data.SEGMENTS, null, 2)};
 
 export const KPIS = ${JSON.stringify(data.KPIS, null, 2)};
+
+export const DATA_SOURCE = ${JSON.stringify(path.basename(CSV_PATH))};
 `;
 
 fs.writeFileSync(OUT_PATH, output, 'utf8');

@@ -492,7 +492,7 @@ function DataManager() {
             </div>
           )}
           <div className="max-h-[300px] overflow-y-auto">
-            <DatasetRow filename="Default Data" subtitle="cleaned_data.csv" isActive={activeId === 'default'}
+            <DatasetRow filename="Default Data" subtitle={DEFAULT_DATA.DATA_SOURCE || 'cleaned_data.csv'} isActive={activeId === 'default'}
               onSelect={() => { switchDataset('default'); setOpen(false); }} />
             {[...index].reverse().map(entry => (
               <DatasetRow key={entry.id} filename={entry.filename} subtitle={relativeDate(entry.uploadedAt)}
@@ -1456,7 +1456,9 @@ function DashboardInner() {
   ]);
 
   const pageTitle = page === 'consolidated' ? 'FP&A Financial Dashboard' : `${page} Segment`;
-  const dataSourceLabel = isCustom && activeMeta ? activeMeta.filename : 'WIP Dashboard per 4 August 17.35.csv';
+  const dataSourceLabel = isCustom && activeMeta
+    ? activeMeta.filename
+    : (activeData.DATA_SOURCE || DEFAULT_DATA.DATA_SOURCE || 'cleaned_data.csv');
 
   const tableHeaders = useMemo(() => {
     const cols = ['Period', 'Tag'];
